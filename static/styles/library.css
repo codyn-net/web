@@ -1,0 +1,28 @@
+table.definitions
+{
+  border-collapse: collapse;
+  margin: 0 50px 0 50px;
+}
+
+table.definitions th
+{
+  text-align: left;
+}
+
+table.definitions th, table.definitions td
+{
+  padding: 3px;
+  vertical-align: top;
+}
+
+table.definitions th
+{
+  border-bottom: 1px solid #333;
+}
+
+table.definitions td:last-child, table.definitions th:last-child
+{
+  padding-left: 30px;
+}
+
+/* vi:ex:ts=2:et */

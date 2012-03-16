@@ -1,0 +1,40 @@
+\newcommand{\cpgconnect}[4] {
+	\path (#1) edge [coupling,bends=#3,#4] (#2);
+}
+
+\newcommand{\cpgbendandconnect}[5] {
+	\pgfmathsetmacro{\ThisBend}{#3 * #4}
+	\cpgconnect{#1}{#2}{\ThisBend}{#5}
+}
+
+\newcommand{\cpgconnectself}[4] {
+	\path (#1) edge [loop above,in=60,out=120,min distance=#3cm,coupling,#4] (#2);
+}
+
+\newcommand{\cpgbendandconnectself}[4] {
+	\pgfmathsetmacro{\ThisLength}{(#3 + 1) * 0.5}
+	\cpgconnectself{#1}{#2}{\ThisLength}{#4}
+}
+
+\newcommand{\rendercpg}[1][30]{
+	\def\Bending{#1}
+	\tikzstyle{state custom}+=[]
+	\tikzstyle{state}=[circle, draw, minimum size=6mm,state custom]
+
+	\tikzstyle{coupling custom}+=[]
+	\tikzstyle{coupling}=[max distance=6mm, -stealth',coupling custom]
+
+	\tikzstyle{sinewave custom}+=[]
+	\tikzstyle{sinewave}=[scale=0.5,semithick,sinewave custom]
+
+	\tikzstyle{bends custom}+=[]
+	\tikzset{bends/.style={bend left=##1,bends custom=##1}}
+
+	\tikzstyle{state hopf}+=[]
+	\tikzstyle{link link}+=[]
+
+	\node[state,state hopf] (hopf) at (0, 0) {};
+	\draw [sinewave,x=1.57ex,y=1ex] ($(hopf.center) - (2,0)$) sin +(1,1) cos +(1,-1) sin +(1,-1) cos +(1,1);
+
+	\cpgbendandconnectself{hopf}{hopf}{0}{link link}
+}

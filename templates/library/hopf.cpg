@@ -1,0 +1,33 @@
+templates {
+	group "oscillator" {
+		[proxy]
+		state "hopf" {
+			x = 0 | integrated
+			y = 1 | integrated
+
+			omega = "2 * pi"
+			mu = 1
+
+			r2 = "x * x + y * y"
+		}
+
+		link on "hopf" {
+			gamma = 1
+
+			x <= "gamma * (mu - r2) * x - omega * y"
+			y <= "gamma * (mu - r2) * y + omega * x"
+		}
+	}
+
+	link "coupling" {
+		K = 5
+		x <= "K * y"
+	}
+}
+
+group "osc{1,2}" : "oscillator" {}
+link "coupling" from "osc1" to "osc2" : "coupling" {}
+
+layout {
+	"osc{1,2}" at @[++], 0
+}

@@ -1,0 +1,100 @@
+@import url('header.css');
+
+body
+{
+  font-family: Ubuntu, Cantarell, 'Droid Sans', 'DejaVu Sans', Arial, sans-serif
+}
+
+div#main
+{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a
+{
+  color: #0064af;
+  -webkit-transition: color 100ms linear;
+  text-decoration: none;
+}
+
+a:visited
+{
+  color: #0064af;
+}
+
+a:hover
+{
+  color: #003269;
+}
+
+div#toc ol
+{
+  margin: 0;
+}
+
+div#toc
+{
+  padding: 10px 10px 10px 0px;
+  background-color: #ffce34;
+  float: right;
+  display: none;
+  margin: 0 0 10px 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+div#toc a
+{
+  color: inherit;
+}
+
+div#toc li
+{
+  color: #333;
+}
+
+div#toc li:hover
+{
+  color: #000;
+}
+
+h1
+{
+  font-size: 1.4em;
+}
+
+h2
+{
+  font-size: 1.2em;
+}
+
+h3
+{
+  font-size: 1.1em;
+}
+
+table.default
+{
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table.default th, table.default td
+{
+  padding: 3px;
+  padding-left: 20px;
+}
+
+table.default th:first-child, table.default td:first-child
+{
+  padding-left: 0;
+}
+
+table.default th
+{
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+/* vi:ex:ts=2:et */

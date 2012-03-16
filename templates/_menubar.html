@@ -1,0 +1,22 @@
+<?
+	$menu = array(
+		array('title' => 'CPG', 'page' => 'index.php', 'desc' => 'Home page'),
+		array('title' => 'Library', 'page' => 'library.php', 'desc' => 'CPG Library'),
+		array('title' => 'Studio', 'page' => 'studio.php', 'desc' => 'CPG Studio'),
+		array('title' => 'Tools', 'page' => 'tools.php', 'desc' => 'CPG Tools'),
+		array('title' => 'Documentation', 'page' => 'documentation.php', 'desc' => 'CPG Documentation'),
+		array('title' => 'Downloads', 'page' => 'downloads.php', 'desc' => 'CPG Downloads'),
+	);
+
+	$base = pathinfo($_SERVER['SCRIPT_FILENAME'], PATHINFO_BASENAME);
+?>
+
+<div id="menubar">
+    <ul>
+        <? foreach ($menu as $item) { ?>
+        <li><a href='<?= $item['page'] ?>' title='<?= $item['desc'] ?>' class='<?= $base == $item['page'] ? 'selected' : '' ?>'><?= $item['title'] ?></a></li>
+        <? } ?>
+    </ul>
+</div>
+
+<!-- vi:ex:ts=4:et -->

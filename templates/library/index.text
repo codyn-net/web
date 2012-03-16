@@ -1,0 +1,161 @@
+The library is the core component of the libcpg family. It provides a high-level API to construct, manipulate, integrate and monitor systems of dynamical equations. It is written in C and can thus be easily integrated into existing software.
+
+==<div id="toc"></div>==
+
+h1(#methodology). Methodology
+
+In libcpg, coupled systems of dynamical equations are modeled in an object oriented and hierarchical way, resulting in a (possibly cyclic) graph representation of the dynamical equations. Multiple objects can be grouped together so that it is easy to define self-contained, encapsulated sub-networks. Furthermore, libcpg features the concept of templating, which allows you to define common functionality (equations) once, and reuse this functionality later. How all of this works is explained in this section.
+
+h2. Definitions
+
+The following table contains some definitions of common terminology used in the library.
+
+table(definitions).
+|_. Name|_. Definition|
+|%(#networkdef)Network%|The network is the toplevel object. From here you can access all the templates, functions, states and links in the system. You can also access (or modify) the integrator used to integrate the system. A "Network":#networkdef is also a "Group":#groupdef. |
+|%(#statedef)State%|A state is the basic state variable container object. You can define multiple states (integrated variables) and other variables in the state.|
+|%(#linkdef)Link%|The link object implements the differential equations acting on the state variables of a "State":#statedef. A link from one "State":#statedef to another accesses state information from one "State":#statedef, to act on a state variable of the other "State":#statedef (implementing a coupled system). A link can also be defined *on* a "State":#statedef (this is called a _self-link_). |
+|%(#groupdef)Group%|A group is a special kind of "State":#statedef which can contain other "State":#statedef objects (for example, a "Network":#networkdef is a "Group":#groupdef). It can be used to group common sub-networks. This can be particularly useful for "Templates":#templatedef. |
+|%(#templatedef)Template%|A template is an object of any type ("State":#statedef, "Link":#linkdef or "Group":#groupdef) residing in the templates group of the network. When defining a new object in the network, multiple templates can be referenced, inheriting their functionality. Any changes in a template will be automatically reflected in the instantiated objects. |
+|%(#functiondef)Function%|A function is a custom defined mathematical expression which can (after it has been defined) used in mathematical expressions in states and links. |
+|%(#integratordef)Integrator%|An integrator is an object responsible for integrating the system of differential equations. Several integrators are available in the library (e.g. Euler, Runge-Kutta 4).|
+
+h2. Basic Example
+
+Here follows a basic example of a simple oscillator. We will implement the following system of equations (which represents a Hopf oscillator):
+
+==\begin{aligned}
+\dot{x} & = \gamma (\mu - r^2) x - \omega y \\
+\dot{y} & = \gamma (\mu - r^2) y + \omega x
+\end{aligned}==
+
+In libcpg, this system would typically be implemented with one state object and one link object, grouped together for convenience. Below is an implementation of this oscillator in the "dynamical systems definition format":#format used by libcpg:
+
+bc. group "oscillator" {
+	state "hopf" {
+		x = 0 | integrated
+		y = 1 | integrated
+	
+		omega = 1
+		mu = 1
+		
+		r2 = "x * x + y * y"
+	}
+	
+	link on "hopf" {
+		gamma = 1
+	
+		x <= "gamma * (mu - r2) * x - omega * y"
+		y <= "gamma * (mu - r2) * y + omega * x"
+	}
+}
+
+The description above first defines a group named "oscillator" and then defines two objects in the group (the state "hopf" and a link on the "hopf" state). In the "hopf" state you see two integrated state variables (\(x\) and \(y\)) and three additional _normal_ variables (\(\omega\), \(\mu\) and \(r^2\)). The link is added on the "hopf" state and defines two differential equations (on \(x\) and \(y\)) and one variable (\(\gamma\)). The differential equations can use any variables from its origin state (see "Math/Scope":#mathscope).
+
+If we extend this example a little bit further, we can now use our hopf oscillator as a template, instantiate two of them and phase couple them together.
+
+bc. templates {
+	group "oscillator" {
+		[proxy]
+		state "hopf" {
+			x = 0 | integrated
+			y = 1 | integrated
+	
+			omega = "2 * pi"
+			mu = 1
+	
+			r2 = "x * x + y * y"
+		}
+	
+		link on "hopf" {
+			gamma = 1
+	
+			x <= "gamma * (mu - r2) * x - omega * y"
+			y <= "gamma * (mu - r2) * y + omega * x"
+		}
+	}
+	
+	link "coupling" {
+		K = 5
+		x <= "K * y"
+	}
+}
+	
+group "osc{1,2}" : "oscillator" {}
+link "coupling" from "osc1" to "osc2" : "coupling" {}
+
+This example is already a little bit more advanced than the previous one. You will see some new concepts being introduced here (they will not be explained in detail here). One of the changes is that the "oscillator" group is now defined in a special "templates" section. This makes the group available as a template in the network. Furthermore, you see that the "hopf" state in the "oscillator" group has a special tag on it ([proxy]). This means that the "hopf" state will be proxied in the parent group so that the information in "hopf" is also available in "oscillator" (we need this later to implement the coupling). Finally, there is one additional template link "coupling" which implements a very basic kind of coupling between two Hopf oscillators (namely to lock their respective phases in antiphase, by coupling the \(y\) of one oscillator to the \(x\) of another).
+
+Outside of the templates definitions there are two additional lines which instantiate respectively two oscillators and one link. Without going in the details of the syntax, the oscillators are instantiated from the "oscillator" template and the link is instantiated from the "coupling" template. The link is then attached from "osc1" to "osc2". You can try this example by loading it in the Studio (see tools).
+
+The next sections will describe in more detail the available math for variables and expressions, and the description format (as seen in the example above).
+
+h1(#math). Math
+
+The math in libcpg is based on writing simple math expressions in a C program (the syntax and precendence is the same). All expressions operate on floating point, scalar values.
+
+h2. Arithmetic Operators
+
+table(default).
+|_. Operator|_. Description|
+|a + b|Addition|
+|a - b|Subtraction|
+|-a|Unary minus|
+|+a|Unary plus|
+|a * b|Multiplication|
+|a / b|Division|
+|a % b|Modulo|
+|a ** b|Power|
+
+h2. Logical Operators
+
+table(default).
+|_. Operator|_. Description|
+|a && b|1 if a and b are not 0|
+|a &#124;&#124; b|1 if a or b are not 0|
+|a > b|1 if a is greater than b|
+|a < b|1 if a is smaller than b|
+|a >= b|1 if a is greater or equal to b|
+|a <= b|1 if a is smaller or equal to b|
+|!a|1 if a is 0|
+|a ? b : c|b if a is 1, otherwise c|
+
+h2. Functions
+
+table(default).
+|_. Function|_. Description|
+|sin(x)|Sine of x|
+|cos(x)|Cosine of x|
+|ta(x)n|Tangent of x|
+|asin(x)|Arcsine of x|
+|acos(x)|Arccosine of x|
+|atan(x)|Arctangent of x|
+|atan2(y, x)|Arctangent of y/x|
+|sqrt(x)|Square root of x|
+|invsqrt(x)|Inverse square root of x|
+|min(a, b)|Minimum of a and b|
+|max(a, b)|Maximum of a and b|
+|exp(x)|e to the power x|
+|floor(x)|Rounded down integer value of x|
+|ceil(x)|Rounded up integer value of x|
+|round(x)|Rounded value of x|
+|
+|abs(x)|Absolute value of x|
+|pow(a, b)|a to the power b|
+|ln(x)|Natural logarithm of x|
+|log10(x)|Base 10 logarithm of x|
+|hypot(x, y)|Square root of x^2 + y^2|
+|exp2(x)|2 to the power of x|
+|sinh(x)|Hyperbolic sine of x|
+|cosh(x)|Hyperbolic cosine of x|
+|tanh(x)|Hyperbolic tangent of x|
+|lerp(a, b, x)|Linear interpolation between a and b at x (fraction of (b - a))|
+|sqsum(a, b)|The squared sum of a and b|
+|sign(a)|The sign of a|
+|csign(x, y)|x with the sign of y|
+
+h1(#format). Network description format
+
+h1(#using). Using the library
+
+h1(#api). API

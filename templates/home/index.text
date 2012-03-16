@@ -1,0 +1,8 @@
+_Central pattern generators (CPGs) are neural networks that can produce rhythmic patterned outputs without requiring rhythmic input_. They are often modeled as systems of coupled dynamical equations which are numerically integrated. libcpg is a set of software libraries and tools that allow you to quickly model and integrate systems of coupled equations, or CPGs.
+
+|_. "Library":library.php |_. "Studio":studio.php |_. "Tools":tools.php |
+|The "library":library.php is the core component of the libcpg family. It provides a
+high-level modeling language and robust API to construct, manipulate, model and
+integrate coupled dynamical systems. It is written in "GObject C":http://en.wikipedia.org/wiki/eGObject making it fast and easy to use from other programming languages. |The "studio":studio.php is a graphical user interface for the library, making it extremely easy to graphically model of a network of
+coupled equations. You can model your network, integrate it and plot output
+of any variables in the system.|libcpg comes with a variety of useful "tools":tools.php allowing you to _automatically convert a system to a low-level C implementation targetting embedded systems and microcontrollers_ ("rawc":tools.php#rawc), _monitor variables in a network_ ("monitor":tools.php#monitor) or _render a graphical representation of the network_ ("render":tools.php#render).|
