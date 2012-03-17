@@ -3,6 +3,8 @@
 require 'erb'
 require 'optparse'
 require 'fileutils'
+require 'rubygems'
+require 'maruku'
 
 class Context
     attr_reader :vars
@@ -34,11 +36,21 @@ class Context
     end
 
     def template(filename, vars = {})
-        templ = ERB.new(File.read(filename), nil, '<>')
+        templ = ERB.new(File.read(filename), nil, nil, '@_erout')
 
         return @engine.context(vars) do |ctx|
             templ.result(ctx.context)
         end
+    end
+
+    def markdown
+        before = @_erout.length
+
+        ret = yield
+
+        after = @_erout.length
+
+        @_erout[before..after] = Maruku.new(@_erout[before..after]).to_html_document
     end
 end
 
