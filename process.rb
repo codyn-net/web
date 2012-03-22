@@ -117,7 +117,7 @@ $options = {:output => 'generated', :static => [], :force => false}
 OptionParser.new do |opts|
     opts.banner = "Usage: process.rb [$options] FILES"
 
-    opts.on("-o", "--output", "Output directory") do |o|
+    opts.on("-o DIR", "--output DIR", "Output directory") do |o|
         $options[:output] = o
     end
 
