@@ -1,3 +1,35 @@
 <%= template 'templates/header.html', :title => 'Download' %>
+<% markdown do %>
+# Download
+The codyn software is made freely available under the GPL license. All software
+can be downloaded from the links provided below.
 
+## Latest release
+[codyn-3.0.tar.xz](http://download.codyn.net/releases/codyn-3.0.tar.xz)
+
+Previous versions of the software can be found at [http://download.codyn.net/releases/](http://download.codyn.net/releases/).
+
+## Packages
+Packages are available for several linux distributions. More instructions to
+add repositories for your particular distribution can be found by following the
+links below.
+
+* Ubuntu (precise and lucid, 32 and 64 bits)
+
+  - Repository: `deb http://packages.codyn.net/ubuntu/ <codename> main`
+  - See also: [http://packages.codyn.net/ubuntu/README](http://packages.codyn.net/ubuntu/README)
+
+* Debian (wheezy and squeeze, 32 and 64 bits)
+
+  - Repository: `deb http://packages.codyn.net/debian/ <codename> main`
+  - See also: [http://packages.codyn.net/debian/README](http://packages.codyn.net/debian/README)
+
+## Development
+Codyn uses [git](http://git-scm.com/) for version control of all the software.
+All software can be easily accessed through git and can be browsed online at
+[http://git.codyn.net/](http://git.codyn.net/). More information on cloning the repositories can
+be found there.
+
+<% end %>
 <%= template 'templates/footer.html' %>
+
