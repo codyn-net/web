@@ -1,5 +1,5 @@
-OUTDIR=generated
-SYNCDIR=$(HOME)/public_html/codyn
+OUTDIR=../www
+SYNCDIR=
 
 process.timestamp: *.html templates/*.html static/* static/styles/* Makefile
 	ruby process.rb *.html -s static/ -f -o $(OUTDIR);
