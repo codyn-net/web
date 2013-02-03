@@ -52,7 +52,37 @@ function select_header()
 	});
 }
 
+function make_code()
+{
+	var code = $('code');
+
+	code.each(function (_, elem) {
+		elem = $(elem);
+
+		var pre = elem.parent('pre');
+
+		if (pre.length > 0)
+		{
+			var text = elem.text();
+
+			if (text[0] == '$')
+			{
+				pre.addClass('console_output');
+			}
+			else
+			{
+				pre.addClass('code');
+				elem.html(hl.highlight(text));
+			}
+		}
+
+		elem.css('visibility', 'visible');
+	});
+}
+
 $(document).ready(function () {
 	select_header();
+
 	make_toc();
+	make_code();
 });
