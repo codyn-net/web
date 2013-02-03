@@ -112,4 +112,8 @@ table.default th
   text-align: left;
 }
 
+div.centered {
+  text-align: center;
+}
+
 /* vi:ex:ts=2:et */
