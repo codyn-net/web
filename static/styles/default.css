@@ -2,7 +2,8 @@
 
 body
 {
-  font-family: Ubuntu, Cantarell, 'Droid Sans', 'DejaVu Sans', Arial, sans-serif
+  font-family: Ubuntu, Cantarell, 'Droid Sans', 'DejaVu Sans', Arial, sans-serif;
+  overflow-y: scroll;
 }
 
 *
