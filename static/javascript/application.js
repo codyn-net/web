@@ -45,7 +45,7 @@ function select_header()
 	$('#menubar a').each(function (i, a) {
 		a = $(a);
 
-		if (document.location.href.endsWith(a.attr('href')))
+		if (document.location.pathname.endsWith(a.attr('href')))
 		{
 			a.addClass('selected');
 		}
