@@ -1,0 +1,34 @@
+code
+{
+  visibility: hidden;
+}
+
+pre.code, pre.console_output {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+}
+
+code span.keyword
+{
+  color: #a2340e;
+}
+
+code span.string
+{
+  color: #096f38;
+}
+
+code span.comment
+{
+  color: #5c3566;
+}
+
+pre.console_output
+{
+  background-color: #2e3436;
+  color: #d3d7cf;
+}
+
+/* vi:ex:ts=2:et */

@@ -1,13 +1,12 @@
 <%= template 'templates/header.html' %>
 <% markdown do %>
-# Codyn
 Codyn is a general purpose open source software framework for modeling and
 simulating **Co**upled **Dyn**amical Systems. It uses object oriented concepts
 to define coupled systems in a concise manner using a special purpose
 [modeling language](modeling.html) allowing the user to directly define
 dynamical systems.
 
-## Design
+# Design
 Codyn has been designed as a [core C library](library.html) with an elegant
 public API, and a set of [tools](tools.html) built on top of this C library.
 This approach ensures that the the core C library exposes all relevant API to
@@ -30,7 +29,7 @@ numerical integrator schemes that are built into the library can then integrate
 the system. This approach allows you to model dynamical systems in simple
 text files which can be integrated without any further compilation.
 
-## Math
+# Math
 The math in codyn supports basic mathematical functions and fully supports
 vectors and matrices. Various computationally intensive matrix operations
 (such as solving linear systems and matrix multiplication) are implemented
@@ -44,7 +43,7 @@ In addition to basic math, a limited set of symbolic math is also available
 in codyn. In particular, symbolic derivation and simplification of mathematical
 expressions can be very useful.
 
-## Performance
+# Performance
 Although the core codyn library is designed to be fast, the mathematical
 expressions are still interpreted by software. In addition, due to the
 object oriented approach of modeling the dynamical system, and the possibilities

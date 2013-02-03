@@ -19,6 +19,9 @@
     <script type="text/javascript" src="javascript/application.js">
     </script>
 
+    <script type="text/javascript" src="javascript/hl.js">
+    </script>
+
     <% var(:scripts, []).each do |script| %>
     <script type="text/javascript" src="javascript/<%= script %>.js">
     </script>
@@ -36,7 +39,7 @@
                 <ul>
                     <li><a href="index.html">Codyn</a></li>
                     <li><a href="library.html">Library</a></li>
-                    <li><a href="modeling.html">Language</a></li>
+                    <li><a href="modeling.html">Modeling</a></li>
                     <li><a href="studio.html">Studio</a></li>
                     <li><a href="tools.html">Tools</a></li>
                     <li><a href="documentation.html">Documentation</a></li>
@@ -45,4 +48,5 @@
             </div>
         </div>
         <div id="content">
+            <div id="toc"></div>
 

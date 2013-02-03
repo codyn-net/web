@@ -1,3 +1,129 @@
 <%= template 'templates/header.html', :title => 'Tools' %>
 
+<% markdown do %>
+Codyn comes with a set of command line tools to parse, compile,
+monitor (evaluate), archive and render a graphical representation of a network
+(for use in reporting). Each of the tools uses the Codyn [library](library.html)
+and are fairly simple. It is therefor very easy to write your own tools. The
+following sections briefly introduce each of the available tools.
+
+# cdn-compile
+
+The cdn-compile command line tool can be used to quickly _compile_ a network
+file and see if there are any syntax errors or evaluation errors
+(e.g. missing variables or cyclic dependencies). For example, consider the
+following invalid network (missing _b_ variable).
+
+	node "n" {
+	    a = "2 * b"
+	}
+
+The resulting output from cdn-compile would be:
+
+	$ Error while compiling `[n].a':
+	[5-6]: 2 * b
+	           ^ Could not find variable or constant `b'
+
+For more information on cdn-compile options, use `cdn-compile -h`.
+
+[view cdn-compile source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-compile/cdn-compile.c)
+
+# cdn-parser
+
+The cdn-parser command line tool is used to translate a codyn network in the
+native codyn modeling language, to an xml representation of the same file. This
+is mostly useful at times to see if the model you wrote in the native format
+corresponds with the flattened out/ generated resulting network. It is however
+often easier to open the network in the [studio](studio.html).
+
+One alternative use for cdn-parser is to output a list of files that are
+included by a particular codyn file. The output lists all included files
+(recursively), one file per line. Use `cdn-parser -l <files>...`.
+
+For more information on cdn-parser options, use `cdn-compile -h`.
+
+[view cdn-parser source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-parser/cdn-parser.c)
+
+# cdn-monitor
+
+The cdn-monitor command line tool is used to evaluate a codyn network and monitor
+a set of variables from the network. The output of the command is are the
+tab separated values of each variable to be monitored at each step of the
+numerical integration of the network. Consider the following simple network:
+
+	node "n{1,2}" {
+		x = "sin(t * 2 * pi)"
+	}
+
+This generates two nodes (`n1` and `n2`) with a variable `x`. We can now
+evaluate this network with the following command:
+
+	$ cdn-monitor -t 0:0.1:1 -m n1.x -m n2.x network.cdn
+	
+	0                    0                        0
+	0.10000000000000001  0.58778525229247314      0.58778525229247314
+	0.20000000000000001  0.95105651629515353      0.95105651629515353
+	0.30000000000000004  0.95105651629515353      0.95105651629515353
+	0.40000000000000002  0.58778525229247325      0.58778525229247325
+	0.5                  1.2246467991473532e-16   1.2246467991473532e-16
+	0.59999999999999998  -0.58778525229247303     -0.58778525229247303
+	0.69999999999999996  -0.95105651629515353     -0.95105651629515353
+	0.79999999999999993  -0.95105651629515364     -0.95105651629515364
+	0.89999999999999991  -0.58778525229247403     -0.58778525229247403
+	0.99999999999999989  -1.1331077795295959e-15  -1.1331077795295959e-15
+	1                    -2.4492935982947064e-16  -2.4492935982947064e-16
+
+Note the `-m` flag to specify a variable to monitor. `-m` can be used multiple
+times to indicate multiple variables to be monitored. Furthermore, the argument
+to `-m` is a [selector]() and as such can select multiple variables easily
+using the selector syntax (for example, we could have used `-m '/n[0-9]+/.variables'`
+to select all variables in nodes n0 to n...).
+
+Other options for cdn-monitor include `-i` to print a header of variable
+names on the first line of the output or `-d` to change the delimiter from
+a tab to something else. For more information on cdn-monitor options,
+use `cdn-monitor -h`.
+
+[view cdn-monitor source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-monitor/cdn-monitor.c)
+
+# cdn-render
+
+The cdn-render command line tool renders the specified network similarly to
+the rendering in the studio. The default render output is in
+[TikZ](http://sourceforge.net/projects/pgf/) format and integrates seamlessly
+into LaTeX documents. Consider the following network:
+
+	node "node_{left,right}_{top,bottom}"
+	{
+	    # Layout in a square. Use @<N>[!] syntax to access count in order
+	    # of construction of the nodes
+	    layout at $(@1[!] * 3), $(@2[!] * 3)
+	}
+	
+	# Generate edges connecting all nodes in a square in one direction,
+	# as well as bidirectional edges between the corners of the square
+	edge from "node_{left,right}_{top,bottom}" to ["{node_right_top,    node_right_bottom}",
+	                                               "{node_left_top,     node_right_top}",
+	                                               "{node_right_bottom, node_left_bottom}",
+	                                               "{node_left_bottom,  node_left_top}"] {}
+
+Running `cdn-compile` on this file will result in two files, network.inc.tex and
+network.tex. The first contains the network definition and the second is a
+simple latex document rendering the network in a preview environment. The
+network.inc.tex file makes use of the codyn.sty which is installed with the
+tool. Styles can be easily customized through normal TikZ styling. The result
+of the above network, when rendered with pdflatex, is:
+
+<div class="centered">
+	<img src="images/cdn-render-example.png"/>
+</div>
+
+[view cdn-render source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-render/cdn-render.c)
+
+# cdn-archive
+
+[view cdn-archive source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-archive/cdn-archive.c)
+
+<% end %>
+
 <%= template 'templates/footer.html' %>
