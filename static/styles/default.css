@@ -35,31 +35,24 @@ a:hover
   color: #003269;
 }
 
-div#toc ol
+#markdown-toc
 {
-  margin: 0;
+  margin: 0 0 10px 10px;
   padding: 15px 20px 15px 20px;
   list-style-position: inside;
-  color: #333;
-}
-
-div#toc
-{
-  padding: 0px;
-  background-color: #f5f5f5;
   float: right;
-  display: none;
-  margin: 0 0 10px 10px;
+
+  color: #333;
+  background-color: #f5f5f5;
   border-radius: 10px;
-  color: #fff;
 }
 
-div#toc li, div#toc a
+#markdown-toc li, #markdown-toc a
 {
   color: #0064af;
 }
 
-div#toc li:hover, div#toc a:hover
+#markdown-toc li:hover, #markdown-toc a:hover
 {
   color: #003269;
 }

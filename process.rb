@@ -4,7 +4,155 @@ require 'erb'
 require 'optparse'
 require 'fileutils'
 require 'rubygems'
-require 'maruku'
+require 'kramdown'
+require 'coderay'
+
+module CodeRay
+module Scanners
+    class Codyn < Scanner
+        register_for :codyn
+        file_extension 'cdn'
+
+        KEYWORDS = [
+            'action',
+            'all',
+            'any',
+            'apply',
+            'as',
+            'at',
+            'bidirectional',
+            'context',
+            'debug-print',
+            'defines',
+            'delete',
+            'edge',
+            'event',
+            'from',
+            'functions',
+            'import',
+            'in',
+            'include',
+            'integrated',
+            'integrator',
+            'interface',
+            'io',
+            'layout',
+            'link-library',
+            'node',
+            'no-self',
+            'object',
+            'of',
+            'on',
+            'once',
+            'out',
+            'parse',
+            'phase',
+            'piece',
+            'polynomial',
+            'probability',
+            'require',
+            'set',
+            'settings',
+            'terminate',
+            'to',
+            'unapply',
+            'when',
+            'with',
+            'within'
+        ]
+
+        SELECTORS = [
+            'actions',
+            'append-context',
+            'applied-templates',
+            'children',
+            'count',
+            'debug',
+            'edges',
+            'first',
+            'from-set',
+            'has-flag',
+            'has-template',
+            'if',
+            'ifstr',
+            'imports',
+            'input',
+            'input-name',
+            'inputs',
+            'last',
+            'name',
+            'nodes',
+            'not',
+            'notstr',
+            'objects',
+            'output',
+            'output-name',
+            'outputs',
+            'parent',
+            'recurse',
+            'reduce',
+            'reverse',
+            'root',
+            'self',
+            'siblings',
+            'subset',
+            'templates',
+            'templates-root',
+            'type',
+            'unique',
+            'variables'
+        ]
+
+        IDENT_KIND = WordList.new(:ident).
+            add(KEYWORDS, :keyword).
+            add(SELECTORS, :selector)
+
+        protected
+            def scan_tokens encoder, options
+                state = :initial
+
+                until eos?
+                    case state
+                    when :initial
+                        if match = scan(/\# .* /x)
+                            encoder.text_token(match, :comment)
+                        elsif match = scan(/ [A-Za-z_][A-Za-z_0-9]* /x)
+                            kind = IDENT_KIND[match]
+
+                            if kind != false
+                                encoder.text_token(match, kind)
+                            else
+                                encoder.text_token(match, :identifier)
+                            end
+                        elsif match = scan(/ " /x)
+                            encoder.begin_group(:string)
+                            encoder.text_token(match, :plain)
+                            state = :string
+                        else
+                            encoder.text_token(getch, :plain)
+                        end
+                    when :string
+                        if match = scan(/ [^\\\n"]+ /x)
+                            encoder.text_token(match, :plain)
+                        elsif match = scan(/ " /x)
+                            encoder.text_token(match, :plain)
+                            encoder.end_group(:string)
+                            state = :initial
+                        else
+                            encoder.text_token(getch, :plain)
+                    end
+                end
+            end
+
+            if state == :string
+                encoder.end_group(:string)
+            end
+
+            encoder
+        end
+    end
+end
+end
 
 class Context
     attr_reader :vars
@@ -50,7 +198,14 @@ class Context
 
         after = @_erout.length
 
-        @_erout[before..after] = Maruku.new(@_erout[before..after]).to_html_document
+        opts = {
+            :coderay_css => :class,
+            :coderay_default_lang => 'text',
+            :toc_levels => "1,2",
+            :coderay_line_numbers => :table,
+        }
+
+        @_erout[before..after] = Kramdown::Document.new(@_erout[before..after], opts).to_html
     end
 end
 
