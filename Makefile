@@ -1,7 +1,7 @@
 OUTDIR=../www
 SYNCDIR=
 
-process.timestamp: *.html templates/*.html static/* static/styles/* static/javascript/* Makefile
+process.timestamp: *.html templates/*.html static/* static/styles/* static/javascript/* Makefile process.rb
 	@mkdir -p $(OUTDIR); \
 	ruby process.rb *.html -s static/ -f -o $(OUTDIR); \
 	if [ ! -z "$(SYNCDIR)" ]; then \
