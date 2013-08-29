@@ -4,10 +4,14 @@ String.prototype.endsWith = function(suffix) {
 
 function select_header()
 {
+	var pname = document.location.pathname;
+
 	$('#menubar a').each(function (i, a) {
 		a = $(a);
 
-		if (document.location.pathname.endsWith(a.attr('href')))
+		var href = a.attr('href');
+
+		if (pname.endsWith(href) || (href == 'index.html' && !pname.endsWith('.html')))
 		{
 			a.addClass('selected');
 		}
