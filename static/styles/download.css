@@ -1,0 +1,19 @@
+p#os_name, p#os_icon {
+	text-align: center;
+}
+
+#os_download {
+	display: table;
+	margin: 0 auto;
+	padding-left: 150px;
+}
+
+#os_icon img {
+	cursor: pointer;
+}
+
+#os_desc {
+	font-size: 0.8em;
+	font-style: italic;
+	display: block;
+}

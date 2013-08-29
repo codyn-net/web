@@ -1,32 +1,94 @@
-<%= template 'templates/header.html', :title => 'Download' %>
+<%= template 'templates/header.html', :title => 'Download', :styles => ['download'] %>
+
 <% markdown do %>
 
 1. This is the table of contents
 {:toc}
 
-The codyn software is made freely available under the GPL license. All software
-can be downloaded from the links provided below.
+<p></p>
 
-## Latest release
-[codyn-3.4.1.tar.xz](http://download.codyn.net/releases/codyn-3.4.1.tar.xz)
+<div id="os_download">
+<p id="os_icon">
+	<a><img></img></a>
+</p>
+<p id="os_name"><a><span id="os_name"/></a><span id="os_desc"/></p>
+</div>
 
-Previous versions of the software can be found at <http://download.codyn.net/releases/>.
+<script type="text/javascript">
+	var d = $('#os_download');
+	var img = $('#os_icon img');
+	var df = $('span#os_name');
+	var a = $('#os_download a');
+
+	if (navigator.appVersion.indexOf('Mac') != -1)
+	{
+		img.attr('src', 'images/osx_installer.png');
+		df.text('Install OS X Package (>= 10.6)');
+		a.attr('href', 'http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg');
+	}
+	else if (navigator.appVersion.indexOf('Linux') != -1)
+	{
+		img.attr('src', 'images/ubuntu_installer.png');
+
+		var arch;
+		var bits;
+
+		if (navigator.appVersion.indexOf('x86_64') != -1)
+		{
+			arch = 'amd64';
+			bits = '64';
+		}
+		else
+		{
+			arch = 'i386';
+			bits = '32';
+		}
+
+		df.text('Install Ubuntu Repository (' + bits + ' bits)');
+		a.attr('href', 'http://packages.codyn.net/ubuntu/pool/main/c/codyn-meta/codyn-ubuntu-installer_3.0-1precise0_' + arch + '.deb');
+
+		$('#os_desc').html(' After the repository is configured you can install the <strong>codyn-all</strong> package using either apt-get or the Ubuntu software center.');
+	}
+	else
+	{
+		d.hide();
+	}
+</script>
+
+The codyn software is made freely available under the GPL license. Codyn provides
+pre-built packages for Ubuntu, OS X and Windows, as well as all sources. The
+development of codyn uses git and the git repositories are publicly accessible.
 
 # Packages
-Packages are available for several linux distributions and windows. More
-instructions to add repositories for your particular distribution can be found
-by following the links below.
+Pre-built binary packages are available for Ubuntu, OS X (>= 10.6) and Windows (limited support).
 
-* Ubuntu (precise, 32 and 64 bits)
+## Ubuntu Precise i386/x86_64
+codyn.net provides an Ubuntu repository for both 32 and 64 bits Ubuntu precise.
+The repository is located at <http://packages.codyn.net/ubuntu/>. For more
+information on configuring the repository and installing the packages, please
+see: <http://packages.codyn.net/ubuntu/README>. After the repository is configured,
+install the codyn-all package (`sudo apt-get install codyn-all`) to install
+all the codyn software components.
 
-  - Repository: `deb http://packages.codyn.net/ubuntu/ precise main`
-  - See also: <http://packages.codyn.net/ubuntu/README>
+## OS X (>= 10.6 Snow Leopard)
+All codyn software is available for OS X from a universal installer package. The
+latest available version of the installer is [Codyn-3.4.1.pkg](http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg). The oldest supported OS X platform is Snow Leopard (10.6).
+This package provides all of the codyn software components
+available for OS X, including the library, studio and rawc. The codyn library
+for OS X will be installed as an OS X framework making it easy to develop
+with codyn on OS X.
 
-* Windows  
-The precompiled binaries for windows can be found at
-<http://download.codyn.net/releases/win32/>. Note that some features are not
-available on windows (most notably python, blas and lapack are not
-supported at this time).
+## Windows
+The pre-compiled binaries of libcodyn for windows can be found at
+<http://download.codyn.net/releases/win32/>. Note that at this time, only
+libcodyn is supported on Windows. There are currently no binaries for the
+studio or rawc. Furthermore, some features of libcodyn are not available
+on Windows (most notably python, blas and lapack).
+
+# Sources
+The latest sources for all the codyn components can be found at
+<http://download.codyn.net/releases/>. Previous released versions of codyn
+are also available at this location.
 
 # Development
 Codyn uses [git](http://git-scm.com/) for version control of all the software.

@@ -16,6 +16,12 @@ div#main
 {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+div#content p:first-of-type {
+  margin-top: 0px;
+  padding-top: 1em;
 }
 
 a
@@ -37,15 +43,16 @@ a:hover
 
 #markdown-toc
 {
-  margin: 0 0 10px 10px;
-  padding: 15px 20px 15px 40px;
-/*  list-style-position: inside;*/
   float: right;
+
+  margin: 0 0 0px 0px;
+  padding: 10px 15px 15px 40px;
+
   white-space: nowrap;
 
   color: #333;
   background-color: #f5f5f5;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 #markdown-toc li, #markdown-toc a
@@ -61,6 +68,7 @@ a:hover
 h1
 {
   font-size: 1.4em;
+  margin-top: 2em;
 }
 
 h1 + p, h2 + p, h3 + p
@@ -74,13 +82,17 @@ h1, h2, h3 {
 
 h2
 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 0px;
 }
 
 h3
 {
-  font-size: 1.1em;
+  font-size: 1em;
+}
+
+h2, h3 {
+  color: #666;
 }
 
 table.default
