@@ -1,4 +1,4 @@
-<%= template 'templates/header.html' %>
+<%= template 'templates/header.html', :styles => ['index'] %>
 <% markdown do %>
 
 1. This is the table of contents
@@ -9,6 +9,49 @@ simulating **Co**upled **Dyn**amical Systems. It uses object oriented concepts
 to define coupled systems in a concise manner using a special purpose
 [modeling language](modeling.html) allowing the user to directly define
 dynamical systems.
+
+<div id="download_latest">
+<a>Download latest version 3.4 <span></span></a> <a><img></img></a>
+</div>
+
+<script type="text/javascript">
+	var d = $('#download_latest');
+	var img = $('#download_latest img');
+	var a = $('#download_latest a');
+	var span = $('#download_latest span');
+
+	if (navigator.appVersion.indexOf('Mac') != -1)
+	{
+		img.attr('src', 'images/osx_installer.png');
+		a.attr('href', 'http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg');
+		span.text('for OS X');
+	}
+	else if (navigator.appVersion.indexOf('Linux') != -1)
+	{
+		img.attr('src', 'images/ubuntu_installer.png');
+
+		var arch;
+		var bits;
+
+		if (navigator.appVersion.indexOf('x86_64') != -1)
+		{
+			arch = 'amd64';
+			bits = '64';
+		}
+		else
+		{
+			arch = 'i386';
+			bits = '32';
+		}
+
+		a.attr('href', 'http://packages.codyn.net/ubuntu/pool/main/c/codyn-meta/codyn-ubuntu-installer_3.0-1precise0_' + arch + '.deb');
+		span.text('for Ubuntu');
+	}
+	else
+	{
+		d.hide();
+	}
+</script>
 
 # Design
 Codyn has been designed as a [core C library](library.html) with an elegant

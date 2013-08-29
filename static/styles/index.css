@@ -1,0 +1,16 @@
+#download_latest {
+	margin: 20px;
+	float: right;
+	clear: both;
+}
+
+#download_latest img {
+	width: 32px;
+	height: 32px;
+	vertical-align: bottom;
+	margin-bottom: -2px;
+}
+
+#download_latest img:first-child {
+	margin-left: 5px;
+}
