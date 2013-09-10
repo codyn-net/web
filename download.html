@@ -1,5 +1,7 @@
 <%= template 'templates/header.html', :title => 'Download', :styles => ['download'] %>
 
+<% osx_latest = File.read('latest.pkg').chomp %>
+
 <% markdown do %>
 
 1. This is the table of contents
@@ -24,7 +26,7 @@
 	{
 		img.attr('src', 'images/osx_installer.png');
 		df.text('Install OS X Package (>= 10.6)');
-		a.attr('href', 'http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg');
+		a.attr('href', 'http://download.codyn.net/releases/mac/<%= osx_latest %>');
 	}
 	else if (navigator.appVersion.indexOf('Linux') != -1)
 	{
@@ -72,7 +74,7 @@ all the codyn software components.
 
 ## OS X (>= 10.6 Snow Leopard)
 All codyn software is available for OS X from a universal installer package. The
-latest available version of the installer is [Codyn-3.4.1.pkg](http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg). The oldest supported OS X platform is Snow Leopard (10.6).
+latest available version of the installer is [<%= osx_latest %>](http://download.codyn.net/releases/mac/<%= osx_latest %>). The oldest supported OS X platform is Snow Leopard (10.6).
 This package provides all of the codyn software components
 available for OS X, including the library, studio and rawc. The codyn library
 for OS X will be installed as an OS X framework making it easy to develop
