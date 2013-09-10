@@ -1,4 +1,7 @@
 <%= template 'templates/header.html', :styles => ['index'] %>
+
+<% osx_latest = File.read('latest.pkg').chomp %>
+
 <% markdown do %>
 
 1. This is the table of contents
@@ -23,7 +26,7 @@ dynamical systems.
 	if (navigator.appVersion.indexOf('Mac') != -1)
 	{
 		img.attr('src', 'images/osx_installer.png');
-		a.attr('href', 'http://download.codyn.net/releases/mac/Codyn-3.4.1.pkg');
+		a.attr('href', 'http://download.codyn.net/releases/mac/<%= osx_latest %>');
 		span.text('for OS X');
 	}
 	else if (navigator.appVersion.indexOf('Linux') != -1)
