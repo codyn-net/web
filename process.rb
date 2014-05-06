@@ -183,8 +183,23 @@ class Context
         Context.new(@vars.merge(vars))
     end
 
-    def template(filename, vars = {})
+    def template(filename, vars = {}, &block)
         templ = ERB.new(File.read(filename), nil, nil, '@_erout')
+
+        if block_given?
+            before = @_erout.length
+
+            ret = yield
+
+            after = @_erout.length
+
+            vars[:contents] = @_erout[before..after]
+            @_erout[before..after] = ''
+
+            return @engine.context(vars) do |ctx|
+                @_erout += templ.result(ctx.context)
+            end
+        end
 
         return @engine.context(vars) do |ctx|
             templ.result(ctx.context)
@@ -206,6 +221,10 @@ class Context
         }
 
         @_erout[before..after] = Kramdown::Document.new(@_erout[before..after], opts).to_html
+    end
+
+    def input(filename)
+        File.read(filename)
     end
 end
 

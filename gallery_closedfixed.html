@@ -1,77 +1,10 @@
-<%= template 'templates/header.html', :styles => ['gallery'] %>
+<% template('templates/gallery.html',
+    :model => 'closedfixed',
+    :title => 'Closed loop dynamics on fixed base') do %>
 
-<p>
-	<a href="gallery.html">⇠ Back to the gallery</a>
-</p>
-
-<div class="video">
-<video width="480" height="270" controls autoplay loop>
-	<source src="movies/closedfixedanim_4.mp4" type="video/mp4">
-</video>
-<div>
-	(<a href="movies/closedfixedanim_4.mp4">small</a>)
-	(<a href="movies/closedfixedanim_2.mp4">normal</a>)
-	(<a href="movies/closedfixedanim_1.mp4">large</a>)
-</div>
-<div class="description">
-<h2>Closed loop dynamics on fixed base</h2>
-<p>
-	Example of simple closed loop dynamics in codyn. The model on the left
-	shows how to close a system on the fixed base (i.e. world inertial frame)
-	by connecting the p3 node to the closing joint. The resulting system has
-	only one degree of freedom left.
-</p>
-<div class="download">
-	<a href="models/closedfixed.cdn">⌦ Download model</a>
-</div>
-</div>
-</div>
-
-<% markdown do %>
-
-~~~~ codyn
-include "physics/physics.cdn"
-include "physics/cjoints.cdn"
-
-integrator {
-    method = "runge-kutta"
-}
-
-defines {
-    offset = "0.2 * pi"
-}
-
-node "system" : physics.system {
-    node "p{1:3}" : physics.joints.revoluteY {
-         tr = "[0; 0; -1]"
-        com = "[0; 0; -0.5]"
-          I = "Inertia.Box(m, 0.05, 0.05, 1)"
-    }
-
-    node "p1" {
-        tr = "[0; 0; 0]"
-         q = "-@offset"
-    }
-
-    node "p{2:3}" {
-        q = ["0.5 * pi + @offset", "0.5 * pi - @offset"]
-    }
-
-    edge from "p{1:3}" to "p$(@1 + 1)" : physics.joint {}
-
-    # Create a closing joint node
-    node "pcl" : physics.cjoints.revoluteY {
-        tr = "[0; 0; -1]"
-    }
-
-    # Connect the last body (p3) to the closing loop joint
-    edge from "p3" to "pcl" : physics.cjoint {}
-
-    include "physics/model.cdn"
-    include "physics/dynamics.cdn"
-}
-~~~~
+Example of simple closed loop dynamics in codyn. The model on the left
+shows how to close a system on the fixed base (i.e. world inertial frame)
+by connecting the p3 node to the closing joint. The resulting system has
+only one degree of freedom left.
 
 <% end %>
-
-<%= template 'templates/footer.html' %>

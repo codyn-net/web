@@ -1,0 +1,35 @@
+<%= template 'templates/header.html', :styles => ['gallery'] %>
+
+<p>
+	<a href="gallery.html">⇠ Back to the gallery</a>
+</p>
+
+<div class="video">
+<video width="480" height="270" controls autoplay loop>
+	<source src="movies/<%= var(:video, var(:model) + 'anim_4.mp4') %>" type="video/mp4">
+</video>
+<div>
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_4.mp4') %>">small</a>)
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_2.mp4') %>">normal</a>)
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_1.mp4') %>">large</a>)
+</div>
+<div class="description">
+<h2><%= var(:title) %></h2>
+<p>
+    <%= var(:contents) %>
+</p>
+<div class="download">
+	<a href="models/<%= var(:model) %>.cdn">⌦ Download model</a>
+</div>
+</div>
+</div>
+
+<% markdown do %>
+
+~~~~ codyn
+<%= input("static/models/#{var(:model)}.cdn") %>
+~~~~
+
+<% end %>
+
+<%= template 'templates/footer.html' %>
