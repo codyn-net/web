@@ -122,4 +122,28 @@ div.centered {
   text-align: center;
 }
 
+div.image-container {
+  text-align: center;
+  margin: 30px;
+}
+
+div.image {
+  display: inline-table;
+  text-align: center;
+  padding: 12px;
+  background-color: #f5f5f5;
+  padding-bottom: 0px;
+}
+
+div.image div.caption {
+  text-align: justify;
+  display: table-caption;
+  caption-side: bottom;
+  background-color: #f5f5f5;
+  padding: 12px;
+  padding-top: 6px;
+  font-style: italic;
+  color: #666;
+}
+
 /* vi:ex:ts=2:et */
