@@ -6,6 +6,7 @@ require 'fileutils'
 require 'rubygems'
 require 'kramdown'
 require 'coderay'
+require 'cgi'
 
 module CodeRay
 module Scanners
@@ -204,6 +205,12 @@ class Context
         return @engine.context(vars) do |ctx|
             templ.result(ctx.context)
         end
+    end
+
+    def image(filename, caption)
+        caption = CGI.escapeHTML(caption)
+
+        @_erout += '<div class="image-container"><div class="image"><img src="images/' + CGI.escapeHTML(filename) + '" alt="' + caption + '"><div class="caption">' + caption + '</div></div></div>'
     end
 
     def markdown
