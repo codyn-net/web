@@ -136,9 +136,14 @@ of the above network, when rendered with pdflatex, is:
 
 [view cdn-render source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-render/cdn-render.c)
 
-# cdn-archive
+# cdn-repl
+cdn-repl is a Read-Eval-Print-Loop interface for quickly exploring and evaluating codyn networks
+from the command line. It compiles the network when loaded and provides commands to navigate the
+network (`cd selector`) and display and evaluate variables and expressions. Furthermore, networks
+can be forward simulated (using either stepping or running for a particular time span) while
+variables can be watched and printed after each simulation step.
 
-[view cdn-archive source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-archive/cdn-archive.c)
+[view cdn-repl source in git](http://git.codyn.net/git/codyn.git/tree/tools/cdn-repl/)
 
 <% end %>
 
