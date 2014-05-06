@@ -1,3 +1,20 @@
 <%= template 'templates/header.html', :title => 'Documentation' %>
 
+<% markdown do %>
+## Sorry!
+
+This section of the website is unfortunately mostly empty at the moment. This is a real shame, but it is currently
+being worked on. Please have faith and check back later for updates. In the mean time, please enjoy this Ponyo:
+
+<% image 'ponyo.jpg', 'Ponyo' %>
+
+<div class="audio">
+  <audio controls autoplay loop>
+    <source src="sounds/ponyo.ogg" type="audio/ogg"/>
+    <source src="sounds/ponyo.mp3" type="audio/mp3"/>
+  </audio>
+</div>
+
+<% end %>
+
 <%= template 'templates/footer.html' %>

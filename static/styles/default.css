@@ -146,4 +146,9 @@ div.image div.caption {
   color: #666;
 }
 
+div.audio {
+  width: 300px;
+  margin: 0 auto;
+}
+
 /* vi:ex:ts=2:et */
