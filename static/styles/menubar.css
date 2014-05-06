@@ -19,7 +19,7 @@ div#menubar ul
 {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0px 5px 0px 5px;
 }
 
 div#menubar li
