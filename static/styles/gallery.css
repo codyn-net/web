@@ -59,7 +59,8 @@ div.description {
 }
 
 table.CodeRay {
-	width: 500px;
+	width: 480px;
+	font-size: 0.9em;
 }
 
 div.plot-container, div.plot {
