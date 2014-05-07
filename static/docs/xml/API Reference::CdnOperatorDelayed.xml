@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnOperatorDelayed" name="CdnOperatorDelayed" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Math operator for delayed evaluation of an expression</brief>
+  <doc>Math operator for delayed evaluation of an expression.
+
+The <ref ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed" /> is a special operator that can be used in
+mathematical expressions ('delay'). When evaluated, it will return the
+delayed value of its argument (which can be an arbitrary expression).</doc>
+  <base access="public">
+    <type name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+  </base>
+  <gobject:property id="API Reference::CdnOperatorDelayed::expression" mode="readonly" name="expression">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnOperatorDelayed::initial-value" mode="readonly" name="initial-value">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <function id="cdn_operator_delayed_get_expression" name="cdn_operator_delayed_get_expression">
+    <brief>Get the expression to be delayed.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_operator_delayed_get_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed">CdnOperatorDelayed</ref>.</doc>
+      <type name="CdnOperatorDelayed" qualifier="*" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed" />
+    </argument>
+  </function>
+  <function id="cdn_operator_delayed_get_initial_value" name="cdn_operator_delayed_get_initial_value">
+    <brief>Get the initial value of the expression to be delayed.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_operator_delayed_get_initial_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed">CdnOperatorDelayed</ref>.</doc>
+      <type name="CdnOperatorDelayed" qualifier="*" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed" />
+    </argument>
+  </function>
+  <function id="cdn_operator_delayed_new" name="cdn_operator_delayed_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnOperatorDelayed" qualifier="*" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed" transfer-ownership="full" />
+    </return>
+  </function>
+</gobject:class>

@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpansionContext" name="CdnExpansionContext" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_expansion_context_add_define" name="cdn_expansion_context_add_define">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_add_define::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_add_define::name" name="name">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_expansion_context_add_define::expansion" name="expansion">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_add_defines" name="cdn_expansion_context_add_defines">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_add_defines::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_add_defines::defines" name="defines">
+      <doc>*documentation missing...*</doc>
+      <type name="GHashTable" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_add_expansion" name="cdn_expansion_context_add_expansion">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_add_expansion::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_add_expansion::expansion" name="expansion">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_add_expansions" name="cdn_expansion_context_add_expansions">
+    <brief>Add expansions to the expansion context.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_add_expansions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_add_expansions::expansions" name="expansions">
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_calculate" name="cdn_expansion_context_calculate">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_context_calculate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_calculate::equation" name="equation">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_expansion_context_calculate::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_debug_print" name="cdn_expansion_context_debug_print">
+    <brief>Write debug information of the context.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_debug_print::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_debug_print::file" name="file">
+      <doc>A &amp;lt;FILE&amp;gt;</doc>
+      <type name="FILE" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_foreach_define" name="cdn_expansion_context_foreach_define">
+    <brief>Call <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_foreach_define::hfunc">hfunc</ref> for each define in the expansion context.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_foreach_define::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_foreach_define::hfunc" name="hfunc">
+      <doc>the callback function.</doc>
+      <type name="GHFunc" />
+    </argument>
+    <argument id="cdn_expansion_context_foreach_define::userdata" name="userdata">
+      <doc>user data provided to the callback.</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_define" name="cdn_expansion_context_get_define">
+    <brief>Get the expansion for a particular define name.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </return>
+    <argument id="cdn_expansion_context_get_define::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_get_define::name" name="name">
+      <doc>The name of the define</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_expansion" name="cdn_expansion_context_get_expansion">
+    <brief>Get an expansion at a particular depth.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </return>
+    <argument id="cdn_expansion_context_get_expansion::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_get_expansion::depth" name="depth">
+      <doc>The depth of the context at which to get the expansion</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_expansions" name="cdn_expansion_context_get_expansions">
+    <brief>Get a list of expansions in &amp;lt;context&amp;gt;.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_expansion_context_get_expansions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_local_defines" name="cdn_expansion_context_get_local_defines">
+    <brief>Get the defines of this context, but not those in the parent context.</brief>
+    <return>
+      <doc>a &amp;lt;GHashTable&amp;gt; or `NULL`.</doc>
+      <type name="GHashTable" qualifier="*" />
+    </return>
+    <argument id="cdn_expansion_context_get_local_defines::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_local_expansions" name="cdn_expansion_context_get_local_expansions">
+    <brief>Get the expansions defined in this context but not those in the parent context.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_expansion_context_get_local_expansions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_marker" name="cdn_expansion_context_get_marker">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="gulong" />
+    </return>
+    <argument id="cdn_expansion_context_get_marker::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_get_parent" name="cdn_expansion_context_get_parent">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_context_get_parent::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_increment_define" name="cdn_expansion_context_increment_define">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expansion_context_increment_define::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_increment_define::name" name="name">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_expansion_context_increment_define::exidx" name="exidx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expansion_context_increment_define::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_merge" name="cdn_expansion_context_merge">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_merge::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_merge::other" name="other">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_new" name="cdn_expansion_context_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_context_new::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_new_unreffed" name="cdn_expansion_context_new_unreffed">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_context_new_unreffed::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_ref" name="cdn_expansion_context_ref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_context_ref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_remove_expansion" name="cdn_expansion_context_remove_expansion">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_remove_expansion::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_remove_expansion::expansion" name="expansion">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_shared_defines" name="cdn_expansion_context_shared_defines">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_shared_defines::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_shared_defines::from" name="from">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_truncate" name="cdn_expansion_context_truncate">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_truncate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_expansion_context_truncate::parent" name="parent">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_context_unref" name="cdn_expansion_context_unref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_context_unref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+</gobject:boxed>

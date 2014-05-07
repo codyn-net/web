@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstruction" name="CdnInstruction" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Mathematical instruction base class</brief>
+  <doc>Mathematical instruction base class.
+
+The <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction" /> class is an abstract base class for all mathematical
+instructions in Codyn.</doc>
+  <base access="public">
+    <type name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
+  </base>
+  <function id="cdn_instruction_equal" name="cdn_instruction_equal">
+    <brief>Compares two instructions for equality.</brief>
+    <return>
+      <doc>`TRUE` if both instructions are equal, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_instruction_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_equal::i2" name="i2">
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_equal::asstring" name="asstring">
+      <doc>as string</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_execute" name="cdn_instruction_execute">
+    <brief>Execute the instruction on the given stack.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_execute::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_execute::stack" name="stack">
+      <doc>A <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref></doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_get_dependencies" name="cdn_instruction_get_dependencies">
+    <brief>Get the properties on which the instruction depends.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>. The list should be freed with g_slist_free when no longer used.</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_instruction_get_dependencies::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_get_is_commutative" name="cdn_instruction_get_is_commutative">
+    <brief>Get whether an instruction has commutative arguments or not.</brief>
+    <return>
+      <doc>`TRUE` if the instruction as commutative arguments, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_instruction_get_is_commutative::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_get_location" name="cdn_instruction_get_location">
+    <brief>Get the location of this instruction in the corresponding string representatio</brief>
+    <doc>Get the location of this instruction in the corresponding string representation
+of the expression the instruction belongs to.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_get_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_get_location::start" name="start">
+      <doc>return value for the start.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+    <argument id="cdn_instruction_get_location::end" name="end">
+      <doc>return value for the end.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_get_stack_manipulation" name="cdn_instruction_get_stack_manipulation">
+    <brief>Get by how many values the instruction will modify the stack when executed</brief>
+    <doc>Get by how many values the instruction will modify the stack when executed.
+Note that this can be a negative value if the instruction consumes more
+values than it pushes. It can generally be assumed that every instruction
+always pushes one value on the stack (i.e. the number of values it pops
+is -stack_count + 1)
+
+</doc>
+    <return>
+      <doc>the number of values that the instruction will pop and push on the stack</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_get_stack_manipulation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_get_stack_manipulation::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_set_location" name="cdn_instruction_set_location">
+    <brief>Set the location of this instruction in the corresponding string representatio</brief>
+    <doc>Set the location of this instruction in the corresponding string representation
+of the expression the instruction belongs to.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_set_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+    <argument id="cdn_instruction_set_location::start" name="start">
+      <doc>the start.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_instruction_set_location::end" name="end">
+      <doc>the end.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_to_string" name="cdn_instruction_to_string">
+    <brief>Get some sort of string representation of the instruction</brief>
+    <doc>Get some sort of string representation of the instruction. Note that this
+is only useful for debugging since the string representation only shows
+what type of instruction this is.
+
+</doc>
+    <return>
+      <doc>a string representation of the instruction</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_to_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>.</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+</gobject:class>

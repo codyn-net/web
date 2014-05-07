@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpression" name="CdnExpression" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Mathematical expression evaluation</brief>
+  <doc>Mathematical expression evaluation.
+
+A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression" /> contains a mathematical expression. The expression in
+string format can be compiled and evaluated. At the compilation phase,
+a list of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> is provided as a context in which variables are mapped
+to <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> in this context.</doc>
+  <base access="public">
+    <type name="GInitiallyUnowned" />
+  </base>
+  <implements access="public">
+    <type name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+  </implements>
+  <gobject:property id="API Reference::CdnExpression::expression" name="expression">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnExpression::has-cache" name="has-cache">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnExpression::value" name="value">
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <function id="cdn_expression_compile" name="cdn_expression_compile">
+    <brief>Compile the expression</brief>
+    <doc>Compile the expression. The context is a list of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> from which
+properties can be looked up (such as global constants, or from/to objects).
+If there were any errors during compilation, <ref ref="API Reference::CdnExpression#cdn_expression_compile::error">error</ref> will be set accordingly
+
+</doc>
+    <return>
+      <doc>`TRUE` if the expression compiled successfully, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_compile::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_compile::context" name="context">
+      <doc>the evaluation context</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_expression_compile::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;</doc>
+      <type name="CdnCompileErrorForward" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expression_copy" name="cdn_expression_copy">
+    <brief>Create a copy of a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_depends_on" name="cdn_expression_depends_on">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_depends_on::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_depends_on::depends_on" name="depends_on">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_equal" name="cdn_expression_equal">
+    <brief>Get whether two expressions are equal</brief>
+    <doc>Get whether two expressions are equal. If the expressions are compiled, they
+are evaluated for equality by means of their instructions. Otherwise the
+comparison is done on their string representations
+
+</doc>
+    <return>
+      <doc>`TRUE` if the expressions are equal, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_equal::other" name="other">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_equal::asstring" name="asstring">
+      <doc>whether the expression is equal in string representation</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_expression_evaluate" name="cdn_expression_evaluate">
+    <brief>Get the result of evaluating the expression</brief>
+    <doc>Get the result of evaluating the expression. If the expression is not yet
+compiled, 0.0 is returned. The result of the evaluation is cached in
+the expression. Make sure to call cdn_expression_reset_cache to clear the
+cache if needed
+
+</doc>
+    <return>
+      <doc>the result of evaluating the expression</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_expression_evaluate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_evaluate_values" name="cdn_expression_evaluate_values">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>the result of evaluating the expression</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_evaluate_values::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_force_reset_cache" name="cdn_expression_force_reset_cache">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_force_reset_cache::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_as_string" name="cdn_expression_get_as_string">
+    <brief>Get the string representation of the expression</brief>
+    <return>
+      <doc>the string representation of the expression</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_expression_get_as_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_dependencies" name="cdn_expression_get_dependencies">
+    <brief>Get a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> on which the expression depends</brief>
+    <doc>Get a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> on which the expression depends. The list is owned
+by <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref> and should not be freed or modified
+
+</doc>
+    <return>
+      <doc>a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_expression_get_dependencies::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_depends_on_me" name="cdn_expression_get_depends_on_me">
+    <brief>Get a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> which depend on <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref>
+    </brief>
+    <doc>Get a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> which depend on <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref>. The list is owned
+by <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref> and should not be freed or modified
+
+</doc>
+    <return>
+      <doc>a list of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_expression_get_depends_on_me::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_dimension" name="cdn_expression_get_dimension">
+    <brief>Get the dimension of the expression.</brief>
+    <return>
+      <doc>`TRUE` if the expression has a known dimension, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_get_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_get_dimension::dimension" name="dimension">
+      <doc>return value for the expression dimension.</doc>
+      <type name="CdnDimension" out="yes" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_error_at" name="cdn_expression_get_error_at">
+    <brief>Get the character position in the expression at which an error occurred while compiling the expression</brief>
+    <return>
+      <doc>the character position at which an error occurred</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expression_get_error_at::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_error_start" name="cdn_expression_get_error_start">
+    <brief>Get the character position in the expression at which an error started while compiling the expression</brief>
+    <return>
+      <doc>the character position at which an error started</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expression_get_error_start::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_has_cache" name="cdn_expression_get_has_cache">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_get_has_cache::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_instructions" name="cdn_expression_get_instructions">
+    <brief>Get list of <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>
+    </brief>
+    <doc>Get list of <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref>. The list is owned by <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref> and should
+not be freed or modified
+
+</doc>
+    <return>
+      <doc>list of <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_expression_get_instructions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_once" name="cdn_expression_get_once">
+    <brief>Get whether the expression is only evaluated once.</brief>
+    <return>
+      <doc>`TRUE` if the expression is only evaluated once, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_get_once::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_rand_instructions" name="cdn_expression_get_rand_instructions">
+    <brief>Get the random instructions in this expression.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_expression_get_rand_instructions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_stack_arg" name="cdn_expression_get_stack_arg">
+    <brief>Get the stack return argument of the expression.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnStackArg#API Reference::CdnStackArg">CdnStackArg</ref>.</doc>
+      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+    </return>
+    <argument id="cdn_expression_get_stack_arg::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_stack_size" name="cdn_expression_get_stack_size">
+    <brief>Get the size of the stack needed to evaluate the expression.</brief>
+    <return>
+      <doc>the required stack size to evaluate <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref>.</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_expression_get_stack_size::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_get_variable_dependencies" name="cdn_expression_get_variable_dependencies">
+    <brief>Get a list of variables on which the expression depends directly.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_expression_get_variable_dependencies::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_is_cached" name="cdn_expression_is_cached">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_is_cached::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_new" name="cdn_expression_new">
+    <brief>Create a new <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> containing the expression <ref ref="API Reference::CdnExpression#cdn_expression_new::expression">expression</ref>
+    </brief>
+    <return>
+      <doc>a new <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_expression_new::expression" name="expression">
+      <doc>an expression</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_expression_new0" name="cdn_expression_new0">
+    <brief>Create a new expression representing the value 0.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_expression_new_number" name="cdn_expression_new_number">
+    <brief>Create a new expression representing the number.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_new_number::number" name="number">
+      <doc>a number</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_expression_reset" name="cdn_expression_reset">
+    <brief>Resets the expression</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_reset_cache" name="cdn_expression_reset_cache">
+    <brief>Resets the possibly cached result of the value</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_reset_cache::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_cache_notify" name="cdn_expression_set_cache_notify">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_cache_notify::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_cache_notify::notify" name="notify">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionCacheNotify" />
+    </argument>
+    <argument id="cdn_expression_set_cache_notify::userdata" name="userdata">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+    <argument id="cdn_expression_set_cache_notify::destroy_notify" name="destroy_notify">
+      <doc>*documentation missing...*</doc>
+      <type name="GDestroyNotify" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_evaluate_notify" name="cdn_expression_set_evaluate_notify">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_evaluate_notify::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_evaluate_notify::notify" name="notify">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionEvaluateNotify" />
+    </argument>
+    <argument id="cdn_expression_set_evaluate_notify::userdata" name="userdata">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+    <argument id="cdn_expression_set_evaluate_notify::destroy_notify" name="destroy_notify">
+      <doc>*documentation missing...*</doc>
+      <type name="GDestroyNotify" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_from_string" name="cdn_expression_set_from_string">
+    <brief>Set a new expression for <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref>
+    </brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_from_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_from_string::value" name="value">
+      <doc>the value</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_has_cache" name="cdn_expression_set_has_cache">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_has_cache::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_has_cache::cache" name="cache">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_instructions" name="cdn_expression_set_instructions">
+    <brief>Set the instructions used to evaluate the expression</brief>
+    <doc>Set the instructions used to evaluate the expression. You should never have
+to use this function. It's main purpose is for optimization of expressions
+in cdnrawc.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_instructions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_instructions::instructions" name="instructions">
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="GSList" qualifier=" const *" transfer-ownership="full" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_instructions_take" name="cdn_expression_set_instructions_take">
+    <brief>Set the instructions used to evaluate the expression</brief>
+    <doc>Set the instructions used to evaluate the expression. You should never have
+to use this function. It's main purpose is for optimization of expressions
+in cdnrawc. This method differs from set_instructions in that it simply
+refs the instructions whereas <ref ref="API Reference::CdnExpression#cdn_expression_set_instructions">cdn_expression_set_instructions</ref> copies
+the instructions.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_instructions_take::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_instructions_take::instructions" name="instructions">
+      <doc>a &amp;lt;GSList&amp;gt;.</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_once" name="cdn_expression_set_once">
+    <brief>When an expression is "once", its value will not change.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_once::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_once::instant" name="instant">
+      <doc>Whether the expression should be constant</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_value" name="cdn_expression_set_value">
+    <brief>Sets the cached/instant value of an expression</brief>
+    <doc>Sets the cached/instant value of an expression. If the expression is
+reset, this value will no longer be used and the expression will be
+evaluated as normal</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_value::value" name="value">
+      <doc>a value</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_expression_set_values" name="cdn_expression_set_values">
+    <brief>Set expression value.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_set_values::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_expression_set_values::values" name="values">
+      <doc>the new values</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_expression_sum" name="cdn_expression_sum">
+    <brief>Create a new expression which represents the sum of the given expressions.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_sum::expressions" name="expressions">
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+</gobject:class>

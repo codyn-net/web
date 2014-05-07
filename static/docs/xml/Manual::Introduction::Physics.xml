@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Introduction::Physics" name="Physics" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Using codyn to simulate physics.</brief>
+</category>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnCfileStream" name="CdnCfileStream" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>An output stream implementation for C FILE streams</brief>
+  <doc>An output stream implementation for C FILE streams.
+
+This class implements a GOutputStream wrapped around the C streaming FILE
+API.</doc>
+  <base access="public">
+    <type name="GOutputStream" />
+  </base>
+  <gobject:property id="API Reference::CdnCfileStream::cfile" mode="construct-only" name="cfile">
+    <brief>A FILE pointer to write to.</brief>
+    <type builtin="yes" name="gpointer" />
+  </gobject:property>
+  <function id="cdn_cfile_stream_new" name="cdn_cfile_stream_new">
+    <brief>Create a new <ref ref="API Reference::CdnCfileStream#API Reference::CdnCfileStream">CdnCfileStream</ref> from a FILE.</brief>
+    <return>
+      <doc>a new <ref ref="API Reference::CdnCfileStream#API Reference::CdnCfileStream">CdnCfileStream</ref>.</doc>
+      <type name="GOutputStream" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_cfile_stream_new::cfile" name="cfile">
+      <doc>the FILE to write to.</doc>
+      <type name="FILE" qualifier="*" />
+    </argument>
+  </function>
+</gobject:class>

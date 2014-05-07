@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnFunctionArgument" name="CdnFunctionArgument" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>An argument to a custom defined function</brief>
+  <doc>An argument to a custom defined function.
+
+A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" /> contains information on an argument (or parameter)
+to a custom defined function.</doc>
+  <base access="public">
+    <type name="GInitiallyUnowned" />
+  </base>
+  <gobject:property id="API Reference::CdnFunctionArgument::default-value" mode="construct" name="default-value">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnFunctionArgument::explicit" mode="construct" name="explicit">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnFunctionArgument::name" mode="construct" name="name">
+    <brief>The function argument name</brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnFunctionArgument::optional" mode="readonly" name="optional">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <function id="cdn_function_argument_copy" name="cdn_function_argument_copy">
+    <brief>Create a copy of a function argument</brief>
+    <doc>Create a copy of a function argument. Note that <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref> derives
+from &amp;lt;GInitiallyUnowned&amp;gt;. This means that initially, the newly created object
+has a floating reference and does not need to be freed if you add it to
+a function using &amp;lt;cdn\_function\_add\_argument&amp;gt;.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref></doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_argument_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_default_value" name="cdn_function_argument_get_default_value">
+    <brief>Get the default value of the function argument</brief>
+    <doc>Get the default value of the function argument. If the function argument is
+not optional, the default value will return `NULL`.
+
+</doc>
+    <return>
+      <doc>The default value or `NULL`.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_function_argument_get_default_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_dimension" name="cdn_function_argument_get_dimension">
+    <brief>Get the dimension of the function argument.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_argument_get_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_get_dimension::dimension" name="dimension">
+      <doc>the dimension</doc>
+      <type allow-none="yes" name="CdnDimension" out="yes" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_explicit" name="cdn_function_argument_get_explicit">
+    <brief>Get whether the function argument is explicit.</brief>
+    <return>
+      <doc>whether the argument is explicit</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_argument_get_explicit::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_name" name="cdn_function_argument_get_name">
+    <brief>Get the function name.</brief>
+    <return>
+      <doc>the function name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_function_argument_get_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_optional" name="cdn_function_argument_get_optional">
+    <brief>Get whether the function argument is optional (i</brief>
+    <doc>Get whether the function argument is optional (i.e. has a default value).
+
+</doc>
+    <return>
+      <doc>`TRUE` if the function argument is optional, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_argument_get_optional::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_unused" name="cdn_function_argument_get_unused">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_argument_get_unused::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_get_variable" name="cdn_function_argument_get_variable">
+    <brief>Get the function argument variable.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_function_argument_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_new" name="cdn_function_argument_new">
+    <brief>Create a new <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>
+    </brief>
+    <doc>Create a new <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>. Note that <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref> derives
+from &amp;lt;GInitiallyUnowned&amp;gt;. This means that initially, the newly created object
+has a floating reference and does not need to be freed if you add it to
+a function using &amp;lt;cdn\_function\_add\_argument&amp;gt;.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref></doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </return>
+    <argument id="cdn_function_argument_new::name" name="name">
+      <doc>The function argument name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_function_argument_new::isexplicit" name="isexplicit">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+    <argument id="cdn_function_argument_new::default_value" name="default_value">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_set_default_value" name="cdn_function_argument_set_default_value">
+    <brief>Set a default value for the function argument</brief>
+    <doc>Set a default value for the function argument. The default value can be
+unset by supplying `NULL` for <ref ref="API Reference::CdnFunctionArgument#cdn_function_argument_set_default_value::value">value</ref>.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_argument_set_default_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_set_default_value::value" name="value">
+      <doc>The default value (or `NULL`).</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_set_dimension" name="cdn_function_argument_set_dimension">
+    <brief>Set the expected dimension of the function argument when the function i</brief>
+    <doc>Set the expected dimension of the function argument when the function is
+called.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_argument_set_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_set_dimension::dimension" name="dimension">
+      <doc>the dimension</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_set_explicit" name="cdn_function_argument_set_explicit">
+    <brief>Set whether a function argument is explicit.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_argument_set_explicit::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_set_explicit::isexplicit" name="isexplicit">
+      <doc>Whether the argument is explicit</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_set_name" name="cdn_function_argument_set_name">
+    <brief>Set the function argument name.</brief>
+    <return>
+      <doc>`TRUE` if the function argument name could be successfully changed, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_argument_set_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_set_name::name" name="name">
+      <doc>The argument name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_function_argument_set_unused" name="cdn_function_argument_set_unused">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_argument_set_unused::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref>.</doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_argument_set_unused::unused" name="unused">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+</gobject:class>

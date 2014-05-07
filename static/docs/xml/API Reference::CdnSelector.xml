@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnSelector" name="CdnSelector" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnStatement" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+  </implements>
+  <gobject:property id="API Reference::CdnSelector::root" mode="construct-only" name="root">
+    <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </gobject:property>
+  <function id="cdn_selector_append" name="cdn_selector_append">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_append::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_append::identifier" name="identifier">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_selector_append_partial" name="cdn_selector_append_partial">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_append_partial::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_append_partial::identifier" name="identifier">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_selector_append_pseudo" name="cdn_selector_append_pseudo">
+    <brief>Append a pseudo selector.</brief>
+    <return>
+      <doc>The identifier of the added pseudo selector</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_append_pseudo::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_append_pseudo::type" name="type">
+      <doc>A <ref ref="API Reference#API Reference::CdnSelectorPseudoType">CdnSelectorPseudoType</ref></doc>
+      <type name="CdnSelectorPseudoType" ref="API Reference#API Reference::CdnSelectorPseudoType" />
+    </argument>
+    <argument id="cdn_selector_append_pseudo::arguments" name="arguments">
+      <doc>A &amp;lt;GSList&amp;gt; of &amp;lt;GObject&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_selector_append_regex" name="cdn_selector_append_regex">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_append_regex::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_append_regex::regex" name="regex">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_selector_append_regex_partial" name="cdn_selector_append_regex_partial">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_append_regex_partial::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_append_regex_partial::regex" name="regex">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_selector_as_string" name="cdn_selector_as_string">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_as_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+  </function>
+  <function id="cdn_selector_escape_identifier" name="cdn_selector_escape_identifier">
+    <brief>Escapes an identifier if needed.</brief>
+    <return>
+      <doc>the escaped identifier</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_escape_identifier::name" name="name">
+      <doc>the name</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_selector_get_implicit_children" name="cdn_selector_get_implicit_children">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_selector_get_implicit_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+  </function>
+  <function id="cdn_selector_get_in_context" name="cdn_selector_get_in_context">
+    <brief>Get the in-context for a particular selector.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_selector_get_in_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_get_in_context::id" name="id">
+      <doc>The selector id</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_selector_get_last_id" name="cdn_selector_get_last_id">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_selector_get_last_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+  </function>
+  <function id="cdn_selector_get_out_context" name="cdn_selector_get_out_context">
+    <brief>Get the out-context for a particular selector.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_selector_get_out_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_get_out_context::id" name="id">
+      <doc>The selector id</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_selector_get_parts" name="cdn_selector_get_parts">
+    <brief>Get the selector parts.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt;.</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_selector_get_parts::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+  </function>
+  <function id="cdn_selector_is_pseudo_name" name="cdn_selector_is_pseudo_name">
+    <brief>Check whether a name is a pseudo selector.</brief>
+    <return>
+      <doc>`TRUE` if the name is a pseudo selector, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_selector_is_pseudo_name::name" name="name">
+      <doc>the name</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_selector_new" name="cdn_selector_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_new::root" name="root">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_selector_parse" name="cdn_selector_parse">
+    <brief>Parse a selector from a string.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref></doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_parse::root" name="root">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type allow-none="yes" name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_selector_parse::s" name="s">
+      <doc>The selector</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_selector_parse::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_selector_select" name="cdn_selector_select">
+    <brief>Select objects (from <ref ref="API Reference::CdnSelector#cdn_selector_select::parent">parent</ref>) using the selector.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_select::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_select::parent" name="parent">
+      <doc>A &amp;lt;GObject&amp;gt;</doc>
+      <type name="GObject" qualifier="*" />
+    </argument>
+    <argument id="cdn_selector_select::type" name="type">
+      <doc>A <ref ref="API Reference#API Reference::CdnSelectorType">CdnSelectorType</ref></doc>
+      <type name="CdnSelectorType" ref="API Reference#API Reference::CdnSelectorType" />
+    </argument>
+    <argument id="cdn_selector_select::context" name="context">
+      <doc>A <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_selector_select_set" name="cdn_selector_select_set">
+    <brief>Select objects (from &amp;lt;parent&amp;gt;) using the selector.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selector_select_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_select_set::parents" name="parents">
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+    <argument id="cdn_selector_select_set::type" name="type">
+      <doc>A <ref ref="API Reference#API Reference::CdnSelectorType">CdnSelectorType</ref></doc>
+      <type name="CdnSelectorType" ref="API Reference#API Reference::CdnSelectorType" />
+    </argument>
+  </function>
+  <function id="cdn_selector_set_define_context" name="cdn_selector_set_define_context">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selector_set_define_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_set_define_context::id" name="id">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_selector_set_from_set" name="cdn_selector_set_from_set">
+    <brief>Set the from set of the selector.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selector_set_from_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_set_from_set::selections" name="selections">
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_selector_set_implicit_children" name="cdn_selector_set_implicit_children">
+    <brief>Sets whether the selector will apply an implicit "children" selector.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selector_set_implicit_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_set_implicit_children::isimplicit" name="isimplicit">
+      <doc>implicit children.</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_selector_set_partial" name="cdn_selector_set_partial">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selector_set_partial::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_set_partial::partial" name="partial">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_selector_set_self" name="cdn_selector_set_self">
+    <brief>Set the selection representing the "self" pseudo selector.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selector_set_self::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref>.</doc>
+      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    </argument>
+    <argument id="cdn_selector_set_self::selection" name="selection">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+</gobject:class>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionCustomFunction" name="CdnInstructionCustomFunction" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_CUSTOM_FUNCTION`</brief>
+  <base access="public">
+    <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+  </base>
+  <function id="cdn_instruction_custom_function_get_function" name="cdn_instruction_custom_function_get_function">
+    <brief>Get the function executed by the instruction.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </return>
+    <argument id="cdn_instruction_custom_function_get_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">CdnInstructionCustomFunction</ref>.</doc>
+      <type name="CdnInstructionCustomFunction" qualifier="*" ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_custom_function_new" name="cdn_instruction_custom_function_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_custom_function_new::function" name="function">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_instruction_custom_function_new::argdim" name="argdim">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_custom_function_set_function" name="cdn_instruction_custom_function_set_function">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_custom_function_set_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">CdnInstructionCustomFunction</ref>.</doc>
+      <type name="CdnInstructionCustomFunction" qualifier="*" ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction" />
+    </argument>
+    <argument id="cdn_instruction_custom_function_set_function::f" name="f">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+</gobject:class>

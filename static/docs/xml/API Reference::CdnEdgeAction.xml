@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEdgeAction" name="CdnEdgeAction" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Edge action equation</brief>
+  <doc>Edge action equation.
+
+A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an action inside an edge which sets a target
+<ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> to the value of a particular <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> equation.</doc>
+  <base access="public">
+    <type name="GInitiallyUnowned" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnPhaseable" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+  </implements>
+  <gobject:property id="API Reference::CdnEdgeAction::equation" mode="construct" name="equation">
+    <brief>The equation</brief>
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEdgeAction::index" name="index">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEdgeAction::link" mode="readonly" name="link">
+    <brief>The link</brief>
+    <type name="CdnEdge" qualifier="*" ref="API Reference::CdnEdge#API Reference::CdnEdge" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEdgeAction::target" mode="construct" name="target">
+    <brief>The target <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
+    </brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEdgeAction::target-property" mode="readonly" name="target-property">
+    <brief>The target property</brief>
+    <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+  </gobject:property>
+  <function id="cdn_edge_action_compile" name="cdn_edge_action_compile">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_edge_action_compile::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_compile::context" name="context">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_edge_action_compile::error" name="error">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnCompileErrorForward" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_copy" name="cdn_edge_action_copy">
+    <brief>Create a copy of a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_edge_action_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_equal" name="cdn_edge_action_equal">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_edge_action_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_equal::other" name="other">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_adds" name="cdn_edge_action_get_adds">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_edge_action_get_adds::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_edge" name="cdn_edge_action_get_edge">
+    <brief>Get the link associated with the action</brief>
+    <return>
+      <doc>the link associated with the action</doc>
+      <type name="CdnEdge" qualifier="*" ref="API Reference::CdnEdge#API Reference::CdnEdge" />
+    </return>
+    <argument id="cdn_edge_action_get_edge::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_equation" name="cdn_edge_action_get_equation">
+    <brief>Get the equation of the action.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_edge_action_get_equation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_index" name="cdn_edge_action_get_index">
+    <brief>Get the index expression for the action (or `NULL` if the action does no</brief>
+    <doc>Get the index expression for the action (or `NULL` if the action does not
+have an associated index).
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_edge_action_get_index::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_indices" name="cdn_edge_action_get_indices">
+    <brief>Get the indices for this action.</brief>
+    <return>
+      <doc>the indices for this action.</doc>
+      <type builtin="yes" name="gint" qualifier="*" />
+    </return>
+    <argument id="cdn_edge_action_get_indices::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_get_indices::num_indices" name="num_indices">
+      <doc>return value for the number of indices.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_target" name="cdn_edge_action_get_target">
+    <brief>Get the target of the action.</brief>
+    <return>
+      <doc>the action target</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_edge_action_get_target::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_get_target_variable" name="cdn_edge_action_get_target_variable">
+    <brief>Get the target property of the link action.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_edge_action_get_target_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_new" name="cdn_edge_action_new">
+    <brief>Create a new <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</brief>
+    <return>
+      <doc>A new <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </return>
+    <argument id="cdn_edge_action_new::target" name="target">
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_edge_action_new::equation" name="equation">
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_set_adds" name="cdn_edge_action_set_adds">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_edge_action_set_adds::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_set_adds::adds" name="adds">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_set_equation" name="cdn_edge_action_set_equation">
+    <brief>Set the equation of the action.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_edge_action_set_equation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_set_equation::equation" name="equation">
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_set_index" name="cdn_edge_action_set_index">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_edge_action_set_index::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_set_index::expression" name="expression">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_edge_action_set_target" name="cdn_edge_action_set_target">
+    <brief>Set the target of the action.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_edge_action_set_target::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>.</doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_edge_action_set_target::target" name="target">
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+</gobject:class>

@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegratorState" name="CdnIntegratorState" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The integrator state</brief>
+  <doc>The integrator state.
+
+The integrator state stores information on which variables need to be
+integrated and how, based on a root object. It automatically tracks changes
+in the root object and recalculates the variables that need to be
+integrated.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <gobject:property id="API Reference::CdnIntegratorState::object" mode="construct-only" name="object">
+    <brief>The object which is integrated</brief>
+    <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </gobject:property>
+  <function id="cdn_integrator_state_all_variables" name="cdn_integrator_state_all_variables">
+    <brief>Get the link actions that act on non-integrated variables.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_all_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_direct_edge_actions" name="cdn_integrator_state_direct_edge_actions">
+    <brief>Get the link actions that act on non-integrated variables.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_direct_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_direct_variables" name="cdn_integrator_state_direct_variables">
+    <brief>Get non-integrated variables which are acted upon by links.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_direct_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_discrete_edge_actions" name="cdn_integrator_state_discrete_edge_actions">
+    <brief>Get the link actions that act on discrete variables.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_discrete_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_discrete_variables" name="cdn_integrator_state_discrete_variables">
+    <brief>Get the discrete variables which are acted upon by links.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_discrete_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_events" name="cdn_integrator_state_events">
+    <brief>Get the list of events.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_events::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_expressions" name="cdn_integrator_state_expressions">
+    <brief>Get the expressions in the network.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_expressions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_functions" name="cdn_integrator_state_functions">
+    <brief>Get the list of functions.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_integrator_state_functions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_get_object" name="cdn_integrator_state_get_object">
+    <brief>Get the object of the integrator state.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_integrator_state_get_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_integrated_edge_actions" name="cdn_integrator_state_integrated_edge_actions">
+    <brief>Get the link actions that act on integrated variables.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_integrated_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_integrated_variables" name="cdn_integrator_state_integrated_variables">
+    <brief>Get the integrated variables which are acted upon by links.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_integrated_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_io" name="cdn_integrator_state_io">
+    <brief>Get the io states.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_io::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_new" name="cdn_integrator_state_new">
+    <brief>Create a new integrator state for the given object.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref></doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_integrator_state_new::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_operators" name="cdn_integrator_state_operators">
+    <brief>Get the list of operators.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_operators::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_phase_direct_edge_actions" name="cdn_integrator_state_phase_direct_edge_actions">
+    <brief>Get the edge actions that act on non-integrated variables in the curren</brief>
+    <doc>Get the edge actions that act on non-integrated variables in the current
+phase.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_phase_direct_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_phase_discrete_edge_actions" name="cdn_integrator_state_phase_discrete_edge_actions">
+    <brief>Get the discrete edge actions in the current phase.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_phase_discrete_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_phase_events" name="cdn_integrator_state_phase_events">
+    <brief>Get the list of events in the current phase.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_phase_events::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_phase_integrated_edge_actions" name="cdn_integrator_state_phase_integrated_edge_actions">
+    <brief>Get the integrated edge actions in the current phase.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_state_phase_integrated_edge_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_rand_expressions" name="cdn_integrator_state_rand_expressions">
+    <brief>Get the list of rand expressions.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_integrator_state_rand_expressions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_rand_instructions" name="cdn_integrator_state_rand_instructions">
+    <brief>Get the list of rand instructions.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_integrator_state_rand_instructions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_set_state" name="cdn_integrator_state_set_state">
+    <brief>Change the active state of <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::node">node</ref> to <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::st">st</ref>.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_state_set_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+    <argument id="cdn_integrator_state_set_state::node" name="node">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_integrator_state_set_state::st" name="st">
+      <doc>the state</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_integrator_state_set_state::events_added" name="events_added">
+      <doc>return value for the events added by changing the state</doc>
+      <type name="GSList" qualifier="**" transfer-ownership="container" />
+    </argument>
+    <argument id="cdn_integrator_state_set_state::events_removed" name="events_removed">
+      <doc>return value for the events removed changing the state</doc>
+      <type name="GSList" qualifier="**" transfer-ownership="container" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_state_update" name="cdn_integrator_state_update">
+    <brief>Update the integrator state</brief>
+    <doc>Update the integrator state. This recursively goes through all the objects
+contained in the associated <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>:object and collects the
+links and variables that need to be integrated.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_state_update::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref>.</doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+</gobject:class>

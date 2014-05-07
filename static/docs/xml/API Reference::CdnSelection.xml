@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnSelection" name="CdnSelection" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_selection_copy" name="cdn_selection_copy">
+    <brief>Copy a selection.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selection_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+  <function id="cdn_selection_get_context" name="cdn_selection_get_context">
+    <brief>Get the selection context.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </return>
+    <argument id="cdn_selection_get_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+  <function id="cdn_selection_get_object" name="cdn_selection_get_object">
+    <brief>Get the object being selected.</brief>
+    <return>
+      <doc>The object being selected</doc>
+      <type builtin="yes" name="GObject" />
+    </return>
+    <argument id="cdn_selection_get_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+  <function id="cdn_selection_new" name="cdn_selection_new">
+    <brief>Create a new selection.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selection_new::object" name="object">
+      <doc>The object</doc>
+      <type builtin="yes" name="GObject" />
+    </argument>
+    <argument id="cdn_selection_new::context" name="context">
+      <doc>The expansion context</doc>
+      <type allow-none="yes" name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_selection_ref" name="cdn_selection_ref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_selection_ref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+  <function id="cdn_selection_set_context" name="cdn_selection_set_context">
+    <brief>Set the selection context.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selection_set_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+    <argument id="cdn_selection_set_context::context" name="context">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+  </function>
+  <function id="cdn_selection_set_object" name="cdn_selection_set_object">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selection_set_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+    <argument id="cdn_selection_set_object::object" name="object">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_selection_unref" name="cdn_selection_unref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_selection_unref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref>.</doc>
+      <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    </argument>
+  </function>
+</gobject:boxed>

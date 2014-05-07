@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnAttribute" name="CdnAttribute" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Cdn format attribute</brief>
+  <doc>Cdn format attribute.
+
+This object represents an attribute in the Cdn format.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <gobject:property id="API Reference::CdnAttribute::id" mode="construct-only" name="id">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <function id="cdn_attribute_get_argument" name="cdn_attribute_get_argument">
+    <brief>Get an argument.</brief>
+    <return>
+      <doc>The argument</doc>
+      <type name="GObject" qualifier="*" />
+    </return>
+    <argument id="cdn_attribute_get_argument::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref>.</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" />
+    </argument>
+    <argument id="cdn_attribute_get_argument::i" name="i">
+      <doc>The index of the argument</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_get_arguments" name="cdn_attribute_get_arguments">
+    <brief>Get the list of arguments of the attribute.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of &amp;lt;GObject&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_attribute_get_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref>.</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_get_id" name="cdn_attribute_get_id">
+    <brief>Get the attribute id.</brief>
+    <return>
+      <doc>the attribute id.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_attribute_get_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref>.</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_new" name="cdn_attribute_new">
+    <brief>Create a new attribute.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref></doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_attribute_new::id" name="id">
+      <doc>attribute id</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_newv" name="cdn_attribute_newv">
+    <brief>Create a new attribute.</brief>
+    <return>
+      <doc>the new attribute</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_attribute_newv::id" name="id">
+      <doc>the attribute id</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_attribute_newv::arg1" name="arg1">
+      <doc>*documentation missing...*</doc>
+      <type name="" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_num_arguments" name="cdn_attribute_num_arguments">
+    <brief>Get the number of arguments.</brief>
+    <return>
+      <doc>the number of attribute arguments</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_attribute_num_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref>.</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" />
+    </argument>
+  </function>
+  <function id="cdn_attribute_set_arguments" name="cdn_attribute_set_arguments">
+    <brief>Set the arguments of the attribute.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_attribute_set_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAttribute#API Reference::CdnAttribute">CdnAttribute</ref>.</doc>
+      <type name="CdnAttribute" qualifier="*" ref="API Reference::CdnAttribute#API Reference::CdnAttribute" />
+    </argument>
+    <argument id="cdn_attribute_set_arguments::arguments" name="arguments">
+      <doc>A list of &amp;lt;GObject&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+</gobject:class>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnOperatorSimplify" name="CdnOperatorSimplify" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Math operator for simplify evaluation of an expression</brief>
+  <doc>Math operator for simplify evaluation of an expression.
+
+The <ref ref="API Reference::CdnOperatorSimplify#API Reference::CdnOperatorSimplify" /> is a special operator that can be used in
+mathematical expressions ('delay'). When evaluated, it will return the
+simplify value of its argument (which can be an arbitrary expression).</doc>
+  <base access="public">
+    <type name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+  </base>
+  <function id="cdn_operator_simplify_new" name="cdn_operator_simplify_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnOperatorSimplify" qualifier="*" ref="API Reference::CdnOperatorSimplify#API Reference::CdnOperatorSimplify" transfer-ownership="full" />
+    </return>
+  </function>
+</gobject:class>

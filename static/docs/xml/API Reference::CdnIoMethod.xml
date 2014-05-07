@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIoMethod" name="CdnIoMethod" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="GTypeModule" />
+  </base>
+  <implements access="public">
+    <type name="GTypePlugin" />
+  </implements>
+  <gobject:property id="API Reference::CdnIoMethod::path" mode="construct-only" name="path">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <function id="cdn_io_method_find" name="cdn_io_method_find">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="GType" />
+    </return>
+    <argument id="cdn_io_method_find::name" name="name">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_method_find::mode" name="mode">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
+    </argument>
+  </function>
+  <function id="cdn_io_method_initialize" name="cdn_io_method_initialize">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+  </function>
+  <function id="cdn_io_method_new" name="cdn_io_method_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnIoMethod" qualifier="*" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_io_method_new::path" name="path">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+</gobject:class>

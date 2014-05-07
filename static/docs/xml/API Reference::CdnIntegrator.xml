@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegrator" name="CdnIntegrator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Simulation integrator</brief>
+  <doc>Simulation integrator.
+
+<ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" /> is a base class for implementing different integration
+methods.</doc>
+  <base access="public">
+    <type name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnIntegrator::default-timestep" mode="construct" name="default-timestep">
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegrator::minimum-timestep" mode="construct" name="minimum-timestep">
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegrator::object" name="object">
+    <brief>The object to integrate</brief>
+    <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegrator::real-time" mode="construct" name="real-time">
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegrator::state" mode="readonly" name="state">
+    <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegrator::time" mode="readonly" name="time">
+    <brief>The current simulated time</brief>
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <function id="cdn_integrator_begin" name="cdn_integrator_begin">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_integrator_begin::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_begin::start" name="start">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_begin::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_end" name="cdn_integrator_end">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_integrator_end::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_end::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_evaluate" name="cdn_integrator_evaluate">
+    <brief>Evaluate the system of equations comprising the object</brief>
+    <doc>Evaluate the system of equations comprising the object. This is a utility
+function for integrator implementations. Call this function to calculate
+all the states. After this function completes, the update values for the
+states can be found (&amp;lt;see&amp;gt; &amp;lt;cdn\_integrator\_state\_get\_update&amp;gt;)</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_evaluate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_evaluate::t" name="t">
+      <doc>The time at which to evaluate the object</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_evaluate::timestep" name="timestep">
+      <doc>The timestep with which the current step is evaluating</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_class_id" name="cdn_integrator_get_class_id">
+    <brief>The integrator class id.</brief>
+    <return>
+      <doc>the integrator class id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_get_class_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_default_timestep" name="cdn_integrator_get_default_timestep">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_integrator_get_default_timestep::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_name" name="cdn_integrator_get_name">
+    <brief>The integrator name.</brief>
+    <return>
+      <doc>the integrator name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_integrator_get_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_object" name="cdn_integrator_get_object">
+    <brief>Get the object associated with the integrator.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_integrator_get_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_real_time" name="cdn_integrator_get_real_time">
+    <brief>Get how many times real time the integrator is trying to integrate th</brief>
+    <doc>Get how many times real time the integrator is trying to integrate the
+network. The special value 0 means that the integrator will integrate as
+fast as possible.
+
+</doc>
+    <return>
+      <doc>the real-time.</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_integrator_get_real_time::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_state" name="cdn_integrator_get_state">
+    <brief>Get the integrator state.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref></doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </return>
+    <argument id="cdn_integrator_get_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_terminate" name="cdn_integrator_get_terminate">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_integrator_get_terminate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_get_time" name="cdn_integrator_get_time">
+    <brief>Get the current time at which the object is being integrated.</brief>
+    <return>
+      <doc>the current integration time</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_integrator_get_time::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_reset" name="cdn_integrator_reset">
+    <brief>Reset the integrator</brief>
+    <doc>Reset the integrator. This is usually called from &amp;lt;cdn\_object\_reset&amp;gt; on the
+main network.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_run" name="cdn_integrator_run">
+    <brief>Integrate the object for a certain period of time.</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_integrator_run::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_run::from" name="from">
+      <doc>The time at which to start integrating</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_run::timestep" name="timestep">
+      <doc>The timestep to use for integration</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_run::to" name="to">
+      <doc>The time until which to run the integration</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_run::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_set_default_timestep" name="cdn_integrator_set_default_timestep">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_set_default_timestep::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_set_default_timestep::timestep" name="timestep">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_set_real_time" name="cdn_integrator_set_real_time">
+    <brief>Set how many times real time the integrator is trying to integrate th</brief>
+    <doc>Set how many times real time the integrator is trying to integrate the
+network. Set <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">real_time</ref> to 0 to integrate the network as fast as possible.
+Otherwise, the integrator will integrate at <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">real_time</ref> real time, using
+sleep to pause the integration if needed. Note that this can only make your
+network integrate slower, not faster.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_set_real_time::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_set_real_time::real_time" name="real_time">
+      <doc>real time value.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_set_state" name="cdn_integrator_set_state">
+    <brief>Set the integrator state</brief>
+    <doc>Set the integrator state. You should normally not need to use this function.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_set_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_set_state::state" name="state">
+      <doc>A <ref ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">CdnIntegratorState</ref></doc>
+      <type name="CdnIntegratorState" qualifier="*" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_set_time" name="cdn_integrator_set_time">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_set_time::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_set_time::t" name="t">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_simulation_step_integrate" name="cdn_integrator_simulation_step_integrate">
+    <brief>Execute one integration step.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_simulation_step_integrate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_simulation_step_integrate::actions" name="actions">
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_step" name="cdn_integrator_step">
+    <brief>Perform a single integration step</brief>
+    <doc>Perform a single integration step. Use <ref ref="API Reference::CdnIntegrator#cdn_integrator_run">cdn_integrator_run</ref> if you want to
+run the integration for a period of time.
+
+</doc>
+    <return>
+      <doc>The real time step with which the integration was performed</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_integrator_step::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_step::t" name="t">
+      <doc>The time at which to perform the integration step</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_step::timestep" name="timestep">
+      <doc>The timestep with which to perform the integration step</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_step_prepare" name="cdn_integrator_step_prepare">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_integrator_step_prepare::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref>.</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+    <argument id="cdn_integrator_step_prepare::t" name="t">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_integrator_step_prepare::timestep" name="timestep">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+</gobject:class>

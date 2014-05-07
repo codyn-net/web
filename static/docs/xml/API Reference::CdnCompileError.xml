@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnCompileError" name="CdnCompileError" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Compile error message container</brief>
+  <doc>Compile error message container.
+
+Object used to store information on expression compile errors.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <function id="cdn_compile_error_get_code" name="cdn_compile_error_get_code">
+    <brief>Get the error code</brief>
+    <return>
+      <doc>the error code</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_compile_error_get_code::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_edge_action" name="cdn_compile_error_get_edge_action">
+    <brief>Get the associated <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>
+    </brief>
+    <return>
+      <doc>the associated <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </return>
+    <argument id="cdn_compile_error_get_edge_action::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_error" name="cdn_compile_error_get_error">
+    <brief>Get the associated &amp;lt;GError&amp;gt;</brief>
+    <return>
+      <doc>the associated &amp;lt;GError&amp;gt;</doc>
+      <type name="GError" qualifier="*" />
+    </return>
+    <argument id="cdn_compile_error_get_error::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_expression" name="cdn_compile_error_get_expression">
+    <brief>Get the expression which failed to compile.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_compile_error_get_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_formatted_string" name="cdn_compile_error_get_formatted_string">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_compile_error_get_formatted_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_message" name="cdn_compile_error_get_message">
+    <brief>Get the error message</brief>
+    <return>
+      <doc>the error message</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_compile_error_get_message::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_object" name="cdn_compile_error_get_object">
+    <brief>Get the associated <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>
+    </brief>
+    <return>
+      <doc>the associated <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_compile_error_get_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_get_variable" name="cdn_compile_error_get_variable">
+    <brief>Get the associated <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
+    </brief>
+    <return>
+      <doc>the associated <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_compile_error_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_new" name="cdn_compile_error_new">
+    <brief>Create new empty compile error</brief>
+    <return>
+      <doc>a new <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref></doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_compile_error_set" name="cdn_compile_error_set">
+    <brief>Set compile error information.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_error_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+    <argument id="cdn_compile_error_set::gerror" name="gerror">
+      <doc>A &amp;lt;GError&amp;gt;</doc>
+      <type name="GError" qualifier="*" />
+    </argument>
+    <argument id="cdn_compile_error_set::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_compile_error_set::property" name="property">
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_compile_error_set::action" name="action">
+      <doc>A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
+    </argument>
+    <argument id="cdn_compile_error_set::expression" name="expression">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_string" name="cdn_compile_error_string">
+    <brief>Get the string describing &amp;lt;error&amp;gt;</brief>
+    <return>
+      <doc>the error string message</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_compile_error_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref>.</doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_compile_error_type_quark" name="cdn_compile_error_type_quark">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="GQuark" />
+    </return>
+  </function>
+</gobject:class>

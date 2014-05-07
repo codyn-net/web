@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEvent" name="CdnEvent" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Event class</brief>
+  <doc>Event class.
+
+The <ref ref="API Reference::CdnEvent#API Reference::CdnEvent" /> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> derivative defining node state transitions
+under specified conditions (see <ref ref="API Reference::CdnEvent#cdn_event_set_condition">cdn_event_set_condition</ref>). Each simulation
+step, all event conditions are checked and when the condition goes from
+false to true, the event is executed (see <ref ref="API Reference::CdnEvent#cdn_event_execute">cdn_event_execute</ref>).
+
+Events can be active only in certain states (see <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>), and can
+transition states when they are executed (see <ref ref="API Reference::CdnEvent#cdn_event_set_goto_state">cdn_event_set_goto_state</ref>).
+Note that these states are transitioned on the _parent_ <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>, such that
+multiple event objects can affect the same state. Additionally, states can
+set variables to certain values when fired (see <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable">cdn_event_add_set_variable</ref>).
+
+Finally, the occurence of events can be refined by the integrator. When
+the event approximation (<ref ref="API Reference::CdnEvent#cdn_event_set_approximation">cdn_event_set_approximation</ref>) is set, then the
+time at which the event occurs will be refined beyond the specified
+integration time step, until the error of the condition going from false to
+true is within the specified approximation.</doc>
+  <base access="public">
+    <type name="CdnNode" ref="API Reference::CdnNode#API Reference::CdnNode" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnPhaseable" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnEvent::approximation" mode="construct" name="approximation">
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEvent::condition" mode="construct" name="condition">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEvent::goto-state" mode="construct" name="goto-state">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnEvent::terminal" mode="construct" name="terminal">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <function id="cdn_event_add_set_variable" name="cdn_event_add_set_variable">
+    <brief>Add an action to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">variable</ref> to <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::value">value</ref> when the event is triggered.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_add_set_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_add_set_variable::variable" name="variable">
+      <doc>the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> to set.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_event_add_set_variable::value" name="value">
+      <doc>the expression to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">variable</ref> to.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_event_execute" name="cdn_event_execute">
+    <brief>Execute the event</brief>
+    <doc>Execute the event. This will set all the variables added with
+<ref ref="API Reference::CdnEvent#cdn_event_add_set_variable">cdn_event_add_set_variable</ref> to their corresponding values. Note that this
+is normally called by the integrator and does not need to be manually called.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_execute::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_approximation" name="cdn_event_get_approximation">
+    <brief>Get the maximum error on the condition allowed when the event should b</brief>
+    <doc>Get the maximum error on the condition allowed when the event should be
+triggered.
+
+</doc>
+    <return>
+      <doc>the approximation.</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_event_get_approximation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_condition" name="cdn_event_get_condition">
+    <brief>Get the event condition.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_event_get_condition::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_goto_state" name="cdn_event_get_goto_state">
+    <brief>Get the state to which the parent node transitions when the event i</brief>
+    <doc>Get the state to which the parent node transitions when the event is
+triggered. Note that this can return `NULL` if the event doesn't cause a
+state transition.
+
+</doc>
+    <return>
+      <doc>the state to which the event transitions the parent node when triggered.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_event_get_goto_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_logical_tree" name="cdn_event_get_logical_tree">
+    <brief>Get the logical tree representation of the event condition.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </return>
+    <argument id="cdn_event_get_logical_tree::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_set_variables" name="cdn_event_get_set_variables">
+    <brief>Get the variables that are modified when the event fires.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">CdnEventSetVariable</ref>.</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_event_get_set_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_get_terminal" name="cdn_event_get_terminal">
+    <brief>Get whether the event is terminal.</brief>
+    <return>
+      <doc>`TRUE` if the event is terminal, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_event_get_terminal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_happened" name="cdn_event_happened">
+    <brief>Check whether the event has happened in the last timestep</brief>
+    <doc>Check whether the event has happened in the last timestep. If the event
+has happened, and <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">dist</ref> is not `NULL`, then the error on the event condition
+is returned in <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">dist</ref>.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the event happened, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_event_happened::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_happened::dist" name="dist">
+      <doc>return value for the condition distance.</doc>
+      <type allow-none="yes" builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_event_last_distance" name="cdn_event_last_distance">
+    <brief>Get the last computed distance towards triggering the condition.</brief>
+    <return>
+      <doc>the last condition distance.</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_event_last_distance::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+  <function id="cdn_event_new" name="cdn_event_new">
+    <brief>Create a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>
+    </brief>
+    <doc>Create a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>. The specified <ref ref="API Reference::CdnEvent#cdn_event_new::id">id</ref> is simply the <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> id
+(note that <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref> derives from <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>). The <ref ref="API Reference::CdnEvent#cdn_event_new::condition">condition</ref> expression should
+be a logical expression indicating when the event is triggered.
+
+Set <ref ref="API Reference::CdnEvent#cdn_event_new::approximation">approximation</ref> to the maximum allowed error (positive) on the condition
+for which the event should be triggered. A value of -1 specifies the maximum
+error and will not refine the time at which the event occured.
+
+</doc>
+    <return>
+      <doc>a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_event_new::id" name="id">
+      <doc>the event node id.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_event_new::condition" name="condition">
+      <doc>the event condition.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_event_new::approximation" name="approximation">
+      <doc>the event approximation.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_event_set_approximation" name="cdn_event_set_approximation">
+    <brief>Set the maximum error on the condition allowed when the event should b</brief>
+    <doc>Set the maximum error on the condition allowed when the event should be
+triggered. If do not want the event to be refined, then use the special
+value -1 for <ref ref="API Reference::CdnEvent#cdn_event_set_approximation::approximation">approximation</ref>.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_set_approximation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_set_approximation::approximation" name="approximation">
+      <doc>the approximation value.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_event_set_condition" name="cdn_event_set_condition">
+    <brief>Set the condition at which the event should be triggered</brief>
+    <doc>Set the condition at which the event should be triggered. This condition
+must be a logical expression.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_set_condition::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_set_condition::condition" name="condition">
+      <doc>the condition.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_event_set_goto_state" name="cdn_event_set_goto_state">
+    <brief>Sets the state to which the parent node transitions when this even</brief>
+    <doc>Sets the state to which the parent node transitions when this event
+is triggered.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_set_goto_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_set_goto_state::state" name="state">
+      <doc>the state to transition to.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_event_set_terminal" name="cdn_event_set_terminal">
+    <brief>Set whether the event is terminal</brief>
+    <doc>Set whether the event is terminal. Terminal events cause the integration
+to stop when triggered.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_set_terminal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+    <argument id="cdn_event_set_terminal::terminal" name="terminal">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_event_update" name="cdn_event_update">
+    <brief>Update the event condition value</brief>
+    <doc>Update the event condition value. This is normally called by the integrator
+and should not be called manually.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_event_update::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>.</doc>
+      <type name="CdnEvent" qualifier="*" ref="API Reference::CdnEvent#API Reference::CdnEvent" />
+    </argument>
+  </function>
+</gobject:class>

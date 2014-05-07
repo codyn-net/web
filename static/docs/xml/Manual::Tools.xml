@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Tools" name="Tools" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Documentation of various codyn tools (studio, rawc, etc.).</brief>
+  <category name="Command line" ref="Manual::Tools::Command line#Manual::Tools::Command line">
+    <brief>Command line tools for working with codyn.</brief>
+  </category>
+  <category name="studio" ref="Manual::Tools::studio#Manual::Tools::studio">
+    <brief>The graphical interface for codyn networks.</brief>
+  </category>
+  <category name="rawc" ref="Manual::Tools::rawc#Manual::Tools::rawc">
+    <brief>The codyn C code generator.</brief>
+  </category>
+</category>

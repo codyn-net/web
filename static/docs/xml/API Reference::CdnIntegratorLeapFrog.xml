@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegratorLeapFrog" name="CdnIntegratorLeapFrog" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>LeapFrog integrator</brief>
+  <doc>LeapFrog integrator.
+
+The leap frog integrator is a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref> subclass implementing a leap
+frog integration scheme (useful for second order systems). You can use this
+integrator to efficiently integrate dynamical equations of motion. Note
+that this integration scheme is exactly the same as Euler integration when
+dealing with first order systems.</doc>
+  <base access="public">
+    <type name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <function id="cdn_integrator_leap_frog_new" name="cdn_integrator_leap_frog_new">
+    <brief>Create a new LeapFrog integrator.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorLeapFrog#API Reference::CdnIntegratorLeapFrog">CdnIntegratorLeapFrog</ref></doc>
+      <type name="CdnIntegratorLeapFrog" qualifier="*" ref="API Reference::CdnIntegratorLeapFrog#API Reference::CdnIntegratorLeapFrog" transfer-ownership="full" />
+    </return>
+  </function>
+</gobject:class>

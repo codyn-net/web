@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnObject" name="CdnObject" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Basis for all cdn objects</brief>
+  <doc>Basis for all cdn objects.
+
+<ref ref="API Reference::CdnObject#API Reference::CdnObject" /> is a base class for all the objects which can be added to a
+network. It provides property storage and virtual methods which can be
+implemented that drive the simulation process.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnObject::auto-imported" mode="construct" name="auto-imported">
+    <brief>Set to `TRUE` when the object was automatically imported.</brief>
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnObject::id" mode="construct" name="id">
+    <brief>The <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> id.</brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnObject::parent" mode="readonly" name="parent">
+    <brief>The <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> parent.</brief>
+    <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </gobject:property>
+  <function id="cdn_object_add_variable" name="cdn_object_add_variable">
+    <brief>Add a new variable to the object</brief>
+    <doc>Add a new variable to the object. Note that if a variable with the same
+name already exists, the variable information is transfered to the existing
+variable instance. This means that the specified <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> might not actually
+be added to the object. Also, since a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> is a &amp;lt;GInitiallyUnowned&amp;gt;,
+<ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> will be destroyed after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable" /> in
+the above described case, unless you explicitly sink the floating reference.
+
+In the case that you can not know whether a variable is overriding an
+existing variable in &amp;lt;object&amp;gt;, never use <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> after a call to
+<ref ref="API Reference::CdnObject#cdn_object_add_variable" />. Instead, retrieve the corresponding variable
+using <ref ref="API Reference::CdnObject#cdn_object_get_variable">cdn_object_get_variable</ref> after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable" />.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the variable was added successfully, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_add_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_add_variable::variable" name="variable">
+      <doc>the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> to add</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_object_add_variable::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_object_apply_template" name="cdn_object_apply_template">
+    <brief>Apply a template to the object</brief>
+    <doc>Apply a template to the object. This will apply all of the characteristics
+of the template to the object. Note that &amp;lt;object&amp;gt; should be of the same type,
+or inheriting from, the type of <ref ref="API Reference::CdnObject#cdn_object_apply_template::templ">templ</ref>.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the template could be successfully applied, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_apply_template::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_apply_template::templ" name="templ">
+      <doc>The template</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_apply_template::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_object_clear" name="cdn_object_clear">
+    <brief>Clear all variables from the object.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_clear::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_compile" name="cdn_object_compile">
+    <brief>Compile the object.</brief>
+    <return>
+      <doc>`TRUE` if the object compiled successfully, `FALSE` otherwise. If the compilation failed and <ref ref="API Reference::CdnObject#cdn_object_compile::error">error</ref> was set, the reason for the compile failure is set in <ref ref="API Reference::CdnObject#cdn_object_compile::error">error</ref>.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_compile::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_compile::context" name="context">
+      <doc>A <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref></doc>
+      <type allow-none="yes" name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_object_compile::error" name="error">
+      <doc>A <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref></doc>
+      <type allow-none="yes" name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_object_copy" name="cdn_object_copy">
+    <brief>Create a copy of the given object</brief>
+    <doc>Create a copy of the given object. This will create a new object with the
+same id and with a copy of all the variables defined on the object.
+The copied object will not have the same links, nor will it have a parent.
+See the documentation of specific subclasses of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> to see the
+copy semantics for those classes.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_equal" name="cdn_object_equal">
+    <brief>Check if two objects are equal.</brief>
+    <return>
+      <doc>`TRUE` if the objects are equal, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_equal::second" name="second">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_foreach_expression" name="cdn_object_foreach_expression">
+    <brief>Iterate over each expression defined in the object</brief>
+    <doc>Iterate over each expression defined in the object. For normal objects, this
+means all the property expressions. Classes that inherit from <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>
+can implement their own iteration for additional expressions (see for
+example <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>).</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_foreach_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_foreach_expression::func" name="func">
+      <doc>A &amp;lt;CdnForeachExpressionFunc&amp;gt;</doc>
+      <type name="CdnForeachExpressionFunc" />
+    </argument>
+    <argument id="cdn_object_foreach_expression::userdata" name="userdata">
+      <doc>The userdata that will be supplied to <ref ref="API Reference::CdnObject#cdn_object_foreach_expression::func">func</ref></doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_applied_templates" name="cdn_object_get_applied_templates">
+    <brief>Get the list of applied templates.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_object_get_applied_templates::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_auto_imported" name="cdn_object_get_auto_imported">
+    <brief>Get whether the object was automatically imported.</brief>
+    <return>
+      <doc>`TRUE` if the object was automatically imported, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_get_auto_imported::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_compile_context" name="cdn_object_get_compile_context">
+    <brief>Get the compile context for this object.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref></doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_get_compile_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_get_compile_context::context" name="context">
+      <doc>A <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref></doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_full_id" name="cdn_object_get_full_id">
+    <brief>Get the full id of the object</brief>
+    <doc>Get the full id of the object. This is the id that can be used in the outer
+most parent to refer to this object (i.e.
+&amp;lt;code&amp;gt;cdn_node_find_object (top_parent, cdn_object_get_full_id (deep_child)) == deep_child&amp;lt;/code&amp;gt;)
+
+</doc>
+    <return>
+      <doc>The full id of the object. This is a newly allocated string that should be freed with g_free.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_get_full_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_full_id_for_display" name="cdn_object_get_full_id_for_display">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_get_full_id_for_display::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_id" name="cdn_object_get_id">
+    <brief>Gets the object id</brief>
+    <return>
+      <doc>the object id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_object_get_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_parent" name="cdn_object_get_parent">
+    <brief>Get the parent of the object.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNodeForward" qualifier="*" />
+    </return>
+    <argument id="cdn_object_get_parent::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_relative_id" name="cdn_object_get_relative_id">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_get_relative_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_get_relative_id::parent" name="parent">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnNodeForward" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_relative_id_for_display" name="cdn_object_get_relative_id_for_display">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_get_relative_id_for_display::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_get_relative_id_for_display::parent" name="parent">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnNodeForward" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_template_applies_to" name="cdn_object_get_template_applies_to">
+    <brief>Get the list objects that this object (as a template) applies to</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_object_get_template_applies_to::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_variable" name="cdn_object_get_variable">
+    <brief>Get a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> from the object by name</brief>
+    <return>
+      <doc>the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> with name <ref ref="API Reference::CdnObject#cdn_object_get_variable::name">name</ref>, or `NULL` if no such property could be found</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_object_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_get_variable::name" name="name">
+      <doc>a property name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_variable_template" name="cdn_object_get_variable_template">
+    <brief>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">variable</ref> is defined, if any</brief>
+    <doc>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">variable</ref> is defined, if any. If <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::match_full">match_full</ref> is
+`TRUE`, the template will only be possitively matched if both variables are
+equal (i.e. if a variable originated from a template, but was later modified,
+this function will not return the original template object).
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_object_get_variable_template::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_get_variable_template::variable" name="variable">
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_object_get_variable_template::match_full" name="match_full">
+      <doc>How to match the property</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_object_get_variables" name="cdn_object_get_variables">
+    <brief>Gets the object variables.</brief>
+    <return>
+      <doc>a list of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_object_get_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_has_variable" name="cdn_object_has_variable">
+    <brief>Get whether &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">name</ref>
+    </brief>
+    <return>
+      <doc>`TRUE` if &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">name</ref>, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_has_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_has_variable::name" name="name">
+      <doc>a property name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_object_is_compiled" name="cdn_object_is_compiled">
+    <brief>Get whether the object is compiled.</brief>
+    <return>
+      <doc>`TRUE` if the object is compiled, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_is_compiled::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_new" name="cdn_object_new">
+    <brief>Creates a new <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</brief>
+    <return>
+      <doc>the newly created <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_new::id" name="id">
+      <doc>the object id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_object_new_from_template" name="cdn_object_new_from_template">
+    <brief>Create a new <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> based on the template &amp;lt;templ&amp;gt;.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_object_new_from_template::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_new_from_template::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_object_remove_variable" name="cdn_object_remove_variable">
+    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;</brief>
+    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
+could not be removed, <ref ref="API Reference::CdnObject#cdn_object_remove_variable::error">error</ref> will be appropriately set
+
+</doc>
+    <return>
+      <doc>`TRUE` if the property could be removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_remove_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_remove_variable::name" name="name">
+      <doc>a property name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_object_remove_variable::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_object_reset" name="cdn_object_reset">
+    <brief>Reset all variables to their initial values</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_set_auto_imported" name="cdn_object_set_auto_imported">
+    <brief>Set whether the object was automatically imported.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_set_auto_imported::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_set_auto_imported::auto_imported" name="auto_imported">
+      <doc>a boolean</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_object_set_id" name="cdn_object_set_id">
+    <brief>Sets the object id</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_set_id::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_set_id::id" name="id">
+      <doc>the new object id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_object_taint" name="cdn_object_taint">
+    <brief>Mark the object as tainted</brief>
+    <doc>Mark the object as tainted. This emits the "tainted" signal. The <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>
+in which the object is added acts on this signal to mark the network tainted
+and as such the object will be properly recompiled when the network needs
+to be simulated</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_object_taint::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_object_unapply_template" name="cdn_object_unapply_template">
+    <brief>Unapply a template from the object.</brief>
+    <return>
+      <doc>`TRUE` if the template could be successfully unapplied, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_unapply_template::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_unapply_template::templ" name="templ">
+      <doc>The template</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_unapply_template::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_object_verify_remove_variable" name="cdn_object_verify_remove_variable">
+    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;</brief>
+    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
+could not be removed, <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::error">error</ref> will be appropriately set
+
+</doc>
+    <return>
+      <doc>`TRUE` if the property could be removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_object_verify_remove_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_object_verify_remove_variable::name" name="name">
+      <doc>a property name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_object_verify_remove_variable::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+</gobject:class>

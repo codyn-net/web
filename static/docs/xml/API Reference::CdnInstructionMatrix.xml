@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionMatrix" name="CdnInstructionMatrix" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_MATRIX`</brief>
+  <base access="public">
+    <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+  </base>
+  <function id="cdn_instruction_matrix_new" name="cdn_instruction_matrix_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_matrix_new::args" name="args">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+    <argument id="cdn_instruction_matrix_new::dim" name="dim">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+</gobject:class>

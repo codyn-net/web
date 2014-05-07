@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnDimension" name="CdnDimension" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="API Reference::CdnDimension::rows" name="rows">
+    <type builtin="yes" name="gint32" />
+  </field>
+  <field id="API Reference::CdnDimension::columns" name="columns">
+    <type builtin="yes" name="gint32" />
+  </field>
+  <function id="cdn_dimension_equal" name="cdn_dimension_equal">
+    <brief>Compare two dimensions for equality.</brief>
+    <return>
+      <doc>`TRUE` if the dimensions are equal, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_dimension_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+    <argument id="cdn_dimension_equal::other" name="other">
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_dimension_is_one" name="cdn_dimension_is_one">
+    <brief>Check if the dimension is 1 x 1.</brief>
+    <return>
+      <doc>`TRUE` if the dimension is single, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_dimension_is_one::self" name="self">
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_dimension_size" name="cdn_dimension_size">
+    <brief>Get the size of a dimension (i</brief>
+    <doc>Get the size of a dimension (i.e. row x columns).
+
+</doc>
+    <return>
+      <doc>the dimension size.</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_dimension_size::self" name="self">
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+</gobject:boxed>

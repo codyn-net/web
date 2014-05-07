@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpansion" name="CdnExpansion" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_expansion_add" name="cdn_expansion_add">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_add::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_add::item" name="item">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_append" name="cdn_expansion_append">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_append::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_append::other" name="other">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_append::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_copy" name="cdn_expansion_copy">
+    <brief>Copy an expansion.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_debug_print" name="cdn_expansion_debug_print">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_debug_print::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_debug_print::file" name="file">
+      <doc>*documentation missing...*</doc>
+      <type name="FILE" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_get" name="cdn_expansion_get">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_get::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_get::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_get_index" name="cdn_expansion_get_index">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expansion_get_index::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_get_index::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_insert" name="cdn_expansion_insert">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_insert::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_insert::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expansion_insert::item" name="item">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_new" name="cdn_expansion_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_new::items" name="items">
+      <doc>*documentation missing...*</doc>
+      <type name="gchar* const" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_new_one" name="cdn_expansion_new_one">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_new_one::item" name="item">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_new_sized" name="cdn_expansion_new_sized">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_new_sized::items" name="items">
+      <doc>*documentation missing...*</doc>
+      <type name="gchar* const" qualifier="*" />
+    </argument>
+    <argument id="cdn_expansion_new_sized::sized" name="sized">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_newv" name="cdn_expansion_newv">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_newv::item" name="item">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_expansion_newv::arg1" name="arg1">
+      <doc>*documentation missing...*</doc>
+      <type name="" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_num" name="cdn_expansion_num">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expansion_num::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_prepend" name="cdn_expansion_prepend">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_prepend::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_prepend::other" name="other">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_prepend::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_ref" name="cdn_expansion_ref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expansion_ref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_set" name="cdn_expansion_set">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_set::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expansion_set::val" name="val">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_set_index" name="cdn_expansion_set_index">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_set_index::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+    <argument id="cdn_expansion_set_index::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expansion_set_index::val" name="val">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expansion_unref" name="cdn_expansion_unref">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expansion_unref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    </argument>
+  </function>
+</gobject:boxed>

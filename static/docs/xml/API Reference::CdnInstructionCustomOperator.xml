@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionCustomOperator" name="CdnInstructionCustomOperator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+  </base>
+  <function id="cdn_instruction_custom_operator_get_operator" name="cdn_instruction_custom_operator_get_operator">
+    <brief>Get the operator executed by the instruction.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref></doc>
+      <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+    </return>
+    <argument id="cdn_instruction_custom_operator_get_operator::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">CdnInstructionCustomOperator</ref>.</doc>
+      <type name="CdnInstructionCustomOperator" qualifier="*" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_custom_operator_new" name="cdn_instruction_custom_operator_new">
+    <brief>Create a new <ref ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">CdnInstructionCustomOperator</ref>.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_custom_operator_new::op" name="op">
+      <doc>A <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref></doc>
+      <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+    </argument>
+  </function>
+</gobject:class>

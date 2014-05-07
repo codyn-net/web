@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionBoxed" name="CdnInstructionBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_instruction_boxed_as_custom_function" name="cdn_instruction_boxed_as_custom_function">
+    <brief>Get the instruction as a custom function.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed">CdnInstructionCustomFunctionBoxed</ref>.</doc>
+      <type name="CdnInstructionCustomFunctionBoxed" qualifier="*" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed" />
+    </return>
+    <argument id="cdn_instruction_boxed_as_custom_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_as_custom_function_ref" name="cdn_instruction_boxed_as_custom_function_ref">
+    <brief>Get the instruction as a custom function.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed">CdnInstructionCustomFunctionRefBoxed</ref>.</doc>
+      <type name="CdnInstructionCustomFunctionRefBoxed" qualifier="*" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed" />
+    </return>
+    <argument id="cdn_instruction_boxed_as_custom_function_ref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_as_custom_operator" name="cdn_instruction_boxed_as_custom_operator">
+    <brief>Get the instruction as a custom function.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed">CdnInstructionCustomOperatorBoxed</ref>.</doc>
+      <type name="CdnInstructionCustomOperatorBoxed" qualifier="*" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed" />
+    </return>
+    <argument id="cdn_instruction_boxed_as_custom_operator::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_as_custom_operator_ref" name="cdn_instruction_boxed_as_custom_operator_ref">
+    <brief>Get the instruction as a custom function.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed">CdnInstructionCustomOperatorRefBoxed</ref>.</doc>
+      <type name="CdnInstructionCustomOperatorRefBoxed" qualifier="*" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed" />
+    </return>
+    <argument id="cdn_instruction_boxed_as_custom_operator_ref::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_as_variable" name="cdn_instruction_boxed_as_variable">
+    <brief>Get the instruction as a variable.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed">CdnInstructionVariableBoxed</ref>.</doc>
+      <type name="CdnInstructionVariableBoxed" qualifier="*" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+    </return>
+    <argument id="cdn_instruction_boxed_as_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_get_dependencies" name="cdn_instruction_boxed_get_dependencies">
+    <brief>Get the properties on which the instruction depends.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>. The list should be freed with g_slist_free when no longer used.</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_instruction_boxed_get_dependencies::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_get_location" name="cdn_instruction_boxed_get_location">
+    <brief>Get the location of this instruction in the corresponding string representatio</brief>
+    <doc>Get the location of this instruction in the corresponding string representation
+of the expression the instruction belongs to.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_boxed_get_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+    <argument id="cdn_instruction_boxed_get_location::start" name="start">
+      <doc>return value for the start.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+    <argument id="cdn_instruction_boxed_get_location::end" name="end">
+      <doc>return value for the end.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_get_stack_manipulation" name="cdn_instruction_boxed_get_stack_manipulation">
+    <brief>Get by how many values the instruction will modify the stack when executed</brief>
+    <doc>Get by how many values the instruction will modify the stack when executed.
+Note that this can be a negative value if the instruction consumes more
+values than it pushes. It can generally be assumed that every instruction
+always pushes one value on the stack (i.e. the number of values it pops
+is -stack_count + 1)
+
+</doc>
+    <return>
+      <doc>the number of values that the instruction will pop and push on the stack</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_boxed_get_stack_manipulation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+    <argument id="cdn_instruction_boxed_get_stack_manipulation::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_boxed_to_string" name="cdn_instruction_boxed_to_string">
+    <brief>Get some sort of string representation of the instruction</brief>
+    <doc>Get some sort of string representation of the instruction. Note that this
+is only useful for debugging since the string representation only shows
+what type of instruction this is.
+
+</doc>
+    <return>
+      <doc>a string representation of the instruction</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_boxed_to_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref>.</doc>
+      <type name="CdnInstructionBoxed" qualifier="*" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    </argument>
+  </function>
+</gobject:boxed>

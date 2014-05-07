@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionVariableBoxed" name="CdnInstructionVariableBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_instruction_variable_boxed_get_slice" name="cdn_instruction_variable_boxed_get_slice">
+    <brief>Get the slice, if any, of this variable.</brief>
+    <return>
+      <doc>the slice indices.</doc>
+      <type builtin="yes" name="guint" qualifier="*" />
+    </return>
+    <argument id="cdn_instruction_variable_boxed_get_slice::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed">CdnInstructionVariableBoxed</ref>.</doc>
+      <type name="CdnInstructionVariableBoxed" qualifier="*" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+    </argument>
+    <argument id="cdn_instruction_variable_boxed_get_slice::length" name="length">
+      <doc>the length of the returned slice array.</doc>
+      <type builtin="yes" name="guint" out="yes" qualifier="*" />
+    </argument>
+    <argument id="cdn_instruction_variable_boxed_get_slice::dim" name="dim">
+      <doc>the dimension of the slice.</doc>
+      <type name="CdnDimension" out="yes" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_variable_boxed_get_variable" name="cdn_instruction_variable_boxed_get_variable">
+    <brief>Description.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_instruction_variable_boxed_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed">CdnInstructionVariableBoxed</ref>.</doc>
+      <type name="CdnInstructionVariableBoxed" qualifier="*" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+    </argument>
+  </function>
+</gobject:boxed>

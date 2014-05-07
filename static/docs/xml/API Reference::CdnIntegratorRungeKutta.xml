@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegratorRungeKutta" name="CdnIntegratorRungeKutta" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Runge-Kutta order 4 integrator</brief>
+  <doc>Runge-Kutta order 4 integrator.
+
+The runge kutta integrator is a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref> subclass implementing a
+runge-kutta order 4 integration scheme. It is the most accurate integrator
+available, but also the slowest. For a good compromise between speed and
+accuracy see <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref>.</doc>
+  <base access="public">
+    <type name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <function id="cdn_integrator_runge_kutta_new" name="cdn_integrator_runge_kutta_new">
+    <brief>Create a new Runge-Kutta, 4th order integrator.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorRungeKutta#API Reference::CdnIntegratorRungeKutta">CdnIntegratorRungeKutta</ref></doc>
+      <type name="CdnIntegratorRungeKutta" qualifier="*" ref="API Reference::CdnIntegratorRungeKutta#API Reference::CdnIntegratorRungeKutta" transfer-ownership="full" />
+    </return>
+  </function>
+</gobject:class>

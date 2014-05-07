@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnModifiable" name="CdnModifiable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for keeping track of the modified state of an object</brief>
+  <doc>Interface for keeping track of the modified state of an object.
+
+This interface can be implemented when an object needs to keep track of
+whether or not it has been modified.</doc>
+  <gobject:property id="API Reference::CdnModifiable::modified" mode="construct" name="modified">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <function id="cdn_modifiable_get_modified" name="cdn_modifiable_get_modified">
+    <brief>Get the modified state.</brief>
+    <return>
+      <doc>`TRUE` if the object has been modified, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_modifiable_get_modified::self" name="self">
+      <doc>a <ref ref="API Reference::CdnModifiable#API Reference::CdnModifiable">CdnModifiable</ref>.</doc>
+      <type name="CdnModifiable" qualifier="*" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+    </argument>
+  </function>
+  <function id="cdn_modifiable_set_modified" name="cdn_modifiable_set_modified">
+    <brief>Set the modified state of the object.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_modifiable_set_modified::self" name="self">
+      <doc>a <ref ref="API Reference::CdnModifiable#API Reference::CdnModifiable">CdnModifiable</ref>.</doc>
+      <type name="CdnModifiable" qualifier="*" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+    </argument>
+    <argument id="cdn_modifiable_set_modified::modified" name="modified">
+      <doc>Modified state</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+</gobject:interface>

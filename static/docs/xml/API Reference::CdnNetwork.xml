@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnNetwork" name="CdnNetwork" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The main codyn network object</brief>
+  <doc>The main codyn network object.
+
+The <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork" /> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> subclass representing the top-level
+node in which all other nodes are defined. Variables defined on the network
+are therefore automatically available to all the nodes in your network and
+can be considered as global variables. Please see <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> for useful API
+for finding child nodes, and adding/removing nodes from the network.
+
+A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork" /> can be loaded from either an XML format or the newer Codyn
+language format. Please see <ref ref="API Reference::CdnNetwork#cdn_network_new_from_file">cdn_network_new_from_file</ref>,
+<ref ref="API Reference::CdnNetwork#cdn_network_new_from_path">cdn_network_new_from_path</ref>, <ref ref="API Reference::CdnNetwork#cdn_network_new_from_stream">cdn_network_new_from_stream</ref> and
+<ref ref="API Reference::CdnNetwork#cdn_network_new_from_string">cdn_network_new_from_string</ref> for more information.
+
+Networks are mainly composed of two types of objects, nodes and edges. A
+node (see <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>) is a container of variables which can be either state
+variables or normal variables. Edges (see <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref>) on the other hand
+represent connections between two nodes. Conceptually, they define the
+relationship between two nodes in terms of how variables in one node
+influence variables in another node. A typical example of the use of an
+edge is to implement coupling between two dynamical subsystems.
+
+To simulate a network, you can either use <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref>, which
+simulates the network for a given amount of time in one time.
+<ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref> blocks until the simulation is done. Alternatively, you
+can use <ref ref="API Reference::CdnNetwork#cdn_network_begin">cdn_network_begin</ref>, <ref ref="API Reference::CdnNetwork#cdn_network_step">cdn_network_step</ref> and <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref> to do
+the same without blocking. The simulation will use the integrater which can
+be set using <ref ref="API Reference::CdnNetwork#cdn_network_set_integrator">cdn_network_set_integrator</ref>.
+
+Templates in a network (useful when loading a network from a file) can be
+accessed through a special template node. This node only serves as a
+container for the templates and can be accessed from a network using
+<ref ref="API Reference::CdnNetwork#cdn_network_get_template_node">cdn_network_get_template_node</ref>.
+
+A network also governs the random number generator that is used to implement
+the `rand()` function. You can set the seed that is used for the random
+number generator with <ref ref="API Reference::CdnNetwork#cdn_network_set_random_seed">cdn_network_set_random_seed</ref>. The default random seed
+is read from `/dev/urandom` on UNIX like systems. On non-UNIX systems, or when
+reading from `/dev/urandom` fails, the initial seed is set to the current
+system time (milliseconds since epoch).</doc>
+  <base access="public">
+    <type name="CdnNode" ref="API Reference::CdnNode#API Reference::CdnNode" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnNetwork::file" mode="construct" name="file">
+    <brief>The file from which the network was read (may be `NULL`).</brief>
+    <type name="GFile" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnNetwork::filename" mode="readonly" name="filename">
+    <brief>The filename from which the network was read (may be `NULL`).</brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnNetwork::integrator" name="integrator">
+    <brief>The integrator used to simulate the network.</brief>
+    <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+  </gobject:property>
+  <function id="cdn_network_begin" name="cdn_network_begin">
+    <brief>Initialize the network to be integrated</brief>
+    <doc>Initialize the network to be integrated. Note that you do not need to
+use this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref> since it will call
+<ref ref="API Reference::CdnNetwork#cdn_network_begin" /> (and <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref>) for you.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the network is ready to be integrated, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_begin::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_begin::start" name="start">
+      <doc>the simulation start time</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_network_begin::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_end" name="cdn_network_end">
+    <brief>Finalize the network after integration</brief>
+    <doc>Finalize the network after integration. Note that you do not need to use
+this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref> since it will call
+<ref ref="API Reference::CdnNetwork#cdn_network_end" /> for you.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the network has been finalized successfully, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_end::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_end::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_file" name="cdn_network_get_file">
+    <brief>Get the file with which the network was loaded.</brief>
+    <return>
+      <doc>The file or `NULL` if the network was not loaded from file.</doc>
+      <type name="GFile" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_get_file::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_import" name="cdn_network_get_import">
+    <brief>Get a registered import which imports the given file.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref></doc>
+      <type name="CdnImportForward" qualifier="*" />
+    </return>
+    <argument id="cdn_network_get_import::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_get_import::file" name="file">
+      <doc>A &amp;lt;GFile&amp;gt;</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_import_from_path" name="cdn_network_get_import_from_path">
+    <brief>Get a registered import which imports the given path.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref></doc>
+      <type name="CdnImportForward" qualifier="*" />
+    </return>
+    <argument id="cdn_network_get_import_from_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_get_import_from_path::path" name="path">
+      <doc>A file path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_integrator" name="cdn_network_get_integrator">
+    <brief>Get the integrator currently associated with the network.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref></doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </return>
+    <argument id="cdn_network_get_integrator::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_parser_context" name="cdn_network_get_parser_context">
+    <brief>&amp;lt;network&amp;gt; the <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>
+    </brief>
+    <return>
+      <doc>the parser context.</doc>
+      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
+    </return>
+    <argument id="cdn_network_get_parser_context::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_path" name="cdn_network_get_path">
+    <brief>Get the path with which the network was loaded.</brief>
+    <return>
+      <doc>The path or `NULL` if the network was not loaded from file.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_get_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_random_seed" name="cdn_network_get_random_seed">
+    <brief>Get the random seed used to initialize the random number generator.</brief>
+    <return>
+      <doc>the seed.</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_network_get_random_seed::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_get_template_node" name="cdn_network_get_template_node">
+    <brief>Get the group containing the templates.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </return>
+    <argument id="cdn_network_get_template_node::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_link_library" name="cdn_network_link_library">
+    <brief>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>
+    </brief>
+    <doc>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.
+<ref ref="API Reference::CdnNetwork#cdn_network_link_library::path">path</ref> path to the dynamic library to link.
+<ref ref="API Reference::CdnNetwork#cdn_network_link_library::error">error</ref> a &amp;lt;GError&amp;gt;
+Link a dynamic library (.so, .dylib or .dll) at runtime. This method is
+mainly useful for internal use. It's used by the codyn format which has
+a link_library keyword to dynamically link a library when the network is
+loaded. The loaded library typically installs new math functions or defines
+a new type of integrator.
+
+When the library is loaded, a symbol with the name "cdn_linked_library_init"
+is resolved. If found, the symbol (interpreted as a function) is called with
+&amp;lt;network&amp;gt; as a parameter.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the library was linked successfully, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_link_library::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_link_library::path" name="path">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_link_library::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_load_from_file" name="cdn_network_load_from_file">
+    <brief>Load a network from a file</brief>
+    <return>
+      <doc>`TRUE` if the file could be loaded, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_load_from_file::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_load_from_file::file" name="file">
+      <doc>The file to load</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_load_from_file::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_load_from_path" name="cdn_network_load_from_path">
+    <brief>Load a network from a path into an existing network instance.</brief>
+    <return>
+      <doc>`TRUE` if the path could be loaded, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_load_from_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_load_from_path::path" name="path">
+      <doc>The filename of the file to load</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_load_from_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_load_from_stream" name="cdn_network_load_from_stream">
+    <brief>Load a network from a stream</brief>
+    <return>
+      <doc>`TRUE` if the stream could be loaded, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_load_from_stream::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_load_from_stream::stream" name="stream">
+      <doc>The stream to load</doc>
+      <type name="GInputStream" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_load_from_stream::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_load_from_string" name="cdn_network_load_from_string">
+    <brief>Load a network from text into an existing network instance.</brief>
+    <return>
+      <doc>`TRUE` if the text could be loaded, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_load_from_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_load_from_string::s" name="s">
+      <doc>The network to load</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_load_from_string::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_merge_from_file" name="cdn_network_merge_from_file">
+    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">file</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">file</ref> into &amp;lt;network&amp;gt;. This is
+similar to creating a network from a file and merging it with &amp;lt;network&amp;gt;.
+
+</doc>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_merge_from_file::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_merge_from_file::file" name="file">
+      <doc>network file</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_merge_from_file::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_merge_from_path" name="cdn_network_merge_from_path">
+    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">path</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">path</ref> into &amp;lt;network&amp;gt;. This is
+similar to creating a network from a file and merging it with &amp;lt;network&amp;gt;.
+
+</doc>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_merge_from_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_merge_from_path::path" name="path">
+      <doc>network path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_merge_from_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_merge_from_stream" name="cdn_network_merge_from_stream">
+    <brief>Merges the network defined in the stream <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_stream::stream">stream</ref> into &amp;lt;network&amp;gt;.</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_merge_from_stream::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_merge_from_stream::stream" name="stream">
+      <doc>network stream</doc>
+      <type name="GInputStream" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_merge_from_stream::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_merge_from_string" name="cdn_network_merge_from_string">
+    <brief>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">s</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">s</ref> into &amp;lt;network&amp;gt;. This is
+similar to creating a network from xml and merging it with &amp;lt;network&amp;gt;.
+
+</doc>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_merge_from_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_merge_from_string::s" name="s">
+      <doc>a string describing the network</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_merge_from_string::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_new" name="cdn_network_new">
+    <brief>Create a new empty CDN network</brief>
+    <return>
+      <doc>the newly created CDN network</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_network_new_from_file" name="cdn_network_new_from_file">
+    <brief>Create a new CDN network by reading the network definition from file</brief>
+    <return>
+      <doc>the newly created CDN network or `NULL` if there was an error reading the file</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_new_from_file::file" name="file">
+      <doc>the file containing the network definition</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_new_from_file::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_new_from_path" name="cdn_network_new_from_path">
+    <brief>Create a new CDN network by reading the network definition from a file path</brief>
+    <doc>Create a new CDN network by reading the network definition from a file path.
+See <ref ref="API Reference::CdnNetwork#cdn_network_new_from_file">cdn_network_new_from_file</ref> for more information.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_new_from_path::path" name="path">
+      <doc>The network file path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_new_from_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_new_from_stream" name="cdn_network_new_from_stream">
+    <brief>Create a new CDN network by reading the network definition from a stream</brief>
+    <return>
+      <doc>the newly created CDN network or `NULL` if there was an error reading the stream</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_new_from_stream::stream" name="stream">
+      <doc>the stream containing the network definition</doc>
+      <type name="GInputStream" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_new_from_stream::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_new_from_string" name="cdn_network_new_from_string">
+    <brief>Create a new CDN network from the network definition</brief>
+    <return>
+      <doc>the newly created CDN network or `NULL` if there was an error</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_new_from_string::s" name="s">
+      <doc>definition of the network</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_new_from_string::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_run" name="cdn_network_run">
+    <brief>Perform a period of simulation</brief>
+    <doc>Perform a period of simulation. The period is determined by from, timestep
+and to as described above.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the network has been successfully integrated, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_run::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_run::from" name="from">
+      <doc>the simulation start time</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_network_run::timestep" name="timestep">
+      <doc>the integration time step to simulate with</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_network_run::to" name="to">
+      <doc>the simulation end time</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_network_run::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_set_integrator" name="cdn_network_set_integrator">
+    <brief>Set the integrator used to integrate the network</brief>
+    <doc>Set the integrator used to integrate the network. Note that the network
+is automatically reset when the integrator is changed.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_network_set_integrator::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_set_integrator::integrator" name="integrator">
+      <doc>A <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref></doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+  <function id="cdn_network_set_random_seed" name="cdn_network_set_random_seed">
+    <brief>Set the random seed used to initialize the random number generator</brief>
+    <doc>Set the random seed used to initialize the random number generator. The
+network will be reset when calling this function which will reset the random
+number generator with the given seed.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_network_set_random_seed::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_set_random_seed::seed" name="seed">
+      <doc>the new seed.</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_network_simplify" name="cdn_network_simplify">
+    <brief>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>
+    </brief>
+    <doc>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.
+This function is an experimental feature which tries to symbolically
+simplify each expression in the network. This can potentially improve the
+simulation time. Note that at this time, this feature has not been tested
+well, and most likely will cause your network to behave incorrectly.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_network_simplify::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+  </function>
+  <function id="cdn_network_step" name="cdn_network_step">
+    <brief>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">timestep</ref>
+    </brief>
+    <doc>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">timestep</ref>. Note that you
+have to call <ref ref="API Reference::CdnNetwork#cdn_network_begin">cdn_network_begin</ref> before doing the first step, and you should
+call <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref> after the last step.
+
+</doc>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_network_step::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_step::timestep" name="timestep">
+      <doc>the integration timestep</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+</gobject:class>

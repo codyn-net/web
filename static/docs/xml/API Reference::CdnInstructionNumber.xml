@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionNumber" name="CdnInstructionNumber" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_NUMBER`</brief>
+  <base access="public">
+    <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+  </base>
+  <function id="cdn_instruction_number_get_representation" name="cdn_instruction_number_get_representation">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_number_get_representation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_number_get_value" name="cdn_instruction_number_get_value">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_instruction_number_get_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_number_new" name="cdn_instruction_number_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_number_new::value" name="value">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_number_new_from_string" name="cdn_instruction_number_new_from_string">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_number_new_from_string::repr" name="repr">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_number_set_representation" name="cdn_instruction_number_set_representation">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_number_set_representation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
+    </argument>
+    <argument id="cdn_instruction_number_set_representation::repr" name="repr">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_number_set_value" name="cdn_instruction_number_set_value">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_number_set_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
+    </argument>
+    <argument id="cdn_instruction_number_set_value::value" name="value">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+</gobject:class>

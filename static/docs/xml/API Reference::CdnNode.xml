@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnNode" name="CdnNode" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Base node class</brief>
+  <doc>Base node class.
+
+The <ref ref="API Reference::CdnNode#API Reference::CdnNode" /> class is the basic variable container class in a network. It
+derives from <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> (as all network objects do). Please see <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>
+for useful API about getting, setting and finding variables, as those functions
+are defined for all <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.
+
+Apart from variables, a node may contain other nodes which can be used to
+compose reusable subsystems. Such child nodes can be added using
+<ref ref="API Reference::CdnNode#cdn_node_add">cdn_node_add</ref> and removed using <ref ref="API Reference::CdnNode#cdn_node_remove">cdn_node_remove</ref>. To find child nodes,
+use <ref ref="API Reference::CdnNode#cdn_node_find_object">cdn_node_find_object</ref> or <ref ref="API Reference::CdnNode#cdn_node_find_objects">cdn_node_find_objects</ref> (these use selectors), or
+<ref ref="API Reference::CdnNode#cdn_node_get_child">cdn_node_get_child</ref> to simply get a child by its identifier.
+
+It's often convenient to expose a set of variables from child nodes. Child
+nodes can not be directly accessed external to the node. To allow access to
+child node variables, each node can configure such a variable interface using
+its <ref ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface">CdnVariableInterface</ref> instance (see <ref ref="API Reference::CdnNode#cdn_node_get_variable_interface">cdn_node_get_variable_interface</ref>).
+The variable interface basically allows you to map a virtual node variable
+to a child node variable.
+
+Each node has a so-called self edge (see <ref ref="API Reference::CdnNode#cdn_node_get_self_edge">cdn_node_get_self_edge</ref>). The self
+edge is used to define the equations on variables in the node which only
+use variables from the node itself. Although its functionally equivalent
+(and certainly allowed) to define an external edge which simply goes from the
+node to itself, it's often much more convenient to use the self edge. For
+example, the prime shorthand notation in the codyn format (x' = "(1 - x)")
+defines the given differential equation in the self edge of the containing
+node.
+
+## CdnNode Copy Semantics
+When a node is copied with &amp;lt;cdn\_object\_copy&amp;gt;, all the children are
+recursively copied as well.
+</doc>
+  <base access="public">
+    <type name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnNode::initial-state" name="initial-state">
+    <brief>The initial node state.</brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnNode::state" name="state">
+    <brief>The current node state</brief>
+    <doc>The current node state. Do not write to this property while the
+network is running (use &amp;lt;cdn\_integrator\_state\_set\_state&amp;gt; instead).</doc>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <function id="cdn_node_add" name="cdn_node_add">
+    <brief>Add a child object to the node.</brief>
+    <return>
+      <doc>`TRUE` if the child could be successfully added, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_node_add::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_add::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_node_add::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_node_find_object" name="cdn_node_find_object">
+    <brief>Find object by specifying a selector</brief>
+    <doc>Find object by specifying a selector. For example, if there is
+another node "g" containing a node "s", you can use
+<ref ref="API Reference::CdnNode#cdn_node_find_object" /> (node, "g.s") to get the object.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_node_find_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_find_object::selector" name="selector">
+      <doc>The selector</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_find_objects" name="cdn_node_find_objects">
+    <brief>Find objects by specifying a selector</brief>
+    <doc>Find objects by specifying a selector. For example, if there is
+another node "g" containing a state "s", you can use
+<ref ref="API Reference::CdnNode#cdn_node_find_object">cdn_node_find_object</ref> (node, "g.s") to get the object.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_node_find_objects::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_find_objects::selector" name="selector">
+      <doc>The selector</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_find_variable" name="cdn_node_find_variable">
+    <brief>Find a variable by specifying a selector</brief>
+    <doc>Find a variable by specifying a selector. For example, if there is
+another node "g" containing a node "s" with a variable "x", you can use
+<ref ref="API Reference::CdnNode#cdn_node_find_variable" /> (node, "g.s.x") to get the variable.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_node_find_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_find_variable::selector" name="selector">
+      <doc>The selector</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_find_variables" name="cdn_node_find_variables">
+    <brief>Find variables by specifying a selector</brief>
+    <doc>Find variables by specifying a selector. For example, if there is
+another node "g" containing a node "s" with variable "x", you can use
+<ref ref="API Reference::CdnNode#cdn_node_find_variables" /> (node, "g.s.x") to remove the variable.
+
+</doc>
+    <return>
+      <doc>A list of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_node_find_variables::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_find_variables::selector" name="selector">
+      <doc>The selector</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_foreach" name="cdn_node_foreach">
+    <brief>Call <ref ref="API Reference::CdnNode#cdn_node_foreach::func">func</ref> for each child object in the node.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_node_foreach::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_foreach::func" name="func">
+      <doc>A &amp;lt;GFunc&amp;gt;</doc>
+      <type name="GFunc" />
+    </argument>
+    <argument id="cdn_node_foreach::data" name="data">
+      <doc>User data</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_actors" name="cdn_node_get_actors">
+    <brief>Get the variables which are acted upon by edges.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_node_get_actors::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_auto_templates_for_child" name="cdn_node_get_auto_templates_for_child">
+    <brief>Get the templates that were automatically applied from the node to th</brief>
+    <doc>Get the templates that were automatically applied from the node to the
+child.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_node_get_auto_templates_for_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_get_auto_templates_for_child::child" name="child">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_child" name="cdn_node_get_child">
+    <brief>Get a child from the node by name.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_node_get_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_get_child::name" name="name">
+      <doc>The child name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_children" name="cdn_node_get_children">
+    <brief>Get a list of the children in &amp;lt;node&amp;gt;.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_node_get_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_edges" name="cdn_node_get_edges">
+    <brief>Get a list of edges that act on this object.</brief>
+    <return>
+      <doc>A list of <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_node_get_edges::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_initial_state" name="cdn_node_get_initial_state">
+    <brief>Get the initial state of the node.</brief>
+    <return>
+      <doc>the initial state.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_node_get_initial_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_self_edge" name="cdn_node_get_self_edge">
+    <brief>Get the self edge of this node</brief>
+    <doc>Get the self edge of this node. Note that the self edge will be automatically
+created if it does not exist yet. When this is undesired, use
+<ref ref="API Reference::CdnNode#cdn_node_has_self_edge">cdn_node_has_self_edge</ref> first.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref></doc>
+      <type name="CdnEdge" qualifier="*" ref="API Reference::CdnEdge#API Reference::CdnEdge" />
+    </return>
+    <argument id="cdn_node_get_self_edge::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_state" name="cdn_node_get_state">
+    <brief>Get the current state of the node.</brief>
+    <return>
+      <doc>the current state.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_node_get_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_get_variable_interface" name="cdn_node_get_variable_interface">
+    <brief>Get the property interface of the node.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface">CdnVariableInterface</ref></doc>
+      <type name="CdnVariableInterface" qualifier="*" ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface" />
+    </return>
+    <argument id="cdn_node_get_variable_interface::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_has_self_edge" name="cdn_node_has_self_edge">
+    <brief>Get whether the node currently has a self edge</brief>
+    <doc>Get whether the node currently has a self edge. The node self edge is only
+created when needed (this happens automatically when using
+<ref ref="API Reference::CdnNode#cdn_node_get_self_edge">cdn_node_get_self_edge</ref>, which therefore cannot be used to check for the
+existence of the self edge).
+
+</doc>
+    <return>
+      <doc>`TRUE` if the node has a self edge, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_node_has_self_edge::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_node_new" name="cdn_node_new">
+    <brief>Create a new node.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_node_new::id" name="id">
+      <doc>the node id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_remove" name="cdn_node_remove">
+    <brief>Remove a child object from the node.</brief>
+    <return>
+      <doc>`TRUE` if the child was successfully removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_node_remove::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_remove::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_node_remove::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_node_set_initial_state" name="cdn_node_set_initial_state">
+    <brief>Set the initial state of the node.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_node_set_initial_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_set_initial_state::state" name="state">
+      <doc>the initial state.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_set_state" name="cdn_node_set_state">
+    <brief>Set the current state of the node</brief>
+    <doc>Set the current state of the node. Note that you should not try to call this
+yourself when the network is running since it will not have the desired
+effect (it's used internally to keep track of the state of the node). To
+programatically change the state of a node while the network is running, use
+&amp;lt;cdn\_integrator\_state\_set\_state&amp;gt;.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_node_set_state::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_set_state::state" name="state">
+      <doc>the new state.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_node_verify_remove_child" name="cdn_node_verify_remove_child">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_node_verify_remove_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>.</doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_node_verify_remove_child::child" name="child">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+    <argument id="cdn_node_verify_remove_child::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+</gobject:class>

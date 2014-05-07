@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Bindings::.NET" name=".NET" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Using codyn with .NET.</brief>
+</category>

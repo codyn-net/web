@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIo" name="CdnIo" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <gobject:property id="API Reference::CdnIo::mode" mode="construct" name="mode">
+    <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
+  </gobject:property>
+  <function id="cdn_io_finalize" name="cdn_io_finalize">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_io_finalize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_finalize::cancellable" name="cancellable">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GCancellable" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_finalize::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_io_finalize_async" name="cdn_io_finalize_async">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_io_finalize_async::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_finalize_async::cancellable" name="cancellable">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GCancellable" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_finalize_async::callback" name="callback">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GAsyncReadyCallback" />
+    </argument>
+    <argument id="cdn_io_finalize_async::user_data" name="user_data">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_io_finalize_finish" name="cdn_io_finalize_finish">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_io_finalize_finish::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_finalize_finish::result" name="result">
+      <doc>*documentation missing...*</doc>
+      <type name="GAsyncResult" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_finalize_finish::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_io_get_mode" name="cdn_io_get_mode">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
+    </return>
+    <argument id="cdn_io_get_mode::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+  </function>
+  <function id="cdn_io_initialize" name="cdn_io_initialize">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_io_initialize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_initialize::cancellable" name="cancellable">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GCancellable" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_initialize::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_io_initialize_async" name="cdn_io_initialize_async">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_io_initialize_async::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_initialize_async::cancellable" name="cancellable">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GCancellable" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_initialize_async::callback" name="callback">
+      <doc>*documentation missing...*</doc>
+      <type allow-none="yes" name="GAsyncReadyCallback" />
+    </argument>
+    <argument id="cdn_io_initialize_async::user_data" name="user_data">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_io_initialize_finish" name="cdn_io_initialize_finish">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_io_initialize_finish::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_initialize_finish::result" name="result">
+      <doc>*documentation missing...*</doc>
+      <type name="GAsyncResult" qualifier="*" />
+    </argument>
+    <argument id="cdn_io_initialize_finish::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_io_update" name="cdn_io_update">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_io_update::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.</doc>
+      <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    </argument>
+    <argument id="cdn_io_update::integrator" name="integrator">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+    </argument>
+  </function>
+</gobject:interface>
