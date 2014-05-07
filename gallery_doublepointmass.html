@@ -1,0 +1,13 @@
+<% template('templates/gallery.html',
+    :model => 'doublepointmass',
+    :title => 'Double accelerating point mass',
+    :plotted => true,
+    :series => [
+    	{:i => 0, :label => 'n1.y'},
+    	{:i => 1, :label => 'n2.y'}
+    ]) do %>
+
+Example of a two accelerating point masses in codyn. This model shows how
+multiple nodes can be used to implement different *entities*.
+
+<% end %>

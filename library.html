@@ -1,3 +1,23 @@
 <%= template 'templates/header.html', :title => 'Library' %>
 
+<% markdown do %>
+
+The core of codyn exists of a library, libcodyn, which is responsible for parsing and
+evaluating networks. Using GObject, the library is implemented in C, maintaining
+an object oriented design while at the same time allowing for easy bindings into other
+programming languages using gobject introspection.
+
+libcodyn consists of two main parts. The first is the parser, which parses the codyn language
+and creates a network object accordingly. The parser itself makes use of the public API available
+in libcodyn so that without loss of generality, networks can be easily manipulated in the same
+manner as the parser does. Therefore, networks can not only be parsed from file, but can also
+be entirely constructed dynamically/programmatically.
+
+The second main purpose of libcodyn is to not only construct a network, but also to evaluate it. Internally,
+libcodyn parses all mathematical expressions into a special purpose byte code representation. A simple,
+stack based, Virtual Machine in libcodyn then evaluates these byte code instructions and allows for
+computation of mathematical expressions.
+
+<% end %>
+
 <%= template 'templates/footer.html' %>

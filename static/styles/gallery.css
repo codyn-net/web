@@ -1,0 +1,64 @@
+table.gallery {
+	width: 915px;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+table.gallery td {
+	padding: 5px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+table.gallery img {
+	border: 1px solid #999;
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px 1px #aaa;
+}
+
+table.gallery td.header {
+	font-size: 1.2em;
+	color: #999;
+	padding-top: 60px;
+}
+
+div.media {
+	float: right;
+	text-align: center;
+}
+
+div.media video {
+	border: 1px solid #999;
+	border-radius: 10px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+ul.download {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+ul.download li {
+	float: left;
+	padding-left: 5px;
+}
+
+div.description {
+	margin: 30px;
+	text-align: left;
+	width: 420px;
+}
+
+table.CodeRay {
+	width: 513px;
+}
+
+div.plot-container, div.plot {
+	width: 480px;
+	height: 270px;
+}

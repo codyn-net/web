@@ -1,0 +1,23 @@
+<% template('templates/gallery.html',
+    :model => 'pogopointmass',
+    :title => 'Pogo point masses',
+    :plotted => true,
+    :duration => 10,
+    :series => [
+    	{:i => 0, :label => 'p1.y'},
+    	{:i => 1, :label => 'p2.y'},
+    	{:i => 2, :label => 'p3.y'}
+    ]) do %>
+
+<% markdown do %>
+This example shows how to use templates and the event system in codyn to implement
+simple hybrid dynamical systems. In this case, a template is defined named `"pogopoint"`,
+which defines the dynamics of a bouncing point mass. In the air, the point mass is
+subject only to gravity, while on the ground it acts as if compressing a spring.
+
+Events are used to determine when to transition between air and ground states. Differential
+equations can be specified to only be active in a certain state, as shown on
+[line 31](#n31).
+<% end %>
+
+<% end %>

@@ -1,0 +1,14 @@
+# Initial position of the point mass
+y = 10
+
+# Gravity
+g = 9.81
+
+# Mass
+m = 0.6
+
+# External force
+f = 0
+
+# Acceleration
+y'' = "-g + f / m"

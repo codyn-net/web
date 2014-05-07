@@ -1,0 +1,19 @@
+GALLERY_PLOT_NAMES =	\
+	pointmass			\
+	doublepointmass		\
+	coupledpointmass	\
+	multicoupling		\
+	pogopointmass		\
+	hopf				\
+	morphedosc
+
+GALLERY_PLOTS = $(foreach i,$(GALLERY_PLOT_NAMES),static/images/gallery/$(i).png)
+GALLERY_DATA = $(foreach i,$(GALLERY_PLOT_NAMES),gallery/$(i).txt)
+
+deps: $(GALLERY_PLOTS) $(GALLERY_DATA)
+
+static/images/gallery/%.png: gallery/%.txt gallery/template.tex
+	@echo "[GEN] $@"; \
+	gallery/snap.rb gallery/template.tex $< > $@.tex; \
+	(cd $(dir $@) && TEXINPUTS="$$HOME/texmf:.:../../../gallery:" pdflatex --interaction=nonstopmode --halt-on-error --shell-escape $(notdir $@).tex >/dev/null && rm -f $(notdir $@).{aux,log,tex}) && \
+	convert -density 88 -quality 100 $@.pdf $@ 2>/dev/null && rm -f $@.pdf

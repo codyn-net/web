@@ -1,0 +1,116 @@
+<%=
+
+opts = {
+	:styles => ['gallery']
+}
+
+if var(:plotted, false)
+	opts[:scripts] = [
+		'jquery.flot.min',
+		'jquery.flot.animator',
+		'jquery.flot.selection.min',
+		'jquery.flot.downsample']
+end
+
+template 'templates/header.html', opts %>
+
+<p>
+	<a href="gallery.html">⇠ Back to the gallery</a>
+</p>
+
+<div class="media">
+
+<% unless var(:plotted, false) %>
+<video width="480" height="270" controls autoplay loop>
+	<source src="movies/<%= var(:video, var(:model) + 'anim_4.mp4') %>" type="video/mp4">
+</video>
+<div>
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_4.mp4') %>">small</a>)
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_2.mp4') %>">normal</a>)
+	(<a href="movies/<%= var(:video, var(:model) + 'anim_1.mp4') %>">large</a>)
+</div>
+<% else %>
+<div class="plot-container">
+<div class="plot">
+</div>
+</div>
+
+<% simulation_data var(:model, '') + '.txt', 'simdata' %>
+
+<script type="text/javascript">
+var colors_html = [
+    "#268BD2",
+    "#859900",
+    "#DC322F",
+    "#2AA198",
+    "#D33682",
+    "#B58900",
+    "#6C71C4",
+    "#CB4B16"
+];
+
+var series = [];
+var i = 0;
+
+<% var(:series, []).each do |serie| %>
+	var d = [];
+
+	for (var j = 0; j < simdata.length; j++) {
+		d.push([simdata[j][0], simdata[j][<%= serie[:i] + 1 %>]]);
+	}
+
+	series.push({
+		data: d,
+		color: colors_html[i % colors_html.length],
+		downsample: {
+			threshold: 300
+		},
+		label: '<%= serie[:label] %>',
+		animator: {
+			start: 500,
+			duration: <%= var(:duration, 5) * 1000 %>,
+			direction: 'right'
+		}
+	});
+
+	i++;
+<% end %>
+
+var options = {
+	grid: {
+		hoverable: true
+	},
+
+	selection: {
+		mode: 'xy'
+	},
+
+	legend: {
+		show: false,
+	}
+};
+
+var plot = $.plotAnimator('.plot', series, options);
+</script>
+
+<% end %>
+<div class="description">
+<h2><%= var(:title) %></h2>
+<p>
+    <%= var(:contents) %>
+</p>
+<div class="download">
+	<a href="models/<%= var(:model) %>.cdn">⌦ Download model</a>
+</div>
+</div>
+</div>
+
+<% markdown do %>
+
+~~~~ codyn
+<%= input("static/models/#{var(:model)}.cdn") %>
+~~~~
+
+<% end %>
+
+<%= template 'templates/footer.html' %>

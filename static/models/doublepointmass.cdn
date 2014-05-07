@@ -1,0 +1,32 @@
+# Global gravity, accessible from child nodes
+g = 9.81
+
+# Define a single node named n1
+node "n1" {
+    # Position of the point mass
+    y = 20
+
+    # Mass
+    m = 0.6
+
+    # External force, air friction
+    f = "-dy"
+
+    # Acceleration
+    y'' = "-g + f / m"
+}
+
+# Define a single node named n2
+node "n2" {
+    # Position of the point mass
+    y = 8
+
+    # Mass
+    m = 0.4
+
+    # External force, air friction
+    f = "-dy"
+
+    # Acceleration
+    y'' = "-g + f / m"
+}

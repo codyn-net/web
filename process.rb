@@ -6,6 +6,8 @@ require 'fileutils'
 require 'rubygems'
 require 'kramdown'
 require 'coderay'
+require 'cgi'
+require 'json'
 
 module CodeRay
 module Scanners
@@ -54,6 +56,7 @@ module Scanners
             'set',
             'settings',
             'terminate',
+            'templates',
             'to',
             'unapply',
             'when',
@@ -96,7 +99,6 @@ module Scanners
             'self',
             'siblings',
             'subset',
-            'templates',
             'templates-root',
             'type',
             'unique',
@@ -183,12 +185,46 @@ class Context
         Context.new(@vars.merge(vars))
     end
 
-    def template(filename, vars = {})
+    def template(filename, vars = {}, &block)
         templ = ERB.new(File.read(filename), nil, nil, '@_erout')
+
+        if block_given?
+            before = @_erout.length
+
+            ret = yield
+
+            after = @_erout.length
+
+            vars[:contents] = @_erout[before..after]
+            @_erout[before..after] = ''
+
+            return @engine.context(vars) do |ctx|
+                @_erout += templ.result(ctx.context)
+            end
+        end
 
         return @engine.context(vars) do |ctx|
             templ.result(ctx.context)
         end
+    end
+
+    def image(filename, caption)
+        caption = CGI.escapeHTML(caption)
+
+        @_erout += "<div class='image-container'>\n"
+        @_erout += "<div class='image'>\n"
+        @_erout += "<img src='images/#{CGI.escapeHTML(filename)}' alt='#{caption}'>\n"
+        @_erout += "<div class='caption'>#{caption}</div>\n"
+        @_erout += "</div>\n"
+        @_erout += "</div>\n"
+    end
+
+    def simulation_data(filename, varname)
+        data = File.read('gallery/' + filename).split("\n").map { |x| x.split(" ").map { |d| d.to_f } }
+
+        @_erout += "<script type='text/javascript'>\n"
+        @_erout += "  var #{varname} = " + data.to_json + ";\n"
+        @_erout += "</script>\n"
     end
 
     def markdown
@@ -206,6 +242,10 @@ class Context
         }
 
         @_erout[before..after] = Kramdown::Document.new(@_erout[before..after], opts).to_html
+    end
+
+    def input(filename)
+        File.read(filename)
     end
 end
 
