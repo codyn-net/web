@@ -16,10 +16,14 @@ table.gallery img {
 	box-shadow: 0px 0px 15px 1px #aaa;
 }
 
-table.gallery td.header {
+table.gallery tr.header td {
 	font-size: 1.2em;
 	color: #999;
 	padding-top: 60px;
+}
+
+table.gallery tr.header:first-of-type td {
+	padding-top: 0px;
 }
 
 div.media {
@@ -55,7 +59,7 @@ div.description {
 }
 
 table.CodeRay {
-	width: 513px;
+	width: 500px;
 }
 
 div.plot-container, div.plot {

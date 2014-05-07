@@ -22,17 +22,20 @@ node "system" : physics.system {
     }
 
     node "p{2:3}" {
-        q = ["0.5 * pi + @offset", "0.5 * pi - @offset"]
+        q = ["0.5 * pi + @offset",
+             "0.5 * pi - @offset"]
     }
 
-    edge from "p{1:3}" to "p$(@1 + 1)" : physics.joint {}
+    edge from "p{1:3}"
+           to "p$(@1 + 1)" : physics.joint {}
 
     # Create a closing joint node
     node "pcl" : physics.cjoints.revoluteY {
         tr = "[0; 0; -1]"
     }
 
-    # Connect the last body (p3) to the closing loop joint
+    # Connect the last body (p3) to the closing
+    # loop joint
     edge from "p3" to "pcl" : physics.cjoint {}
 
     include "physics/model.cdn"
