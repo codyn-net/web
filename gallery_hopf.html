@@ -1,0 +1,26 @@
+<% template('templates/gallery.html',
+    :model => 'hopf',
+    :title => 'Coupled hopf oscillators',
+    :plotted => true,
+    :duration => 10,
+    :series => [
+    	{:i => 0, :label => 'h1.x'},
+    	{:i => 1, :label => 'h2.x'},
+    	{:i => 2, :label => 'h3.x'},
+    	{:i => 3, :label => 'h4.x'},
+    	{:i => 4, :label => 'h5.x'}
+    ]) do %>
+
+<% markdown do %>
+
+Implementation of a Hopf oscillator template in codyn. The Hopf oscillator
+is represented in polar coordinates. After having defined the template,
+5 oscillators are created with randomized initial conditions. Bidirectional
+coupling between subsequent oscillators (i.e. coupled in a chain) is defined
+such that the oscillators converge to exactly one single traveling wave
+across all oscillators. [Line 40](#n40) shows how to use embedded calculations
+which are evaluated at parse time.
+
+<% end %>
+
+<% end %>

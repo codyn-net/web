@@ -1,0 +1,22 @@
+pointmass_VARS = y
+doublepointmass_VARS = /n[12]/.y
+coupledpointmass_VARS = /n[12]/.y
+multicoupling_VARS = /n[12345][rl]/.y
+
+pogopointmass_VARS = /p[123]/.y
+pogopointmass_DURATION = 10
+
+hopf_VARS = /h[12345]/.x
+hopf_DURATION = 10
+
+morphedosc_VARS = /m[12]/.r
+morphedosc_DURATION = 8
+
+gallery/%.txt: static/models/%.cdn
+	@echo "[GEN] $@"; \
+	vars="$($(subst .txt,,$(notdir $@))_VARS)"; \
+	duration="$($(subst .txt,,$(notdir $@))_DURATION)"; \
+	if [ -z $$duration ]; then \
+		duration=5; \
+	fi; \
+	cdn-monitor -t 0:0.01:$$duration -m $$vars  $^ > $@ || rm -f $@

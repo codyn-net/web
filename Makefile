@@ -1,7 +1,12 @@
 OUTDIR=generated
 SYNCDIR=$(HOME)/public_html/codyn
 
-process.timestamp: *.html templates/*.html static/* static/styles/* static/javascript/* Makefile process.rb
+all: process.timestamp
+
+include Makefile.models
+include Makefile.gallery
+
+process.timestamp: *.html templates/*.html static/* static/styles/* static/javascript/* Makefile process.rb deps
 	@mkdir -p $(OUTDIR); \
 	ruby process.rb *.html -s static/ -f -o $(OUTDIR) || exit 1; \
 	if [ ! -z "$(SYNCDIR)" ]; then \
@@ -10,4 +15,4 @@ process.timestamp: *.html templates/*.html static/* static/styles/* static/javas
 	fi; \
 	touch process.timestamp;
 
-all: process.timestamp
+.PHONY: deps

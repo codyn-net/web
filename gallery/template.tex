@@ -1,0 +1,55 @@
+\documentclass[preview]{standalone}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{external}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usepackage{tangocolors}
+
+\PreviewEnvironment{tikzpicture}
+%\setlength\PreviewBorder{5pt}
+
+\pgfplotscreateplotcyclelist{tango}{
+        {color=ta2skyblue},
+        {color=ta2chameleon},
+        {color=ta2scarletred},
+        {color=ta2butter},
+        {color=ta2plum},
+        {color=ta2orange},
+        {color=ta2chocolate},
+        {color=ta2gray},
+        {color=ta3skyblue},
+        {color=ta3chameleon},
+        {color=ta3scarletred},
+        {color=ta3butter},
+        {color=ta3plum},
+        {color=ta3orange},
+        {color=ta3chocolate},
+        {color=ta3gray},
+        {color=taskyblue},
+        {color=tachameleon},
+        {color=tascarletred},
+        {color=tabutter},
+        {color=taplum},
+        {color=taorange},
+        {color=tachocolate},
+        {color=tagray}
+}
+
+\pgfplotsset{every axis/.append style={cycle list name=tango,axis lines=none}}
+\pgfplotsset{every axis plot/.append style={ultra thick}}
+\pgfplotsset{ticks=none}
+
+\usetikzlibrary{positioning,shapes,calc,arrows}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=240pt,
+        height=155pt
+    ]
+
+    {{PLOTS}}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,26 @@
+<% template('templates/gallery.html',
+    :model => 'multicoupling',
+    :title => 'Multi coupling point masses',
+    :plotted => true,
+    :series => [
+    	{:i => 0, :label => 'n1r.y'},
+    	{:i => 1, :label => 'n2r.y'},
+    	{:i => 2, :label => 'n3r.y'},
+    	{:i => 3, :label => 'n4r.y'},
+    	{:i => 4, :label => 'n5r.y'},
+    	{:i => 5, :label => 'n1l.y'},
+    	{:i => 6, :label => 'n2l.y'},
+    	{:i => 7, :label => 'n3l.y'},
+    	{:i => 8, :label => 'n4l.y'},
+    	{:i => 9, :label => 'n5l.y'},
+    ]) do %>
+
+<% markdown do %>
+Example of generating complex coupling between many nodes. In this example, many
+nodes are constructed in parallel using name generators ([#n3](#n3), [#n22](#n22)).
+Using the same generator syntax, edges can be quickly created between many nodes, in this
+case bidirectional coupling (spring) between the left and right nodes ([#n33](#n33)).
+
+<% end %>
+
+<% end %>

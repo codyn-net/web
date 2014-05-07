@@ -1,0 +1,30 @@
+include "../cdnplots/multipendulum.cdn"
+include "general.cdn"
+
+node "system" {
+    parse "fixed.cdn" {
+        nbars = 19
+        height = 0.02
+        barwidth = 0.01
+        barheight = 0.1
+    }
+
+    node "camera" {
+        orthographicScale = 10
+        translation = "[0; -5; -2.4]"
+    }
+
+    node "p{1:5}" {
+        parse "joint.cdn" {
+            color  = "tacolormap[@@1[!], :]"
+            color2 = "tacolormap[$(@@1[!] + 14), :]"
+            radius = 0.1
+        }
+
+        node "b2" : physics.rendering.box {
+            size      = "[0.04; 0.001; 0.5]"
+            transform = "Transform.Translation([0; 0; -0.5])"
+            color     = "@taaluminium"
+        }
+    }
+}

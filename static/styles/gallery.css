@@ -7,6 +7,7 @@ table.gallery {
 table.gallery td {
 	padding: 5px;
 	text-align: center;
+	padding-bottom: 30px;
 }
 
 table.gallery img {
@@ -15,12 +16,18 @@ table.gallery img {
 	box-shadow: 0px 0px 15px 1px #aaa;
 }
 
-div.video {
+table.gallery td.header {
+	font-size: 1.2em;
+	color: #999;
+	padding-top: 60px;
+}
+
+div.media {
 	float: right;
 	text-align: center;
 }
 
-div.video video {
+div.media video {
 	border: 1px solid #999;
 	border-radius: 10px;
 }
@@ -49,4 +56,9 @@ div.description {
 
 table.CodeRay {
 	width: 513px;
+}
+
+div.plot-container, div.plot {
+	width: 480px;
+	height: 270px;
 }

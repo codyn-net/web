@@ -7,6 +7,7 @@ require 'rubygems'
 require 'kramdown'
 require 'coderay'
 require 'cgi'
+require 'json'
 
 module CodeRay
 module Scanners
@@ -55,6 +56,7 @@ module Scanners
             'set',
             'settings',
             'terminate',
+            'templates',
             'to',
             'unapply',
             'when',
@@ -97,7 +99,6 @@ module Scanners
             'self',
             'siblings',
             'subset',
-            'templates',
             'templates-root',
             'type',
             'unique',
@@ -210,7 +211,20 @@ class Context
     def image(filename, caption)
         caption = CGI.escapeHTML(caption)
 
-        @_erout += '<div class="image-container"><div class="image"><img src="images/' + CGI.escapeHTML(filename) + '" alt="' + caption + '"><div class="caption">' + caption + '</div></div></div>'
+        @_erout += "<div class='image-container'>\n"
+        @_erout += "<div class='image'>\n"
+        @_erout += "<img src='images/#{CGI.escapeHTML(filename)}' alt='#{caption}'>\n"
+        @_erout += "<div class='caption'>#{caption}</div>\n"
+        @_erout += "</div>\n"
+        @_erout += "</div>\n"
+    end
+
+    def simulation_data(filename, varname)
+        data = File.read('gallery/' + filename).split("\n").map { |x| x.split(" ").map { |d| d.to_f } }
+
+        @_erout += "<script type='text/javascript'>\n"
+        @_erout += "  var #{varname} = " + data.to_json + ";\n"
+        @_erout += "</script>\n"
     end
 
     def markdown
