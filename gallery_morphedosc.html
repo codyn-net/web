@@ -10,6 +10,14 @@
 
 <% markdown do %>
 
+Example of the implementation of a phase based Morphed oscillator. Here we see how
+to define a template (`morphed`) which uses the automatic derivation features of
+codyn to obtain the derivative ([line 12](#n12)) of a user defined function `f`
+([line 9](#n9)).
+
+Having defined the template, two oscillators are instantiated from it each defining
+their own shaping function `f` (line [23](#n23) and [31](#n31)). The two oscillators
+are then phase coupled to bring them into phase.
 
 <% end %>
 
