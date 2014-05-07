@@ -5,6 +5,11 @@ String.prototype.endsWith = function(suffix) {
 function select_header()
 {
 	var pname = document.location.pathname;
+	var m = pname.match(/([^_]*)_.*[.]html/);
+
+	if (m) {
+		pname = m[1] + '.html';
+	}
 
 	$('#menubar a').each(function (i, a) {
 		a = $(a);
