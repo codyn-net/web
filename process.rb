@@ -8,6 +8,7 @@ require 'kramdown'
 require 'coderay'
 require 'cgi'
 require 'json'
+require 'net/http'
 
 module CodeRay
 module Scanners
@@ -244,8 +245,32 @@ class Context
         @_erout[before..after] = Kramdown::Document.new(@_erout[before..after], opts).to_html
     end
 
-    def input(filename)
-        File.read(filename)
+    def input(filename, opts = {})
+        ret = File.read(filename)
+
+        if opts[:strip]
+            ret.strip!
+        end
+
+        return ret
+    end
+
+    def input_model(filename)
+        ret = input(filename, {:strip => true})
+        play = playground_put(ret)
+
+        markdown do
+            @_erout += "~~~~ codyn\n#{ret}\n~~~~\n"
+            @_erout += "[⌦ Open in playground](http://play.codyn.net/d/#{play})"
+        end
+    end
+
+    def playground_put(txt)
+        http = Net::HTTP.new('play.codyn.net', 80)
+        response = http.send_request('PUT', '/d/', URI.encode_www_form('document' => txt))
+
+        ret = JSON.parse(response.body)
+        return ret['hash']
     end
 end
 
