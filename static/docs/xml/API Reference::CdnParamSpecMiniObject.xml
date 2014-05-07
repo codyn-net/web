@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnParamSpecMiniObject" name="CdnParamSpecMiniObject" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="GParamSpec" />
+  </base>
+</gobject:class>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnMonitor" name="CdnMonitor" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Property value monitor</brief>
+  <doc>Property value monitor.
+
+A <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor" /> can be used to monitor the value of a certain <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
+while simulating. The monitor will collect the value of the property at
+each simulation step and provides methods to access these values.
+Particularly useful is <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled">cdn_monitor_get_data_resampled</ref> which retrieves the
+data resampled at specific times.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <gobject:property id="API Reference::CdnMonitor::network" mode="construct-only" name="network">
+    <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnMonitor::property" mode="construct-only" name="property">
+    <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+  </gobject:property>
+  <function id="cdn_monitor_get_data" name="cdn_monitor_get_data">
+    <brief>Returns the data as monitored during the simulation</brief>
+    <doc>Returns the data as monitored during the simulation. See also
+<ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled">cdn_monitor_get_data_resampled</ref> for retrieving a resampled version
+of the monitor data. Note that the data returned is N-x-M values where
+N is the number of sampled data points and M the size of the variable.
+
+</doc>
+    <return>
+      <doc>internal array of monitored values. The pointer should not be freed</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_monitor_get_data::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref>.</doc>
+      <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" />
+    </argument>
+    <argument id="cdn_monitor_get_data::size" name="size">
+      <doc>return value for number of values</doc>
+      <type builtin="yes" name="guint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_monitor_get_data_resampled" name="cdn_monitor_get_data_resampled">
+    <brief>Returns the data as monitored during the simulation, but resampled a</brief>
+    <doc>Returns the data as monitored during the simulation, but resampled at
+specific data sites. <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">ret</ref> will have to be already allocated and large
+enough to hold <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::size">size</ref> values of the dimension of the monitored variable.
+
+</doc>
+    <return>
+      <doc>`TRUE` if <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">ret</ref> was successfully filled with data, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_monitor_get_data_resampled::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref>.</doc>
+      <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" />
+    </argument>
+    <argument id="cdn_monitor_get_data_resampled::sites" name="sites">
+      <doc>the data sites at which to resample the data</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_monitor_get_data_resampled::size" name="size">
+      <doc>the size of the data sites array</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+    <argument id="cdn_monitor_get_data_resampled::ret" name="ret">
+      <doc>the return location for the resampled data</doc>
+      <type builtin="yes" name="gdouble" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_monitor_get_sites" name="cdn_monitor_get_sites">
+    <brief>Returns the data sites as monitored during the simulation</brief>
+    <doc>Returns the data sites as monitored during the simulation. See also
+<ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled">cdn_monitor_get_data_resampled</ref> for retrieving a resampled version
+of the monitor data. Note that the size of the sites is always equal to the
+number of sampled data points, but not necessarily equal to the number of
+values returned by <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data">cdn_monitor_get_data</ref> (since values might be vectors/matrices).
+
+</doc>
+    <return>
+      <doc>internal array of monitored sites. The pointer should not be freed</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_monitor_get_sites::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref>.</doc>
+      <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" />
+    </argument>
+    <argument id="cdn_monitor_get_sites::size" name="size">
+      <doc>return value for number of sites</doc>
+      <type builtin="yes" name="guint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_monitor_get_variable" name="cdn_monitor_get_variable">
+    <brief>Returns the property which is being monitored.</brief>
+    <return>
+      <doc>a pointer to the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_monitor_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref>.</doc>
+      <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" />
+    </argument>
+  </function>
+  <function id="cdn_monitor_new" name="cdn_monitor_new">
+    <brief>Create a new monitor for monitoring property <ref ref="API Reference::CdnMonitor#cdn_monitor_new::property">property</ref>.</brief>
+    <return>
+      <doc>a new <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref></doc>
+      <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_monitor_new::network" name="network">
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_monitor_new::property" name="property">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+</gobject:class>

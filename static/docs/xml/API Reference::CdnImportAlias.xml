@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnImportAlias" name="CdnImportAlias" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Network import alias object</brief>
+  <doc>Network import alias object.
+
+This object provides an alias for an imported network. This can be useful
+when you have a shared library of templates A. Furthermore, imagine a network
+B which imports A and a network C which imports both B and A. The second
+import of A into C will then be an alias to the already imported A in B.</doc>
+  <base access="public">
+    <type name="CdnImport" ref="API Reference::CdnImport#API Reference::CdnImport" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnImportAlias::source" mode="construct-only" name="source">
+    <brief>The source <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref> to alias.</brief>
+    <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+  </gobject:property>
+  <function id="cdn_import_alias_new" name="cdn_import_alias_new">
+    <brief>Create a new alias for an existing import.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnImportAlias#API Reference::CdnImportAlias">CdnImportAlias</ref></doc>
+      <type name="CdnImportAlias" qualifier="*" ref="API Reference::CdnImportAlias#API Reference::CdnImportAlias" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_import_alias_new::source" name="source">
+      <doc>A <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref></doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+    </argument>
+  </function>
+</gobject:class>

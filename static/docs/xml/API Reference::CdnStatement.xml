@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStatement" name="CdnStatement" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for keeping track statements.</brief>
+  <gobject:property id="API Reference::CdnStatement::column-end" mode="construct" name="column-end">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnStatement::column-start" mode="construct" name="column-start">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnStatement::line-end" mode="construct" name="line-end">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnStatement::line-start" mode="construct" name="line-start">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <function id="cdn_statement_get_column" name="cdn_statement_get_column">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_statement_get_column::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStatement#API Reference::CdnStatement">CdnStatement</ref>.</doc>
+      <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+    </argument>
+    <argument id="cdn_statement_get_column::start" name="start">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" qualifier="*" />
+    </argument>
+    <argument id="cdn_statement_get_column::end" name="end">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_statement_get_line" name="cdn_statement_get_line">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_statement_get_line::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStatement#API Reference::CdnStatement">CdnStatement</ref>.</doc>
+      <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+    </argument>
+    <argument id="cdn_statement_get_line::start" name="start">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" qualifier="*" />
+    </argument>
+    <argument id="cdn_statement_get_line::end" name="end">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_statement_set_column" name="cdn_statement_set_column">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_statement_set_column::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStatement#API Reference::CdnStatement">CdnStatement</ref>.</doc>
+      <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+    </argument>
+    <argument id="cdn_statement_set_column::start" name="start">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_statement_set_column::end" name="end">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_statement_set_line" name="cdn_statement_set_line">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_statement_set_line::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStatement#API Reference::CdnStatement">CdnStatement</ref>.</doc>
+      <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+    </argument>
+    <argument id="cdn_statement_set_line::start" name="start">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_statement_set_line::end" name="end">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+</gobject:interface>

@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnFunctionPolynomialPiece" name="CdnFunctionPolynomialPiece" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Piecewise polynomial piece</brief>
+  <doc>Piecewise polynomial piece.
+
+This class provides a single piece of a piecewise polynomial function. See
+<ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref> for more information on the support for piecewise
+polynomial functions.</doc>
+  <base access="public">
+    <type name="GInitiallyUnowned" />
+  </base>
+  <gobject:property id="API Reference::CdnFunctionPolynomialPiece::begin" mode="construct" name="begin">
+    <brief>The begin point of the piece</brief>
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnFunctionPolynomialPiece::end" mode="construct" name="end">
+    <brief>The end point of the piece</brief>
+    <type builtin="yes" name="gdouble" />
+  </gobject:property>
+  <function id="cdn_function_polynomial_piece_copy" name="cdn_function_polynomial_piece_copy">
+    <brief>Create a copy of a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_equal" name="cdn_function_polynomial_piece_equal">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_equal::b" name="b">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_evaluate" name="cdn_function_polynomial_piece_evaluate">
+    <brief>Evaluate the piece at <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_evaluate::t">t</ref>.</brief>
+    <return>
+      <doc>the value of the polynomial.</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_evaluate::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_evaluate::t" name="t">
+      <doc>at which point to evaluate the piece.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_get_begin" name="cdn_function_polynomial_piece_get_begin">
+    <brief>Get the interval begin of the polynomial.</brief>
+    <return>
+      <doc>the interval begin of the polynomial</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_get_begin::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_get_coefficients" name="cdn_function_polynomial_piece_get_coefficients">
+    <brief>Get the polynomial coefficients</brief>
+    <doc>Get the polynomial coefficients. The order of the coefficients is from high
+to low
+
+</doc>
+    <return>
+      <doc>the polynomial coefficients</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_get_coefficients::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_get_coefficients::num" name="num">
+      <doc>Return value for the number of coefficients</doc>
+      <type builtin="yes" name="guint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_get_derivative" name="cdn_function_polynomial_piece_get_derivative">
+    <brief>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">order</ref> derivative of the origina</brief>
+    <doc>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">order</ref> derivative of the original
+piece.
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_get_derivative::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_get_derivative::order" name="order">
+      <doc>the order of derivation</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_get_end" name="cdn_function_polynomial_piece_get_end">
+    <brief>Get the interval end of the polynomial.</brief>
+    <return>
+      <doc>the interval end of the polynomial</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_get_end::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_new" name="cdn_function_polynomial_piece_new">
+    <brief>Create a new polynomial to be used in a piecewise polynomial function</brief>
+    <doc>Create a new polynomial to be used in a piecewise polynomial function. The
+coefficients are specified from high to low order.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_new::begin" name="begin">
+      <doc>The polynomial interval begin</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_new::end" name="end">
+      <doc>The polynomial interval end</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_new::coefficients" name="coefficients">
+      <doc>The coefficients</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_new::num_coefficients" name="num_coefficients">
+      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_new::coefficients">coefficients</ref></doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_set_begin" name="cdn_function_polynomial_piece_set_begin">
+    <brief>Set the interval begin of the polynomial.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_set_begin::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_set_begin::begin" name="begin">
+      <doc>the interval begin of the polynomial</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_set_coefficients" name="cdn_function_polynomial_piece_set_coefficients">
+    <brief>Set the coefficients of the polynomial</brief>
+    <doc>Set the coefficients of the polynomial. The order of the coefficients is
+from high to low.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_set_coefficients::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_set_coefficients::coefficients" name="coefficients">
+      <doc>The polynomial coefficients</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_set_coefficients::num" name="num">
+      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_set_coefficients::coefficients">coefficients</ref></doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_piece_set_end" name="cdn_function_polynomial_piece_set_end">
+    <brief>Set the interval end of the polynomial.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_polynomial_piece_set_end::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref>.</doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+    <argument id="cdn_function_polynomial_piece_set_end::end" name="end">
+      <doc>the interval end of the polynomial</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+</gobject:class>

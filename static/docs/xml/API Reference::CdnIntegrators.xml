@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegrators" name="CdnIntegrators" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Integrator registry</brief>
+  <doc>Integrator registry.
+
+<ref ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators" /> provides a registry for integrators. All integrators must
+be registered before loading a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <function id="cdn_integrators_create" name="cdn_integrators_create">
+    <brief>Create a list of instances of all registered integrators.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_integrators_find" name="cdn_integrators_find">
+    <brief>Find an integrator by id.</brief>
+    <return>
+      <doc>A &amp;lt;GType&amp;gt; of the integrator or &amp;lt;G\_TYPE\_INVALID&amp;gt; when the integrator could not be found.</doc>
+      <type name="GType" />
+    </return>
+    <argument id="cdn_integrators_find::id" name="id">
+      <doc>The integrator id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_integrators_list" name="cdn_integrators_list">
+    <brief>Get the list of integrators.</brief>
+    <return>
+      <doc>A GSList of &amp;lt;GType&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+  </function>
+  <function id="cdn_integrators_register" name="cdn_integrators_register">
+    <brief>Register a new integrator.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrators_register::gtype" name="gtype">
+      <doc>A &amp;lt;GType&amp;gt;</doc>
+      <type name="GType" />
+    </argument>
+  </function>
+  <function id="cdn_integrators_unregister" name="cdn_integrators_unregister">
+    <brief>Unregister an integrator.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrators_unregister::gtype" name="gtype">
+      <doc>A &amp;lt;GType&amp;gt;</doc>
+      <type name="GType" />
+    </argument>
+  </function>
+</gobject:class>

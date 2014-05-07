@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnNetworkDeserializer" name="CdnNetworkDeserializer" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>XML to Network deserializer</brief>
+  <doc>XML to Network deserializer.
+
+Use this to deserialize an XML description of a network to a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <gobject:property id="API Reference::CdnNetworkDeserializer::network" mode="construct-only" name="network">
+    <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnNetworkDeserializer::root" mode="construct-only" name="root">
+    <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+  </gobject:property>
+  <function id="cdn_network_deserializer_deserialize" name="cdn_network_deserializer_deserialize">
+    <brief>Deserialize a network from an input stream.</brief>
+    <return>
+      <doc>`TRUE` if the deserialization was successful, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_deserializer_deserialize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer">CdnNetworkDeserializer</ref>.</doc>
+      <type name="CdnNetworkDeserializer" qualifier="*" ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer" />
+    </argument>
+    <argument id="cdn_network_deserializer_deserialize::file" name="file">
+      <doc>*documentation missing...*</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_deserializer_deserialize::stream" name="stream">
+      <doc>A &amp;lt;GInputStream&amp;gt;</doc>
+      <type name="GInputStream" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_deserializer_deserialize::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_deserializer_deserialize_path" name="cdn_network_deserializer_deserialize_path">
+    <brief>Convenience function to deserialize a network from a file path.</brief>
+    <return>
+      <doc>`TRUE` if the deserialization was successful, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_deserializer_deserialize_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer">CdnNetworkDeserializer</ref>.</doc>
+      <type name="CdnNetworkDeserializer" qualifier="*" ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer" />
+    </argument>
+    <argument id="cdn_network_deserializer_deserialize_path::path" name="path">
+      <doc>The file path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_deserializer_deserialize_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_deserializer_new" name="cdn_network_deserializer_new">
+    <brief>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">network</ref>
+    </brief>
+    <doc>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">network</ref>. When calling
+<ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_deserialize">cdn_network_deserializer_deserialize</ref>, objects will be deserialized into
+<ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">root</ref>. If <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">root</ref> is `NULL`, the objects will be deserialized in the root
+of the network.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer">CdnNetworkDeserializer</ref></doc>
+      <type name="CdnNetworkDeserializer" qualifier="*" ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_deserializer_new::network" name="network">
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_deserializer_new::root" name="root">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+</gobject:class>

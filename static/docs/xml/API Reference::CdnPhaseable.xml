@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnPhaseable" name="CdnPhaseable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for state dependent actions</brief>
+  <doc>Interface for state dependent actions.
+
+This interface can be implemented when an object can be active or inactive
+depending on node states (see &amp;lt;cdn\_node\_get\_state&amp;gt;). Implementations of this
+interface should call <ref ref="API Reference::CdnPhaseable#cdn_phaseable_set_phase_table">cdn_phaseable_set_phase_table</ref> to specify a hash table
+which the states are stored.</doc>
+  <function id="cdn_phaseable_add_phase" name="cdn_phaseable_add_phase">
+    <brief>Add a state in which &amp;lt;phaseable&amp;gt; is active.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_phaseable_add_phase::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_add_phase::phase" name="phase">
+      <doc>the state.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_copy_to" name="cdn_phaseable_copy_to">
+    <brief>Copy the states in which &amp;lt;phaseable&amp;gt; is active to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_copy_to::dest">dest</ref>.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_phaseable_copy_to::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_copy_to::dest" name="dest">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_equal" name="cdn_phaseable_equal">
+    <brief>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> in terms of in which state</brief>
+    <doc>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> in terms of in which states
+they are active.
+
+</doc>
+    <return>
+      <doc>`TRUE` if &amp;lt;phaseable&amp;gt; and <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> are active in the same states, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_phaseable_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_equal::other" name="other">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_foreach" name="cdn_phaseable_foreach">
+    <brief>Calls <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">func</ref> for each state.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_phaseable_foreach::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_foreach::func" name="func">
+      <doc>A &amp;lt;CdnPhaseableForeachFunc&amp;gt;</doc>
+      <type name="CdnPhaseableForeachFunc" />
+    </argument>
+    <argument id="cdn_phaseable_foreach::userdata" name="userdata">
+      <doc>The user data for <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">func</ref></doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_get_phase_table" name="cdn_phaseable_get_phase_table">
+    <brief>Get the tag hash table.</brief>
+    <return>
+      <doc>A &amp;lt;GHashTable&amp;gt;</doc>
+      <type name="GHashTable" qualifier="*" />
+    </return>
+    <argument id="cdn_phaseable_get_phase_table::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_get_phases" name="cdn_phaseable_get_phases">
+    <brief>Get the list of states in which &amp;lt;phaseable&amp;gt; is active</brief>
+    <doc>Get the list of states in which &amp;lt;phaseable&amp;gt; is active. The returned list
+should be freed with &amp;lt;g\_strfreev&amp;gt;.
+
+</doc>
+    <return>
+      <doc>`NULL` terminated list of phases. Free the return value with &amp;lt;g\_strfreev&amp;gt; when done.</doc>
+      <type builtin="yes" name="gchar" qualifier="**" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_phaseable_get_phases::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_is_active" name="cdn_phaseable_is_active">
+    <brief>Get whether this object is active for the given state.</brief>
+    <return>
+      <doc>`TRUE` if the object is active in <ref ref="API Reference::CdnPhaseable#cdn_phaseable_is_active::phase">phase</ref>, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_phaseable_is_active::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_is_active::phase" name="phase">
+      <doc>the phase.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_remove_phase" name="cdn_phaseable_remove_phase">
+    <brief>Remove a state in which &amp;lt;phaseable&amp;gt; was active.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_phaseable_remove_phase::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_remove_phase::phase" name="phase">
+      <doc>a state.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_phaseable_set_phase_table" name="cdn_phaseable_set_phase_table">
+    <brief>Set the hash table used to store in which states the phaseable is active.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_phaseable_set_phase_table::self" name="self">
+      <doc>a <ref ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">CdnPhaseable</ref>.</doc>
+      <type name="CdnPhaseable" qualifier="*" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable" />
+    </argument>
+    <argument id="cdn_phaseable_set_phase_table::table" name="table">
+      <doc>a &amp;lt;GHashTable&amp;gt;.</doc>
+      <type name="GHashTable" qualifier="*" />
+    </argument>
+  </function>
+</gobject:interface>

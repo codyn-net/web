@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Tools::Command line" name="Command line" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Command line tools for working with codyn.</brief>
+</category>

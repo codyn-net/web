@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnAnnotationInfo" name="CdnAnnotationInfo" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_annotation_info_free" name="cdn_annotation_info_free">
+    <brief>Free the annotation info.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_annotation_info_free::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+  </function>
+  <function id="cdn_annotation_info_get_anchor" name="cdn_annotation_info_get_anchor">
+    <brief>Get the anchor point from which the location of the annotation is specified.</brief>
+    <return>
+      <doc>a <ref ref="API Reference#API Reference::CdnAnnotationAnchor">CdnAnnotationAnchor</ref>.</doc>
+      <type name="CdnAnnotationAnchor" ref="API Reference#API Reference::CdnAnnotationAnchor" />
+    </return>
+    <argument id="cdn_annotation_info_get_anchor::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+  </function>
+  <function id="cdn_annotation_info_get_annotation" name="cdn_annotation_info_get_annotation">
+    <brief>Get the original annotation from which the annotation info was extracted.</brief>
+    <return>
+      <doc>the original annotation.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_annotation_info_get_annotation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+  </function>
+  <function id="cdn_annotation_info_get_location" name="cdn_annotation_info_get_location">
+    <brief>Get the location of the annotation.</brief>
+    <return>
+      <doc>`TRUE` if the location was set in the annotation, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_annotation_info_get_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+    <argument id="cdn_annotation_info_get_location::x" name="x">
+      <doc>the return value of the x location coordinate.</doc>
+      <type allow-none="yes" builtin="yes" name="gdouble" out="yes" qualifier="*" />
+    </argument>
+    <argument id="cdn_annotation_info_get_location::y" name="y">
+      <doc>the return value of the y location coordinate.</doc>
+      <type allow-none="yes" builtin="yes" name="gdouble" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_annotation_info_get_relative_to" name="cdn_annotation_info_get_relative_to">
+    <brief>Get a selector string specifying the location from which to interpret th</brief>
+    <doc>Get a selector string specifying the location from which to interpret the
+location of the annotation (i.e. it specifies the origin of the annotation
+location).
+
+</doc>
+    <return>
+      <doc>a selector string specifying the coordinate origin, or `NULL`.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_annotation_info_get_relative_to::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+  </function>
+  <function id="cdn_annotation_info_get_text" name="cdn_annotation_info_get_text">
+    <brief>Get the annotation text without metadata.</brief>
+    <return>
+      <doc>the annotation text without metadata.</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_annotation_info_get_text::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    </argument>
+  </function>
+</gobject:boxed>

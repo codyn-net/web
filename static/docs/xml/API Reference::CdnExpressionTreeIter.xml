@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpressionTreeIter" name="CdnExpressionTreeIter" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_expression_tree_iter_canonicalize" name="cdn_expression_tree_iter_canonicalize">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_canonicalize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_copy" name="cdn_expression_tree_iter_copy">
+    <brief>Create a copy of the tree iter.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_derive" name="cdn_expression_tree_iter_derive">
+    <brief>Derive an expression symbolically.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_derive::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_derive::symbols" name="symbols">
+      <doc>a list of symbols considered to be derivable (e.g. all arguments to a function).</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_derive::towards" name="towards">
+      <doc>a hash of symbols to derive (mapping to its derivative if any)</doc>
+      <type name="GHashTable" qualifier="*" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_derive::order" name="order">
+      <doc>the order of the derivation</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_derive::flags" name="flags">
+      <doc>a <ref ref="API Reference#API Reference::CdnExpressionTreeIterDeriveFlags">CdnExpressionTreeIterDeriveFlags</ref></doc>
+      <type name="CdnExpressionTreeIterDeriveFlags" ref="API Reference#API Reference::CdnExpressionTreeIterDeriveFlags" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_derive::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_equal" name="cdn_expression_tree_iter_equal">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_expression_tree_iter_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_equal::other" name="other">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_equal::asstring" name="asstring">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_free" name="cdn_expression_tree_iter_free">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_free::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_get_child" name="cdn_expression_tree_iter_get_child">
+    <brief>Get the nth child of this tree iter.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </return>
+    <argument id="cdn_expression_tree_iter_get_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_get_child::nth" name="nth">
+      <doc>The index of the child</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_get_instruction" name="cdn_expression_tree_iter_get_instruction">
+    <brief>Get the instruction for this tree iter.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </return>
+    <argument id="cdn_expression_tree_iter_get_instruction::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_get_num_children" name="cdn_expression_tree_iter_get_num_children">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_expression_tree_iter_get_num_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_initialize_stack" name="cdn_expression_tree_iter_initialize_stack">
+    <brief>Initialize the provided <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_initialize_stack::stack">stack</ref> to contain enough space to evaluate &amp;lt;iter&amp;gt;.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_initialize_stack::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_initialize_stack::stack" name="stack">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref></doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_new" name="cdn_expression_tree_iter_new">
+    <brief>Create a new expression tree iter from an expression.</brief>
+    <return>
+      <doc>a new expression tree iter.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_new::expression" name="expression">
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_new_from_instruction" name="cdn_expression_tree_iter_new_from_instruction">
+    <brief>Create a new tree iter from an instruction.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_new_from_instruction::instruction" name="instruction">
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_new_from_instruction_take" name="cdn_expression_tree_iter_new_from_instruction_take">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_new_from_instruction_take::instruction" name="instruction">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_new_from_instructions" name="cdn_expression_tree_iter_new_from_instructions">
+    <brief>Create a new tree iter from a list of instructions.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_new_from_instructions::instructions" name="instructions">
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_set_child" name="cdn_expression_tree_iter_set_child">
+    <brief>Set the child of the tree iter.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_set_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_set_child::nth" name="nth">
+      <doc>The index of the child</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_set_child::child" name="child">
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_set_instruction" name="cdn_expression_tree_iter_set_instruction">
+    <brief>Set the instruction for this tree iter.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_set_instruction::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_set_instruction::instr" name="instr">
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_set_num_children" name="cdn_expression_tree_iter_set_num_children">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_set_num_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_set_num_children::i" name="i">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_simplify" name="cdn_expression_tree_iter_simplify">
+    <brief>Simplify an expresion</brief>
+    <doc>Simplify an expresion. Note that the simplification is done in place, i.e.
+the same &amp;lt;iter&amp;gt; passed to the function is also returned.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </return>
+    <argument id="cdn_expression_tree_iter_simplify::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_solve_for" name="cdn_expression_tree_iter_solve_for">
+    <brief>NOTE: This is only supposed to work for canonical expressions linear in <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_solve_for::prop">prop</ref>
+    </brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_solve_for::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_solve_for::prop" name="prop">
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_solve_for::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_substitute" name="cdn_expression_tree_iter_substitute">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_substitute::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_substitute::property" name="property">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_substitute::subst" name="subst">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_substitute_hash" name="cdn_expression_tree_iter_substitute_hash">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_substitute_hash::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_substitute_hash::table" name="table">
+      <doc>*documentation missing...*</doc>
+      <type name="GHashTable" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_swap_children" name="cdn_expression_tree_iter_swap_children">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_swap_children::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_swap_children::first" name="first">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_swap_children::second" name="second">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_take_child" name="cdn_expression_tree_iter_take_child">
+    <brief>Set the child of the tree iter, without making a copy of <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_take_child::child">child</ref>.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_expression_tree_iter_take_child::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_take_child::nth" name="nth">
+      <doc>The index of the child</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_expression_tree_iter_take_child::child" name="child">
+      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_to_expression" name="cdn_expression_tree_iter_to_expression">
+    <brief>Create an expression from a tree iter.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_to_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_to_instructions" name="cdn_expression_tree_iter_to_instructions">
+    <brief>Get the instructions that this tree iter represents (including its children).</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt;</doc>
+      <type name="GSList" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_expression_tree_iter_to_instructions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_to_string" name="cdn_expression_tree_iter_to_string">
+    <brief>Get the expression as a string.</brief>
+    <return>
+      <doc>the expression as a string.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </return>
+    <argument id="cdn_expression_tree_iter_to_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+  <function id="cdn_expression_tree_iter_to_string_dbg" name="cdn_expression_tree_iter_to_string_dbg">
+    <brief>Get the expression as a string (debug).</brief>
+    <return>
+      <doc>the expression as a string.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </return>
+    <argument id="cdn_expression_tree_iter_to_string_dbg::self" name="self">
+      <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    </argument>
+  </function>
+</gobject:boxed>

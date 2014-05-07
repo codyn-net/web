@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnVariable" name="CdnVariable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Variable</brief>
+  <doc>Variable.
+
+A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable" /> represents a single variable in an object. A variable has
+a name and an mathematical expression describing its value.
+
+Variables can be constrained using a secondary equation which is evaluated
+just after the variable expression has been evaluated. This is useful for
+example to constrain a value within certain boundaries (use the clip() function)
+or to keep a variable in a certain circular domain such as [0, 2pi]
+(use the cycle() function). See <ref ref="API Reference::CdnVariable#cdn_variable_set_constraint">cdn_variable_set_constraint</ref>.
+
+Each variable has a set of flags which changes its behavior.
+
+ * integrated: specifies whether edges by default integrate on the variable.
+ * in: specifies that a variable can be externally changed (for rawc).
+ * out: specifies that a variable can be externall observed (for rawc).
+ * once: specifies that a variable is only ever evaluated once and never updates after.
+ * function_argument: used internally to mark a variable as a function argument.
+ * inout: convenience flag composed of in and out.</doc>
+  <base access="public">
+    <type name="GInitiallyUnowned" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnVariable::constraint" name="constraint">
+    <brief>The variable constraint expression</brief>
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnVariable::expression" name="expression">
+    <brief>The variable expression</brief>
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnVariable::flags" name="flags">
+    <brief>The variable flags</brief>
+    <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnVariable::name" name="name">
+    <brief>The variable name</brief>
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnVariable::object" name="object">
+    <brief>The object on which the variable is defined</brief>
+    <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </gobject:property>
+  <function id="cdn_variable_add_flags" name="cdn_variable_add_flags">
+    <brief>Add a flags flag to the variable flagss.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_add_flags::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_add_flags::flags" name="flags">
+      <doc>A <ref ref="API Reference#API Reference::CdnVariableFlags">CdnVariableFlags</ref></doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </argument>
+  </function>
+  <function id="cdn_variable_clear_update" name="cdn_variable_clear_update">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_clear_update::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_compile" name="cdn_variable_compile">
+    <brief>Compile a single variable.</brief>
+    <return>
+      <doc>`TRUE` if the compilation was successful, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_variable_compile::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_compile::error" name="error">
+      <doc>A <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref></doc>
+      <type name="CdnCompileError" qualifier="*" ref="API Reference::CdnCompileError#API Reference::CdnCompileError" />
+    </argument>
+  </function>
+  <function id="cdn_variable_copy" name="cdn_variable_copy">
+    <brief>Make a copy of &amp;lt;variable&amp;gt;.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_variable_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_equal" name="cdn_variable_equal">
+    <brief>Compare two properties for equal values/expressions</brief>
+    <return>
+      <doc>`TRUE` if the properties are equal, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_variable_equal::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_equal::other" name="other">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_equal::asstring" name="asstring">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_actions" name="cdn_variable_get_actions">
+    <brief>Get the actions acting on this variable.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="container" />
+    </return>
+    <argument id="cdn_variable_get_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_constraint" name="cdn_variable_get_constraint">
+    <brief>Get the variable value constraint expression</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>. The expression is owned by the variable and should not be freed</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_variable_get_constraint::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_derivative" name="cdn_variable_get_derivative">
+    <brief>Get the variable representing the derivative of &amp;lt;variable&amp;gt;.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_variable_get_derivative::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_dimension" name="cdn_variable_get_dimension">
+    <brief>Get the dimension of the variable value.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_get_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_get_dimension::dim" name="dim">
+      <doc>the number of dimensions.</doc>
+      <type name="CdnDimension" out="yes" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_expression" name="cdn_variable_get_expression">
+    <brief>Get the variable value expression</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>. The expression is owned by the variable and should not be freed</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_variable_get_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_flags" name="cdn_variable_get_flags">
+    <brief>The variable flags</brief>
+    <doc>The variable flags. The flags contains information on the type of variable (
+such as in, or out).
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference#API Reference::CdnVariableFlags">CdnVariableFlags</ref></doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </return>
+    <argument id="cdn_variable_get_flags::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_full_name" name="cdn_variable_get_full_name">
+    <brief>Get the full name of the variable</brief>
+    <doc>Get the full name of the variable. This is the name that can be used in the
+outer most parent to refer to this variable (i.e.
+&amp;lt;code&amp;gt;cdn_node_find_variable (top_parent, cdn_variable_get_full_name (deep_variable)) == deep_variable&amp;lt;/code&amp;gt;)
+
+</doc>
+    <return>
+      <doc>The full name of the variable. This is a newly allocated string that should be freed with g_free.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_variable_get_full_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_full_name_for_display" name="cdn_variable_get_full_name_for_display">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_variable_get_full_name_for_display::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_integral" name="cdn_variable_get_integral">
+    <brief>Get the variable representing the integral of &amp;lt;variable&amp;gt;.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_variable_get_integral::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_name" name="cdn_variable_get_name">
+    <brief>Get the variable name</brief>
+    <return>
+      <doc>the variable name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </return>
+    <argument id="cdn_variable_get_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_object" name="cdn_variable_get_object">
+    <brief>Get the object associated with the variable</brief>
+    <return>
+      <doc>the object associated with the variable</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </return>
+    <argument id="cdn_variable_get_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_update" name="cdn_variable_get_update">
+    <brief>Get the update value of a variable</brief>
+    <doc>Get the update value of a variable. The update value is used to store the
+result of differential equations on the variable. You normally do not need
+to use this function.
+
+</doc>
+    <return>
+      <doc>The update value</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </return>
+    <argument id="cdn_variable_get_update::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_value" name="cdn_variable_get_value">
+    <brief>Get the numerical value of the current value of the variable</brief>
+    <return>
+      <doc>the numerical value of the variable's current value</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_variable_get_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_get_values" name="cdn_variable_get_values">
+    <brief>Get the value of the variable.</brief>
+    <return>
+      <doc>the value of the variable.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </return>
+    <argument id="cdn_variable_get_values::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_has_actions" name="cdn_variable_has_actions">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_variable_has_actions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_has_flag" name="cdn_variable_has_flag">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_variable_has_flag::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_has_flag::flags" name="flags">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </argument>
+  </function>
+  <function id="cdn_variable_new" name="cdn_variable_new">
+    <brief>Create a new variable object</brief>
+    <doc>Create a new variable object. Property objects are assigned to <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>
+objects and are of little use on their own. The provided expression will
+not be parsed initially.
+
+</doc>
+    <return>
+      <doc>the new <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_variable_new::name" name="name">
+      <doc>the variable name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_variable_new::expression" name="expression">
+      <doc>the value expression</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+    <argument id="cdn_variable_new::flags" name="flags">
+      <doc>the variable flags</doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </argument>
+  </function>
+  <function id="cdn_variable_remove_flags" name="cdn_variable_remove_flags">
+    <brief>Remove a flags flag from the variable flagss.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_remove_flags::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_remove_flags::flags" name="flags">
+      <doc>A <ref ref="API Reference#API Reference::CdnVariableFlags">CdnVariableFlags</ref></doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </argument>
+  </function>
+  <function id="cdn_variable_reset" name="cdn_variable_reset">
+    <brief>Reset the variable</brief>
+    <doc>Reset the variable. This will reset the value of the variable to the
+stored string representation.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_constraint" name="cdn_variable_set_constraint">
+    <brief>Set the variable constraint from an expression.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_constraint::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_constraint::expression" name="expression">
+      <doc>the constraint expression</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_derivative" name="cdn_variable_set_derivative">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_derivative::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_derivative::diffprop" name="diffprop">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_expression" name="cdn_variable_set_expression">
+    <brief>Set the variable value from an expression.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_expression::expression" name="expression">
+      <doc>the expression</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_flags" name="cdn_variable_set_flags">
+    <brief>Set the variable flags.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_flags::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_flags::flags" name="flags">
+      <doc>A <ref ref="API Reference#API Reference::CdnVariableFlags">CdnVariableFlags</ref></doc>
+      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_name" name="cdn_variable_set_name">
+    <brief>Set a new name for a variable.</brief>
+    <return>
+      <doc>`TRUE` if the name could be successfully changed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_variable_set_name::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_name::name" name="name">
+      <doc>The new variable name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_value" name="cdn_variable_set_value">
+    <brief>Change the value to a specific number.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_value::value" name="value">
+      <doc>the new value</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_variable_set_values" name="cdn_variable_set_values">
+    <brief>Change the value to a specific number.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_variable_set_values::self" name="self">
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </argument>
+    <argument id="cdn_variable_set_values::values" name="values">
+      <doc>the new value</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+</gobject:class>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Modeling" name="Modeling" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Modeling language of codyn.</brief>
+  <category name="Embedded calculations" ref="Manual::Modeling::Embedded calculations#Manual::Modeling::Embedded calculations">
+    <brief>Embedded calculations</brief>
+  </category>
+  <category name="Expansion references" ref="Manual::Modeling::Expansion references#Manual::Modeling::Expansion references">
+    <brief>Expansion references</brief>
+  </category>
+</category>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnAnnotatable" name="CdnAnnotatable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for annotating objects</brief>
+  <doc>Interface for annotating objects.
+
+This interface can be implemented when an object supports annotations.</doc>
+  <gobject:property id="API Reference::CdnAnnotatable::annotation" mode="construct" name="annotation">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <function id="cdn_annotatable_get_annotation" name="cdn_annotatable_get_annotation">
+    <brief>Get the annotation.</brief>
+    <return>
+      <doc>Get the object annotation</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_annotatable_get_annotation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">CdnAnnotatable</ref>.</doc>
+      <type name="CdnAnnotatable" qualifier="*" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+    </argument>
+  </function>
+  <function id="cdn_annotatable_get_title" name="cdn_annotatable_get_title">
+    <brief>Get the title (display name) of the annotatable object.</brief>
+    <return>
+      <doc>the title</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_annotatable_get_title::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">CdnAnnotatable</ref>.</doc>
+      <type name="CdnAnnotatable" qualifier="*" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+    </argument>
+  </function>
+  <function id="cdn_annotatable_parse_annotation" name="cdn_annotatable_parse_annotation">
+    <brief>Parse the annotation for additional metadata.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref>.</doc>
+      <type name="CdnAnnotationInfo" qualifier="*" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_annotatable_parse_annotation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">CdnAnnotatable</ref>.</doc>
+      <type name="CdnAnnotatable" qualifier="*" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+    </argument>
+  </function>
+  <function id="cdn_annotatable_set_annotation" name="cdn_annotatable_set_annotation">
+    <brief>Set the object annotation.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_annotatable_set_annotation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">CdnAnnotatable</ref>.</doc>
+      <type name="CdnAnnotatable" qualifier="*" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+    </argument>
+    <argument id="cdn_annotatable_set_annotation::annotation" name="annotation">
+      <doc>The annotation</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+</gobject:interface>

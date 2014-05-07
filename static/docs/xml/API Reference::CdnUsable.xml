@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnUsable" name="CdnUsable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for counting the uses of an object</brief>
+  <doc>Interface for counting the uses of an object.
+
+This interface can be implemented when an object provides a use count.</doc>
+  <gobject:property id="API Reference::CdnUsable::use-count" mode="readonly" name="use-count">
+    <type builtin="yes" name="guint" />
+  </gobject:property>
+  <function id="cdn_usable_unuse" name="cdn_usable_unuse">
+    <brief>Decrease the use count.</brief>
+    <return>
+      <doc>`TRUE` if the use count dropped to 0, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_usable_unuse::self" name="self">
+      <doc>a <ref ref="API Reference::CdnUsable#API Reference::CdnUsable">CdnUsable</ref>.</doc>
+      <type name="CdnUsable" qualifier="*" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+    </argument>
+  </function>
+  <function id="cdn_usable_use" name="cdn_usable_use">
+    <brief>Increase the use count.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_usable_use::self" name="self">
+      <doc>a <ref ref="API Reference::CdnUsable#API Reference::CdnUsable">CdnUsable</ref>.</doc>
+      <type name="CdnUsable" qualifier="*" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+    </argument>
+  </function>
+  <function id="cdn_usable_use_count" name="cdn_usable_use_count">
+    <brief>Get the use count of the usable.</brief>
+    <return>
+      <doc>The use count</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_usable_use_count::self" name="self">
+      <doc>a <ref ref="API Reference::CdnUsable#API Reference::CdnUsable">CdnUsable</ref>.</doc>
+      <type name="CdnUsable" qualifier="*" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+    </argument>
+  </function>
+</gobject:interface>

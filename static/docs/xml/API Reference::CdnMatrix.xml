@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnMatrix" name="CdnMatrix" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_matrix_clear" name="cdn_matrix_clear">
+    <brief>Clear all matrix values to 0.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_clear::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_copy" name="cdn_matrix_copy">
+    <brief>Copy the matrix values from <ref ref="API Reference::CdnMatrix#cdn_matrix_copy::src">src</ref> to &amp;lt;dest&amp;gt;.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_copy::src" name="src">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_copy_to" name="cdn_matrix_copy_to">
+    <brief>Copy the values of &amp;lt;matrix&amp;gt; into the memory pointed to by <ref ref="API Reference::CdnMatrix#cdn_matrix_copy_to::values">values</ref>
+    </brief>
+    <doc>Copy the values of &amp;lt;matrix&amp;gt; into the memory pointed to by <ref ref="API Reference::CdnMatrix#cdn_matrix_copy_to::values">values</ref>. You must
+make sure that <ref ref="API Reference::CdnMatrix#cdn_matrix_copy_to::values">values</ref> is large enough to hold the values from &amp;lt;matrix&amp;gt;.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_copy_to::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_copy_to::values" name="values">
+      <doc>matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_destroy" name="cdn_matrix_destroy">
+    <brief>Destroy a matrix value allocated on the stack.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_destroy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_dimension" name="cdn_matrix_dimension">
+    <brief>Get the dimension of the matrix.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </return>
+    <argument id="cdn_matrix_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_free" name="cdn_matrix_free">
+    <brief>Free a matrix value previously created with cdn_matrix_new.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_free::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_get" name="cdn_matrix_get">
+    <brief>Get the values memory of a matrix for reading values</brief>
+    <doc>Get the values memory of a matrix for reading values. For writing values,
+use <ref ref="API Reference::CdnMatrix#cdn_matrix_get_memory">cdn_matrix_get_memory</ref>. Note that the returned value is pointing to
+the matrix internal memory.
+
+</doc>
+    <return>
+      <doc>the matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_matrix_get::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_get_at" name="cdn_matrix_get_at">
+    <brief>Get a single value at a particular position in the matrix</brief>
+    <doc>Get a single value at a particular position in the matrix. Note that this
+is mostly useful for bindings and potentially slow. If you want to get
+values from the matrix just use <ref ref="API Reference::CdnMatrix#cdn_matrix_get">cdn_matrix_get</ref> and get the values
+directly.
+
+</doc>
+    <return>
+      <doc>the value at <ref ref="API Reference::CdnMatrix#cdn_matrix_get_at::r">r</ref>, <ref ref="API Reference::CdnMatrix#cdn_matrix_get_at::c">c</ref></doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_matrix_get_at::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_get_at::r" name="r">
+      <doc>the value row.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_matrix_get_at::c" name="c">
+      <doc>the value column.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_get_flat" name="cdn_matrix_get_flat">
+    <brief>Get the values memory of a matrix</brief>
+    <doc>Get the values memory of a matrix. This method is mostly for writing bindings
+and should not be used.
+
+</doc>
+    <return>
+      <doc>the matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_matrix_get_flat::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_get_flat::length" name="length">
+      <doc>return value for the length.</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_get_memory" name="cdn_matrix_get_memory">
+    <brief>Get the values memory of a matrix for writing values</brief>
+    <doc>Get the values memory of a matrix for writing values. For reading values,
+use <ref ref="API Reference::CdnMatrix#cdn_matrix_get">cdn_matrix_get</ref>. Note that the returned value is pointing to
+the matrix internal memory and does not need to be freed.
+
+</doc>
+    <return>
+      <doc>the matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_matrix_get_memory::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_init" name="cdn_matrix_init">
+    <brief>Initialize a new <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref> struct on the stack</brief>
+    <doc>Initialize a new <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref> struct on the stack. The <ref ref="API Reference::CdnMatrix#cdn_matrix_init::values">values</ref> array must
+contain &amp;lt;cdn\_dimension\_size&amp;gt;(<ref ref="API Reference::CdnMatrix#cdn_matrix_init::dimension">dimension</ref>) values. The returned matrix should
+be cleared with <ref ref="API Reference::CdnMatrix#cdn_matrix_destroy">cdn_matrix_destroy</ref>.
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_matrix_init::values" name="values">
+      <doc>the matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_matrix_init::dimension" name="dimension">
+      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_new" name="cdn_matrix_new">
+    <brief>Create a new matrix value of a given dimension.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_matrix_new::values" name="values">
+      <doc>matrix values (or `NULL`).</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_matrix_new::dimension" name="dimension">
+      <doc>the matrix dimensions.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_new_flat" name="cdn_matrix_new_flat">
+    <brief>Create a new matrix value of a given dimension.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_matrix_new_flat::values" name="values">
+      <doc>matrix values (or `NULL`).</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_matrix_new_flat::length" name="length">
+      <doc>the length</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_matrix_new_flat::dimension" name="dimension">
+      <doc>the matrix dimensions.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_new_one" name="cdn_matrix_new_one">
+    <brief>Create a new 1x1 matrix.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_matrix_new_one::value" name="value">
+      <doc>the matrix value.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_set" name="cdn_matrix_set">
+    <brief>Set the values of a matrix value to the given values</brief>
+    <doc>Set the values of a matrix value to the given values. The matrix will
+automatically resize if needed.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_set::values" name="values">
+      <doc>the matrix values.</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_matrix_set::dimension" name="dimension">
+      <doc>the values dimension.</doc>
+      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_set_at" name="cdn_matrix_set_at">
+    <brief>Set a single value at a particular position in the matrix</brief>
+    <doc>Set a single value at a particular position in the matrix. Note that this
+is mostly useful for bindings and potentially slow. If you want to set
+values in the matrix just use <ref ref="API Reference::CdnMatrix#cdn_matrix_get_memory">cdn_matrix_get_memory</ref> and set the values
+directly.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_set_at::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_set_at::r" name="r">
+      <doc>the value row.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_matrix_set_at::c" name="c">
+      <doc>the value column.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_matrix_set_at::value" name="value">
+      <doc>the value.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_set_one" name="cdn_matrix_set_one">
+    <brief>Set the matrix value from a single matrix (matrix will become 1x1).</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_matrix_set_one::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+    <argument id="cdn_matrix_set_one::value" name="value">
+      <doc>matrix value.</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_size" name="cdn_matrix_size">
+    <brief>Get the total size (in number of values) of the matrix (i</brief>
+    <doc>Get the total size (in number of values) of the matrix (i.e. rows-x-columns).
+
+</doc>
+    <return>
+      <doc>the size of the matrix.</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_matrix_size::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+  <function id="cdn_matrix_to_string" name="cdn_matrix_to_string">
+    <brief>Get a string representation of the matrix value</brief>
+    <doc>Get a string representation of the matrix value. If the matrix is 1-by-1 then
+the resulting string is just a number. Otherwise it will be in the form
+[a, b; c, d] where a , separates columns and a ; separates rows.
+
+</doc>
+    <return>
+      <doc>the string representation of the matrix. The result needs to be freed when no longer used.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_matrix_to_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    </argument>
+  </function>
+</gobject:boxed>

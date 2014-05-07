@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnMiniObject" name="CdnMiniObject" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_mini_object_copy" name="cdn_mini_object_copy">
+    <brief>Copy a mini object.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">CdnMiniObject</ref></doc>
+      <type builtin="yes" name="gpointer" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_mini_object_copy::obj" name="obj">
+      <doc>A <ref ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">CdnMiniObject</ref></doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_mini_object_new" name="cdn_mini_object_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnMiniObject" qualifier="*" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_mini_object_new::type" name="type">
+      <doc>*documentation missing...*</doc>
+      <type name="GType" />
+    </argument>
+  </function>
+  <function id="cdn_mini_object_ref" name="cdn_mini_object_ref">
+    <brief>Increase the ref count on the mini object.</brief>
+    <return>
+      <doc><ref ref="API Reference::CdnMiniObject#cdn_mini_object_ref::obj">obj</ref></doc>
+      <type builtin="yes" name="gpointer" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_mini_object_ref::obj" name="obj">
+      <doc>a <ref ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">CdnMiniObject</ref>.</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+  <function id="cdn_mini_object_unref" name="cdn_mini_object_unref">
+    <brief>Decrease the ref count of the mini object</brief>
+    <doc>Decrease the ref count of the mini object. If the ref count drops to 0, the
+mini object will be finalized.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_mini_object_unref::obj" name="obj">
+      <doc>a <ref ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">CdnMiniObject</ref>.</doc>
+      <type builtin="yes" name="gpointer" />
+    </argument>
+  </function>
+</gobject:class>

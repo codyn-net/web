@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<index xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Codyn documentation.</brief>
+  <doc># Codyn documentation
+
+Welcome to the codyn documentation page. Here you will find all information necessary to get you started
+with codyn. The <ref ref="Manual#Manual">Manual</ref> provides a high level overview of the design, concepts and implementation of
+the codyn framework. The <ref ref="API Reference#API Reference">API Reference</ref> provides documentation of the core <ref ref="Manual::libcodyn#Manual::libcodyn">libcodyn</ref> C API which
+is used to create applications using codyn.
+
+*Note that many of the pages in the <ref ref="Manual#Manual">Manual</ref> are currently only stubs and have yet to be written. We are
+currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, please check back later for updates.*
+</doc>
+  <category name="API Reference" ref="API Reference#API Reference">
+    <brief>libcodyn API reference documentation.</brief>
+    <gobject:interface name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">
+      <brief>Interface for annotating objects</brief>
+    </gobject:interface>
+    <gobject:boxed name="CdnAnnotationInfo" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    <gobject:class name="CdnAttribute" ref="API Reference::CdnAttribute#API Reference::CdnAttribute">
+      <brief>Cdn format attribute</brief>
+    </gobject:class>
+    <gobject:class name="CdnCfileStream" ref="API Reference::CdnCfileStream#API Reference::CdnCfileStream">
+      <brief>An output stream implementation for C FILE streams</brief>
+    </gobject:class>
+    <gobject:class name="CdnCompileContext" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">
+      <brief>The expression compile contex</brief>
+    </gobject:class>
+    <gobject:class name="CdnCompileError" ref="API Reference::CdnCompileError#API Reference::CdnCompileError">
+      <brief>Compile error message container</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    <gobject:class name="CdnEdge" ref="API Reference::CdnEdge#API Reference::CdnEdge">
+      <brief>Connection between two nodes</brief>
+    </gobject:class>
+    <gobject:class name="CdnEdgeAction" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">
+      <brief>Edge action equation</brief>
+    </gobject:class>
+    <gobject:class name="CdnEmbeddedString" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    <gobject:class name="CdnEvent" ref="API Reference::CdnEvent#API Reference::CdnEvent">
+      <brief>Event class</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnEventLogicalNode" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    <gobject:boxed name="CdnEventSetVariable" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable" />
+    <gobject:boxed name="CdnExpansion" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
+    <gobject:boxed name="CdnExpansionContext" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    <gobject:class name="CdnExpression" ref="API Reference::CdnExpression#API Reference::CdnExpression">
+      <brief>Mathematical expression evaluation</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnExpressionTreeIter" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    <gobject:class name="CdnFunction" ref="API Reference::CdnFunction#API Reference::CdnFunction">
+      <brief>User defined function</brief>
+    </gobject:class>
+    <gobject:class name="CdnFunctionArgument" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">
+      <brief>An argument to a custom defined function</brief>
+    </gobject:class>
+    <gobject:class name="CdnFunctionPolynomial" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">
+      <brief>Custom user defined piecewise polynomial</brief>
+    </gobject:class>
+    <gobject:class name="CdnFunctionPolynomialPiece" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">
+      <brief>Piecewise polynomial piece</brief>
+    </gobject:class>
+    <gobject:class name="CdnImport" ref="API Reference::CdnImport#API Reference::CdnImport">
+      <brief>Network import object</brief>
+    </gobject:class>
+    <gobject:class name="CdnImportAlias" ref="API Reference::CdnImportAlias#API Reference::CdnImportAlias">
+      <brief>Network import alias object</brief>
+    </gobject:class>
+    <gobject:class name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction">
+      <brief>Mathematical instruction base class</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnInstructionBoxed" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    <gobject:class name="CdnInstructionCustomFunction" ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">
+      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_CUSTOM_FUNCTION`</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnInstructionCustomFunctionBoxed" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed" />
+    <gobject:boxed name="CdnInstructionCustomFunctionRefBoxed" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed" />
+    <gobject:class name="CdnInstructionCustomOperator" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator" />
+    <gobject:boxed name="CdnInstructionCustomOperatorBoxed" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed" />
+    <gobject:boxed name="CdnInstructionCustomOperatorRefBoxed" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed" />
+    <gobject:class name="CdnInstructionFunction" ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction">
+      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_FUNCTION`</brief>
+    </gobject:class>
+    <gobject:class name="CdnInstructionMatrix" ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">
+      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_MATRIX`</brief>
+    </gobject:class>
+    <gobject:class name="CdnInstructionNumber" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">
+      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_NUMBER`</brief>
+    </gobject:class>
+    <gobject:class name="CdnInstructionRand" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
+    <gobject:class name="CdnInstructionVariable" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
+    <gobject:boxed name="CdnInstructionVariableBoxed" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+    <gobject:class name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">
+      <brief>Simulation integrator</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegratorEuler" ref="API Reference::CdnIntegratorEuler#API Reference::CdnIntegratorEuler">
+      <brief>Euler integrator</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegratorLeapFrog" ref="API Reference::CdnIntegratorLeapFrog#API Reference::CdnIntegratorLeapFrog">
+      <brief>LeapFrog integrator</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegratorPredictCorrect" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">
+      <brief>Prediction Correction integrator</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegratorRungeKutta" ref="API Reference::CdnIntegratorRungeKutta#API Reference::CdnIntegratorRungeKutta">
+      <brief>Runge-Kutta order 4 integrator</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegratorState" ref="API Reference::CdnIntegratorState#API Reference::CdnIntegratorState">
+      <brief>The integrator state</brief>
+    </gobject:class>
+    <gobject:class name="CdnIntegrators" ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators">
+      <brief>Integrator registry</brief>
+    </gobject:class>
+    <gobject:interface name="CdnIo" ref="API Reference::CdnIo#API Reference::CdnIo" />
+    <gobject:class name="CdnIoMethod" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod" />
+    <gobject:class name="CdnLayout" ref="API Reference::CdnLayout#API Reference::CdnLayout" />
+    <gobject:interface name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">
+      <brief>Interface for object layouting</brief>
+    </gobject:interface>
+    <gobject:boxed name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
+    <gobject:class name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
+    <gobject:interface name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable">
+      <brief>Interface for keeping track of the modified state of an object</brief>
+    </gobject:interface>
+    <gobject:class name="CdnMonitor" ref="API Reference::CdnMonitor#API Reference::CdnMonitor">
+      <brief>Property value monitor</brief>
+    </gobject:class>
+    <gobject:class name="CdnNetwork" ref="API Reference::CdnNetwork#API Reference::CdnNetwork">
+      <brief>The main codyn network object</brief>
+    </gobject:class>
+    <gobject:class name="CdnNetworkDeserializer" ref="API Reference::CdnNetworkDeserializer#API Reference::CdnNetworkDeserializer">
+      <brief>XML to Network deserializer</brief>
+    </gobject:class>
+    <gobject:class name="CdnNetworkSerializer" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">
+      <brief>Network to XML serializer</brief>
+    </gobject:class>
+    <gobject:class name="CdnNode" ref="API Reference::CdnNode#API Reference::CdnNode">
+      <brief>Base node class</brief>
+    </gobject:class>
+    <gobject:class name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject">
+      <brief>Basis for all cdn objects</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+    <gobject:class name="CdnOperatorDelayed" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed">
+      <brief>Math operator for delayed evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperatorDiff" ref="API Reference::CdnOperatorDiff#API Reference::CdnOperatorDiff">
+      <brief>Math operator for diff evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperatorDt" ref="API Reference::CdnOperatorDt#API Reference::CdnOperatorDt">
+      <brief>Math operator for dt evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperatorLinsolve" ref="API Reference::CdnOperatorLinsolve#API Reference::CdnOperatorLinsolve">
+      <brief>Math operator for linsolve evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperatorPDiff" ref="API Reference::CdnOperatorPDiff#API Reference::CdnOperatorPDiff">
+      <brief>Math operator for diff evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnOperatorSimplify" ref="API Reference::CdnOperatorSimplify#API Reference::CdnOperatorSimplify">
+      <brief>Math operator for simplify evaluation of an expression</brief>
+    </gobject:class>
+    <gobject:class name="CdnParamSpecMiniObject" ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject" />
+    <gobject:class name="CdnParserContext" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
+    <gobject:interface name="CdnPhaseable" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">
+      <brief>Interface for state dependent actions</brief>
+    </gobject:interface>
+    <gobject:boxed name="CdnSelection" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
+    <gobject:class name="CdnSelector" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    <gobject:boxed name="CdnStack" ref="API Reference::CdnStack#API Reference::CdnStack">
+      <brief>Simple stack</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+    <gobject:boxed name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    <gobject:boxed name="CdnStackManipulation" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    <gobject:interface name="CdnStatement" ref="API Reference::CdnStatement#API Reference::CdnStatement">
+      <brief>Interface for keeping track statements.</brief>
+    </gobject:interface>
+    <gobject:interface name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable">
+      <brief>Interface for counting the uses of an object</brief>
+    </gobject:interface>
+    <gobject:class name="CdnVariable" ref="API Reference::CdnVariable#API Reference::CdnVariable">
+      <brief>Variable</brief>
+    </gobject:class>
+    <gobject:class name="CdnVariableInterface" ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface">
+      <brief>Variable interface for <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>
+      </brief>
+    </gobject:class>
+  </category>
+  <category name="Manual" ref="Manual#Manual">
+    <brief>Getting started with codyn.</brief>
+    <category name="Introduction" ref="Manual::Introduction#Manual::Introduction">
+      <brief>Introduction to the codyn framework.</brief>
+      <category name="Conceptual Overview" ref="Manual::Introduction::Conceptual Overview#Manual::Introduction::Conceptual Overview">
+        <brief>Concepts and terminology.</brief>
+      </category>
+      <category name="First Network" ref="Manual::Introduction::First Network#Manual::Introduction::First Network">
+        <brief>Writing your first network.</brief>
+      </category>
+      <category name="Using the studio" ref="Manual::Introduction::Using the studio#Manual::Introduction::Using the studio">
+        <brief>How to use the codyn studio.</brief>
+      </category>
+      <category name="Performance" ref="Manual::Introduction::Performance#Manual::Introduction::Performance">
+        <brief>Compiling your network for high performance.</brief>
+      </category>
+      <category name="Physics" ref="Manual::Introduction::Physics#Manual::Introduction::Physics">
+        <brief>Using codyn to simulate physics.</brief>
+      </category>
+    </category>
+    <category name="libcodyn" ref="Manual::libcodyn#Manual::libcodyn">
+      <brief>High level description of libcodyn.</brief>
+    </category>
+    <category name="Modeling" ref="Manual::Modeling#Manual::Modeling">
+      <brief>Modeling language of codyn.</brief>
+      <category name="Embedded calculations" ref="Manual::Modeling::Embedded calculations#Manual::Modeling::Embedded calculations">
+        <brief>Embedded calculations</brief>
+      </category>
+      <category name="Expansion references" ref="Manual::Modeling::Expansion references#Manual::Modeling::Expansion references">
+        <brief>Expansion references</brief>
+      </category>
+    </category>
+    <category name="Tools" ref="Manual::Tools#Manual::Tools">
+      <brief>Documentation of various codyn tools (studio, rawc, etc.).</brief>
+      <category name="Command line" ref="Manual::Tools::Command line#Manual::Tools::Command line">
+        <brief>Command line tools for working with codyn.</brief>
+      </category>
+      <category name="studio" ref="Manual::Tools::studio#Manual::Tools::studio">
+        <brief>The graphical interface for codyn networks.</brief>
+      </category>
+      <category name="rawc" ref="Manual::Tools::rawc#Manual::Tools::rawc">
+        <brief>The codyn C code generator.</brief>
+      </category>
+    </category>
+    <category name="Bindings" ref="Manual::Bindings#Manual::Bindings">
+      <brief>Language bindings for codyn (matlab, python, etc.).</brief>
+      <category name="Python" ref="Manual::Bindings::Python#Manual::Bindings::Python">
+        <brief>Using codyn with python.</brief>
+      </category>
+      <category name="Matlab" ref="Manual::Bindings::Matlab#Manual::Bindings::Matlab">
+        <brief>Using codyn with matlab.</brief>
+      </category>
+      <category name=".NET" ref="Manual::Bindings::.NET#Manual::Bindings::.NET">
+        <brief>Using codyn with .NET.</brief>
+      </category>
+    </category>
+  </category>
+</index>

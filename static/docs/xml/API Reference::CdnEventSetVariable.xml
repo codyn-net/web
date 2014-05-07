@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEventSetVariable" name="CdnEventSetVariable" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_event_set_variable_get_value" name="cdn_event_set_variable_get_value">
+    <brief>Get the expression used to update the variable when the event is fired.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_event_set_variable_get_value::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">CdnEventSetVariable</ref>.</doc>
+      <type name="CdnEventSetVariable" qualifier="*" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable" />
+    </argument>
+  </function>
+  <function id="cdn_event_set_variable_get_variable" name="cdn_event_set_variable_get_variable">
+    <brief>Get the variable set when the event is fired.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_event_set_variable_get_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">CdnEventSetVariable</ref>.</doc>
+      <type name="CdnEventSetVariable" qualifier="*" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable" />
+    </argument>
+  </function>
+</gobject:boxed>

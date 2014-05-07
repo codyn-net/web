@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnCompileContext" name="CdnCompileContext" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>The expression compile contex</brief>
+  <doc>The expression compile context
+
+The compile context provides information for compiling expressions such
+as the available user defined functions and the objects that can be used
+to lookup properties used in the expression.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <function id="cdn_compile_context_append_function" name="cdn_compile_context_append_function">
+    <brief>Append a context function to the list of context functions.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_append_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_append_function::function" name="function">
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_append_object" name="cdn_compile_context_append_object">
+    <brief>Append a context object to the list of context objects.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_append_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_append_object::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_get_function_arg_priority" name="cdn_compile_context_get_function_arg_priority">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_compile_context_get_function_arg_priority::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_get_function_ref_priority" name="cdn_compile_context_get_function_ref_priority">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_compile_context_get_function_ref_priority::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_get_functions" name="cdn_compile_context_get_functions">
+    <brief>Get the list of custom user functions</brief>
+    <doc>Get the list of custom user functions. This returns the internally used
+list which should not be modified or freed.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_compile_context_get_functions::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_get_objects" name="cdn_compile_context_get_objects">
+    <brief>Get the list of objects to be considered as context for compilin</brief>
+    <doc>Get the list of objects to be considered as context for compiling
+expressions. This returns the internally used list which should not be
+modified or freed.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_compile_context_get_objects::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_lookup_function" name="cdn_compile_context_lookup_function">
+    <brief>Lookup a custom user function.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref> or `NULL` if the function could not be found</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </return>
+    <argument id="cdn_compile_context_lookup_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_lookup_function::name" name="name">
+      <doc>The name of the function</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_lookup_variable" name="cdn_compile_context_lookup_variable">
+    <brief>Lookup a variable in the list of context objects.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> or `NULL` if the variable could not be found</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_compile_context_lookup_variable::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_lookup_variable::name" name="name">
+      <doc>The variable name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_lookup_variable_last" name="cdn_compile_context_lookup_variable_last">
+    <brief>Lookup a variable in the list of context objects</brief>
+    <doc>Lookup a variable in the list of context objects. This method differs from
+<ref ref="API Reference::CdnCompileContext#cdn_compile_context_lookup_variable">cdn_compile_context_lookup_variable</ref> in that it will return the last
+known variable named <ref ref="API Reference::CdnCompileContext#cdn_compile_context_lookup_variable_last::name">name</ref>.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> or `NULL` if the variable could not be found</doc>
+      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    </return>
+    <argument id="cdn_compile_context_lookup_variable_last::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_lookup_variable_last::name" name="name">
+      <doc>The property name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_new" name="cdn_compile_context_new">
+    <brief>Create a new compile context.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref></doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_compile_context_prepend_function" name="cdn_compile_context_prepend_function">
+    <brief>Prepend a context function to the list of context functions.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_prepend_function::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_prepend_function::function" name="function">
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_prepend_object" name="cdn_compile_context_prepend_object">
+    <brief>Prepend a context object to the list of context objects.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_prepend_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_prepend_object::object" name="object">
+      <doc>A <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref></doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_restore" name="cdn_compile_context_restore">
+    <brief>Restore the previous state of the compile context</brief>
+    <doc>Restore the previous state of the compile context. Each call to restore
+must be matched by a previous call to <ref ref="API Reference::CdnCompileContext#cdn_compile_context_save">cdn_compile_context_save</ref>.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_restore::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_save" name="cdn_compile_context_save">
+    <brief>Save the current state of the compile context</brief>
+    <doc>Save the current state of the compile context. You can use this to alter
+the context and restore it to its previous state later. Calls to this
+function can be nested, but care should be taken to match each call
+with <ref ref="API Reference::CdnCompileContext#cdn_compile_context_restore">cdn_compile_context_restore</ref>.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_save::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_set_function_arg_priority" name="cdn_compile_context_set_function_arg_priority">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_set_function_arg_priority::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_set_function_arg_priority::prio" name="prio">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_compile_context_set_function_ref_priority" name="cdn_compile_context_set_function_ref_priority">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_compile_context_set_function_ref_priority::self" name="self">
+      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
+      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
+    </argument>
+    <argument id="cdn_compile_context_set_function_ref_priority::prio" name="prio">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+</gobject:class>

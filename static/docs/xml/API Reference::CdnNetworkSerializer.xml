@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnNetworkSerializer" name="CdnNetworkSerializer" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Network to XML serializer</brief>
+  <doc>Network to XML serializer.
+
+This can be used to serialize a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref> to XML.</doc>
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <gobject:property id="API Reference::CdnNetworkSerializer::network" mode="construct-only" name="network">
+    <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnNetworkSerializer::root" mode="construct-only" name="root">
+    <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+  </gobject:property>
+  <function id="cdn_network_serializer_new" name="cdn_network_serializer_new">
+    <brief>Create a new serializer for <ref ref="API Reference::CdnNetworkSerializer#cdn_network_serializer_new::network">network</ref>
+    </brief>
+    <doc>Create a new serializer for <ref ref="API Reference::CdnNetworkSerializer#cdn_network_serializer_new::network">network</ref>. When serialized, only objects
+contained in <ref ref="API Reference::CdnNetworkSerializer#cdn_network_serializer_new::root">root</ref> will be serialized. This can be useful to serialize
+only parts of the network. If <ref ref="API Reference::CdnNetworkSerializer#cdn_network_serializer_new::root">root</ref> is `NULL`, all objects will be
+serialized.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">CdnNetworkSerializer</ref></doc>
+      <type name="CdnNetworkSerializer" qualifier="*" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_serializer_new::network" name="network">
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_network_serializer_new::root" name="root">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+  </function>
+  <function id="cdn_network_serializer_serialize" name="cdn_network_serializer_serialize">
+    <brief>Serialize a network to an output stream.</brief>
+    <return>
+      <doc>`TRUE` if the serialization was successful, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_serializer_serialize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">CdnNetworkSerializer</ref>.</doc>
+      <type name="CdnNetworkSerializer" qualifier="*" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize::stream" name="stream">
+      <doc>A &amp;lt;GOutputStream&amp;gt;</doc>
+      <type name="GOutputStream" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_serializer_serialize_file" name="cdn_network_serializer_serialize_file">
+    <brief>Convenience function to serialize to a file.</brief>
+    <return>
+      <doc>`TRUE` if the serialization was successful, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_serializer_serialize_file::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">CdnNetworkSerializer</ref>.</doc>
+      <type name="CdnNetworkSerializer" qualifier="*" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize_file::file" name="file">
+      <doc>A &amp;lt;GFile&amp;gt;</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize_file::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_serializer_serialize_memory" name="cdn_network_serializer_serialize_memory">
+    <brief>Convenience function to serialize a network to a string.</brief>
+    <return>
+      <doc>The serialized network or `NULL` if an error occurred.</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_network_serializer_serialize_memory::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">CdnNetworkSerializer</ref>.</doc>
+      <type name="CdnNetworkSerializer" qualifier="*" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize_memory::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_network_serializer_serialize_path" name="cdn_network_serializer_serialize_path">
+    <brief>Convenience function to serialize to a file path.</brief>
+    <return>
+      <doc>`TRUE` if the serialization was successful, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_network_serializer_serialize_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer">CdnNetworkSerializer</ref>.</doc>
+      <type name="CdnNetworkSerializer" qualifier="*" ref="API Reference::CdnNetworkSerializer#API Reference::CdnNetworkSerializer" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize_path::path" name="path">
+      <doc>The file path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_network_serializer_serialize_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+</gobject:class>

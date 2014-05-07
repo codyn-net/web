@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnFunctionPolynomial" name="CdnFunctionPolynomial" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Custom user defined piecewise polynomial</brief>
+  <doc>Custom user defined piecewise polynomial.
+
+This class provides a specialized custom user function which defines
+and evaluates piecewise polynomials. The piece polynomials can be
+specified in terms of the interval in which they are evaluated and
+the polynomial coefficients.</doc>
+  <base access="public">
+    <type name="CdnFunction" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <function id="cdn_function_polynomial_add" name="cdn_function_polynomial_add">
+    <brief>Add a polynomial piece.</brief>
+    <return>
+      <doc>`TRUE` if the piece could be successfully added, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_polynomial_add::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref>.</doc>
+      <type name="CdnFunctionPolynomial" qualifier="*" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial" />
+    </argument>
+    <argument id="cdn_function_polynomial_add::piece" name="piece">
+      <doc>A <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_clear_pieces" name="cdn_function_polynomial_clear_pieces">
+    <brief>Remove all the polynomial pieces.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_polynomial_clear_pieces::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref>.</doc>
+      <type name="CdnFunctionPolynomial" qualifier="*" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_get_pieces" name="cdn_function_polynomial_get_pieces">
+    <brief>Get a list of the polynomials which make up the function</brief>
+    <doc>Get a list of the polynomials which make up the function. This returns
+the internally used list which should not be modified or freed.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="GSList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_function_polynomial_get_pieces::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref>.</doc>
+      <type name="CdnFunctionPolynomial" qualifier="*" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_new" name="cdn_function_polynomial_new">
+    <brief>Create a new polynomial function</brief>
+    <doc>Create a new polynomial function. This is a special kind of user function
+which calculates a piecewise polynomial. The function is called with
+one argument (the point at which to interpolate).
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref></doc>
+      <type name="CdnFunctionPolynomial" qualifier="*" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_polynomial_new::name" name="name">
+      <doc>The function name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_function_polynomial_remove" name="cdn_function_polynomial_remove">
+    <brief>Remove a polynomial piece.</brief>
+    <return>
+      <doc>`TRUE` if the piece could be successfully removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_polynomial_remove::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref>.</doc>
+      <type name="CdnFunctionPolynomial" qualifier="*" ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial" />
+    </argument>
+    <argument id="cdn_function_polynomial_remove::piece" name="piece">
+      <doc>A <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
+      <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
+    </argument>
+  </function>
+</gobject:class>

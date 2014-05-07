@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnFunction" name="CdnFunction" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>User defined function</brief>
+  <doc>User defined function.
+
+It is possible to define custom user functions in the network which can
+then be used from any expression. This class provides the basic
+user function functionality. User defined functions can reference global
+constants as well as use other user defined functions in their expressions.
+
+The <ref ref="API Reference::CdnFunction#API Reference::CdnFunction" /> class can be subclassed to provide more specific types
+of functions. One such example is the <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref> class which
+can be used to define and evaluate piecewise polynomials.
+
+## CdnFunction Copy Semantics
+When a function is copied with &amp;lt;cdn\_object\_copy&amp;gt;, the function expression
+and all the arguments are copied as well.
+</doc>
+  <base access="public">
+    <type name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnFunction::expression" mode="construct" name="expression">
+    <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+  </gobject:property>
+  <function id="cdn_function_add_argument" name="cdn_function_add_argument">
+    <brief>Add a function argument</brief>
+    <doc>Add a function argument. A proxy property for the argument will be
+automatically created if it does not exist yet. If the argument already
+exists it will not be added.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_add_argument::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_add_argument::argument" name="argument">
+      <doc>A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref></doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+  </function>
+  <function id="cdn_function_clear_arguments" name="cdn_function_clear_arguments">
+    <brief>Remove all the function arguments.</brief>
+    <return>
+      <doc>`TRUE` if all arguments could be successfully removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_clear_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_clear_arguments::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_function_execute" name="cdn_function_execute">
+    <brief>Execute the function</brief>
+    <doc>Execute the function. This is used internally when the function needs to be
+evaluated.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_execute::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_execute::stack" name="stack">
+      <doc>A <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref></doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_function_for_dimension" name="cdn_function_for_dimension">
+    <brief>Get the function prototype representing this function for the give</brief>
+    <doc>Get the function prototype representing this function for the given
+arguments.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_for_dimension::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_for_dimension::argdim" name="argdim">
+      <doc>The argument dimensions</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_argument" name="cdn_function_get_argument">
+    <brief>Get an argument by name.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref></doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </return>
+    <argument id="cdn_function_get_argument::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_get_argument::name" name="name">
+      <doc>The argument name</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_arguments" name="cdn_function_get_arguments">
+    <brief>Get the list of function arguments</brief>
+    <doc>Get the list of function arguments. The returned list is used internally
+and should not be modified or freed.
+
+</doc>
+    <return>
+      <doc>A &amp;lt;GList&amp;gt;</doc>
+      <type name="GList" qualifier=" const *" />
+    </return>
+    <argument id="cdn_function_get_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_dependencies" name="cdn_function_get_dependencies">
+    <brief>Get the function expression dependencies.</brief>
+    <return>
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="GSList" qualifier="*" />
+    </return>
+    <argument id="cdn_function_get_dependencies::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_derivative" name="cdn_function_get_derivative">
+    <brief>Get the derivative of a function</brief>
+    <doc>Get the derivative of a function. If successfull, a new function will be
+returned. In the case of a full derivative, new function arguments for
+each of the variables being derived towards will have been added.
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_get_derivative::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_get_derivative::towards" name="towards">
+      <doc>the variables towards which to derive</doc>
+      <type name="GSList" qualifier="*" />
+    </argument>
+    <argument id="cdn_function_get_derivative::order" name="order">
+      <doc>the order of the derivative</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_function_get_derivative::flags" name="flags">
+      <doc>derivation flags</doc>
+      <type name="CdnExpressionTreeIterDeriveFlags" ref="API Reference#API Reference::CdnExpressionTreeIterDeriveFlags" />
+    </argument>
+    <argument id="cdn_function_get_derivative::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_expression" name="cdn_function_get_expression">
+    <brief>Get the function expression.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_function_get_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_n_arguments" name="cdn_function_get_n_arguments">
+    <brief>Get the number of arguments</brief>
+    <doc>Get the number of arguments. This value is cached and is thus faster than
+using <ref ref="API Reference::CdnFunction#cdn_function_get_arguments">cdn_function_get_arguments</ref> and &amp;lt;g\_list\_length&amp;gt;.
+
+</doc>
+    <return>
+      <doc>the number of arguments</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_function_get_n_arguments::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_n_implicit" name="cdn_function_get_n_implicit">
+    <brief>Get the number of implicit arguments.</brief>
+    <return>
+      <doc>the number of implicit arguments</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_function_get_n_implicit::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_n_optional" name="cdn_function_get_n_optional">
+    <brief>Get the number of optional arguments.</brief>
+    <return>
+      <doc>the number of optional arguments.</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_function_get_n_optional::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_get_stack_manipulation" name="cdn_function_get_stack_manipulation">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_get_stack_manipulation::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_is_pure" name="cdn_function_is_pure">
+    <brief>Get whether the function is pure</brief>
+    <doc>Get whether the function is pure. Pure functions only depend on their
+arguments and do not reference any other external variables.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the function is pure, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_is_pure::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+  </function>
+  <function id="cdn_function_new" name="cdn_function_new">
+    <brief>Create a new custom user function</brief>
+    <doc>Create a new custom user function. After creation, function arguments
+can be added to the function using <ref ref="API Reference::CdnFunction#cdn_function_add_argument">cdn_function_add_argument</ref>.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref></doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_function_new::name" name="name">
+      <doc>The function name</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_function_new::expression" name="expression">
+      <doc>The function expression</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_function_remove_argument" name="cdn_function_remove_argument">
+    <brief>Remove a function argument.</brief>
+    <return>
+      <doc>`TRUE` if the argument could be removed, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_function_remove_argument::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_remove_argument::argument" name="argument">
+      <doc>A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref></doc>
+      <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
+    </argument>
+    <argument id="cdn_function_remove_argument::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_function_set_expression" name="cdn_function_set_expression">
+    <brief>Set the function expression.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_set_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
+      <type name="CdnFunction" qualifier="*" ref="API Reference::CdnFunction#API Reference::CdnFunction" />
+    </argument>
+    <argument id="cdn_function_set_expression::expression" name="expression">
+      <doc>A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </argument>
+  </function>
+  <function id="cdn_function_set_rand_as_argument" name="cdn_function_set_rand_as_argument">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_function_set_rand_as_argument::rand_as_argument" name="rand_as_argument">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+</gobject:class>

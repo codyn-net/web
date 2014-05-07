@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnImport" name="CdnImport" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Network import object</brief>
+  <doc>Network import object.
+
+The <ref ref="API Reference::CdnImport#API Reference::CdnImport" /> object can be used to import templates and objects from
+an external network file.</doc>
+  <base access="public">
+    <type name="CdnNode" ref="API Reference::CdnNode#API Reference::CdnNode" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnImport::file" mode="construct-only" name="file">
+    <brief>The imported file</brief>
+    <type name="GFile" qualifier="*" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnImport::path" mode="readonly" name="path">
+    <type builtin="yes" name="gchar" qualifier="*" />
+  </gobject:property>
+  <function id="cdn_import_append_search_path" name="cdn_import_append_search_path">
+    <brief>Append a search directory path to the list of paths to be searched whe</brief>
+    <doc>Append a search directory path to the list of paths to be searched when
+resolving an import file.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_import_append_search_path::path" name="path">
+      <doc>A directory path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_import_get_file" name="cdn_import_get_file">
+    <brief>Get the file that was imported.</brief>
+    <return>
+      <doc>A &amp;lt;GFile&amp;gt;</doc>
+      <type name="GFile" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_import_get_file::self" name="self">
+      <doc>a <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref>.</doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+    </argument>
+  </function>
+  <function id="cdn_import_get_path" name="cdn_import_get_path">
+    <brief>Get the path that was imported.</brief>
+    <return>
+      <doc>the path</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_import_get_path::self" name="self">
+      <doc>a <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref>.</doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+    </argument>
+  </function>
+  <function id="cdn_import_get_search_path" name="cdn_import_get_search_path">
+    <brief>Get the search directories used to resolve import file names.</brief>
+    <return>
+      <doc>a `NULL` terminated list of strings</doc>
+      <type builtin="yes" name="gchar" qualifier="**" />
+    </return>
+  </function>
+  <function id="cdn_import_imports_object" name="cdn_import_imports_object">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_import_imports_object::self" name="self">
+      <doc>a <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref>.</doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+    </argument>
+    <argument id="cdn_import_imports_object::object" name="object">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+    </argument>
+  </function>
+  <function id="cdn_import_load" name="cdn_import_load">
+    <brief>Perform the actual import</brief>
+    <doc>Perform the actual import. This function is called by <ref ref="API Reference::CdnImport#cdn_import_new">cdn_import_new</ref> and
+should never have to be used manually. It's provided for use in bindings.
+
+</doc>
+    <return>
+      <doc>`TRUE` if the import was successful, `FALSE` otherwise.</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_import_load::self" name="self">
+      <doc>a <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref>.</doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
+    </argument>
+    <argument id="cdn_import_load::network" name="network">
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_import_load::parent" name="parent">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type allow-none="yes" name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_import_load::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_import_new" name="cdn_import_new">
+    <brief>Import objects from an external file</brief>
+    <doc>Import objects from an external file. The import object will automatically
+be added to the parent group. If the import is done in the normal object
+tree of the network, templates that are defined in the imported file will
+be automatically imported in the networks' templates.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref> or `NULL` if the import failed.</doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_import_new::network" name="network">
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_import_new::parent" name="parent">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type allow-none="yes" name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_import_new::id" name="id">
+      <doc>The import object id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_import_new::file" name="file">
+      <doc>The file to import</doc>
+      <type name="GFile" qualifier="*" />
+    </argument>
+    <argument id="cdn_import_new::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_import_new_from_path" name="cdn_import_new_from_path">
+    <brief>Convenience function to create a new import for a path</brief>
+    <doc>Convenience function to create a new import for a path. See <ref ref="API Reference::CdnImport#cdn_import_new">cdn_import_new</ref>
+for more information. Note that the specified path should be an absolute
+path. The search directories are not used to resolve the full path.
+
+</doc>
+    <return>
+      <doc>A <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref></doc>
+      <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_import_new_from_path::network" name="network">
+      <doc>A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
+      <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
+    </argument>
+    <argument id="cdn_import_new_from_path::parent" name="parent">
+      <doc>A <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
+      <type allow-none="yes" name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
+    </argument>
+    <argument id="cdn_import_new_from_path::id" name="id">
+      <doc>The import object id</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_import_new_from_path::path" name="path">
+      <doc>The import file path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+    <argument id="cdn_import_new_from_path::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_import_prepend_search_path" name="cdn_import_prepend_search_path">
+    <brief>Prepend a search directory path to the list of paths to be searched whe</brief>
+    <doc>Prepend a search directory path to the list of paths to be searched when
+resolving an import file.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_import_prepend_search_path::path" name="path">
+      <doc>A directory path</doc>
+      <type builtin="yes" name="gchar" qualifier=" const *" />
+    </argument>
+  </function>
+  <function id="cdn_import_set_search_path" name="cdn_import_set_search_path">
+    <brief>Set the search directories used to resolve import file names</brief>
+    <doc>Set the search directories used to resolve import file names. <ref ref="API Reference::CdnImport#cdn_import_set_search_path::path">path</ref> should
+be a `NULL` terminated list of strings.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_import_set_search_path::path" name="path">
+      <doc>The search directories</doc>
+      <type builtin="yes" name="gchar" qualifier="**" />
+    </argument>
+  </function>
+</gobject:class>

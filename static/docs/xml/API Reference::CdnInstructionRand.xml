@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionRand" name="CdnInstructionRand" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+  </base>
+  <function id="cdn_instruction_rand_get_seed" name="cdn_instruction_rand_get_seed">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_instruction_rand_get_seed::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</doc>
+      <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_rand_new" name="cdn_instruction_rand_new">
+    <brief>Create a new <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_instruction_rand_new::argdim" name="argdim">
+      <doc>the argument dimensions</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_rand_next" name="cdn_instruction_rand_next">
+    <brief>Generate the next random value in the instruction.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_rand_next::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</doc>
+      <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_rand_reset" name="cdn_instruction_rand_reset">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_rand_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</doc>
+      <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_rand_set_seed" name="cdn_instruction_rand_set_seed">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_rand_set_seed::self" name="self">
+      <doc>a <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</doc>
+      <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
+    </argument>
+    <argument id="cdn_instruction_rand_set_seed::seed" name="seed">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_instruction_rand_set_use_streams" name="cdn_instruction_rand_set_use_streams">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_instruction_rand_set_use_streams::use" name="use">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+</gobject:class>

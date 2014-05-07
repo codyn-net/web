@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegratorEuler" name="CdnIntegratorEuler" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Euler integrator</brief>
+  <doc>Euler integrator.
+
+The euler integrator is a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref> subclass implementing a simple
+euler integration scheme. See <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref> or
+<ref ref="API Reference::CdnIntegratorRungeKutta#API Reference::CdnIntegratorRungeKutta">CdnIntegratorRungeKutta</ref> for more accurate (but slower) integrators.</doc>
+  <base access="public">
+    <type name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <function id="cdn_integrator_euler_new" name="cdn_integrator_euler_new">
+    <brief>Create a new Euler integrator.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorEuler#API Reference::CdnIntegratorEuler">CdnIntegratorEuler</ref></doc>
+      <type name="CdnIntegratorEuler" qualifier="*" ref="API Reference::CdnIntegratorEuler#API Reference::CdnIntegratorEuler" transfer-ownership="full" />
+    </return>
+  </function>
+</gobject:class>

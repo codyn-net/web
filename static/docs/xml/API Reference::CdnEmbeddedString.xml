@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEmbeddedString" name="CdnEmbeddedString" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="GObject" />
+  </base>
+  <implements access="public">
+    <type name="CdnStatement" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
+  </implements>
+  <function id="cdn_embedded_string_add_string" name="cdn_embedded_string_add_string">
+    <brief>Add one embedded string to another.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_add_string::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_add_string::other" name="other">
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_add_text" name="cdn_embedded_string_add_text">
+    <brief>Adds a text node to the embedded string.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_add_text::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_add_text::text" name="text">
+      <doc>The text to add</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_as_expansion" name="cdn_embedded_string_as_expansion">
+    <brief>Create an expansion representing the embedded string</brief>
+    <doc>Create an expansion representing the embedded string. The first
+element represents the non-multiexpanded expansion of the embedded string.
+The embedded string &amp;lt;s&amp;gt; is first multi-expanded. Then, all 0th elements of
+each expansion in &amp;lt;expanded&amp;gt; are added to the result expansion (i.e.
+represented in elements 1:N).
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_as_expansion::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_as_expansion::context" name="context">
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_embedded_string_as_expansion::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_brace_level" name="cdn_embedded_string_brace_level">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </return>
+    <argument id="cdn_embedded_string_brace_level::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_clear_cache" name="cdn_embedded_string_clear_cache">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_embedded_string_clear_cache::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_collapse" name="cdn_embedded_string_collapse">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_collapse::s" name="s">
+      <doc>*documentation missing...*</doc>
+      <type name="gchar* const" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_escape" name="cdn_embedded_string_escape">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_escape::item" name="item">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_expand" name="cdn_embedded_string_expand">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_expand::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_expand::ctx" name="ctx">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_embedded_string_expand::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_expand_escape" name="cdn_embedded_string_expand_escape">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_expand_escape::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_expand_escape::ctx" name="ctx">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_embedded_string_expand_escape::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_expand_multiple" name="cdn_embedded_string_expand_multiple">
+    <brief>Expand string with braces syntax.</brief>
+    <return>
+      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <type name="GSList" qualifier="*" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_expand_multiple::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_expand_multiple::ctx" name="ctx">
+      <doc>A <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    </argument>
+    <argument id="cdn_embedded_string_expand_multiple::error" name="error">
+      <doc>a &amp;lt;GError&amp;gt;.</doc>
+      <type allow-none="yes" name="GError " qualifier="**" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_new" name="cdn_embedded_string_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_embedded_string_new_from_double" name="cdn_embedded_string_new_from_double">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_new_from_double::s" name="s">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_new_from_integer" name="cdn_embedded_string_new_from_integer">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_new_from_integer::s" name="s">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_new_from_string" name="cdn_embedded_string_new_from_string">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_embedded_string_new_from_string::s" name="s">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_pop" name="cdn_embedded_string_pop">
+    <brief>Pop an embedded context.</brief>
+    <return>
+      <doc>The <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref> (&amp;lt;s&amp;gt;)</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_pop::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_pop_brace" name="cdn_embedded_string_pop_brace">
+    <brief>Pop a brace for an embedded string.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_pop_brace::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_prepend_text" name="cdn_embedded_string_prepend_text">
+    <brief>Prepends a text node to the embedded string.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_prepend_text::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_prepend_text::text" name="text">
+      <doc>The text to add</doc>
+      <type builtin="yes" name="gchar" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_push" name="cdn_embedded_string_push">
+    <brief>Push a context type into the embedded string.</brief>
+    <return>
+      <doc>The <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref> (&amp;lt;s&amp;gt;)</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_push::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+    <argument id="cdn_embedded_string_push::type" name="type">
+      <doc>A <ref ref="API Reference#API Reference::CdnEmbeddedStringNodeType">CdnEmbeddedStringNodeType</ref></doc>
+      <type name="CdnEmbeddedStringNodeType" ref="API Reference#API Reference::CdnEmbeddedStringNodeType" />
+    </argument>
+    <argument id="cdn_embedded_string_push::depth" name="depth">
+      <doc>The depth of the embedded string</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_embedded_string_push_brace" name="cdn_embedded_string_push_brace">
+    <brief>Push a brace for an embedded string.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </return>
+    <argument id="cdn_embedded_string_push_brace::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>.</doc>
+      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    </argument>
+  </function>
+</gobject:class>

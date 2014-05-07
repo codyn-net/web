@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnLayoutable" name="CdnLayoutable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Interface for object layouting</brief>
+  <doc>Interface for object layouting.
+
+This interface can be implemented when an object can be layouted.</doc>
+  <gobject:property id="API Reference::CdnLayoutable::has-location" mode="construct" name="has-location">
+    <type builtin="yes" name="gboolean" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnLayoutable::x" mode="construct" name="x">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnLayoutable::y" mode="construct" name="y">
+    <type builtin="yes" name="gint" />
+  </gobject:property>
+  <function id="cdn_layoutable_get_has_location" name="cdn_layoutable_get_has_location">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_layoutable_get_has_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">CdnLayoutable</ref>.</doc>
+      <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+    </argument>
+  </function>
+  <function id="cdn_layoutable_get_location" name="cdn_layoutable_get_location">
+    <brief>Get the location of the layoutable.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_layoutable_get_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">CdnLayoutable</ref>.</doc>
+      <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+    </argument>
+    <argument id="cdn_layoutable_get_location::x" name="x">
+      <doc>x</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+    <argument id="cdn_layoutable_get_location::y" name="y">
+      <doc>y</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_layoutable_set_has_location" name="cdn_layoutable_set_has_location">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_layoutable_set_has_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">CdnLayoutable</ref>.</doc>
+      <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+    </argument>
+    <argument id="cdn_layoutable_set_has_location::has_location" name="has_location">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gboolean" />
+    </argument>
+  </function>
+  <function id="cdn_layoutable_set_location" name="cdn_layoutable_set_location">
+    <brief>Set the location of the layoutable.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_layoutable_set_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">CdnLayoutable</ref>.</doc>
+      <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+    </argument>
+    <argument id="cdn_layoutable_set_location::x" name="x">
+      <doc>x</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_layoutable_set_location::y" name="y">
+      <doc>y</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_layoutable_supports_location" name="cdn_layoutable_supports_location">
+    <brief>Whether the layoutable supports a location.</brief>
+    <return>
+      <doc>`TRUE` if the layoutable supports location, `FALSE` otherwise</doc>
+      <type builtin="yes" name="gboolean" />
+    </return>
+    <argument id="cdn_layoutable_supports_location::self" name="self">
+      <doc>a <ref ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">CdnLayoutable</ref>.</doc>
+      <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+    </argument>
+  </function>
+</gobject:interface>

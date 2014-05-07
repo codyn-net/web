@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStackManipulation" name="CdnStackManipulation" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="API Reference::CdnStackManipulation::pop" name="pop">
+    <type name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+  </field>
+  <field id="API Reference::CdnStackManipulation::push" name="push">
+    <type name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+  </field>
+  <field id="API Reference::CdnStackManipulation::extra_space" name="extra_space">
+    <type builtin="yes" name="gint" />
+  </field>
+  <function id="cdn_stack_manipulation_copy" name="cdn_stack_manipulation_copy">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_manipulation_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+    <argument id="cdn_stack_manipulation_copy::src" name="src">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+  </function>
+  <function id="cdn_stack_manipulation_destroy" name="cdn_stack_manipulation_destroy">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_manipulation_destroy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+  </function>
+  <function id="cdn_stack_manipulation_get_pop" name="cdn_stack_manipulation_get_pop">
+    <brief>Get the dimension of a particular popped argument.</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_manipulation_get_pop::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+  </function>
+  <function id="cdn_stack_manipulation_get_popn" name="cdn_stack_manipulation_get_popn">
+    <brief>Get the dimension of a particular popped argument.</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_manipulation_get_popn::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+    <argument id="cdn_stack_manipulation_get_popn::n" name="n">
+      <doc>the popped argument index.</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_manipulation_get_push" name="cdn_stack_manipulation_get_push">
+    <brief>Get the dimension of the pushed element.</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_manipulation_get_push::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    </argument>
+  </function>
+</gobject:boxed>

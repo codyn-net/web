@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEventLogicalNode" name="CdnEventLogicalNode" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <function id="cdn_event_logical_node_get_compare_type" name="cdn_event_logical_node_get_compare_type">
+    <brief>Get the comparison type represented by the node.</brief>
+    <return>
+      <doc>a <ref ref="API Reference#API Reference::CdnMathFunctionType">CdnMathFunctionType</ref>.</doc>
+      <type name="CdnMathFunctionType" ref="API Reference#API Reference::CdnMathFunctionType" />
+    </return>
+    <argument id="cdn_event_logical_node_get_compare_type::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </argument>
+  </function>
+  <function id="cdn_event_logical_node_get_expression" name="cdn_event_logical_node_get_expression">
+    <brief>Get the expression of the logical node.</brief>
+    <return>
+      <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
+      <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
+    </return>
+    <argument id="cdn_event_logical_node_get_expression::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </argument>
+  </function>
+  <function id="cdn_event_logical_node_get_left" name="cdn_event_logical_node_get_left">
+    <brief>Get the left hand side node of the logical node</brief>
+    <doc>Get the left hand side node of the logical node. This is only non `NULL` for
+nodes representing logical AND and OR.
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </return>
+    <argument id="cdn_event_logical_node_get_left::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </argument>
+  </function>
+  <function id="cdn_event_logical_node_get_right" name="cdn_event_logical_node_get_right">
+    <brief>Get the right hand side node of the logical node</brief>
+    <doc>Get the right hand side node of the logical node. This is only non `NULL` for
+nodes representing logical AND and OR.
+
+</doc>
+    <return>
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </return>
+    <argument id="cdn_event_logical_node_get_right::self" name="self">
+      <doc>a <ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref>.</doc>
+      <type name="CdnEventLogicalNode" qualifier="*" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
+    </argument>
+  </function>
+</gobject:boxed>

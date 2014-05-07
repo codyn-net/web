@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStack" name="CdnStack" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Simple stack</brief>
+  <doc>Simple stack.
+
+Very simple/efficient stack implementation for double numbers.</doc>
+  <function id="cdn_stack_at" name="cdn_stack_at">
+    <brief>Get a value from the stack at the specified index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">idx</ref>.</brief>
+    <return>
+      <doc>The stack value at index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">idx</ref></doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_stack_at::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_at::idx" name="idx">
+      <doc>The index</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_copy" name="cdn_stack_copy">
+    <brief>Create a copy of the stack.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref></doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_count" name="cdn_stack_count">
+    <brief>Count the number of items on the stack.</brief>
+    <return>
+      <doc>the number of items on the stack</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_stack_count::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_destroy" name="cdn_stack_destroy">
+    <brief>Destroy the stack</brief>
+    <doc>Destroy the stack. This resizes the stack to 0. To free the whole stack, use
+<ref ref="API Reference::CdnStack#cdn_stack_free">cdn_stack_free</ref>.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_destroy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_free" name="cdn_stack_free">
+    <brief>Free the stack.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_free::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_init" name="cdn_stack_init">
+    <brief>Initialize the stack to a certain size (useful when a stack is allocate</brief>
+    <doc>Initialize the stack to a certain size (useful when a stack is allocated
+statically).</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_init::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_init::size" name="size">
+      <doc>the stack size</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_new" name="cdn_stack_new">
+    <brief>Create a new stack with the given size.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref></doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_new::size" name="size">
+      <doc>the stack size</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_output_ptr" name="cdn_stack_output_ptr">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_stack_output_ptr::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_peek" name="cdn_stack_peek">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_stack_peek::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_pop" name="cdn_stack_pop">
+    <brief>Pop a value of the stack</brief>
+    <doc>Pop a value of the stack. Note: this function does not check whether there
+are still values on the stack, be sure to either know, or check the stack
+yourself.
+
+</doc>
+    <return>
+      <doc>the last value on the stack</doc>
+      <type builtin="yes" name="gdouble" />
+    </return>
+    <argument id="cdn_stack_pop::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_popn" name="cdn_stack_popn">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_stack_popn::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_popn::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_ptr" name="cdn_stack_ptr">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </return>
+    <argument id="cdn_stack_ptr::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_push" name="cdn_stack_push">
+    <brief>Push a value on the stack</brief>
+    <doc>Push a value on the stack. The stack will not be automatically resized, thus
+be sure to know that you are not exceeding the stack size.</doc>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_push::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_push::value" name="value">
+      <doc>the value</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_stack_pushn" name="cdn_stack_pushn">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_pushn::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_pushn::values" name="values">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+    <argument id="cdn_stack_pushn::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_pushni" name="cdn_stack_pushni">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_pushni::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_pushni::value" name="value">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+    <argument id="cdn_stack_pushni::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_reset" name="cdn_stack_reset">
+    <brief>Reset the stack.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_reset::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+  <function id="cdn_stack_resize" name="cdn_stack_resize">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_resize::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_resize::size" name="size">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_set" name="cdn_stack_set">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_set::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_set::value" name="value">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_stack_set_at" name="cdn_stack_set_at">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_set_at::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_set_at::idx" name="idx">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+    <argument id="cdn_stack_set_at::value" name="value">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" />
+    </argument>
+  </function>
+  <function id="cdn_stack_set_output_ptr" name="cdn_stack_set_output_ptr">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_set_output_ptr::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+    <argument id="cdn_stack_set_output_ptr::ptr" name="ptr">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gdouble" qualifier="*" />
+    </argument>
+  </function>
+  <function id="cdn_stack_size" name="cdn_stack_size">
+    <brief>Get the size of the stack</brief>
+    <doc>Get the size of the stack. This is the maximum number of items that the
+stack can hold. Use <ref ref="API Reference::CdnStack#cdn_stack_count">cdn_stack_count</ref> to get the number of items currently
+on the stack
+
+</doc>
+    <return>
+      <doc>the stack size</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_stack_size::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStack#API Reference::CdnStack">CdnStack</ref>.</doc>
+      <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
+    </argument>
+  </function>
+</gobject:boxed>

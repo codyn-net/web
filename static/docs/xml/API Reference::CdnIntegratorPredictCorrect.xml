@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIntegratorPredictCorrect" name="CdnIntegratorPredictCorrect" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Prediction Correction integrator</brief>
+  <doc>Prediction Correction integrator.
+
+The prediction correction integrator is a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref> subclass
+implementing a prediction correction integration scheme. It supports multiple
+orders of prediction and correction.</doc>
+  <base access="public">
+    <type name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
+  </base>
+  <implements access="public">
+    <type name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
+  </implements>
+  <implements access="public">
+    <type name="CdnUsable" ref="API Reference::CdnUsable#API Reference::CdnUsable" />
+  </implements>
+  <gobject:property id="API Reference::CdnIntegratorPredictCorrect::correction-order" mode="construct" name="correction-order">
+    <type builtin="yes" name="guint" />
+  </gobject:property>
+  <gobject:property id="API Reference::CdnIntegratorPredictCorrect::prediction-order" mode="construct" name="prediction-order">
+    <type builtin="yes" name="guint" />
+  </gobject:property>
+  <function id="cdn_integrator_predict_correct_get_correction_order" name="cdn_integrator_predict_correct_get_correction_order">
+    <brief>Get the correction order.</brief>
+    <return>
+      <doc>The correction order</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_integrator_predict_correct_get_correction_order::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref>.</doc>
+      <type name="CdnIntegratorPredictCorrect" qualifier="*" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_predict_correct_get_prediction_order" name="cdn_integrator_predict_correct_get_prediction_order">
+    <brief>Get the prediction order.</brief>
+    <return>
+      <doc>The prediction order</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_integrator_predict_correct_get_prediction_order::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref>.</doc>
+      <type name="CdnIntegratorPredictCorrect" qualifier="*" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_predict_correct_new" name="cdn_integrator_predict_correct_new">
+    <brief>Create a new PredictCorrect integrator.</brief>
+    <return>
+      <doc>A <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref></doc>
+      <type name="CdnIntegratorPredictCorrect" qualifier="*" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect" transfer-ownership="full" />
+    </return>
+  </function>
+  <function id="cdn_integrator_predict_correct_set_correction_order" name="cdn_integrator_predict_correct_set_correction_order">
+    <brief>Set the correction order.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_predict_correct_set_correction_order::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref>.</doc>
+      <type name="CdnIntegratorPredictCorrect" qualifier="*" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect" />
+    </argument>
+    <argument id="cdn_integrator_predict_correct_set_correction_order::order" name="order">
+      <doc>The correction order</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+  <function id="cdn_integrator_predict_correct_set_prediction_order" name="cdn_integrator_predict_correct_set_prediction_order">
+    <brief>Set the prediction order.</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_integrator_predict_correct_set_prediction_order::self" name="self">
+      <doc>a <ref ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect">CdnIntegratorPredictCorrect</ref>.</doc>
+      <type name="CdnIntegratorPredictCorrect" qualifier="*" ref="API Reference::CdnIntegratorPredictCorrect#API Reference::CdnIntegratorPredictCorrect" />
+    </argument>
+    <argument id="cdn_integrator_predict_correct_set_prediction_order::order" name="order">
+      <doc>The prediction order</doc>
+      <type builtin="yes" name="guint" />
+    </argument>
+  </function>
+</gobject:class>

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStackArgs" name="CdnStackArgs" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="API Reference::CdnStackArgs::num" name="num">
+    <type builtin="yes" name="gint" />
+  </field>
+  <field id="API Reference::CdnStackArgs::args" name="args">
+    <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+  </field>
+  <function id="cdn_stack_args_append" name="cdn_stack_args_append">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_args_append::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+    <argument id="cdn_stack_args_append::arg" name="arg">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+    </argument>
+  </function>
+  <function id="cdn_stack_args_copy" name="cdn_stack_args_copy">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_args_copy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+    <argument id="cdn_stack_args_copy::src" name="src">
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_stack_args_destroy" name="cdn_stack_args_destroy">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_args_destroy::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_stack_args_get_num" name="cdn_stack_args_get_num">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="guint" />
+    </return>
+    <argument id="cdn_stack_args_get_num::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+  </function>
+  <function id="cdn_stack_args_init" name="cdn_stack_args_init">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <type builtin="yes" name="void" />
+    </return>
+    <argument id="cdn_stack_args_init::self" name="self">
+      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    </argument>
+    <argument id="cdn_stack_args_init::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+  <function id="cdn_stack_args_new" name="cdn_stack_args_new">
+    <brief>*Documentation missing...*</brief>
+    <return>
+      <doc>*documentation missing...*</doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" transfer-ownership="full" />
+    </return>
+    <argument id="cdn_stack_args_new::num" name="num">
+      <doc>*documentation missing...*</doc>
+      <type builtin="yes" name="gint" />
+    </argument>
+  </function>
+</gobject:boxed>

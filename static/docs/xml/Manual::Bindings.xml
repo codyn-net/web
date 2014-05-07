@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<category id="Manual::Bindings" name="Bindings" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Language bindings for codyn (matlab, python, etc.).</brief>
+  <category name="Python" ref="Manual::Bindings::Python#Manual::Bindings::Python">
+    <brief>Using codyn with python.</brief>
+  </category>
+  <category name="Matlab" ref="Manual::Bindings::Matlab#Manual::Bindings::Matlab">
+    <brief>Using codyn with matlab.</brief>
+  </category>
+  <category name=".NET" ref="Manual::Bindings::.NET#Manual::Bindings::.NET">
+    <brief>Using codyn with .NET.</brief>
+  </category>
+</category>
