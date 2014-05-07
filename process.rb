@@ -267,7 +267,7 @@ class Context
 
     def playground_put(txt)
         http = Net::HTTP.new('play.codyn.net', 80)
-        response = http.send_request('PUT', '/d/', URI.encode_www_form('document' => txt))
+        response = http.send_request('PUT', '/d/', "document=#{CGI.escape(txt)}")
 
         ret = JSON.parse(response.body)
         return ret['hash']
