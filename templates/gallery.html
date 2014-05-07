@@ -105,12 +105,6 @@ var plot = $.plotAnimator('.plot', series, options);
 </div>
 </div>
 
-<% markdown do %>
-
-~~~~ codyn
-<%= input("static/models/#{var(:model)}.cdn") %>
-~~~~
-
-<% end %>
+<%= input_model("static/models/#{var(:model)}.cdn") %>
 
 <%= template 'templates/footer.html' %>
