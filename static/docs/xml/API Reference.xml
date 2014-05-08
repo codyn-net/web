@@ -873,33 +873,44 @@ Operator error codes.</doc>
       <brief>sort</brief>
     </enumvalue>
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_XOR" name="CDN_SELECTOR_PSEUDO_TYPE_XOR" value="41">
-      <brief>xor vCDN_SELECTOR_PSEUDO_NUM: num</brief>
+      <brief>xor</brief>
     </enumvalue>
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_NUM" name="CDN_SELECTOR_PSEUDO_NUM" value="42" />
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_NUM" name="CDN_SELECTOR_PSEUDO_NUM" value="42">
+      <brief>num</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnSelectorType" name="CdnSelectorType" typedef="yes">
-    <brief>CDN_SELECTOR_TYPE_NONE: non</brief>
-    <doc>CDN_SELECTOR_TYPE_NONE: none
-CDN_SELECTOR_TYPE_ANY: any
-CDN_SELECTOR_TYPE_STATE: state
-CDN_SELECTOR_TYPE_EDGE: edge
-CDN_SELECTOR_TYPE_NODE: node
-CDN_SELECTOR_TYPE_VARIABLE: variable
-CDN_SELECTOR_TYPE_ACTION: action
-CDN_SELECTOR_TYPE_FUNCTION: function
-CDN_SELECTOR_TYPE_TEMPLATE: template
-CDN_SELECTOR_TYPE_OBJECT: all object types
-Selector type.</doc>
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_NONE" name="CDN_SELECTOR_TYPE_NONE" value="0" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_ANY" name="CDN_SELECTOR_TYPE_ANY" value="1" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_STATE" name="CDN_SELECTOR_TYPE_STATE" value="2" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_EDGE" name="CDN_SELECTOR_TYPE_EDGE" value="4" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_NODE" name="CDN_SELECTOR_TYPE_NODE" value="8" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_VARIABLE" name="CDN_SELECTOR_TYPE_VARIABLE" value="16" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_ACTION" name="CDN_SELECTOR_TYPE_ACTION" value="32" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_FUNCTION" name="CDN_SELECTOR_TYPE_FUNCTION" value="64" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_TEMPLATE" name="CDN_SELECTOR_TYPE_TEMPLATE" value="128" />
-    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_OBJECT" name="CDN_SELECTOR_TYPE_OBJECT" value="206" />
+    <brief>Selector type.</brief>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_NONE" name="CDN_SELECTOR_TYPE_NONE" value="0">
+      <brief>none</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_ANY" name="CDN_SELECTOR_TYPE_ANY" value="1">
+      <brief>any</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_STATE" name="CDN_SELECTOR_TYPE_STATE" value="2">
+      <brief>state</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_EDGE" name="CDN_SELECTOR_TYPE_EDGE" value="4">
+      <brief>edge</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_NODE" name="CDN_SELECTOR_TYPE_NODE" value="8">
+      <brief>node</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_VARIABLE" name="CDN_SELECTOR_TYPE_VARIABLE" value="16">
+      <brief>variable</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_ACTION" name="CDN_SELECTOR_TYPE_ACTION" value="32">
+      <brief>action</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_FUNCTION" name="CDN_SELECTOR_TYPE_FUNCTION" value="64">
+      <brief>function</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_TEMPLATE" name="CDN_SELECTOR_TYPE_TEMPLATE" value="128">
+      <brief>template</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_OBJECT" name="CDN_SELECTOR_TYPE_OBJECT" value="206">
+      <brief>all object types</brief>
+    </enumvalue>
   </enum>
   <gobject:boxed name="CdnStack" ref="API Reference::CdnStack#API Reference::CdnStack">
     <brief>Simple stack</brief>
