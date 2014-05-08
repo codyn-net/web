@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionCustomOperator" name="CdnInstructionCustomOperator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Custom operator call instruction</brief>
+  <doc>Custom operator call instruction.
+
+The <ref ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">CdnInstructionCustomOperator</ref> is a special <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> subtype
+which represents a custom operator call.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
@@ -17,8 +22,8 @@
   <function id="cdn_instruction_custom_operator_new" name="cdn_instruction_custom_operator_new">
     <brief>Create a new <ref ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">CdnInstructionCustomOperator</ref>.</brief>
     <return>
-      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">CdnInstructionCustomOperator</ref></doc>
+      <type name="CdnInstructionCustomOperator" qualifier="*" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_custom_operator_new::op" name="op">
       <doc>A <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref></doc>

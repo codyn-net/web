@@ -3,7 +3,7 @@
   <brief>Property value monitor</brief>
   <doc>Property value monitor.
 
-A <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor" /> can be used to monitor the value of a certain <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
+A <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref> can be used to monitor the value of a certain <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
 while simulating. The monitor will collect the value of the property at
 each simulation step and provides methods to access these values.
 Particularly useful is <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled">cdn_monitor_get_data_resampled</ref> which retrieves the
@@ -41,12 +41,12 @@ N is the number of sampled data points and M the size of the variable.
   <function id="cdn_monitor_get_data_resampled" name="cdn_monitor_get_data_resampled">
     <brief>Returns the data as monitored during the simulation, but resampled a</brief>
     <doc>Returns the data as monitored during the simulation, but resampled at
-specific data sites. <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">ret</ref> will have to be already allocated and large
-enough to hold <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::size">size</ref> values of the dimension of the monitored variable.
+specific data sites. <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">cdn_monitor_get_data_resampled::ret</ref> will have to be already allocated and large
+enough to hold <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::size">cdn_monitor_get_data_resampled::size</ref> values of the dimension of the monitored variable.
 
 </doc>
     <return>
-      <doc>`TRUE` if <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">ret</ref> was successfully filled with data, `FALSE` otherwise</doc>
+      <doc>`TRUE` if <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data_resampled::ret">cdn_monitor_get_data_resampled::ret</ref> was successfully filled with data, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_monitor_get_data_resampled::self" name="self">
@@ -100,7 +100,7 @@ values returned by <ref ref="API Reference::CdnMonitor#cdn_monitor_get_data">cdn
     </argument>
   </function>
   <function id="cdn_monitor_new" name="cdn_monitor_new">
-    <brief>Create a new monitor for monitoring property <ref ref="API Reference::CdnMonitor#cdn_monitor_new::property">property</ref>.</brief>
+    <brief>Create a new monitor for monitoring property <ref ref="API Reference::CdnMonitor#cdn_monitor_new::property">cdn_monitor_new::property</ref>.</brief>
     <return>
       <doc>a new <ref ref="API Reference::CdnMonitor#API Reference::CdnMonitor">CdnMonitor</ref></doc>
       <type name="CdnMonitor" qualifier="*" ref="API Reference::CdnMonitor#API Reference::CdnMonitor" transfer-ownership="full" />

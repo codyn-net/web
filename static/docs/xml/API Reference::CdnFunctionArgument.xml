@@ -3,7 +3,7 @@
   <brief>An argument to a custom defined function</brief>
   <doc>An argument to a custom defined function.
 
-A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" /> contains information on an argument (or parameter)
+A <ref ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument">CdnFunctionArgument</ref> contains information on an argument (or parameter)
 to a custom defined function.</doc>
   <base access="public">
     <type name="GInitiallyUnowned" />
@@ -104,9 +104,9 @@ not optional, the default value will return `NULL`.
     </argument>
   </function>
   <function id="cdn_function_argument_get_unused" name="cdn_function_argument_get_unused">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the function argument is unused in the function expression.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the function argument is unused, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_function_argument_get_unused::self" name="self">
@@ -154,7 +154,7 @@ a function using &amp;lt;cdn\_function\_add\_argument&amp;gt;.
   <function id="cdn_function_argument_set_default_value" name="cdn_function_argument_set_default_value">
     <brief>Set a default value for the function argument</brief>
     <doc>Set a default value for the function argument. The default value can be
-unset by supplying `NULL` for <ref ref="API Reference::CdnFunctionArgument#cdn_function_argument_set_default_value::value">value</ref>.</doc>
+unset by supplying `NULL` for <ref ref="API Reference::CdnFunctionArgument#cdn_function_argument_set_default_value::value">cdn_function_argument_set_default_value::value</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -213,7 +213,10 @@ called.</doc>
     </argument>
   </function>
   <function id="cdn_function_argument_set_unused" name="cdn_function_argument_set_unused">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set whether the function argument is unused in the function expression</brief>
+    <doc>Set whether the function argument is unused in the function expression. Note that this
+is used internally based on analysis of the function expression. Setting this manually
+can lead to unexpected behavior.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -222,7 +225,7 @@ called.</doc>
       <type name="CdnFunctionArgument" qualifier="*" ref="API Reference::CdnFunctionArgument#API Reference::CdnFunctionArgument" />
     </argument>
     <argument id="cdn_function_argument_set_unused::unused" name="unused">
-      <doc>*documentation missing...*</doc>
+      <doc>whether or not unused</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>

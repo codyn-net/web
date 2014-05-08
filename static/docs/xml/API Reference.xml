@@ -14,17 +14,40 @@ introduction to libcodyn, please see <ref ref="Manual::libcodyn#Manual::libcodyn
     <brief>Interface for annotating objects</brief>
   </gobject:interface>
   <enum anonymous="yes" id="API Reference::CdnAnnotationAnchor" name="CdnAnnotationAnchor" typedef="yes">
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH" name="CDN_ANNOTATION_ANCHOR_NORTH" value="0" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH_EAST" name="CDN_ANNOTATION_ANCHOR_NORTH_EAST" value="1" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_EAST" name="CDN_ANNOTATION_ANCHOR_EAST" value="2" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH_EAST" name="CDN_ANNOTATION_ANCHOR_SOUTH_EAST" value="3" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH" name="CDN_ANNOTATION_ANCHOR_SOUTH" value="4" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH_WEST" name="CDN_ANNOTATION_ANCHOR_SOUTH_WEST" value="5" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_WEST" name="CDN_ANNOTATION_ANCHOR_WEST" value="6" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH_WEST" name="CDN_ANNOTATION_ANCHOR_NORTH_WEST" value="7" />
-    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_CENTER" name="CDN_ANNOTATION_ANCHOR_CENTER" value="8" />
+    <brief>Annotation anchor determines relative to where the annotatio</brief>
+    <doc>Annotation anchor determines relative to where the annotation
+is shown.</doc>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH" name="CDN_ANNOTATION_ANCHOR_NORTH" value="0">
+      <brief>north</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH_EAST" name="CDN_ANNOTATION_ANCHOR_NORTH_EAST" value="1">
+      <brief>north east</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_EAST" name="CDN_ANNOTATION_ANCHOR_EAST" value="2">
+      <brief>east</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH_EAST" name="CDN_ANNOTATION_ANCHOR_SOUTH_EAST" value="3">
+      <brief>south east</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH" name="CDN_ANNOTATION_ANCHOR_SOUTH" value="4">
+      <brief>south</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_SOUTH_WEST" name="CDN_ANNOTATION_ANCHOR_SOUTH_WEST" value="5">
+      <brief>south west</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_WEST" name="CDN_ANNOTATION_ANCHOR_WEST" value="6">
+      <brief>west</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_NORTH_WEST" name="CDN_ANNOTATION_ANCHOR_NORTH_WEST" value="7">
+      <brief>north west</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnAnnotationAnchor::CDN_ANNOTATION_ANCHOR_CENTER" name="CDN_ANNOTATION_ANCHOR_CENTER" value="8">
+      <brief>center</brief>
+    </enumvalue>
   </enum>
-  <gobject:boxed name="CdnAnnotationInfo" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+  <gobject:boxed name="CdnAnnotationInfo" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">
+    <brief>Annotation informatio</brief>
+  </gobject:boxed>
   <gobject:class name="CdnAttribute" ref="API Reference::CdnAttribute#API Reference::CdnAttribute">
     <brief>Cdn format attribute</brief>
   </gobject:class>
@@ -69,54 +92,115 @@ introduction to libcodyn, please see <ref ref="Manual::libcodyn#Manual::libcodyn
     </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnDebugSection" name="CdnDebugSection" typedef="yes">
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_LINSOLVE" name="CDN_DEBUG_LINSOLVE" value="256" />
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_DIFF" name="CDN_DEBUG_DIFF" value="512" />
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_SIMPLIFY" name="CDN_DEBUG_SIMPLIFY" value="1024" />
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_IO" name="CDN_DEBUG_IO" value="2048" />
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_MATH" name="CDN_DEBUG_MATH" value="4096" />
-    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_INTEGRATOR" name="CDN_DEBUG_INTEGRATOR" value="8192" />
+    <brief>Various levels of debugging.</brief>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_LINSOLVE" name="CDN_DEBUG_LINSOLVE" value="256">
+      <brief>linsolve</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_DIFF" name="CDN_DEBUG_DIFF" value="512">
+      <brief>diff</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_SIMPLIFY" name="CDN_DEBUG_SIMPLIFY" value="1024">
+      <brief>simplify</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_IO" name="CDN_DEBUG_IO" value="2048">
+      <brief>io</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_MATH" name="CDN_DEBUG_MATH" value="4096">
+      <brief>math</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnDebugSection::CDN_DEBUG_INTEGRATOR" name="CDN_DEBUG_INTEGRATOR" value="8192">
+      <brief>integrator</brief>
+    </enumvalue>
   </enum>
-  <gobject:boxed name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+  <gobject:boxed name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension">
+    <brief>A dimensio</brief>
+  </gobject:boxed>
   <gobject:class name="CdnEdge" ref="API Reference::CdnEdge#API Reference::CdnEdge">
     <brief>Connection between two nodes</brief>
   </gobject:class>
   <gobject:class name="CdnEdgeAction" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">
     <brief>Edge action equation</brief>
   </gobject:class>
-  <gobject:class name="CdnEmbeddedString" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+  <gobject:class name="CdnEmbeddedString" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">
+    <brief>Embedded string class</brief>
+  </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnEmbeddedStringError" name="CdnEmbeddedStringError" typedef="yes">
-    <enumvalue id="API Reference::CdnEmbeddedStringError::CDN_EMBEDDED_STRING_ERROR_BRACES" name="CDN_EMBEDDED_STRING_ERROR_BRACES" value="0" />
-    <enumvalue id="API Reference::CdnEmbeddedStringError::CDN_EMBEDDED_STRING_ERROR_INVALID_EXPANSION" name="CDN_EMBEDDED_STRING_ERROR_INVALID_EXPANSION" value="1" />
+    <brief>Embedded string error codes.</brief>
+    <enumvalue id="API Reference::CdnEmbeddedStringError::CDN_EMBEDDED_STRING_ERROR_BRACES" name="CDN_EMBEDDED_STRING_ERROR_BRACES" value="0">
+      <brief>non matching braces</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringError::CDN_EMBEDDED_STRING_ERROR_INVALID_EXPANSION" name="CDN_EMBEDDED_STRING_ERROR_INVALID_EXPANSION" value="1">
+      <brief>invalid expansion</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnEmbeddedStringNodeType" name="CdnEmbeddedStringNodeType" typedef="yes">
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_TEXT" name="CDN_EMBEDDED_STRING_NODE_TEXT" value="0" />
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_EQUATION" name="CDN_EMBEDDED_STRING_NODE_EQUATION" value="1" />
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_INDIRECTION" name="CDN_EMBEDDED_STRING_NODE_INDIRECTION" value="2" />
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_REDUCE" name="CDN_EMBEDDED_STRING_NODE_REDUCE" value="3" />
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_MAP" name="CDN_EMBEDDED_STRING_NODE_MAP" value="4" />
-    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_CONDITION" name="CDN_EMBEDDED_STRING_NODE_CONDITION" value="5" />
+    <brief>Types of embedded string nodes.</brief>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_TEXT" name="CDN_EMBEDDED_STRING_NODE_TEXT" value="0">
+      <brief>text</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_EQUATION" name="CDN_EMBEDDED_STRING_NODE_EQUATION" value="1">
+      <brief>equation</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_INDIRECTION" name="CDN_EMBEDDED_STRING_NODE_INDIRECTION" value="2">
+      <brief>indirection</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_REDUCE" name="CDN_EMBEDDED_STRING_NODE_REDUCE" value="3">
+      <brief>reduce</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_MAP" name="CDN_EMBEDDED_STRING_NODE_MAP" value="4">
+      <brief>map</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnEmbeddedStringNodeType::CDN_EMBEDDED_STRING_NODE_CONDITION" name="CDN_EMBEDDED_STRING_NODE_CONDITION" value="5">
+      <brief>condition</brief>
+    </enumvalue>
   </enum>
   <gobject:class name="CdnEvent" ref="API Reference::CdnEvent#API Reference::CdnEvent">
     <brief>Event class</brief>
   </gobject:class>
-  <gobject:boxed name="CdnEventLogicalNode" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
-  <gobject:boxed name="CdnEventSetVariable" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable" />
-  <gobject:boxed name="CdnExpansion" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
-  <gobject:boxed name="CdnExpansionContext" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+  <gobject:boxed name="CdnEventLogicalNode" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">
+    <brief>Logical event condition nod</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnEventSetVariable" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">
+    <brief>Event set variable</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnExpansion" ref="API Reference::CdnExpansion#API Reference::CdnExpansion">
+    <brief>Expansion class</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnExpansionContext" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">
+    <brief>Expansion context</brief>
+  </gobject:boxed>
   <gobject:class name="CdnExpression" ref="API Reference::CdnExpression#API Reference::CdnExpression">
     <brief>Mathematical expression evaluation</brief>
   </gobject:class>
-  <gobject:boxed name="CdnExpressionTreeIter" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+  <gobject:boxed name="CdnExpressionTreeIter" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">
+    <brief>Expression tree iterator</brief>
+  </gobject:boxed>
   <enum anonymous="yes" id="API Reference::CdnExpressionTreeIterDeriveError" name="CdnExpressionTreeIterDeriveError" typedef="yes">
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_UNSUPPORTED" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_UNSUPPORTED" value="0" />
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_INVALID" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_INVALID" value="1" />
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_FUNCTION" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_FUNCTION" value="2" />
+    <brief>Tree iter derivation errors.</brief>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_UNSUPPORTED" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_UNSUPPORTED" value="0">
+      <brief>unsupported</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_INVALID" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_INVALID" value="1">
+      <brief>invalid</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveError::CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_FUNCTION" name="CDN_EXPRESSION_TREE_ITER_DERIVE_ERROR_FUNCTION" value="2">
+      <brief>function</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnExpressionTreeIterDeriveFlags" name="CdnExpressionTreeIterDeriveFlags" typedef="yes">
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_NONE" name="CDN_EXPRESSION_TREE_ITER_DERIVE_NONE" value="0" />
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_PARTIAL" name="CDN_EXPRESSION_TREE_ITER_DERIVE_PARTIAL" value="1" />
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_TIME" name="CDN_EXPRESSION_TREE_ITER_DERIVE_TIME" value="2" />
-    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_SIMPLIFY" name="CDN_EXPRESSION_TREE_ITER_DERIVE_SIMPLIFY" value="4" />
+    <brief>Flags for tree iter derivation.</brief>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_NONE" name="CDN_EXPRESSION_TREE_ITER_DERIVE_NONE" value="0">
+      <brief>none</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_PARTIAL" name="CDN_EXPRESSION_TREE_ITER_DERIVE_PARTIAL" value="1">
+      <brief>partial</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_TIME" name="CDN_EXPRESSION_TREE_ITER_DERIVE_TIME" value="2">
+      <brief>time</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnExpressionTreeIterDeriveFlags::CDN_EXPRESSION_TREE_ITER_DERIVE_SIMPLIFY" name="CDN_EXPRESSION_TREE_ITER_DERIVE_SIMPLIFY" value="4">
+      <brief>simplify</brief>
+    </enumvalue>
   </enum>
   <gobject:class name="CdnFunction" ref="API Reference::CdnFunction#API Reference::CdnFunction">
     <brief>User defined function</brief>
@@ -125,11 +209,12 @@ introduction to libcodyn, please see <ref ref="Manual::libcodyn#Manual::libcodyn
     <brief>An argument to a custom defined function</brief>
   </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnFunctionError" name="CdnFunctionError" typedef="yes">
+    <brief>Function error codes.</brief>
     <enumvalue id="API Reference::CdnFunctionError::CDN_FUNCTION_ERROR_UNKNOWN" name="CDN_FUNCTION_ERROR_UNKNOWN" value="0">
       <brief>unknown</brief>
     </enumvalue>
     <enumvalue id="API Reference::CdnFunctionError::CDN_FUNCTION_ERROR_ARGUMENT_NOT_FOUND" name="CDN_FUNCTION_ERROR_ARGUMENT_NOT_FOUND" value="1">
-      <brief>property not found</brief>
+      <brief>argument not found</brief>
     </enumvalue>
     <enumvalue id="API Reference::CdnFunctionError::CDN_FUNCTION_NUM_ERRORS" name="CDN_FUNCTION_NUM_ERRORS" value="2">
       <brief>num errors</brief>
@@ -156,26 +241,42 @@ introduction to libcodyn, please see <ref ref="Manual::libcodyn#Manual::libcodyn
   <gobject:class name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction">
     <brief>Mathematical instruction base class</brief>
   </gobject:class>
-  <gobject:boxed name="CdnInstructionBoxed" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+  <gobject:boxed name="CdnInstructionBoxed" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">
+    <brief>Boxed instruction</brief>
+  </gobject:boxed>
   <gobject:class name="CdnInstructionCustomFunction" ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">
-    <brief>The instruction class for `CDN_INSTRUCTION_TYPE_CUSTOM_FUNCTION`</brief>
+    <brief>Custom function call instruction</brief>
   </gobject:class>
-  <gobject:boxed name="CdnInstructionCustomFunctionBoxed" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed" />
-  <gobject:boxed name="CdnInstructionCustomFunctionRefBoxed" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed" />
-  <gobject:class name="CdnInstructionCustomOperator" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator" />
-  <gobject:boxed name="CdnInstructionCustomOperatorBoxed" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed" />
-  <gobject:boxed name="CdnInstructionCustomOperatorRefBoxed" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed" />
+  <gobject:boxed name="CdnInstructionCustomFunctionBoxed" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed">
+    <brief>Boxed custom function instruction</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnInstructionCustomFunctionRefBoxed" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed">
+    <brief>Boxed custom function ref instruction</brief>
+  </gobject:boxed>
+  <gobject:class name="CdnInstructionCustomOperator" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">
+    <brief>Custom operator call instruction</brief>
+  </gobject:class>
+  <gobject:boxed name="CdnInstructionCustomOperatorBoxed" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed">
+    <brief>Boxed custom operator instruction</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnInstructionCustomOperatorRefBoxed" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed">
+    <brief>Boxed custom operator ref instruction</brief>
+  </gobject:boxed>
   <gobject:class name="CdnInstructionFunction" ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction">
-    <brief>The instruction class for `CDN_INSTRUCTION_TYPE_FUNCTION`</brief>
+    <brief>Function call instruction</brief>
   </gobject:class>
   <gobject:class name="CdnInstructionMatrix" ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">
-    <brief>The instruction class for `CDN_INSTRUCTION_TYPE_MATRIX`</brief>
+    <brief>Matrix instruction</brief>
   </gobject:class>
   <gobject:class name="CdnInstructionNumber" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">
-    <brief>The instruction class for `CDN_INSTRUCTION_TYPE_NUMBER`</brief>
+    <brief>Number instruction</brief>
   </gobject:class>
-  <gobject:class name="CdnInstructionRand" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
-  <gobject:class name="CdnInstructionVariable" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
+  <gobject:class name="CdnInstructionRand" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">
+    <brief>Random number instruction</brief>
+  </gobject:class>
+  <gobject:class name="CdnInstructionVariable" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">
+    <brief>Variable instruction</brief>
+  </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnInstructionVariableBinding" name="CdnInstructionVariableBinding" typedef="yes">
     <brief>Enum used to indicate how the property in a &lt;CdnInstructionVariable</brief>
     <doc>Enum used to indicate how the property in a <ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref>
@@ -190,7 +291,9 @@ was bound when the instruction was compiled.</doc>
       <brief>output</brief>
     </enumvalue>
   </enum>
-  <gobject:boxed name="CdnInstructionVariableBoxed" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+  <gobject:boxed name="CdnInstructionVariableBoxed" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed">
+    <brief>Boxed variable instruction</brief>
+  </gobject:boxed>
   <gobject:class name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">
     <brief>Simulation integrator</brief>
   </gobject:class>
@@ -212,14 +315,24 @@ was bound when the instruction was compiled.</doc>
   <gobject:class name="CdnIntegrators" ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators">
     <brief>Integrator registry</brief>
   </gobject:class>
-  <gobject:interface name="CdnIo" ref="API Reference::CdnIo#API Reference::CdnIo" />
-  <gobject:class name="CdnIoMethod" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod" />
+  <gobject:interface name="CdnIo" ref="API Reference::CdnIo#API Reference::CdnIo">
+    <brief>Io module interface</brief>
+  </gobject:interface>
+  <gobject:class name="CdnIoMethod" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod">
+    <brief>Dynamic IO module loader</brief>
+  </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnIoMode" name="CdnIoMode" typedef="yes">
-    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_INPUT" name="CDN_IO_MODE_INPUT" value="1" />
-    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_OUTPUT" name="CDN_IO_MODE_OUTPUT" value="2" />
-    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_INPUT_OUTPUT" name="CDN_IO_MODE_INPUT_OUTPUT" value="3" />
+    <brief>Input/output mode types.</brief>
+    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_INPUT" name="CDN_IO_MODE_INPUT" value="1">
+      <brief>input</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_OUTPUT" name="CDN_IO_MODE_OUTPUT" value="2">
+      <brief>output</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnIoMode::CDN_IO_MODE_INPUT_OUTPUT" name="CDN_IO_MODE_INPUT_OUTPUT" value="3">
+      <brief>input/output</brief>
+    </enumvalue>
   </enum>
-  <gobject:class name="CdnLayout" ref="API Reference::CdnLayout#API Reference::CdnLayout" />
   <gobject:interface name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">
     <brief>Interface for object layouting</brief>
   </gobject:interface>
@@ -445,8 +558,12 @@ was bound when the instruction was compiled.</doc>
       <brief>number of function types</brief>
     </enumvalue>
   </enum>
-  <gobject:boxed name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
-  <gobject:class name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
+  <gobject:boxed name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix">
+    <brief>2D matrix value</brief>
+  </gobject:boxed>
+  <gobject:class name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">
+    <brief>A minimum object class</brief>
+  </gobject:class>
   <gobject:interface name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable">
     <brief>Interface for keeping track of the modified state of an object</brief>
   </gobject:interface>
@@ -460,13 +577,25 @@ was bound when the instruction was compiled.</doc>
     <brief>XML to Network deserializer</brief>
   </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnNetworkError" name="CdnNetworkError" typedef="yes">
-    <enumvalue id="API Reference::CdnNetworkError::CDN_NETWORK_ERROR_UNOWNED_TEMPLATE" name="CDN_NETWORK_ERROR_UNOWNED_TEMPLATE" value="0" />
-    <enumvalue id="API Reference::CdnNetworkError::CDN_NETWORK_ERROR_NUM" name="CDN_NETWORK_ERROR_NUM" value="1" />
+    <brief>Network error codes.</brief>
+    <enumvalue id="API Reference::CdnNetworkError::CDN_NETWORK_ERROR_UNOWNED_TEMPLATE" name="CDN_NETWORK_ERROR_UNOWNED_TEMPLATE" value="0">
+      <brief>unowned template</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNetworkError::CDN_NETWORK_ERROR_NUM" name="CDN_NETWORK_ERROR_NUM" value="1">
+      <brief>num</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnNetworkFormat" name="CdnNetworkFormat" typedef="yes">
-    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_UNKNOWN" name="CDN_NETWORK_FORMAT_UNKNOWN" value="0" />
-    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_CDN" name="CDN_NETWORK_FORMAT_CDN" value="1" />
-    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_XML" name="CDN_NETWORK_FORMAT_XML" value="2" />
+    <brief>The loaded network format.</brief>
+    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_UNKNOWN" name="CDN_NETWORK_FORMAT_UNKNOWN" value="0">
+      <brief>unknown</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_CDN" name="CDN_NETWORK_FORMAT_CDN" value="1">
+      <brief>codyn modeling language</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNetworkFormat::CDN_NETWORK_FORMAT_XML" name="CDN_NETWORK_FORMAT_XML" value="2">
+      <brief>xml</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnNetworkLoadError" name="CdnNetworkLoadError" typedef="yes">
     <brief>Network load error types.</brief>
@@ -505,10 +634,19 @@ was bound when the instruction was compiled.</doc>
     <brief>Base node class</brief>
   </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnNodeError" name="CdnNodeError" typedef="yes">
-    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_ALREADY_EXISTS" name="CDN_NODE_ERROR_CHILD_ALREADY_EXISTS" value="0" />
-    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_DOES_NOT_EXIST" name="CDN_NODE_ERROR_CHILD_DOES_NOT_EXIST" value="1" />
-    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_IN_USE" name="CDN_NODE_ERROR_CHILD_IN_USE" value="2" />
-    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_NUM" name="CDN_NODE_ERROR_NUM" value="3" />
+    <brief>Node error codes.</brief>
+    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_ALREADY_EXISTS" name="CDN_NODE_ERROR_CHILD_ALREADY_EXISTS" value="0">
+      <brief>child already exists</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_DOES_NOT_EXIST" name="CDN_NODE_ERROR_CHILD_DOES_NOT_EXIST" value="1">
+      <brief>child does not exist</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_CHILD_IN_USE" name="CDN_NODE_ERROR_CHILD_IN_USE" value="2">
+      <brief>child in use</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnNodeError::CDN_NODE_ERROR_NUM" name="CDN_NODE_ERROR_NUM" value="3">
+      <brief>num</brief>
+    </enumvalue>
   </enum>
   <gobject:class name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject">
     <brief>Basis for all cdn objects</brief>
@@ -532,7 +670,9 @@ was bound when the instruction was compiled.</doc>
       <brief>num errors</brief>
     </enumvalue>
   </enum>
-  <gobject:class name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+  <gobject:class name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator">
+    <brief>Custom operator base class</brief>
+  </gobject:class>
   <gobject:class name="CdnOperatorDelayed" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed">
     <brief>Math operator for delayed evaluation of an expression</brief>
   </gobject:class>
@@ -543,6 +683,10 @@ was bound when the instruction was compiled.</doc>
     <brief>Math operator for dt evaluation of an expression</brief>
   </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnOperatorError" name="CdnOperatorError" typedef="yes">
+    <brief>CDN_OPERATOR_ERROR_UNSUPPORTED: unsupporte</brief>
+    <doc>CDN_OPERATOR_ERROR_UNSUPPORTED: unsupported
+CDN_OPERATOR_ERROR_INVALID: invalid
+Operator error codes.</doc>
     <enumvalue id="API Reference::CdnOperatorError::CDN_OPERATOR_ERROR_UNSUPPORTED" name="CDN_OPERATOR_ERROR_UNSUPPORTED" value="0" />
     <enumvalue id="API Reference::CdnOperatorError::CDN_OPERATOR_ERROR_INVALID" name="CDN_OPERATOR_ERROR_INVALID" value="1" />
   </enum>
@@ -555,27 +699,100 @@ was bound when the instruction was compiled.</doc>
   <gobject:class name="CdnOperatorSimplify" ref="API Reference::CdnOperatorSimplify#API Reference::CdnOperatorSimplify">
     <brief>Math operator for simplify evaluation of an expression</brief>
   </gobject:class>
-  <gobject:class name="CdnParamSpecMiniObject" ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject" />
-  <gobject:class name="CdnParserContext" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
+  <gobject:class name="CdnParamSpecMiniObject" ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject">
+    <brief>A mini object param spec</brief>
+  </gobject:class>
+  <gobject:class name="CdnParserContext" ref="API Reference::CdnParserContext#API Reference::CdnParserContext">
+    <brief>Modeling language parsing context</brief>
+  </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnParserContextDeleteType" name="CdnParserContextDeleteType" typedef="yes">
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_OBJECT" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_OBJECT" value="0" />
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_NODE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_NODE" value="1" />
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_EDGE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_EDGE" value="2" />
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_VARIABLE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_VARIABLE" value="3" />
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_ACTION" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_ACTION" value="4" />
-    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_FUNCTION" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_FUNCTION" value="5" />
+    <brief>Delete types.</brief>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_OBJECT" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_OBJECT" value="0">
+      <brief>object</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_NODE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_NODE" value="1">
+      <brief>node</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_EDGE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_EDGE" value="2">
+      <brief>edge</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_VARIABLE" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_VARIABLE" value="3">
+      <brief>variable</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_ACTION" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_ACTION" value="4">
+      <brief>action</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnParserContextDeleteType::CDN_PARSER_CONTEXT_SELECTOR_TYPE_FUNCTION" name="CDN_PARSER_CONTEXT_SELECTOR_TYPE_FUNCTION" value="5">
+      <brief>function</brief>
+    </enumvalue>
   </enum>
   <gobject:interface name="CdnPhaseable" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">
     <brief>Interface for state dependent actions</brief>
   </gobject:interface>
-  <gobject:boxed name="CdnSelection" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
-  <gobject:class name="CdnSelector" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+  <gobject:boxed name="CdnSelection" ref="API Reference::CdnSelection#API Reference::CdnSelection">
+    <brief>Selection object</brief>
+  </gobject:boxed>
+  <gobject:class name="CdnSelector" ref="API Reference::CdnSelector#API Reference::CdnSelector">
+    <brief>Selector class</brief>
+  </gobject:class>
   <enum anonymous="yes" id="API Reference::CdnSelectorPartType" name="CdnSelectorPartType" typedef="yes">
-    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_IDENTIFIER" name="CDN_SELECTOR_PART_TYPE_IDENTIFIER" value="0" />
-    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_REGEX" name="CDN_SELECTOR_PART_TYPE_REGEX" value="1" />
-    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_PSEUDO" name="CDN_SELECTOR_PART_TYPE_PSEUDO" value="2" />
+    <brief>Part type.</brief>
+    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_IDENTIFIER" name="CDN_SELECTOR_PART_TYPE_IDENTIFIER" value="0">
+      <brief>identifier</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_REGEX" name="CDN_SELECTOR_PART_TYPE_REGEX" value="1">
+      <brief>regular expression</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPartType::CDN_SELECTOR_PART_TYPE_PSEUDO" name="CDN_SELECTOR_PART_TYPE_PSEUDO" value="2">
+      <brief>pseudo selector</brief>
+    </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnSelectorPseudoType" name="CdnSelectorPseudoType" typedef="yes">
+    <brief>CDN_SELECTOR_PSEUDO_TYPE_ROOT: roo</brief>
+    <doc>CDN_SELECTOR_PSEUDO_TYPE_ROOT: root
+CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT: templates root
+CDN_SELECTOR_PSEUDO_TYPE_CHILDREN: children
+CDN_SELECTOR_PSEUDO_TYPE_PARENT: parent
+CDN_SELECTOR_PSEUDO_TYPE_FIRST: first
+CDN_SELECTOR_PSEUDO_TYPE_LAST: last
+CDN_SELECTOR_PSEUDO_TYPE_SUBSET: subset
+CDN_SELECTOR_PSEUDO_TYPE_EDGES: edges
+CDN_SELECTOR_PSEUDO_TYPE_NODES: nodes
+CDN_SELECTOR_PSEUDO_TYPE_IMPORTS: imports
+CDN_SELECTOR_PSEUDO_TYPE_VARIABLES: variables
+CDN_SELECTOR_PSEUDO_TYPE_ACTIONS: actions
+CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS: functions
+CDN_SELECTOR_PSEUDO_TYPE_OBJECTS: objects
+CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS: siblings
+CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES: templates
+CDN_SELECTOR_PSEUDO_TYPE_COUNT: count
+CDN_SELECTOR_PSEUDO_TYPE_INPUT: input
+CDN_SELECTOR_PSEUDO_TYPE_OUTPUT: output
+CDN_SELECTOR_PSEUDO_TYPE_INPUTS: inputs
+CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS: outputs
+CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME: input name
+CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME: output name
+CDN_SELECTOR_PSEUDO_TYPE_SELF: self
+CDN_SELECTOR_PSEUDO_TYPE_DEBUG: debug
+CDN_SELECTOR_PSEUDO_TYPE_NAME: name
+CDN_SELECTOR_PSEUDO_TYPE_UNIQUE: unique
+CDN_SELECTOR_PSEUDO_TYPE_IF: if
+CDN_SELECTOR_PSEUDO_TYPE_NOT: not
+CDN_SELECTOR_PSEUDO_TYPE_IFSTR: ifstr
+CDN_SELECTOR_PSEUDO_TYPE_NOTSTR: notstr
+CDN_SELECTOR_PSEUDO_TYPE_FROM_SET: from set
+CDN_SELECTOR_PSEUDO_TYPE_TYPE: type
+CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG: has flag
+CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE: has template
+CDN_SELECTOR_PSEUDO_TYPE_REVERSE: reverse
+CDN_SELECTOR_PSEUDO_TYPE_RECURSE: recurse
+CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT: append context
+CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES: applied templates
+CDN_SELECTOR_PSEUDO_TYPE_REDUCE: reduce
+CDN_SELECTOR_PSEUDO_TYPE_SORT: sort
+CDN_SELECTOR_PSEUDO_TYPE_XOR: xor
+CDN_SELECTOR_PSEUDO_NUM: num
+Pseudo selector type.</doc>
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_ROOT" value="0" />
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" value="1" />
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" name="CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" value="2" />
@@ -621,6 +838,18 @@ was bound when the instruction was compiled.</doc>
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_NUM" name="CDN_SELECTOR_PSEUDO_NUM" value="42" />
   </enum>
   <enum anonymous="yes" id="API Reference::CdnSelectorType" name="CdnSelectorType" typedef="yes">
+    <brief>CDN_SELECTOR_TYPE_NONE: non</brief>
+    <doc>CDN_SELECTOR_TYPE_NONE: none
+CDN_SELECTOR_TYPE_ANY: any
+CDN_SELECTOR_TYPE_STATE: state
+CDN_SELECTOR_TYPE_EDGE: edge
+CDN_SELECTOR_TYPE_NODE: node
+CDN_SELECTOR_TYPE_VARIABLE: variable
+CDN_SELECTOR_TYPE_ACTION: action
+CDN_SELECTOR_TYPE_FUNCTION: function
+CDN_SELECTOR_TYPE_TEMPLATE: template
+CDN_SELECTOR_TYPE_OBJECT: all object types
+Selector type.</doc>
     <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_NONE" name="CDN_SELECTOR_TYPE_NONE" value="0" />
     <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_ANY" name="CDN_SELECTOR_TYPE_ANY" value="1" />
     <enumvalue id="API Reference::CdnSelectorType::CDN_SELECTOR_TYPE_STATE" name="CDN_SELECTOR_TYPE_STATE" value="2" />
@@ -635,9 +864,15 @@ was bound when the instruction was compiled.</doc>
   <gobject:boxed name="CdnStack" ref="API Reference::CdnStack#API Reference::CdnStack">
     <brief>Simple stack</brief>
   </gobject:boxed>
-  <gobject:boxed name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
-  <gobject:boxed name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
-  <gobject:boxed name="CdnStackManipulation" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+  <gobject:boxed name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg">
+    <brief>A stack argument</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">
+    <brief>List of stack argument</brief>
+  </gobject:boxed>
+  <gobject:boxed name="CdnStackManipulation" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">
+    <brief>Stack manipulation informatio</brief>
+  </gobject:boxed>
   <gobject:interface name="CdnStatement" ref="API Reference::CdnStatement#API Reference::CdnStatement">
     <brief>Interface for keeping track statements.</brief>
   </gobject:interface>
@@ -694,125 +929,59 @@ was bound when the instruction was compiled.</doc>
     </argument>
   </function>
   <function id="cdn_compose_dot" name="cdn_compose_dot">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new name which represents the <ref ref="API Reference#cdn_compose_dot::order">cdn_compose_dot::order</ref> th derivativ</brief>
+    <doc>Create a new name which represents the <ref ref="API Reference#cdn_compose_dot::order">cdn_compose_dot::order</ref> th derivative
+of <ref ref="API Reference#cdn_compose_dot::name">cdn_compose_dot::name</ref>. If <ref ref="API Reference#cdn_compose_dot::order">cdn_compose_dot::order</ref> is smaller or equal to 2, then a utf-8 dot
+or double dot compose character will be used. For orders larger
+than 2 primes will be appended to the given name.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the dot composed name</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_compose_dot::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the name to compose a dot on</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
     <argument id="cdn_compose_dot::order" name="order">
-      <doc>*documentation missing...*</doc>
+      <doc>the dot order</doc>
       <type builtin="yes" name="gint" />
     </argument>
-  </function>
-  <function id="cdn_debug" name="cdn_debug">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_debug::section" name="section">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnDebugSection" ref="API Reference#API Reference::CdnDebugSection" />
-    </argument>
-    <argument id="cdn_debug::file" name="file">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_debug::line" name="line">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-    <argument id="cdn_debug::function" name="function">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_debug_init" name="cdn_debug_init">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-  </function>
-  <function id="cdn_debug_is_enabled" name="cdn_debug_is_enabled">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_debug_is_enabled::section" name="section">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnDebugSection" ref="API Reference#API Reference::CdnDebugSection" />
-    </argument>
-  </function>
-  <function id="cdn_debug_message" name="cdn_debug_message">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_debug_message::section" name="section">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnDebugSection" ref="API Reference#API Reference::CdnDebugSection" />
-    </argument>
-    <argument id="cdn_debug_message::file" name="file">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_debug_message::line" name="line">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-    <argument id="cdn_debug_message::function" name="function">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_debug_message::format" name="format">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_debug_message::arg5" name="arg5">
-      <doc>*documentation missing...*</doc>
-      <type name="" />
-    </argument>
-  </function>
-  <function id="cdn_debug_pop_indent" name="cdn_debug_pop_indent">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-  </function>
-  <function id="cdn_debug_push_indent" name="cdn_debug_push_indent">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
   </function>
   <function id="cdn_decompose_dot" name="cdn_decompose_dot">
-    <brief>*Documentation missing...*</brief>
+    <brief>Decompose a name into its actual name and the derivative order</brief>
+    <doc>Decompose a name into its actual name and the derivative order. This can
+parse composed utf-8 dot and double dot characters on the first character,
+as well as primes at the end of <ref ref="API Reference#cdn_decompose_dot::name">cdn_decompose_dot::name</ref>. The derivative order is returned
+in <ref ref="API Reference#cdn_decompose_dot::order">cdn_decompose_dot::order</ref>.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the decomposed name</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_decompose_dot::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the name to decompose</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
     <argument id="cdn_decompose_dot::order" name="order">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>result value for decomposed order</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_embedded_string_error_quark" name="cdn_embedded_string_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for embedded string errors</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the &amp;lt;GQuark&amp;gt; representing embedded string errors</doc>
       <type name="GQuark" />
     </return>
   </function>
   <function id="cdn_expansions_annotate_indices" name="cdn_expansions_annotate_indices">
-    <brief>*Documentation missing...*</brief>
+    <brief>Annotate the indices of the expansion items starting at th</brief>
+    <doc>Annotate the indices of the expansion items starting at the
+provided start. Items with the same value will be assigned the
+same index.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -826,66 +995,32 @@ was bound when the instruction was compiled.</doc>
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_derive_error_quark" name="cdn_expression_tree_iter_derive_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the derive error quark.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the derive error type.</doc>
       <type name="GQuark" />
     </return>
-  </function>
-  <function id="cdn_function_argument_spec_new" name="cdn_function_argument_spec_new">
-    <brief>Create a new function argument specification.</brief>
-    <return>
-      <doc>A &amp;lt;CdnFunctionArgumentSpec&amp;gt;</doc>
-      <type name="CdnFunctionArgumentSpec" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_function_argument_spec_new::name" name="name">
-      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_function_argument_spec_new::isexplicit" name="isexplicit">
-      <doc>whether the argument is explicit</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-    <argument id="cdn_function_argument_spec_new::default_value" name="default_value">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
   </function>
   <function id="cdn_function_error_quark" name="cdn_function_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the function error type quark.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the function error type.</doc>
       <type name="GQuark" />
     </return>
   </function>
-  <function id="cdn_function_polynomial_piece_spec_new" name="cdn_function_polynomial_piece_spec_new">
-    <brief>Create a new function polynomial piece specification.</brief>
-    <return>
-      <doc>A &amp;lt;CdnFunctionPolynomialPieceSpec&amp;gt;</doc>
-      <type name="CdnFunctionPolynomialPieceSpec" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_function_polynomial_piece_spec_new::from" name="from">
-      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_function_polynomial_piece_spec_new::to" name="to">
-      <doc>A <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_function_polynomial_piece_spec_new::coefficients" name="coefficients">
-      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_import_error_quark" name="cdn_import_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>The import error type quark.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the import error type.</doc>
       <type name="GQuark" />
     </return>
   </function>
   <function id="cdn_init" name="cdn_init">
-    <brief>*Documentation missing...*</brief>
+    <brief>Global codyn library initialization</brief>
+    <doc>Global codyn library initialization. This initializes the gobject type
+system, debugging and input/output modules. Note that you normally do not need
+to call this as it codyn initializes automatically on first use. This function
+can be called multiple times and will only initialize once.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -928,26 +1063,32 @@ NaN, Inf, INF, inf.
     </argument>
   </function>
   <function id="cdn_math_function_get_stack_manipulation" name="cdn_math_function_get_stack_manipulation">
-    <brief>*Documentation missing...*</brief>
+    <brief>Calculate the required stack manipulation of a mathematical function o</brief>
+    <doc>Calculate the required stack manipulation of a mathematical function or
+operator given <ref ref="API Reference#cdn_math_function_get_stack_manipulation::inargs">cdn_math_function_get_stack_manipulation::inargs</ref>. If possible, <ref ref="API Reference#cdn_math_function_get_stack_manipulation::outarg">cdn_math_function_get_stack_manipulation::outarg</ref> and <ref ref="API Reference#cdn_math_function_get_stack_manipulation::extra_space">cdn_math_function_get_stack_manipulation::extra_space</ref> will be set
+to the resulting output dimensionality of the operation and any extra space
+which is required on the stack for this operation.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the stack manipulation could be determined correctly, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_math_function_get_stack_manipulation::type" name="type">
-      <doc>*documentation missing...*</doc>
+      <doc>the math function type</doc>
       <type name="CdnMathFunctionType" ref="API Reference#API Reference::CdnMathFunctionType" />
     </argument>
     <argument id="cdn_math_function_get_stack_manipulation::inargs" name="inargs">
-      <doc>*documentation missing...*</doc>
+      <doc>the input arguments</doc>
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
     <argument id="cdn_math_function_get_stack_manipulation::outarg" name="outarg">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+      <doc>the output arguments</doc>
+      <type name="CdnStackArg" out="yes" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
     <argument id="cdn_math_function_get_stack_manipulation::extra_space" name="extra_space">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>extra space required for the operation</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
     <argument id="cdn_math_function_get_stack_manipulation::error" name="error">
       <doc>a &amp;lt;GError&amp;gt;.</doc>
@@ -981,7 +1122,7 @@ NaN, Inf, INF, inf.
     </argument>
   </function>
   <function id="cdn_math_function_lookup" name="cdn_math_function_lookup">
-    <brief>Lookup a math function given the name <ref ref="API Reference#cdn_math_function_lookup::name">name</ref> and number of arguments.</brief>
+    <brief>Lookup a math function given the name <ref ref="API Reference#cdn_math_function_lookup::name">cdn_math_function_lookup::name</ref> and number of arguments.</brief>
     <return>
       <doc>A <ref ref="API Reference#API Reference::CdnMathFunctionType">CdnMathFunctionType</ref></doc>
       <type name="CdnMathFunctionType" ref="API Reference#API Reference::CdnMathFunctionType" />
@@ -1045,30 +1186,10 @@ can use the new builtin function.
       <type name="GDestroyNotify" />
     </argument>
   </function>
-  <function id="cdn_matrix_init" name="cdn_matrix_init">
-    <brief>Initialize a new <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref> struct on the stack</brief>
-    <doc>Initialize a new <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref> struct on the stack. The <ref ref="API Reference#cdn_matrix_init::values">values</ref> array must
-contain &amp;lt;cdn\_dimension\_size&amp;gt;(<ref ref="API Reference#cdn_matrix_init::dimension">dimension</ref>) values. The returned matrix should
-be cleared with &amp;lt;cdn\_matrix\_destroy&amp;gt;.
-
-</doc>
-    <return>
-      <doc>a <ref ref="API Reference::CdnMatrix#API Reference::CdnMatrix">CdnMatrix</ref>.</doc>
-      <type name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_matrix_init::values" name="values">
-      <doc>the matrix values.</doc>
-      <type builtin="yes" name="gdouble" qualifier="*" />
-    </argument>
-    <argument id="cdn_matrix_init::dimension" name="dimension">
-      <doc>a <ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref>.</doc>
-      <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
-    </argument>
-  </function>
   <function id="cdn_network_error_quark" name="cdn_network_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the network error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the network error type</doc>
       <type name="GQuark" />
     </return>
   </function>
@@ -1107,23 +1228,23 @@ the stream is seekable (see &amp;lt;GSeekable&amp;gt;), or if the stream is a
     </argument>
   </function>
   <function id="cdn_network_load_error_quark" name="cdn_network_load_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the network load error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the network load error type</doc>
       <type name="GQuark" />
     </return>
   </function>
   <function id="cdn_node_error_quark" name="cdn_node_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the node error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the node error type</doc>
       <type name="GQuark" />
     </return>
   </function>
   <function id="cdn_object_error_quark" name="cdn_object_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the object error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the object error type</doc>
       <type name="GQuark" />
     </return>
   </function>
@@ -1138,21 +1259,10 @@ the stream is seekable (see &amp;lt;GSeekable&amp;gt;), or if the stream is a
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
-  <function id="cdn_operators_find_class" name="cdn_operators_find_class">
-    <brief>Find the class of an operator by name.</brief>
-    <return>
-      <doc>A &amp;lt;CdnOperatorClass&amp;gt; or `NULL` if the operator with <ref ref="API Reference#cdn_operators_find_class::name">name</ref> is not found</doc>
-      <type name="CdnOperatorClass" qualifier="*" />
-    </return>
-    <argument id="cdn_operators_find_class::name" name="name">
-      <doc>The name of the operator</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_operators_instantiate" name="cdn_operators_instantiate">
     <brief>Instantiate an operator from a name.</brief>
     <return>
-      <doc>A <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref> or `NULL` if the operator with <ref ref="API Reference#cdn_operators_instantiate::name">name</ref> could not be found</doc>
+      <doc>A <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref> or `NULL` if the operator with <ref ref="API Reference#cdn_operators_instantiate::name">cdn_operators_instantiate::name</ref> could not be found</doc>
       <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" transfer-ownership="full" />
     </return>
     <argument id="cdn_operators_instantiate::name" name="name">
@@ -1188,16 +1298,9 @@ the stream is seekable (see &amp;lt;GSeekable&amp;gt;), or if the stream is a
       <type allow-none="yes" name="GError " qualifier="**" />
     </argument>
   </function>
-  <function id="cdn_operators_list" name="cdn_operators_list">
-    <brief>Get the list of operators.</brief>
-    <return>
-      <doc>A &amp;lt;GSList&amp;gt; of &amp;lt;CdnOperatorClass&amp;gt;</doc>
-      <type name="GSList" qualifier="*" />
-    </return>
-  </function>
   <function id="cdn_operators_register" name="cdn_operators_register">
     <brief>Register an operator</brief>
-    <doc>Register an operator. The type <ref ref="API Reference#cdn_operators_register::gtype">gtype</ref> should derive from <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref></doc>
+    <doc>Register an operator. The type <ref ref="API Reference#cdn_operators_register::gtype">cdn_operators_register::gtype</ref> should derive from <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref></doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -1216,77 +1319,46 @@ the stream is seekable (see &amp;lt;GSeekable&amp;gt;), or if the stream is a
       <type name="GType" />
     </argument>
   </function>
-  <function id="cdn_param_spec_mini_object" name="cdn_param_spec_mini_object">
-    <brief>*Documentation missing...*</brief>
+  <function id="cdn_stack_arg_copy" name="cdn_stack_arg_copy">
+    <brief>Copy the stack arg <ref ref="API Reference#cdn_stack_arg_copy::src">cdn_stack_arg_copy::src</ref> into the stack arg <ref ref="API Reference#cdn_stack_arg_copy::ret">cdn_stack_arg_copy::ret</ref>.</brief>
     <return>
-      <doc>a new &amp;lt;GParamSpec&amp;gt;</doc>
-      <type name="GParamSpec" qualifier="*" transfer-ownership="full" />
+      <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_param_spec_mini_object::name" name="name">
-      <doc>the name</doc>
-      <type builtin="yes" name="char" qualifier=" const *" />
+    <argument id="cdn_stack_arg_copy::ret" name="ret">
+      <doc>the return value of the copied stack arg</doc>
+      <type name="CdnStackArg" out="yes" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
-    <argument id="cdn_param_spec_mini_object::nick" name="nick">
-      <doc>the nick</doc>
-      <type builtin="yes" name="char" qualifier=" const *" />
-    </argument>
-    <argument id="cdn_param_spec_mini_object::blurb" name="blurb">
-      <doc>the blurb</doc>
-      <type builtin="yes" name="char" qualifier=" const *" />
-    </argument>
-    <argument id="cdn_param_spec_mini_object::object_type" name="object_type">
-      <doc>the object type</doc>
-      <type name="GType" />
-    </argument>
-    <argument id="cdn_param_spec_mini_object::flags" name="flags">
-      <doc>the flags</doc>
-      <type name="GParamFlags" />
+    <argument id="cdn_stack_arg_copy::src" name="src">
+      <doc>the source stack arg to copy</doc>
+      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
   </function>
-  <function id="cdn_signal_accumulator_false_handled" name="cdn_signal_accumulator_false_handled">
-    <brief>*Documentation missing...*</brief>
+  <function id="cdn_stack_args_copy" name="cdn_stack_args_copy">
+    <brief>Copy the stack args from <ref ref="API Reference#cdn_stack_args_copy::src">cdn_stack_args_copy::src</ref> to <ref ref="API Reference#cdn_stack_args_copy::dest">cdn_stack_args_copy::dest</ref>.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
+      <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_signal_accumulator_false_handled::ihint" name="ihint">
-      <doc>*documentation missing...*</doc>
-      <type name="GSignalInvocationHint" qualifier="*" />
+    <argument id="cdn_stack_args_copy::dest" name="dest">
+      <doc>the destination <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
+      <type name="CdnStackArgs" out="yes" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
-    <argument id="cdn_signal_accumulator_false_handled::return_accu" name="return_accu">
-      <doc>*documentation missing...*</doc>
-      <type name="GValue" qualifier="*" />
-    </argument>
-    <argument id="cdn_signal_accumulator_false_handled::handler_return" name="handler_return">
-      <doc>*documentation missing...*</doc>
-      <type name="GValue" qualifier=" const *" />
-    </argument>
-    <argument id="cdn_signal_accumulator_false_handled::dummy" name="dummy">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gpointer" />
+    <argument id="cdn_stack_args_copy::src" name="src">
+      <doc>the source <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
+      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
   </function>
-  <function id="cdn_string_to_value" name="cdn_string_to_value">
-    <brief>*Documentation missing...*</brief>
+  <function id="cdn_stack_manipulation_copy" name="cdn_stack_manipulation_copy">
+    <brief>Copy the stack manipulation from <ref ref="API Reference#cdn_stack_manipulation_copy::src">cdn_stack_manipulation_copy::src</ref> to <ref ref="API Reference#cdn_stack_manipulation_copy::dest">cdn_stack_manipulation_copy::dest</ref>.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
+      <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_string_to_value::s" name="s">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
+    <argument id="cdn_stack_manipulation_copy::dest" name="dest">
+      <doc>the destination <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref></doc>
+      <type name="CdnStackManipulation" out="yes" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
     </argument>
-    <argument id="cdn_string_to_value::type" name="type">
-      <doc>*documentation missing...*</doc>
-      <type name="GType" />
-    </argument>
-    <argument id="cdn_string_to_value::value" name="value">
-      <doc>*documentation missing...*</doc>
-      <type name="GValue" qualifier="*" />
-    </argument>
-    <argument id="cdn_string_to_value::error" name="error">
-      <doc>a &amp;lt;GError&amp;gt;.</doc>
-      <type allow-none="yes" name="GError " qualifier="**" />
+    <argument id="cdn_stack_manipulation_copy::src" name="src">
+      <doc>the source <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref></doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
     </argument>
   </function>
   <function id="cdn_value_dup_mini_object" name="cdn_value_dup_mini_object">
@@ -1316,31 +1388,34 @@ value and should not be freed.
     </argument>
   </function>
   <function id="cdn_value_set_mini_object" name="cdn_value_set_mini_object">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the contents of <ref ref="API Reference#cdn_value_set_mini_object::value">cdn_value_set_mini_object::value</ref> to the object specified by <ref ref="API Reference#cdn_value_set_mini_object::mini_object">cdn_value_set_mini_object::mini_object</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
     <argument id="cdn_value_set_mini_object::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>the &amp;lt;GValue&amp;gt;</doc>
       <type name="GValue" qualifier="*" />
     </argument>
     <argument id="cdn_value_set_mini_object::mini_object" name="mini_object">
-      <doc>*documentation missing...*</doc>
+      <doc>the object</doc>
       <type name="CdnMiniObject" qualifier="*" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
     </argument>
   </function>
   <function id="cdn_value_take_mini_object" name="cdn_value_take_mini_object">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the contents of <ref ref="API Reference#cdn_value_take_mini_object::value">cdn_value_take_mini_object::value</ref> to the object specified by <ref ref="API Reference#cdn_value_take_mini_object::mini_object">cdn_value_take_mini_object::mini_object</ref>
+    </brief>
+    <doc>Set the contents of <ref ref="API Reference#cdn_value_take_mini_object::value">cdn_value_take_mini_object::value</ref> to the object specified by <ref ref="API Reference#cdn_value_take_mini_object::mini_object">cdn_value_take_mini_object::mini_object</ref>.
+The ownership of <ref ref="API Reference#cdn_value_take_mini_object::mini_object">cdn_value_take_mini_object::mini_object</ref> is transferred to <ref ref="API Reference#cdn_value_take_mini_object::value">cdn_value_take_mini_object::value</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
     <argument id="cdn_value_take_mini_object::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>the &amp;lt;GValue&amp;gt;</doc>
       <type name="GValue" qualifier="*" />
     </argument>
     <argument id="cdn_value_take_mini_object::mini_object" name="mini_object">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnMiniObject" qualifier="*" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
+      <doc>the object</doc>
+      <type name="CdnMiniObject" qualifier="*" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" transfer-ownership="full" />
     </argument>
   </function>
   <function id="cdn_variable_flags_from_string" name="cdn_variable_flags_from_string">
@@ -1380,9 +1455,9 @@ combination of spaces, comma's and/or pipes.</doc>
     </argument>
   </function>
   <function id="cdn_variable_interface_error_quark" name="cdn_variable_interface_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the variable interface error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the variable interface error type</doc>
       <type name="GQuark" />
     </return>
   </function>

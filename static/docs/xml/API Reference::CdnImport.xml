@@ -3,7 +3,7 @@
   <brief>Network import object</brief>
   <doc>Network import object.
 
-The <ref ref="API Reference::CdnImport#API Reference::CdnImport" /> object can be used to import templates and objects from
+The <ref ref="API Reference::CdnImport#API Reference::CdnImport">CdnImport</ref> object can be used to import templates and objects from
 an external network file.</doc>
   <base access="public">
     <type name="CdnNode" ref="API Reference::CdnNode#API Reference::CdnNode" />
@@ -69,9 +69,10 @@ resolving an import file.</doc>
     </return>
   </function>
   <function id="cdn_import_imports_object" name="cdn_import_imports_object">
-    <brief>*Documentation missing...*</brief>
+    <brief>Check whether <ref ref="API Reference::CdnImport#cdn_import_imports_object::self">cdn_import_imports_object::self</ref> imports <ref ref="API Reference::CdnImport#cdn_import_imports_object::object">cdn_import_imports_object::object</ref>
+    </brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if <ref ref="API Reference::CdnImport#cdn_import_imports_object::object">cdn_import_imports_object::object</ref> has been imported by <ref ref="API Reference::CdnImport#cdn_import_imports_object::self">cdn_import_imports_object::self</ref>, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_import_imports_object::self" name="self">
@@ -79,7 +80,7 @@ resolving an import file.</doc>
       <type name="CdnImport" qualifier="*" ref="API Reference::CdnImport#API Reference::CdnImport" />
     </argument>
     <argument id="cdn_import_imports_object::object" name="object">
-      <doc>*documentation missing...*</doc>
+      <doc>the object to check</doc>
       <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
   </function>
@@ -189,7 +190,7 @@ resolving an import file.</doc>
   </function>
   <function id="cdn_import_set_search_path" name="cdn_import_set_search_path">
     <brief>Set the search directories used to resolve import file names</brief>
-    <doc>Set the search directories used to resolve import file names. <ref ref="API Reference::CdnImport#cdn_import_set_search_path::path">path</ref> should
+    <doc>Set the search directories used to resolve import file names. <ref ref="API Reference::CdnImport#cdn_import_set_search_path::path">cdn_import_set_search_path::path</ref> should
 be a `NULL` terminated list of strings.</doc>
     <return>
       <type builtin="yes" name="void" />

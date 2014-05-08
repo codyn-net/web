@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEventSetVariable" name="CdnEventSetVariable" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Event set variable</brief>
+  <doc>Event set variable.
+
+<ref ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">CdnEventSetVariable</ref> contains information on a set variable which
+gets executed when an event fires.</doc>
   <function id="cdn_event_set_variable_get_value" name="cdn_event_set_variable_get_value">
     <brief>Get the expression used to update the variable when the event is fired.</brief>
     <return>

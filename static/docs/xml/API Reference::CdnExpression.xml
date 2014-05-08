@@ -3,7 +3,7 @@
   <brief>Mathematical expression evaluation</brief>
   <doc>Mathematical expression evaluation.
 
-A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression" /> contains a mathematical expression. The expression in
+A <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> contains a mathematical expression. The expression in
 string format can be compiled and evaluated. At the compilation phase,
 a list of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> is provided as a context in which variables are mapped
 to <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> in this context.</doc>
@@ -26,7 +26,7 @@ to <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable<
     <brief>Compile the expression</brief>
     <doc>Compile the expression. The context is a list of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> from which
 properties can be looked up (such as global constants, or from/to objects).
-If there were any errors during compilation, <ref ref="API Reference::CdnExpression#cdn_expression_compile::error">error</ref> will be set accordingly
+If there were any errors during compilation, <ref ref="API Reference::CdnExpression#cdn_expression_compile::error">cdn_expression_compile::error</ref> will be set accordingly
 
 </doc>
     <return>
@@ -58,9 +58,9 @@ If there were any errors during compilation, <ref ref="API Reference::CdnExpress
     </argument>
   </function>
   <function id="cdn_expression_depends_on" name="cdn_expression_depends_on">
-    <brief>*Documentation missing...*</brief>
+    <brief>Check whether <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref> has a dependency (possibly deep) on <ref ref="API Reference::CdnExpression#cdn_expression_depends_on::depends_on">cdn_expression_depends_on::depends_on</ref>.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expression">CdnExpression::expression</ref> depends on <ref ref="API Reference::CdnExpression#cdn_expression_depends_on::depends_on">cdn_expression_depends_on::depends_on</ref>, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_expression_depends_on::self" name="self">
@@ -68,7 +68,7 @@ If there were any errors during compilation, <ref ref="API Reference::CdnExpress
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
     <argument id="cdn_expression_depends_on::depends_on" name="depends_on">
-      <doc>*documentation missing...*</doc>
+      <doc>the expression to check dependency for</doc>
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
   </function>
@@ -114,10 +114,15 @@ cache if needed
     </argument>
   </function>
   <function id="cdn_expression_evaluate_values" name="cdn_expression_evaluate_values">
-    <brief>*Documentation missing...*</brief>
+    <brief>Evaluate the given expression and return its value as a matrix</brief>
+    <doc>Evaluate the given expression and return its value as a matrix. Note that
+values are always cached in expressions, and this function thus returns
+an internal reference to the resulting matrix.
+
+</doc>
     <return>
       <doc>the result of evaluating the expression</doc>
-      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" transfer-ownership="full" />
+      <type name="CdnMatrix" qualifier="*" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
     </return>
     <argument id="cdn_expression_evaluate_values::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref>.</doc>
@@ -125,7 +130,7 @@ cache if needed
     </argument>
   </function>
   <function id="cdn_expression_force_reset_cache" name="cdn_expression_force_reset_cache">
-    <brief>*Documentation missing...*</brief>
+    <brief>Forcefully reset the cache of the expression</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -214,9 +219,9 @@ by <ref ref="API Reference::CdnExpression#API Reference::CdnExpression::expressi
     </argument>
   </function>
   <function id="cdn_expression_get_has_cache" name="cdn_expression_get_has_cache">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the expression caches values</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the expression caches values, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_expression_get_has_cache::self" name="self">
@@ -296,9 +301,9 @@ not be freed or modified
     </argument>
   </function>
   <function id="cdn_expression_is_cached" name="cdn_expression_is_cached">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the expression is currently cached.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the expression is cached, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_expression_is_cached::self" name="self">
@@ -307,7 +312,7 @@ not be freed or modified
     </argument>
   </function>
   <function id="cdn_expression_new" name="cdn_expression_new">
-    <brief>Create a new <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> containing the expression <ref ref="API Reference::CdnExpression#cdn_expression_new::expression">expression</ref>
+    <brief>Create a new <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> containing the expression <ref ref="API Reference::CdnExpression#cdn_expression_new::expression">cdn_expression_new::expression</ref>
     </brief>
     <return>
       <doc>a new <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref></doc>
@@ -357,7 +362,10 @@ not be freed or modified
     </argument>
   </function>
   <function id="cdn_expression_set_cache_notify" name="cdn_expression_set_cache_notify">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set a cache notification callback handler for the expression</brief>
+    <doc>Set a cache notification callback handler for the expression. Each time
+the cache is invalidated, the provided callback will be called. Note
+that only a single callback can be installed per expression.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -366,20 +374,25 @@ not be freed or modified
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
     <argument id="cdn_expression_set_cache_notify::notify" name="notify">
-      <doc>*documentation missing...*</doc>
+      <doc>notification callback</doc>
       <type name="CdnExpressionCacheNotify" />
     </argument>
     <argument id="cdn_expression_set_cache_notify::userdata" name="userdata">
-      <doc>*documentation missing...*</doc>
+      <doc>user data</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
     <argument id="cdn_expression_set_cache_notify::destroy_notify" name="destroy_notify">
-      <doc>*documentation missing...*</doc>
+      <doc>user data destroy notification</doc>
       <type name="GDestroyNotify" />
     </argument>
   </function>
   <function id="cdn_expression_set_evaluate_notify" name="cdn_expression_set_evaluate_notify">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set an evaluation notification callback handler for the expression</brief>
+    <doc>Set an evaluation notification callback handler for the expression. Each time
+the expression needs to be evaluated, the provided callback will be called. This
+can be used to intercept evaluation of the expression and make sure that external
+dependencies are updated accordingly. Note that only a single callback can be
+installed per expression.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -388,15 +401,15 @@ not be freed or modified
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
     <argument id="cdn_expression_set_evaluate_notify::notify" name="notify">
-      <doc>*documentation missing...*</doc>
+      <doc>notification callback</doc>
       <type name="CdnExpressionEvaluateNotify" />
     </argument>
     <argument id="cdn_expression_set_evaluate_notify::userdata" name="userdata">
-      <doc>*documentation missing...*</doc>
+      <doc>user data</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
     <argument id="cdn_expression_set_evaluate_notify::destroy_notify" name="destroy_notify">
-      <doc>*documentation missing...*</doc>
+      <doc>user data destroy notification</doc>
       <type name="GDestroyNotify" />
     </argument>
   </function>
@@ -416,7 +429,7 @@ not be freed or modified
     </argument>
   </function>
   <function id="cdn_expression_set_has_cache" name="cdn_expression_set_has_cache">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set whether the expression currently has a cached value</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -425,7 +438,7 @@ not be freed or modified
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
     <argument id="cdn_expression_set_has_cache::cache" name="cache">
-      <doc>*documentation missing...*</doc>
+      <doc>whether or not to cache</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>

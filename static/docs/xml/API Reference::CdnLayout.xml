@@ -7,7 +7,7 @@
     <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
   </gobject:property>
   <function id="cdn_layout_new" name="cdn_layout_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>*documentation missing...*</brief>
     <return>
       <doc>*documentation missing...*</doc>
       <type name="CdnLayout" qualifier="*" ref="API Reference::CdnLayout#API Reference::CdnLayout" transfer-ownership="full" />
@@ -18,7 +18,7 @@
     </argument>
   </function>
   <function id="cdn_layout_set" name="cdn_layout_set">
-    <brief>*Documentation missing...*</brief>
+    <brief>*documentation missing...*</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>

@@ -3,7 +3,7 @@
   <brief>Mathematical instruction base class</brief>
   <doc>Mathematical instruction base class.
 
-The <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction" /> class is an abstract base class for all mathematical
+The <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> class is an abstract base class for all mathematical
 instructions in Codyn.</doc>
   <base access="public">
     <type name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />

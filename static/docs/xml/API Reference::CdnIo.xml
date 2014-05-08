@@ -1,12 +1,58 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:interface xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIo" name="CdnIo" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Io module interface</brief>
+  <doc>Io module interface.
+
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> is an interface which can be implemented to add new types
+of IO to codyn. Once implemented and registered, the new IO type
+is also available in the codyn modeling language and can be easily
+instantiated. This is useful for direct integration of external
+input/output in codyn, such that all existing codyn tools can still
+be used.
+
+A <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface implementation must be a subclass of <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.
+Any input or output values must be represented by <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>
+in the object, which allows them to be accessed from the network.
+The <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> implementation is thus simply another node in the network,
+but one which updates its contents based on external IO.
+
+Usually, custom IO is implemented in a dynamically loaded module.
+Such modules are compiled as shared libraries and export at least
+one of the following methods:
+
+1. cdn_input_&amp;lt;name&amp;gt;_get_type
+2. cdn_output_&amp;lt;name&amp;gt;_get_type
+3. cdn_io_&amp;lt;name&amp;gt;_get_type
+
+depending on whether the io module implements only input, only output
+or both input and output. Multiple io types can be defined within the
+same dynamic module and are identified by their name. The returned
+&amp;lt;GType&amp;gt; must be a concrete class which implements <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>.
+
+Io objects are initialized before every run of a network and finalized
+afterwards. Initialization and finalization is usually done asynchronously
+such that all custom IO instantiations can be initialized and finalized
+in parallel. The default implementation of <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>::initialize_async and
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>::finalize_async will create a new thread in which <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>::initialize and
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>::finalize are respectively executed. If needed, these default implementations
+can be overridden to implement your own means of asynchronous initialization
+and finalization.
+
+During numerical integration, <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>::update is called which should update
+any of the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> that the io object exposes based on the current
+integration time. It is up to the implementation whether or not it is required
+to perform the actual updates asynchronously in the background.</doc>
   <gobject:property id="API Reference::CdnIo::mode" mode="construct" name="mode">
     <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
   </gobject:property>
   <function id="cdn_io_finalize" name="cdn_io_finalize">
-    <brief>*Documentation missing...*</brief>
+    <brief>Finalize the IO module</brief>
+    <doc>Finalize the IO module. This will call the finalize method on the
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if finalization was successful, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_io_finalize::self" name="self">
@@ -14,7 +60,7 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_finalize::cancellable" name="cancellable">
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GCancellable&amp;gt;</doc>
       <type allow-none="yes" name="GCancellable" qualifier="*" />
     </argument>
     <argument id="cdn_io_finalize::error" name="error">
@@ -23,7 +69,11 @@
     </argument>
   </function>
   <function id="cdn_io_finalize_async" name="cdn_io_finalize_async">
-    <brief>*Documentation missing...*</brief>
+    <brief>Finalize the IO module asynchronously</brief>
+    <doc>Finalize the IO module asynchronously. This will call the finalize_async
+method on the <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface. Once finalized, <ref ref="API Reference::CdnIo#cdn_io_finalize_async::callback">cdn_io_finalize_async::callback</ref> will be called
+with the specified <ref ref="API Reference::CdnIo#cdn_io_finalize_async::user_data">cdn_io_finalize_async::user_data</ref>. Call <ref ref="API Reference::CdnIo#cdn_io_finalize_finish">cdn_io_finalize_finish</ref> from <ref ref="API Reference::CdnIo#cdn_io_finalize_async::callback">cdn_io_finalize_async::callback</ref>
+to finalize the asynchronous finalization and check for possible errors.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -32,22 +82,22 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_finalize_async::cancellable" name="cancellable">
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GCancellable&amp;gt;</doc>
       <type allow-none="yes" name="GCancellable" qualifier="*" />
     </argument>
     <argument id="cdn_io_finalize_async::callback" name="callback">
-      <doc>*documentation missing...*</doc>
+      <doc>a callback</doc>
       <type allow-none="yes" name="GAsyncReadyCallback" />
     </argument>
     <argument id="cdn_io_finalize_async::user_data" name="user_data">
-      <doc>*documentation missing...*</doc>
+      <doc>user data</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
   <function id="cdn_io_finalize_finish" name="cdn_io_finalize_finish">
-    <brief>*Documentation missing...*</brief>
+    <brief>Finish the asynchronous finalization of the io.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the io module has been finalized, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_io_finalize_finish::self" name="self">
@@ -55,7 +105,7 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_finalize_finish::result" name="result">
-      <doc>*documentation missing...*</doc>
+      <doc>the result</doc>
       <type name="GAsyncResult" qualifier="*" />
     </argument>
     <argument id="cdn_io_finalize_finish::error" name="error">
@@ -64,9 +114,9 @@
     </argument>
   </function>
   <function id="cdn_io_get_mode" name="cdn_io_get_mode">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the io mode of &amp;lt;io&amp;gt;.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the io mode</doc>
       <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
     </return>
     <argument id="cdn_io_get_mode::self" name="self">
@@ -75,9 +125,13 @@
     </argument>
   </function>
   <function id="cdn_io_initialize" name="cdn_io_initialize">
-    <brief>*Documentation missing...*</brief>
+    <brief>Initialize the IO module</brief>
+    <doc>Initialize the IO module. This will call the initialize method on the
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the io module has been initialized, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_io_initialize::self" name="self">
@@ -85,7 +139,7 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_initialize::cancellable" name="cancellable">
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GCancellable&amp;gt;</doc>
       <type allow-none="yes" name="GCancellable" qualifier="*" />
     </argument>
     <argument id="cdn_io_initialize::error" name="error">
@@ -94,7 +148,11 @@
     </argument>
   </function>
   <function id="cdn_io_initialize_async" name="cdn_io_initialize_async">
-    <brief>*Documentation missing...*</brief>
+    <brief>Initialize the IO module asynchronously</brief>
+    <doc>Initialize the IO module asynchronously. This will call the initialize_async
+method on the <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface. Once initialized, <ref ref="API Reference::CdnIo#cdn_io_initialize_async::callback">cdn_io_initialize_async::callback</ref> will be called
+with the specified <ref ref="API Reference::CdnIo#cdn_io_initialize_async::user_data">cdn_io_initialize_async::user_data</ref>. Call <ref ref="API Reference::CdnIo#cdn_io_initialize_finish">cdn_io_initialize_finish</ref> from <ref ref="API Reference::CdnIo#cdn_io_initialize_async::callback">cdn_io_initialize_async::callback</ref>
+to finalize the asynchronous initialization and check for possible errors.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -103,22 +161,22 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_initialize_async::cancellable" name="cancellable">
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GCancellable&amp;gt;</doc>
       <type allow-none="yes" name="GCancellable" qualifier="*" />
     </argument>
     <argument id="cdn_io_initialize_async::callback" name="callback">
-      <doc>*documentation missing...*</doc>
+      <doc>a callback</doc>
       <type allow-none="yes" name="GAsyncReadyCallback" />
     </argument>
     <argument id="cdn_io_initialize_async::user_data" name="user_data">
-      <doc>*documentation missing...*</doc>
+      <doc>user data</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
   <function id="cdn_io_initialize_finish" name="cdn_io_initialize_finish">
-    <brief>*Documentation missing...*</brief>
+    <brief>Finish the asynchronous initialization of the io.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the io module has been initialized, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_io_initialize_finish::self" name="self">
@@ -126,7 +184,7 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_initialize_finish::result" name="result">
-      <doc>*documentation missing...*</doc>
+      <doc>the result</doc>
       <type name="GAsyncResult" qualifier="*" />
     </argument>
     <argument id="cdn_io_initialize_finish::error" name="error">
@@ -135,7 +193,9 @@
     </argument>
   </function>
   <function id="cdn_io_update" name="cdn_io_update">
-    <brief>*Documentation missing...*</brief>
+    <brief>Update the IO</brief>
+    <doc>Update the IO. This will call the update method on the
+<ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref> interface.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -144,7 +204,7 @@
       <type name="CdnIo" qualifier="*" ref="API Reference::CdnIo#API Reference::CdnIo" />
     </argument>
     <argument id="cdn_io_update::integrator" name="integrator">
-      <doc>*documentation missing...*</doc>
+      <doc>the current <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref></doc>
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
   </function>

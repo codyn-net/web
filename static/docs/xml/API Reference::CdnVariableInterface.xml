@@ -66,9 +66,9 @@ children of a node, and ensures data integrity (in a sense).</doc>
     </argument>
   </function>
   <function id="cdn_variable_interface_implements" name="cdn_variable_interface_implements">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the variable interface implements a variable with the given name.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if implemented, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_variable_interface_implements::self" name="self">
@@ -76,7 +76,7 @@ children of a node, and ensures data integrity (in a sense).</doc>
       <type name="CdnVariableInterface" qualifier="*" ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface" />
     </argument>
     <argument id="cdn_variable_interface_implements::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
@@ -96,9 +96,9 @@ children of a node, and ensures data integrity (in a sense).</doc>
     </argument>
   </function>
   <function id="cdn_variable_interface_lookup_child_name" name="cdn_variable_interface_lookup_child_name">
-    <brief>*Documentation missing...*</brief>
+    <brief>Lookup the name of the child for which <ref ref="API Reference::CdnVariableInterface#cdn_variable_interface_lookup_child_name::name">cdn_variable_interface_lookup_child_name::name</ref> provides an interface.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the child name.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_variable_interface_lookup_child_name::self" name="self">
@@ -106,14 +106,14 @@ children of a node, and ensures data integrity (in a sense).</doc>
       <type name="CdnVariableInterface" qualifier="*" ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface" />
     </argument>
     <argument id="cdn_variable_interface_lookup_child_name::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the variable name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_variable_interface_lookup_variable_name" name="cdn_variable_interface_lookup_variable_name">
-    <brief>*Documentation missing...*</brief>
+    <brief>Lookup the name of the child variable for which <ref ref="API Reference::CdnVariableInterface#cdn_variable_interface_lookup_variable_name::name">cdn_variable_interface_lookup_variable_name::name</ref> provides an interface.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the child variable name.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_variable_interface_lookup_variable_name::self" name="self">
@@ -121,7 +121,7 @@ children of a node, and ensures data integrity (in a sense).</doc>
       <type name="CdnVariableInterface" qualifier="*" ref="API Reference::CdnVariableInterface#API Reference::CdnVariableInterface" />
     </argument>
     <argument id="cdn_variable_interface_lookup_variable_name::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the variable name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>

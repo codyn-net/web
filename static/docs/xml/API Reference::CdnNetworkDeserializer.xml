@@ -56,11 +56,11 @@ Use this to deserialize an XML description of a network to a <ref ref="API Refer
     </argument>
   </function>
   <function id="cdn_network_deserializer_new" name="cdn_network_deserializer_new">
-    <brief>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">network</ref>
+    <brief>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">cdn_network_deserializer_new::network</ref>
     </brief>
-    <doc>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">network</ref>. When calling
+    <doc>Create a new deserializer for a given <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::network">cdn_network_deserializer_new::network</ref>. When calling
 <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_deserialize">cdn_network_deserializer_deserialize</ref>, objects will be deserialized into
-<ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">root</ref>. If <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">root</ref> is `NULL`, the objects will be deserialized in the root
+<ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">cdn_network_deserializer_new::root</ref>. If <ref ref="API Reference::CdnNetworkDeserializer#cdn_network_deserializer_new::root">cdn_network_deserializer_new::root</ref> is `NULL`, the objects will be deserialized in the root
 of the network.
 
 </doc>

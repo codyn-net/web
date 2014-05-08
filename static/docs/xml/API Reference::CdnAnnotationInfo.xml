@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnAnnotationInfo" name="CdnAnnotationInfo" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Annotation informatio</brief>
+  <doc>Annotation information
+
+<ref ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">CdnAnnotationInfo</ref> contains information about annotations in the codyn
+modeling language.</doc>
   <function id="cdn_annotation_info_free" name="cdn_annotation_info_free">
     <brief>Free the annotation info.</brief>
     <return>

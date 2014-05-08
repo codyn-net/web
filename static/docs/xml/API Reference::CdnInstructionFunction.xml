@@ -1,15 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionFunction" name="CdnInstructionFunction" xmlns="http://jessevdk.github.com/cldoc/1.0">
-  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_FUNCTION`</brief>
-  <doc>The instruction class for `CDN_INSTRUCTION_TYPE_FUNCTION`. Note: this
-instruction is used both for functions and for operators!</doc>
+  <brief>Function call instruction</brief>
+  <doc>Function call instruction.
+
+The <ref ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction">CdnInstructionFunction</ref> type is a special <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> subtype
+which represents a builtin function call. This instruction type is used
+both for builtin functions and builtin operators (which can be seen as a
+special type of function). This instruction is only used to call builtin
+functions and operators. To call a custom defined user function, use
+<ref ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">CdnInstructionCustomFunction</ref> instead.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
   <function id="cdn_instruction_function_get_id" name="cdn_instruction_function_get_id">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the id of the instruction call</brief>
+    <doc>Get the id of the instruction call. This usually refers to a
+<ref ref="API Reference#API Reference::CdnMathFunctionType">CdnMathFunctionType</ref>, but may also refer to external, dynamically
+loaded functions (which have ids &gt; <ref ref="API Reference#API Reference::CdnMathFunctionType::CDN_MATH_FUNCTION_TYPE_NUM">CDN_MATH_FUNCTION_TYPE_NUM</ref>).
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the function id</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_instruction_function_get_id::self" name="self">
@@ -29,21 +40,33 @@ instruction is used both for functions and for operators!</doc>
     </argument>
   </function>
   <function id="cdn_instruction_function_new" name="cdn_instruction_function_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new function call instruction</brief>
+    <doc>Create a new function call instruction. The <ref ref="API Reference::CdnInstructionFunction#cdn_instruction_function_new::id">cdn_instruction_function_new::id</ref> refers to
+<ref ref="API Reference#API Reference::CdnMathFunctionType">CdnMathFunctionType</ref> for builtin functions in libcodyn, but is of
+type guint because it may also refer to external, dynamically loaded
+functions which get their own identifier &gt; <ref ref="API Reference#API Reference::CdnMathFunctionType::CDN_MATH_FUNCTION_TYPE_NUM">CDN_MATH_FUNCTION_TYPE_NUM</ref>.
+
+<ref ref="API Reference::CdnInstructionFunction#cdn_instruction_function_new::name">cdn_instruction_function_new::name</ref> may be specified for the purpose of the distinction of multiple
+aliases for the same underlying function. This is useful when expressions
+are reconstructed from instruction streams, but is usually only used
+internally. <ref ref="API Reference::CdnInstructionFunction#cdn_instruction_function_new::args">cdn_instruction_function_new::args</ref> defines the arguments that this instruction takes from the
+stack when executed.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction">CdnInstructionFunction</ref></doc>
+      <type name="CdnInstructionFunction" qualifier="*" ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_function_new::id" name="id">
-      <doc>*documentation missing...*</doc>
+      <doc>the function id</doc>
       <type builtin="yes" name="guint" />
     </argument>
     <argument id="cdn_instruction_function_new::name" name="name">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier=" const *" />
+      <doc>the function name</doc>
+      <type allow-none="yes" builtin="yes" name="gchar" qualifier=" const *" />
     </argument>
     <argument id="cdn_instruction_function_new::args" name="args">
-      <doc>*documentation missing...*</doc>
+      <doc>the function arguments</doc>
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
   </function>
@@ -58,7 +81,7 @@ instruction is used both for functions and for operators!</doc>
     </argument>
     <argument id="cdn_instruction_function_set_name::name" name="name">
       <doc>The function name</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
+      <type allow-none="yes" builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
 </gobject:class>

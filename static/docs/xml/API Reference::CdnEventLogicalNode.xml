@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEventLogicalNode" name="CdnEventLogicalNode" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Logical event condition nod</brief>
+  <doc>Logical event condition node
+
+<ref ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">CdnEventLogicalNode</ref> is a struct which contains a tree representation an event
+condition.</doc>
   <function id="cdn_event_logical_node_get_compare_type" name="cdn_event_logical_node_get_compare_type">
     <brief>Get the comparison type represented by the node.</brief>
     <return>

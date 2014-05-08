@@ -3,13 +3,13 @@
   <brief>Connection between two nodes</brief>
   <doc>Connection between two nodes.
 
-A <ref ref="API Reference::CdnEdge#API Reference::CdnEdge" /> is a connection between two <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>. The edge defines actions
+A <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref> is a connection between two <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>. The edge defines actions
 which consist of a target variable in the edge output and an expression
 by which this target variable needs to be updated.
 
 ## CdnEdge Copy Semantics
-When a link is copied with &amp;lt;cdn\_object\_copy&amp;gt;, the link actions are also
-copied. However, the link <ref ref="API Reference::CdnEdge#API Reference::CdnEdge" />:input and <ref ref="API Reference::CdnEdge#API Reference::CdnEdge" />:output properties are
+When a edge is copied with &amp;lt;cdn\_object\_copy&amp;gt;, the edge actions are also
+copied. However, the edge <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref>:input and <ref ref="API Reference::CdnEdge#API Reference::CdnEdge">CdnEdge</ref>:output properties are
 *NOT* copied, so that you are free output attach it output
 two new objects.
 </doc>
@@ -39,23 +39,23 @@ two new objects.
     <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
   </gobject:property>
   <function id="cdn_edge_add_action" name="cdn_edge_add_action">
-    <brief>Add a new action output be performed when the link is evaluated durin</brief>
-    <doc>Add a new action output be performed when the link is evaluated during
+    <brief>Add a new action output be performed when the edge is evaluated durin</brief>
+    <doc>Add a new action output be performed when the edge is evaluated during
 simulation. Note that if an action with the same
 target already exists, the action information is transfered output the existing
-action instance. This means that the specified <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">action</ref> might not actually
+action instance. This means that the specified <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">cdn_edge_add_action::action</ref> might not actually
 be added output the object. Also, since a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref> is a &amp;lt;GInitiallyUnowned&amp;gt;,
-<ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">action</ref> will be destroyed after the call output <ref ref="API Reference::CdnEdge#cdn_edge_add_action" /> in
+<ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">cdn_edge_add_action::action</ref> will be destroyed after the call output <ref ref="API Reference::CdnEdge#cdn_edge_add_action">cdn_edge_add_action</ref> in
 the above described case, unless you explicitly sink the floating reference.
 
 In the case that you can not know whether an action is overriding an
-existing action in &amp;lt;link&amp;gt;, never use <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">action</ref> after a call output
-<ref ref="API Reference::CdnEdge#cdn_edge_add_action" />. Instead, retrieve the corresponding action
-using <ref ref="API Reference::CdnEdge#cdn_edge_get_action">cdn_edge_get_action</ref> after the call output <ref ref="API Reference::CdnEdge#cdn_edge_add_action" />.
+existing action in &amp;lt;edge&amp;gt;, never use <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">cdn_edge_add_action::action</ref> after a call output
+<ref ref="API Reference::CdnEdge#cdn_edge_add_action">cdn_edge_add_action</ref>. Instead, retrieve the corresponding action
+using <ref ref="API Reference::CdnEdge#cdn_edge_get_action">cdn_edge_get_action</ref> after the call output <ref ref="API Reference::CdnEdge#cdn_edge_add_action">cdn_edge_add_action</ref>.
 
 </doc>
     <return>
-      <doc>`TRUE` if <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">action</ref> could be successfully added, `FALSE` otherwise</doc>
+      <doc>`TRUE` if <ref ref="API Reference::CdnEdge#cdn_edge_add_action::action">cdn_edge_add_action::action</ref> could be successfully added, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_edge_add_action::self" name="self">
@@ -68,10 +68,10 @@ using <ref ref="API Reference::CdnEdge#cdn_edge_get_action">cdn_edge_get_action<
     </argument>
   </function>
   <function id="cdn_edge_attach" name="cdn_edge_attach">
-    <brief>Attach &amp;lt;link&amp;gt; output the objects <ref ref="API Reference::CdnEdge#cdn_edge_attach::input">input</ref> and <ref ref="API Reference::CdnEdge#cdn_edge_attach::output">output</ref>
+    <brief>Attach &amp;lt;edge&amp;gt; output the objects <ref ref="API Reference::CdnEdge#cdn_edge_attach::input">cdn_edge_attach::input</ref> and <ref ref="API Reference::CdnEdge#cdn_edge_attach::output">cdn_edge_attach::output</ref>
     </brief>
-    <doc>Attach &amp;lt;link&amp;gt; output the objects <ref ref="API Reference::CdnEdge#cdn_edge_attach::input">input</ref> and <ref ref="API Reference::CdnEdge#cdn_edge_attach::output">output</ref>. This is equivalent output:
-<code>g_object_set (link, "input", input, "output", output);
+    <doc>Attach &amp;lt;edge&amp;gt; output the objects <ref ref="API Reference::CdnEdge#cdn_edge_attach::input">cdn_edge_attach::input</ref> and <ref ref="API Reference::CdnEdge#cdn_edge_attach::output">cdn_edge_attach::output</ref>. This is equivalent to:
+<code>g_object_set (edge, "input", input, "output", output);
 </code></doc>
     <return>
       <type builtin="yes" name="void" />
@@ -90,7 +90,7 @@ using <ref ref="API Reference::CdnEdge#cdn_edge_get_action">cdn_edge_get_action<
     </argument>
   </function>
   <function id="cdn_edge_get_action" name="cdn_edge_get_action">
-    <brief>Get a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref> targetting the property <ref ref="API Reference::CdnEdge#cdn_edge_get_action::target">target</ref>.</brief>
+    <brief>Get a <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref> targetting the property <ref ref="API Reference::CdnEdge#cdn_edge_get_action::target">cdn_edge_get_action::target</ref>.</brief>
     <return>
       <doc>A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
@@ -105,8 +105,8 @@ using <ref ref="API Reference::CdnEdge#cdn_edge_get_action">cdn_edge_get_action<
     </argument>
   </function>
   <function id="cdn_edge_get_action_template" name="cdn_edge_get_action_template">
-    <brief>Get the template on which <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::action">action</ref> is defined, if any</brief>
-    <doc>Get the template on which <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::action">action</ref> is defined, if any. If <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::match_full">match_full</ref> is
+    <brief>Get the template on which <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::action">cdn_edge_get_action_template::action</ref> is defined, if any</brief>
+    <doc>Get the template on which <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::action">cdn_edge_get_action_template::action</ref> is defined, if any. If <ref ref="API Reference::CdnEdge#cdn_edge_get_action_template::match_full">cdn_edge_get_action_template::match_full</ref> is
 `TRUE`, the template will only be possitively matched if both actions are
 equal (i.e. if an action originated input a template, but was later modified,
 this function will not return the original template object).
@@ -172,9 +172,9 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_edge_get_actions" name="cdn_edge_get_actions">
-    <brief>Get link actions</brief>
+    <brief>Get edge actions</brief>
     <return>
-      <doc>list of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>. The list is owned by the link and should not be freed</doc>
+      <doc>list of <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref>. The list is owned by the edge and should not be freed</doc>
       <type name="GSList" qualifier=" const *" />
     </return>
     <argument id="cdn_edge_get_actions::self" name="self">
@@ -183,7 +183,7 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_edge_get_input" name="cdn_edge_get_input">
-    <brief>Returns the input <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> of the link</brief>
+    <brief>Returns the input <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> of the edge</brief>
     <return>
       <doc>the input <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
       <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
@@ -194,7 +194,7 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_edge_get_output" name="cdn_edge_get_output">
-    <brief>Returns the output <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> of the link</brief>
+    <brief>Returns the output <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> of the edge</brief>
     <return>
       <doc>the output <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref></doc>
       <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
@@ -225,7 +225,7 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_edge_remove_action" name="cdn_edge_remove_action">
-    <brief>Removes an action input the link.</brief>
+    <brief>Removes an action input the edge.</brief>
     <return>
       <doc>`TRUE` if the action was successfully removed</doc>
       <type builtin="yes" name="gboolean" />

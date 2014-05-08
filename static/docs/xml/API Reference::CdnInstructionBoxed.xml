@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionBoxed" name="CdnInstructionBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Boxed instruction</brief>
+  <doc>Boxed instruction.
+
+<ref ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">CdnInstructionBoxed</ref> provides boxed versions of the instructions. Instructions
+are not full GObject types, which provides difficulties for language bindings.
+The boxed values can be easily bound for other languages, but are of little
+use otherwise.</doc>
   <function id="cdn_instruction_boxed_as_custom_function" name="cdn_instruction_boxed_as_custom_function">
     <brief>Get the instruction as a custom function.</brief>
     <return>

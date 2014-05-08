@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStackManipulation" name="CdnStackManipulation" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Stack manipulation informatio</brief>
+  <doc>Stack manipulation information
+
+<ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref> contains information on how a particular instruction
+or function manipulates the stack. It encodes both how many elements are popped
+as well as pushed onto the stack when executed.</doc>
   <field id="API Reference::CdnStackManipulation::pop" name="pop">
     <type name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
   </field>
@@ -10,21 +16,23 @@
     <type builtin="yes" name="gint" />
   </field>
   <function id="cdn_stack_manipulation_copy" name="cdn_stack_manipulation_copy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Copy the stack manipulation from <ref ref="API Reference::CdnStackManipulation#cdn_stack_manipulation_copy::src">cdn_stack_manipulation_copy::src</ref> to <ref ref="API Reference::CdnStackManipulation#cdn_stack_manipulation_copy::dest">cdn_stack_manipulation_copy::dest</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_stack_manipulation_copy::self" name="self">
-      <doc>a <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref>.</doc>
-      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    <argument id="cdn_stack_manipulation_copy::dest" name="dest">
+      <doc>the destination <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref></doc>
+      <type name="CdnStackManipulation" out="yes" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
     </argument>
     <argument id="cdn_stack_manipulation_copy::src" name="src">
-      <doc>*documentation missing...*</doc>
+      <doc>the source <ref ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">CdnStackManipulation</ref></doc>
       <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
     </argument>
   </function>
   <function id="cdn_stack_manipulation_destroy" name="cdn_stack_manipulation_destroy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Destroy the contents of the provided stack manipulation</brief>
+    <doc>Destroy the contents of the provided stack manipulation. Note that this does
+not free the memory of &amp;lt;smanip&amp;gt; itself.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>

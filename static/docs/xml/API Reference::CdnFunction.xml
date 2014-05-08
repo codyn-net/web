@@ -8,7 +8,7 @@ then be used from any expression. This class provides the basic
 user function functionality. User defined functions can reference global
 constants as well as use other user defined functions in their expressions.
 
-The <ref ref="API Reference::CdnFunction#API Reference::CdnFunction" /> class can be subclassed to provide more specific types
+The <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref> class can be subclassed to provide more specific types
 of functions. One such example is the <ref ref="API Reference::CdnFunctionPolynomial#API Reference::CdnFunctionPolynomial">CdnFunctionPolynomial</ref> class which
 can be used to define and evaluate piecewise polynomials.
 
@@ -220,10 +220,13 @@ using <ref ref="API Reference::CdnFunction#cdn_function_get_arguments">cdn_funct
     </argument>
   </function>
   <function id="cdn_function_get_stack_manipulation" name="cdn_function_get_stack_manipulation">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the stack manipulation of the function (i</brief>
+    <doc>Get the stack manipulation of the function (i.e. when called)
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" transfer-ownership="full" />
+      <doc>the stack manipulation</doc>
+      <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
     </return>
     <argument id="cdn_function_get_stack_manipulation::self" name="self">
       <doc>a <ref ref="API Reference::CdnFunction#API Reference::CdnFunction">CdnFunction</ref>.</doc>
@@ -298,12 +301,16 @@ can be added to the function using <ref ref="API Reference::CdnFunction#cdn_func
     </argument>
   </function>
   <function id="cdn_function_set_rand_as_argument" name="cdn_function_set_rand_as_argument">
-    <brief>*Documentation missing...*</brief>
+    <brief>Sets whether random number instructions in functions are passed by argument</brief>
+    <doc>Sets whether random number instructions in functions are passed by argument.
+This should be set before parsing any expressions since it alters the
+state globally. If set, random instructions in function expressions are promoted
+to arguments in the function call.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
     <argument id="cdn_function_set_rand_as_argument::rand_as_argument" name="rand_as_argument">
-      <doc>*documentation missing...*</doc>
+      <doc>rand as argument</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>
