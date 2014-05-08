@@ -22,7 +22,7 @@ which the states are stored.</doc>
     </argument>
   </function>
   <function id="cdn_phaseable_copy_to" name="cdn_phaseable_copy_to">
-    <brief>Copy the states in which &amp;lt;phaseable&amp;gt; is active to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_copy_to::dest">dest</ref>.</brief>
+    <brief>Copy the states in which &amp;lt;phaseable&amp;gt; is active to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_copy_to::dest">cdn_phaseable_copy_to::dest</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -36,13 +36,13 @@ which the states are stored.</doc>
     </argument>
   </function>
   <function id="cdn_phaseable_equal" name="cdn_phaseable_equal">
-    <brief>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> in terms of in which state</brief>
-    <doc>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> in terms of in which states
+    <brief>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">cdn_phaseable_equal::other</ref> in terms of in which state</brief>
+    <doc>Returns whether &amp;lt;phaseable&amp;gt; is equal to <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">cdn_phaseable_equal::other</ref> in terms of in which states
 they are active.
 
 </doc>
     <return>
-      <doc>`TRUE` if &amp;lt;phaseable&amp;gt; and <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">other</ref> are active in the same states, `FALSE` otherwise.</doc>
+      <doc>`TRUE` if &amp;lt;phaseable&amp;gt; and <ref ref="API Reference::CdnPhaseable#cdn_phaseable_equal::other">cdn_phaseable_equal::other</ref> are active in the same states, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_phaseable_equal::self" name="self">
@@ -55,7 +55,7 @@ they are active.
     </argument>
   </function>
   <function id="cdn_phaseable_foreach" name="cdn_phaseable_foreach">
-    <brief>Calls <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">func</ref> for each state.</brief>
+    <brief>Calls <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">cdn_phaseable_foreach::func</ref> for each state.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -68,7 +68,7 @@ they are active.
       <type name="CdnPhaseableForeachFunc" />
     </argument>
     <argument id="cdn_phaseable_foreach::userdata" name="userdata">
-      <doc>The user data for <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">func</ref></doc>
+      <doc>The user data for <ref ref="API Reference::CdnPhaseable#cdn_phaseable_foreach::func">cdn_phaseable_foreach::func</ref></doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
@@ -101,7 +101,7 @@ should be freed with &amp;lt;g\_strfreev&amp;gt;.
   <function id="cdn_phaseable_is_active" name="cdn_phaseable_is_active">
     <brief>Get whether this object is active for the given state.</brief>
     <return>
-      <doc>`TRUE` if the object is active in <ref ref="API Reference::CdnPhaseable#cdn_phaseable_is_active::phase">phase</ref>, `FALSE` otherwise.</doc>
+      <doc>`TRUE` if the object is active in <ref ref="API Reference::CdnPhaseable#cdn_phaseable_is_active::phase">cdn_phaseable_is_active::phase</ref>, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_phaseable_is_active::self" name="self">

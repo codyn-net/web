@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionCustomOperatorRefBoxed" name="CdnInstructionCustomOperatorRefBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Boxed custom operator ref instruction</brief>
+  <doc>Boxed custom operator ref instruction.
+
+Boxed version of &amp;lt;CdnInstructionCustomOperatorRef&amp;gt;, only used for language bindings.</doc>
   <function id="cdn_instruction_custom_operator_ref_boxed_get_operator_ref" name="cdn_instruction_custom_operator_ref_boxed_get_operator_ref">
     <brief>Get the function.</brief>
     <return>

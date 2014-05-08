@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnEmbeddedString" name="CdnEmbeddedString" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Embedded string class</brief>
+  <doc>Embedded string class.
+
+CdnEmbeddedString is a special type of string which can have embedded
+references, calculations, map/reduce and conditions. Embedded strings
+are a fundamental part of the codyn modeling language. All strings in
+the language are represented by a <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref>. Embedded strings
+are constructed during parsing of a model. They can then be expanded
+providing a certain context into one or more concrete strings, evaluating
+all the embedded components.</doc>
   <base access="public">
     <type name="GObject" />
   </base>
@@ -63,9 +73,9 @@ represented in elements 1:N).
     </argument>
   </function>
   <function id="cdn_embedded_string_brace_level" name="cdn_embedded_string_brace_level">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the current open brace level of the embedded string.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the current open brace level.</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_embedded_string_brace_level::self" name="self">
@@ -74,7 +84,7 @@ represented in elements 1:N).
     </argument>
   </function>
   <function id="cdn_embedded_string_clear_cache" name="cdn_embedded_string_clear_cache">
-    <brief>*Documentation missing...*</brief>
+    <brief>Forcefully clear the cache of the embedded string.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -83,32 +93,36 @@ represented in elements 1:N).
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
-  <function id="cdn_embedded_string_collapse" name="cdn_embedded_string_collapse">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_embedded_string_collapse::s" name="s">
-      <doc>*documentation missing...*</doc>
-      <type name="gchar* const" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_embedded_string_escape" name="cdn_embedded_string_escape">
-    <brief>*Documentation missing...*</brief>
+    <brief>Escape a string such that subsequent parsing of it as an embedde</brief>
+    <doc>Escape a string such that subsequent parsing of it as an embedded
+string would result in the exact same textual value.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the escaped string representation.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
-    <argument id="cdn_embedded_string_escape::item" name="item">
-      <doc>*documentation missing...*</doc>
+    <argument id="cdn_embedded_string_escape::s" name="s">
+      <doc>a string</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_embedded_string_expand" name="cdn_embedded_string_expand">
-    <brief>*Documentation missing...*</brief>
+    <brief>Expands the embedded string given the provided expansion context</brief>
+    <doc>Expands the embedded string given the provided expansion context.
+If an error occurred during expansion, then <ref ref="API Reference::CdnEmbeddedString#cdn_embedded_string_expand::error">cdn_embedded_string_expand::error</ref> will be set
+accordingly and `NULL` will be returned. This will only expand
+the embedded string to a single value. To obtain multiple values
+in case the embedded string holds a generator, use
+<ref ref="API Reference::CdnEmbeddedString#cdn_embedded_string_expand_multiple">cdn_embedded_string_expand_multiple</ref>.
+
+Note that this function returns an internally cached version of the
+expanded string.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the expanded string or `NULL` on error.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_expand::self" name="self">
@@ -116,7 +130,7 @@ represented in elements 1:N).
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
     <argument id="cdn_embedded_string_expand::ctx" name="ctx">
-      <doc>*documentation missing...*</doc>
+      <doc>the expansion context</doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_embedded_string_expand::error" name="error">
@@ -125,9 +139,16 @@ represented in elements 1:N).
     </argument>
   </function>
   <function id="cdn_embedded_string_expand_escape" name="cdn_embedded_string_expand_escape">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the escaped string representation of the expande</brief>
+    <doc>Get the escaped string representation of the expanded
+version of the embedded string. This can be useful to obtain
+a textual representation of the embedded string as a single
+list of pre-expanded elements. If an error occurs during expansion,
+then <ref ref="API Reference::CdnEmbeddedString#cdn_embedded_string_expand_escape::error">cdn_embedded_string_expand_escape::error</ref> will be set and `NULL` will be returned.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the escaped expanded string representation or `NULL`.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_expand_escape::self" name="self">
@@ -135,7 +156,7 @@ represented in elements 1:N).
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
     <argument id="cdn_embedded_string_expand_escape::ctx" name="ctx">
-      <doc>*documentation missing...*</doc>
+      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_embedded_string_expand_escape::error" name="error">
@@ -144,9 +165,19 @@ represented in elements 1:N).
     </argument>
   </function>
   <function id="cdn_embedded_string_expand_multiple" name="cdn_embedded_string_expand_multiple">
-    <brief>Expand string with braces syntax.</brief>
+    <brief>Expand the embedded string in the provided context</brief>
+    <doc>Expand the embedded string in the provided context. This evaluates
+all components given <ref ref="API Reference::CdnEmbeddedString#cdn_embedded_string_expand_multiple::ctx">cdn_embedded_string_expand_multiple::ctx</ref> and returns possible multiple expansions
+resulting from embedded generators. If an error occurs during
+expansion, <ref ref="API Reference::CdnEmbeddedString#cdn_embedded_string_expand_multiple::error">cdn_embedded_string_expand_multiple::error</ref> will be set and `NULL` will be returned.
+
+Note that the returned list contains <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> (which are owned
+by the caller). The expansions keep track of their corresponding
+expanded indices.
+
+</doc>
     <return>
-      <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
+      <doc>a &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="GSList" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_expand_multiple::self" name="self">
@@ -163,42 +194,52 @@ represented in elements 1:N).
     </argument>
   </function>
   <function id="cdn_embedded_string_new" name="cdn_embedded_string_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new and empty embedded string.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
     </return>
   </function>
   <function id="cdn_embedded_string_new_from_double" name="cdn_embedded_string_new_from_double">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new embedded string containing the textua</brief>
+    <doc>Create a new embedded string containing the textual
+representing of the provided number in a single text
+element.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_new_from_double::s" name="s">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
   <function id="cdn_embedded_string_new_from_integer" name="cdn_embedded_string_new_from_integer">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new embedded string containing the textua</brief>
+    <doc>Create a new embedded string containing the textual
+representing of the provided number in a single text
+element.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_new_from_integer::s" name="s">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_embedded_string_new_from_string" name="cdn_embedded_string_new_from_string">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new embedded string with a single text element.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">CdnEmbeddedString</ref></doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" transfer-ownership="full" />
     </return>
     <argument id="cdn_embedded_string_new_from_string::s" name="s">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>

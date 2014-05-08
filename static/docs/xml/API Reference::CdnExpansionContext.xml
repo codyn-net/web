@@ -1,7 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpansionContext" name="CdnExpansionContext" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Expansion context</brief>
+  <doc>Expansion context.
+
+<ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref> is a boxed class which provides a context for storing
+expansions and defines during parsing. Expansion contexts can have parent
+contexts, allowing to construct a prioritized hierarchy of contexts to
+lookup values in.</doc>
   <function id="cdn_expansion_context_add_define" name="cdn_expansion_context_add_define">
-    <brief>*Documentation missing...*</brief>
+    <brief>Define a new value with the specified name in the expansion context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -10,16 +17,16 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_add_define::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the define name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
-    <argument id="cdn_expansion_context_add_define::expansion" name="expansion">
-      <doc>*documentation missing...*</doc>
+    <argument id="cdn_expansion_context_add_define::value" name="value">
+      <doc>the define value</doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
   </function>
   <function id="cdn_expansion_context_add_defines" name="cdn_expansion_context_add_defines">
-    <brief>*Documentation missing...*</brief>
+    <brief>Add multiple defines from a hash table to the defines of &amp;lt;context&amp;gt;.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -28,12 +35,12 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_add_defines::defines" name="defines">
-      <doc>*documentation missing...*</doc>
+      <doc>the defines to add</doc>
       <type name="GHashTable" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_context_add_expansion" name="cdn_expansion_context_add_expansion">
-    <brief>*Documentation missing...*</brief>
+    <brief>Add an expansion to the top of the context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -42,12 +49,12 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_add_expansion::expansion" name="expansion">
-      <doc>*documentation missing...*</doc>
+      <doc>the expansion</doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
   </function>
   <function id="cdn_expansion_context_add_expansions" name="cdn_expansion_context_add_expansions">
-    <brief>Add expansions to the expansion context.</brief>
+    <brief>Add multiple expansions to the top of the expansion context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -60,41 +67,8 @@
       <type name="GSList" qualifier="*" />
     </argument>
   </function>
-  <function id="cdn_expansion_context_calculate" name="cdn_expansion_context_calculate">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_expansion_context_calculate::self" name="self">
-      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
-      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
-    </argument>
-    <argument id="cdn_expansion_context_calculate::equation" name="equation">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_expansion_context_calculate::error" name="error">
-      <doc>a &amp;lt;GError&amp;gt;.</doc>
-      <type allow-none="yes" name="GError " qualifier="**" />
-    </argument>
-  </function>
-  <function id="cdn_expansion_context_debug_print" name="cdn_expansion_context_debug_print">
-    <brief>Write debug information of the context.</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_expansion_context_debug_print::self" name="self">
-      <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
-      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
-    </argument>
-    <argument id="cdn_expansion_context_debug_print::file" name="file">
-      <doc>A &amp;lt;FILE&amp;gt;</doc>
-      <type name="FILE" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_expansion_context_foreach_define" name="cdn_expansion_context_foreach_define">
-    <brief>Call <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_foreach_define::hfunc">hfunc</ref> for each define in the expansion context.</brief>
+    <brief>Call <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_foreach_define::hfunc">cdn_expansion_context_foreach_define::hfunc</ref> for each define in the expansion context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -175,9 +149,14 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_get_marker" name="cdn_expansion_context_get_marker">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the current marker of the context</brief>
+    <doc>Get the current marker of the context. The marker is used to determine
+whether or not the context has been changed. Each change increases the
+marker.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the context marker.</doc>
       <type name="gulong" />
     </return>
     <argument id="cdn_expansion_context_get_marker::self" name="self">
@@ -186,9 +165,9 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_get_parent" name="cdn_expansion_context_get_parent">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the parent context of &amp;lt;context&amp;gt;.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the parent context or `NULL`.</doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_context_get_parent::self" name="self">
@@ -197,9 +176,13 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_increment_define" name="cdn_expansion_context_increment_define">
-    <brief>*Documentation missing...*</brief>
+    <brief>Increments a define counter, at the specified expansion index, wit</brief>
+    <doc>Increments a define counter, at the specified expansion index, with
+the corresponding increment (may be negative).
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the old value of the counter</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_expansion_context_increment_define::self" name="self">
@@ -207,20 +190,20 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_increment_define::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the define name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
     <argument id="cdn_expansion_context_increment_define::exidx" name="exidx">
-      <doc>*documentation missing...*</doc>
+      <doc>the expansion index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_expansion_context_increment_define::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the increment</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expansion_context_merge" name="cdn_expansion_context_merge">
-    <brief>*Documentation missing...*</brief>
+    <brief>Merge the content of <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_merge::other">cdn_expansion_context_merge::other</ref> into &amp;lt;context&amp;gt;.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -229,14 +212,18 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_merge::other" name="other">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
   </function>
   <function id="cdn_expansion_context_new" name="cdn_expansion_context_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new expansion context with a given parent context</brief>
+    <doc>Create a new expansion context with a given parent context. Use
+<ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_unref">cdn_expansion_context_unref</ref> if the context is no longer needed.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_context_new::self" name="self">
@@ -245,10 +232,17 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_new_unreffed" name="cdn_expansion_context_new_unreffed">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new expansion context with a given parent context</brief>
+    <doc>Create a new expansion context with a given parent context. The
+corresponding context is floating, i.e. it has a reference count
+of 0. To correctly destroy the context, use <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_ref">cdn_expansion_context_ref</ref>
+first and then <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_unref">cdn_expansion_context_unref</ref>. You usually will want
+to use <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_new">cdn_expansion_context_new</ref> instead of this function.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
+      <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </return>
     <argument id="cdn_expansion_context_new_unreffed::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref>.</doc>
@@ -256,9 +250,9 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_ref" name="cdn_expansion_context_ref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Increase the reference count of the expansion context.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>&amp;lt;context&amp;gt;</doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_context_ref::self" name="self">
@@ -267,7 +261,7 @@
     </argument>
   </function>
   <function id="cdn_expansion_context_remove_expansion" name="cdn_expansion_context_remove_expansion">
-    <brief>*Documentation missing...*</brief>
+    <brief>Remove the specified expansion from the context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -276,12 +270,15 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_remove_expansion::expansion" name="expansion">
-      <doc>*documentation missing...*</doc>
+      <doc>the expansion</doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
   </function>
   <function id="cdn_expansion_context_shared_defines" name="cdn_expansion_context_shared_defines">
-    <brief>*Documentation missing...*</brief>
+    <brief>Use the defines from <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_shared_defines::from">cdn_expansion_context_shared_defines::from</ref> as a shared set of define</brief>
+    <doc>Use the defines from <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_shared_defines::from">cdn_expansion_context_shared_defines::from</ref> as a shared set of defines
+in &amp;lt;context&amp;gt;. When new defines are added to &amp;lt;context&amp;gt;, these
+defines will also appear in <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_shared_defines::from">cdn_expansion_context_shared_defines::from</ref> and vice versa.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -290,12 +287,12 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_shared_defines::from" name="from">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
   </function>
   <function id="cdn_expansion_context_truncate" name="cdn_expansion_context_truncate">
-    <brief>*Documentation missing...*</brief>
+    <brief>Truncate &amp;lt;context&amp;gt; to contain only parent contexts up to <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_truncate::parent">cdn_expansion_context_truncate::parent</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -304,12 +301,15 @@
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
     <argument id="cdn_expansion_context_truncate::parent" name="parent">
-      <doc>*documentation missing...*</doc>
+      <doc>the parent <ref ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">CdnExpansionContext</ref></doc>
       <type name="CdnExpansionContext" qualifier="*" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
     </argument>
   </function>
   <function id="cdn_expansion_context_unref" name="cdn_expansion_context_unref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Decrease the reference count of the expansion context</brief>
+    <doc>Decrease the reference count of the expansion context. If the
+reference counts drops to 0, then the memory associated with
+the context is freed and <ref ref="API Reference::CdnExpansionContext#cdn_expansion_context_unref::self">cdn_expansion_context_unref::self</ref> is no longer valid.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>

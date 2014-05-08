@@ -1,7 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpansion" name="CdnExpansion" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Expansion class</brief>
+  <doc>Expansion class.
+
+The <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> boxed class, is a simple object which represents a single level
+of expansion, i.e. something which can be referred to in the codyn modeling language
+by &amp;lt;N&amp;gt; where N is a number. The <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> stores an ordered list of strings, where
+each string can be associated by an index. Normally, a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> is created as
+a product of generators and selectors, i.e. they represent a group of expansions.</doc>
   <function id="cdn_expansion_add" name="cdn_expansion_add">
-    <brief>*Documentation missing...*</brief>
+    <brief>Add a single item (append) to the expansion.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -10,12 +18,14 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_add::item" name="item">
-      <doc>*documentation missing...*</doc>
+      <doc>the item</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_append" name="cdn_expansion_append">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append the items in <ref ref="API Reference::CdnExpansion#cdn_expansion_append::other">cdn_expansion_append::other</ref> to the items in &amp;lt;expansion&amp;gt;</brief>
+    <doc>Append the items in <ref ref="API Reference::CdnExpansion#cdn_expansion_append::other">cdn_expansion_append::other</ref> to the items in &amp;lt;expansion&amp;gt;,
+starting at <ref ref="API Reference::CdnExpansion#cdn_expansion_append::idx">cdn_expansion_append::idx</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -24,11 +34,11 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_append::other" name="other">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_append::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
@@ -43,24 +53,16 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
   </function>
-  <function id="cdn_expansion_debug_print" name="cdn_expansion_debug_print">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_expansion_debug_print::self" name="self">
-      <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
-      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
-    </argument>
-    <argument id="cdn_expansion_debug_print::file" name="file">
-      <doc>*documentation missing...*</doc>
-      <type name="FILE" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_expansion_get" name="cdn_expansion_get">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get a single item from the expansion at index <ref ref="API Reference::CdnExpansion#cdn_expansion_get::idx">cdn_expansion_get::idx</ref>
+    </brief>
+    <doc>Get a single item from the expansion at index <ref ref="API Reference::CdnExpansion#cdn_expansion_get::idx">cdn_expansion_get::idx</ref>. If <ref ref="API Reference::CdnExpansion#cdn_expansion_get::idx">cdn_expansion_get::idx</ref> is larger
+or equal than the number of items in the expansion, then this function
+returns `NULL`.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the item at <ref ref="API Reference::CdnExpansion#cdn_expansion_get::idx">cdn_expansion_get::idx</ref> or `NULL`.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_get::self" name="self">
@@ -68,14 +70,20 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_get::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expansion_get_index" name="cdn_expansion_get_index">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get a single item index from the expansion at index <ref ref="API Reference::CdnExpansion#cdn_expansion_get_index::idx">cdn_expansion_get_index::idx</ref>
+    </brief>
+    <doc>Get a single item index from the expansion at index <ref ref="API Reference::CdnExpansion#cdn_expansion_get_index::idx">cdn_expansion_get_index::idx</ref>. If <ref ref="API Reference::CdnExpansion#cdn_expansion_get_index::idx">cdn_expansion_get_index::idx</ref> is larger
+or equal than the number of items in the expansion, then this function
+returns 0.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the item index at <ref ref="API Reference::CdnExpansion#cdn_expansion_get_index::idx">cdn_expansion_get_index::idx</ref> or `NULL`.</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_expansion_get_index::self" name="self">
@@ -83,12 +91,12 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_get_index::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expansion_insert" name="cdn_expansion_insert">
-    <brief>*Documentation missing...*</brief>
+    <brief>Insert a single item at the specified index.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -97,70 +105,68 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_insert::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_expansion_insert::item" name="item">
-      <doc>*documentation missing...*</doc>
+      <doc>the item</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_new" name="cdn_expansion_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> from a list of items</brief>
+    <doc>Create a new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> from a list of items. The provided
+<ref ref="API Reference::CdnExpansion#cdn_expansion_new::items">cdn_expansion_new::items</ref> must be `NULL` terminated.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_new::items" name="items">
-      <doc>*documentation missing...*</doc>
+      <doc>a `NULL` terminated list of items</doc>
       <type name="gchar* const" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_new_one" name="cdn_expansion_new_one">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref> with a single item.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_new_one::item" name="item">
-      <doc>*documentation missing...*</doc>
+      <doc>an item</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_new_sized" name="cdn_expansion_new_sized">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new expansion with an initial capacity of <ref ref="API Reference::CdnExpansion#cdn_expansion_new_sized::sized">cdn_expansion_new_sized::sized</ref>
+    </brief>
+    <doc>Create a new expansion with an initial capacity of <ref ref="API Reference::CdnExpansion#cdn_expansion_new_sized::sized">cdn_expansion_new_sized::sized</ref>. Note
+that <ref ref="API Reference::CdnExpansion#cdn_expansion_new_sized::items">cdn_expansion_new_sized::items</ref> must still be `NULL` terminated, <ref ref="API Reference::CdnExpansion#cdn_expansion_new_sized::sized">cdn_expansion_new_sized::sized</ref> only indicates
+an initial capacity for the number of items in the expansion.
+
+If <ref ref="API Reference::CdnExpansion#cdn_expansion_new_sized::items">cdn_expansion_new_sized::items</ref> is empty, an empty item will be automatically appended
+to the expansion.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the new <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
     </return>
     <argument id="cdn_expansion_new_sized::items" name="items">
-      <doc>*documentation missing...*</doc>
+      <doc>a `NULL` terminated list of items</doc>
       <type name="gchar* const" qualifier="*" />
     </argument>
     <argument id="cdn_expansion_new_sized::sized" name="sized">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of items to reserve space for</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
-  <function id="cdn_expansion_newv" name="cdn_expansion_newv">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_expansion_newv::item" name="item">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_expansion_newv::arg1" name="arg1">
-      <doc>*documentation missing...*</doc>
-      <type name="" />
-    </argument>
-  </function>
   <function id="cdn_expansion_num" name="cdn_expansion_num">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the number of items in the expansion.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the number of items in &amp;lt;expansion&amp;gt;</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_expansion_num::self" name="self">
@@ -169,7 +175,9 @@
     </argument>
   </function>
   <function id="cdn_expansion_prepend" name="cdn_expansion_prepend">
-    <brief>*Documentation missing...*</brief>
+    <brief>Prepend the items in <ref ref="API Reference::CdnExpansion#cdn_expansion_prepend::other">cdn_expansion_prepend::other</ref> before the items in &amp;lt;expansion&amp;gt;</brief>
+    <doc>Prepend the items in <ref ref="API Reference::CdnExpansion#cdn_expansion_prepend::other">cdn_expansion_prepend::other</ref> before the items in &amp;lt;expansion&amp;gt;,
+starting at <ref ref="API Reference::CdnExpansion#cdn_expansion_prepend::idx">cdn_expansion_prepend::idx</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -178,19 +186,19 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_prepend::other" name="other">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref></doc>
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_prepend::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expansion_ref" name="cdn_expansion_ref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Increase the reference count of &amp;lt;expansion&amp;gt;.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" transfer-ownership="full" />
+      <doc>&amp;lt;expansion&amp;gt;</doc>
+      <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </return>
     <argument id="cdn_expansion_ref::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpansion#API Reference::CdnExpansion">CdnExpansion</ref>.</doc>
@@ -198,7 +206,7 @@
     </argument>
   </function>
   <function id="cdn_expansion_set" name="cdn_expansion_set">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the value of an item at the specified index.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -207,16 +215,19 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_set::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_expansion_set::val" name="val">
-      <doc>*documentation missing...*</doc>
+      <doc>the item</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expansion_set_index" name="cdn_expansion_set_index">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the index of a particular item</brief>
+    <doc>Set the index of a particular item. <ref ref="API Reference::CdnExpansion#cdn_expansion_set_index::idx">cdn_expansion_set_index::idx</ref> indicates the item in the
+list of items in the expansion, while <ref ref="API Reference::CdnExpansion#cdn_expansion_set_index::val">cdn_expansion_set_index::val</ref> represents the corresponding
+item index.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -225,16 +236,18 @@
       <type name="CdnExpansion" qualifier="*" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
     </argument>
     <argument id="cdn_expansion_set_index::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_expansion_set_index::val" name="val">
-      <doc>*documentation missing...*</doc>
+      <doc>the item index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expansion_unref" name="cdn_expansion_unref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Decrease the reference count of &amp;lt;expansion&amp;gt;</brief>
+    <doc>Decrease the reference count of &amp;lt;expansion&amp;gt;. If the reference count
+reaches 0, then the memory associated with &amp;lt;expansion&amp;gt; will be freed.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>

@@ -1,12 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionRand" name="CdnInstructionRand" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Random number instruction</brief>
+  <doc>Random number instruction.
+
+<ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref> is a special subtype of <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> which represents
+a random number. Random number instructions are handled a bit differently from
+other instructions. Each random number instruction contains a cache and new
+random numbers have to be explicitly requested. This is done such that evaluation
+order does not have an effect on observation of random values. Also, this keeps
+the evaluation of a single integration step consistent.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
   <function id="cdn_instruction_rand_get_seed" name="cdn_instruction_rand_get_seed">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the random instruction seed when using rand streams</brief>
+    <doc>Get the random instruction seed when using rand streams. Note that
+this function always returns 0 if <ref ref="API Reference::CdnInstructionRand#cdn_instruction_rand_set_use_streams">cdn_instruction_rand_set_use_streams</ref>
+is not set.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the seed.</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_instruction_rand_get_seed::self" name="self">
@@ -17,8 +31,8 @@
   <function id="cdn_instruction_rand_new" name="cdn_instruction_rand_new">
     <brief>Create a new <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref>.</brief>
     <return>
-      <doc>A <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref></doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">CdnInstructionRand</ref></doc>
+      <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_rand_new::argdim" name="argdim">
       <doc>the argument dimensions</doc>
@@ -36,7 +50,10 @@
     </argument>
   </function>
   <function id="cdn_instruction_rand_reset" name="cdn_instruction_rand_reset">
-    <brief>*Documentation missing...*</brief>
+    <brief>Reset the random number generator</brief>
+    <doc>Reset the random number generator. When using streams, this initializes
+the random number generator with the specified seed. Otherwise, this
+will simply reduce to calling <ref ref="API Reference::CdnInstructionRand#cdn_instruction_rand_next">cdn_instruction_rand_next</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -46,7 +63,10 @@
     </argument>
   </function>
   <function id="cdn_instruction_rand_set_seed" name="cdn_instruction_rand_set_seed">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the random instruction seed when using rand streams</brief>
+    <doc>Set the random instruction seed when using rand streams. Note that
+this function does nothing if <ref ref="API Reference::CdnInstructionRand#cdn_instruction_rand_set_use_streams">cdn_instruction_rand_set_use_streams</ref>
+is not set.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -55,17 +75,23 @@
       <type name="CdnInstructionRand" qualifier="*" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
     </argument>
     <argument id="cdn_instruction_rand_set_seed::seed" name="seed">
-      <doc>*documentation missing...*</doc>
+      <doc>the new seed</doc>
       <type builtin="yes" name="guint" />
     </argument>
   </function>
   <function id="cdn_instruction_rand_set_use_streams" name="cdn_instruction_rand_set_use_streams">
-    <brief>*Documentation missing...*</brief>
+    <brief>Sets whether or not random instructions should work in a streamin</brief>
+    <doc>Sets whether or not random instructions should work in a streaming
+manner. If needed, this should be always called at program initialization,
+before any instructions are being created. Random instructions in streaming
+mode each carry their own random seed. This allows for external control of
+random number generation and is used by rawc to ensure deterministic validation
+of networks across code generation.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
     <argument id="cdn_instruction_rand_set_use_streams::use" name="use">
-      <doc>*documentation missing...*</doc>
+      <doc>whether or not to use streams</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>

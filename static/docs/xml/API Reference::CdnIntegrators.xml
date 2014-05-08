@@ -3,7 +3,7 @@
   <brief>Integrator registry</brief>
   <doc>Integrator registry.
 
-<ref ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators" /> provides a registry for integrators. All integrators must
+<ref ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators">CdnIntegrators</ref> provides a registry for integrators. All integrators must
 be registered before loading a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.</doc>
   <base access="public">
     <type name="GObject" />

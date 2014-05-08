@@ -3,7 +3,7 @@
   <brief>Edge action equation</brief>
   <doc>Edge action equation.
 
-A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an action inside an edge which sets a target
+A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref> is an action inside an edge which sets a target
 <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> to the value of a particular <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> equation.</doc>
   <base access="public">
     <type name="GInitiallyUnowned" />
@@ -38,9 +38,9 @@ A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an 
     <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
   </gobject:property>
   <function id="cdn_edge_action_compile" name="cdn_edge_action_compile">
-    <brief>*Documentation missing...*</brief>
+    <brief>Compile the edge action expression in the specified context.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the action was compiled successfully, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_edge_action_compile::self" name="self">
@@ -48,12 +48,12 @@ A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an 
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
     </argument>
     <argument id="cdn_edge_action_compile::context" name="context">
-      <doc>*documentation missing...*</doc>
+      <doc>A <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref></doc>
       <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
     </argument>
     <argument id="cdn_edge_action_compile::error" name="error">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnCompileErrorForward" qualifier="*" />
+      <doc>A <ref ref="API Reference::CdnCompileError#API Reference::CdnCompileError">CdnCompileError</ref> or `NULL`</doc>
+      <type allow-none="yes" name="CdnCompileErrorForward" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_edge_action_copy" name="cdn_edge_action_copy">
@@ -68,9 +68,14 @@ A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an 
     </argument>
   </function>
   <function id="cdn_edge_action_equal" name="cdn_edge_action_equal">
-    <brief>*Documentation missing...*</brief>
+    <brief>Compares &amp;lt;action&amp;gt; with <ref ref="API Reference::CdnEdgeAction#cdn_edge_action_equal::other">cdn_edge_action_equal::other</ref> for equality</brief>
+    <doc>Compares &amp;lt;action&amp;gt; with <ref ref="API Reference::CdnEdgeAction#cdn_edge_action_equal::other">cdn_edge_action_equal::other</ref> for equality. Edge actions are considered
+equal when they target the same variable, have the same indexing expression
+and finally the same differential equation.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if &amp;lt;action&amp;gt; is equal to <ref ref="API Reference::CdnEdgeAction#cdn_edge_action_equal::other">cdn_edge_action_equal::other</ref>, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_edge_action_equal::self" name="self">
@@ -78,14 +83,19 @@ A <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" /> is an 
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
     </argument>
     <argument id="cdn_edge_action_equal::other" name="other">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">CdnEdgeAction</ref></doc>
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
     </argument>
   </function>
   <function id="cdn_edge_action_get_adds" name="cdn_edge_action_get_adds">
-    <brief>*Documentation missing...*</brief>
+    <brief>Gets whether &amp;lt;action&amp;gt; adds to its targets differential equation, or override</brief>
+    <doc>Gets whether &amp;lt;action&amp;gt; adds to its targets differential equation, or overrides
+it completely. This is only relevant when the target of the action is not
+an integrated variable.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the action adds, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_edge_action_get_adds::self" name="self">
@@ -183,7 +193,10 @@ have an associated index).
     </argument>
   </function>
   <function id="cdn_edge_action_set_adds" name="cdn_edge_action_set_adds">
-    <brief>*Documentation missing...*</brief>
+    <brief>Sets whether &amp;lt;action&amp;gt; adds to its targets differential equation, or override</brief>
+    <doc>Sets whether &amp;lt;action&amp;gt; adds to its targets differential equation, or overrides
+it completely. This is only relevant when the target of the action is not
+an integrated variable.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -192,7 +205,7 @@ have an associated index).
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
     </argument>
     <argument id="cdn_edge_action_set_adds::adds" name="adds">
-      <doc>*documentation missing...*</doc>
+      <doc>whether the action adds</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>
@@ -211,7 +224,10 @@ have an associated index).
     </argument>
   </function>
   <function id="cdn_edge_action_set_index" name="cdn_edge_action_set_index">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set an expression to use for indexing into the target variable</brief>
+    <doc>Set an expression to use for indexing into the target variable.
+The expression is only evaluated once, on initialization and should
+therefore only contain static indices.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -220,7 +236,7 @@ have an associated index).
       <type name="CdnEdgeAction" qualifier="*" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction" />
     </argument>
     <argument id="cdn_edge_action_set_index::expression" name="expression">
-      <doc>*documentation missing...*</doc>
+      <doc>the index expression</doc>
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
   </function>

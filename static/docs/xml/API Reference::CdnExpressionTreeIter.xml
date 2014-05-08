@@ -1,10 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnExpressionTreeIter" name="CdnExpressionTreeIter" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Expression tree iterator</brief>
+  <doc>Expression tree iterator.
+
+<ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref> is a class which deconstructs a <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> into
+a tree of operations. This is a useful representation for manipulating an expression
+symbolically. Various symbolic operations, such as derivation, are implemented for
+these tree iters. After the symbolic manipulation, a linear <ref ref="API Reference::CdnExpression#API Reference::CdnExpression">CdnExpression</ref> can
+be reconstructed from the iter using <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_to_expression">cdn_expression_tree_iter_to_expression</ref>.</doc>
   <function id="cdn_expression_tree_iter_canonicalize" name="cdn_expression_tree_iter_canonicalize">
-    <brief>*Documentation missing...*</brief>
+    <brief>Transform &amp;lt;iter&amp;gt; to its canonical form</brief>
+    <doc>Transform &amp;lt;iter&amp;gt; to its canonical form. This reorders arguments
+of commutative operators and otherwise normalizes the expression such
+that they can be compared easily.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+      <doc>&amp;lt;iter&amp;gt;</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </return>
     <argument id="cdn_expression_tree_iter_canonicalize::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
@@ -54,9 +67,13 @@
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_equal" name="cdn_expression_tree_iter_equal">
-    <brief>*Documentation missing...*</brief>
+    <brief>Compare two expression tree iters for equality</brief>
+    <doc>Compare two expression tree iters for equality. The two iters are first
+compared by their instruction and then by their children.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the iters are equal, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_expression_tree_iter_equal::self" name="self">
@@ -64,16 +81,16 @@
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
     <argument id="cdn_expression_tree_iter_equal::other" name="other">
-      <doc>*documentation missing...*</doc>
+      <doc>the other iter</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
     <argument id="cdn_expression_tree_iter_equal::asstring" name="asstring">
-      <doc>*documentation missing...*</doc>
+      <doc>whether to compare on string equality</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_free" name="cdn_expression_tree_iter_free">
-    <brief>*Documentation missing...*</brief>
+    <brief>Free the expression tree iter.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -109,9 +126,9 @@
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_get_num_children" name="cdn_expression_tree_iter_get_num_children">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the number of children of the tree iter.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the number of children</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_expression_tree_iter_get_num_children::self" name="self">
@@ -120,7 +137,7 @@
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_initialize_stack" name="cdn_expression_tree_iter_initialize_stack">
-    <brief>Initialize the provided <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_initialize_stack::stack">stack</ref> to contain enough space to evaluate &amp;lt;iter&amp;gt;.</brief>
+    <brief>Initialize the provided <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_initialize_stack::stack">cdn_expression_tree_iter_initialize_stack::stack</ref> to contain enough space to evaluate &amp;lt;iter&amp;gt;.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -156,14 +173,14 @@
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_new_from_instruction_take" name="cdn_expression_tree_iter_new_from_instruction_take">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new tree iter for a given instruction.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
     </return>
     <argument id="cdn_expression_tree_iter_new_from_instruction_take::instruction" name="instruction">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
+      <doc>the instruction</doc>
+      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_new_from_instructions" name="cdn_expression_tree_iter_new_from_instructions">
@@ -210,7 +227,9 @@
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_set_num_children" name="cdn_expression_tree_iter_set_num_children">
-    <brief>*Documentation missing...*</brief>
+    <brief>Reserve space for <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_set_num_children::num">cdn_expression_tree_iter_set_num_children::num</ref> children in the iter</brief>
+    <doc>Reserve space for <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_set_num_children::num">cdn_expression_tree_iter_set_num_children::num</ref> children in the iter. Any existing children
+will be detroyed first.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -218,8 +237,8 @@
       <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
-    <argument id="cdn_expression_tree_iter_set_num_children::i" name="i">
-      <doc>*documentation missing...*</doc>
+    <argument id="cdn_expression_tree_iter_set_num_children::num" name="num">
+      <doc>the number of children</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
@@ -239,17 +258,22 @@ the same &amp;lt;iter&amp;gt; passed to the function is also returned.
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_solve_for" name="cdn_expression_tree_iter_solve_for">
-    <brief>NOTE: This is only supposed to work for canonical expressions linear in <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_solve_for::prop">prop</ref>
+    <brief>Solve the expression represented by &amp;lt;iter&amp;gt; for the variable <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_solve_for::variable">cdn_expression_tree_iter_solve_for::variable</ref>
     </brief>
+    <doc>Solve the expression represented by &amp;lt;iter&amp;gt; for the variable <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_solve_for::variable">cdn_expression_tree_iter_solve_for::variable</ref>.
+Note: this is only supposed to work for canonical expressions linear in
+<ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_solve_for::variable">cdn_expression_tree_iter_solve_for::variable</ref>
+
+</doc>
     <return>
-      <doc>A <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
+      <doc>a new <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref></doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
     </return>
     <argument id="cdn_expression_tree_iter_solve_for::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
-    <argument id="cdn_expression_tree_iter_solve_for::prop" name="prop">
+    <argument id="cdn_expression_tree_iter_solve_for::variable" name="variable">
       <doc>A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref></doc>
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
@@ -259,41 +283,41 @@ the same &amp;lt;iter&amp;gt; passed to the function is also returned.
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_substitute" name="cdn_expression_tree_iter_substitute">
-    <brief>*Documentation missing...*</brief>
+    <brief>Substitute a variable with a given expression in a tree iter.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+      <doc>&amp;lt;iter&amp;gt;</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </return>
     <argument id="cdn_expression_tree_iter_substitute::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
-    <argument id="cdn_expression_tree_iter_substitute::property" name="property">
-      <doc>*documentation missing...*</doc>
+    <argument id="cdn_expression_tree_iter_substitute::variable" name="variable">
+      <doc>the variable to substitute</doc>
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
     <argument id="cdn_expression_tree_iter_substitute::subst" name="subst">
-      <doc>*documentation missing...*</doc>
+      <doc>the expression to substitute with</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_substitute_hash" name="cdn_expression_tree_iter_substitute_hash">
-    <brief>*Documentation missing...*</brief>
+    <brief>Substitute multiple variables from a hash table, <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> to <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" transfer-ownership="full" />
+      <doc>&amp;lt;iter&amp;gt;</doc>
+      <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </return>
     <argument id="cdn_expression_tree_iter_substitute_hash::self" name="self">
       <doc>a <ref ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">CdnExpressionTreeIter</ref>.</doc>
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
     <argument id="cdn_expression_tree_iter_substitute_hash::table" name="table">
-      <doc>*documentation missing...*</doc>
+      <doc>the variables to substitute</doc>
       <type name="GHashTable" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_swap_children" name="cdn_expression_tree_iter_swap_children">
-    <brief>*Documentation missing...*</brief>
+    <brief>Swap two children in the tree iter.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -302,16 +326,16 @@ the same &amp;lt;iter&amp;gt; passed to the function is also returned.
       <type name="CdnExpressionTreeIter" qualifier="*" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
     </argument>
     <argument id="cdn_expression_tree_iter_swap_children::first" name="first">
-      <doc>*documentation missing...*</doc>
+      <doc>the first child index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_expression_tree_iter_swap_children::second" name="second">
-      <doc>*documentation missing...*</doc>
+      <doc>the second child index</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_expression_tree_iter_take_child" name="cdn_expression_tree_iter_take_child">
-    <brief>Set the child of the tree iter, without making a copy of <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_take_child::child">child</ref>.</brief>
+    <brief>Set the child of the tree iter, without making a copy of <ref ref="API Reference::CdnExpressionTreeIter#cdn_expression_tree_iter_take_child::child">cdn_expression_tree_iter_take_child::child</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>

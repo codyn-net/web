@@ -1,10 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionVariable" name="CdnInstructionVariable" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Variable instruction</brief>
+  <doc>Variable instruction.
+
+<ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref> is a special <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> subtype which represents
+referencing of a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>. When executed, the current value of the corresponding
+variable is pushed onto the stack. Additionally, a <ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref> can also
+encode a linear slice of the corresponding variable, instead of pushing the entire
+variable value (in the case of multidimensional values). This is equivalent to
+a <ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref> followed by an appropriate &amp;lt;CdnInstructionIndex&amp;gt;, however
+allowing slicing in the <ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref> directly allows for better performance.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
   <function id="cdn_instruction_variable_apply_slice" name="cdn_instruction_variable_apply_slice">
-    <brief>*Documentation missing...*</brief>
+    <brief>Apply the provided slicing of the variable</brief>
+    <doc>Apply the provided slicing of the variable. If the instruction currently does
+not contain a slice, then the new slice will simply be set. Otherwise, the
+slicing operates on the original slice (i.e. the intersection of the two slices).</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -13,22 +26,22 @@
       <type name="CdnInstructionVariable" qualifier="*" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
     </argument>
     <argument id="cdn_instruction_variable_apply_slice::slice" name="slice">
-      <doc>*documentation missing...*</doc>
+      <doc>the slice</doc>
       <type builtin="yes" name="guint" qualifier="*" />
     </argument>
     <argument id="cdn_instruction_variable_apply_slice::length" name="length">
-      <doc>*documentation missing...*</doc>
+      <doc>the length of the slice</doc>
       <type builtin="yes" name="guint" />
     </argument>
     <argument id="cdn_instruction_variable_apply_slice::dim" name="dim">
-      <doc>*documentation missing...*</doc>
+      <doc>the dimension of the slice</doc>
       <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
     </argument>
   </function>
   <function id="cdn_instruction_variable_get_binding" name="cdn_instruction_variable_get_binding">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the binding of the variable instruction.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the binding</doc>
       <type name="CdnInstructionVariableBinding" />
     </return>
     <argument id="cdn_instruction_variable_get_binding::self" name="self">
@@ -104,7 +117,7 @@
     </argument>
   </function>
   <function id="cdn_instruction_variable_set_binding" name="cdn_instruction_variable_set_binding">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the binding of the variable instruction.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -113,12 +126,13 @@
       <type name="CdnInstructionVariable" qualifier="*" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
     </argument>
     <argument id="cdn_instruction_variable_set_binding::binding" name="binding">
-      <doc>*documentation missing...*</doc>
+      <doc>the binding</doc>
       <type name="CdnInstructionVariableBinding" />
     </argument>
   </function>
   <function id="cdn_instruction_variable_set_slice" name="cdn_instruction_variable_set_slice">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the slice of the instruction</brief>
+    <doc>Set the slice of the instruction. Any existing slicing will be overridden.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -127,15 +141,15 @@
       <type name="CdnInstructionVariable" qualifier="*" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
     </argument>
     <argument id="cdn_instruction_variable_set_slice::slice" name="slice">
-      <doc>*documentation missing...*</doc>
+      <doc>the slice</doc>
       <type builtin="yes" name="guint" qualifier="*" />
     </argument>
     <argument id="cdn_instruction_variable_set_slice::length" name="length">
-      <doc>*documentation missing...*</doc>
+      <doc>the length of the slice</doc>
       <type builtin="yes" name="guint" />
     </argument>
     <argument id="cdn_instruction_variable_set_slice::dim" name="dim">
-      <doc>*documentation missing...*</doc>
+      <doc>the dimension of the slice</doc>
       <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
     </argument>
   </function>

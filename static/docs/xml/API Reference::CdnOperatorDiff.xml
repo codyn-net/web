@@ -3,16 +3,16 @@
   <brief>Math operator for diff evaluation of an expression</brief>
   <doc>Math operator for diff evaluation of an expression.
 
-The <ref ref="API Reference::CdnOperatorDiff#API Reference::CdnOperatorDiff" /> is a special operator that can be used in
+The <ref ref="API Reference::CdnOperatorDiff#API Reference::CdnOperatorDiff">CdnOperatorDiff</ref> is a special operator that can be used in
 mathematical expressions ('delay'). When evaluated, it will return the
 diff value of its argument (which can be an arbitrary expression).</doc>
   <base access="public">
     <type name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
   </base>
   <function id="cdn_operator_diff_new" name="cdn_operator_diff_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new diff operator</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new diff operator</doc>
       <type name="CdnOperatorDiff" qualifier="*" ref="API Reference::CdnOperatorDiff#API Reference::CdnOperatorDiff" transfer-ownership="full" />
     </return>
   </function>

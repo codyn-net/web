@@ -5,9 +5,9 @@
 
 Very simple/efficient stack implementation for double numbers.</doc>
   <function id="cdn_stack_at" name="cdn_stack_at">
-    <brief>Get a value from the stack at the specified index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">idx</ref>.</brief>
+    <brief>Get a value from the stack at the specified index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">cdn_stack_at::idx</ref>.</brief>
     <return>
-      <doc>The stack value at index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">idx</ref></doc>
+      <doc>The stack value at index <ref ref="API Reference::CdnStack#cdn_stack_at::idx">cdn_stack_at::idx</ref></doc>
       <type builtin="yes" name="gdouble" />
     </return>
     <argument id="cdn_stack_at::self" name="self">
@@ -91,9 +91,9 @@ statically).</doc>
     </argument>
   </function>
   <function id="cdn_stack_output_ptr" name="cdn_stack_output_ptr">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the stack pointer pointing to the last value of the stack.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the stack pointer</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </return>
     <argument id="cdn_stack_output_ptr::self" name="self">
@@ -102,9 +102,14 @@ statically).</doc>
     </argument>
   </function>
   <function id="cdn_stack_peek" name="cdn_stack_peek">
-    <brief>*Documentation missing...*</brief>
+    <brief>Peek at the last value on the stack</brief>
+    <doc>Peek at the last value on the stack. Note that this does not check whether the
+stack actually contains a value. It is up to the caller to make sure a value
+exists before peeking.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the last value on the stack.</doc>
       <type builtin="yes" name="gdouble" />
     </return>
     <argument id="cdn_stack_peek::self" name="self">
@@ -129,9 +134,14 @@ yourself.
     </argument>
   </function>
   <function id="cdn_stack_popn" name="cdn_stack_popn">
-    <brief>*Documentation missing...*</brief>
+    <brief>Pop a number of values from the stack at once</brief>
+    <doc>Pop a number of values from the stack at once. Note: this function does not
+check whether there are <ref ref="API Reference::CdnStack#cdn_stack_popn::num">cdn_stack_popn::num</ref> values to pop in the first place. Be sure to either
+know, or check the stack yourself.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the last value on the stack</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </return>
     <argument id="cdn_stack_popn::self" name="self">
@@ -139,14 +149,14 @@ yourself.
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_popn::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of elements to pop</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_stack_ptr" name="cdn_stack_ptr">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the stack pointer pointing to the start of the stack.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the stack pointer</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </return>
     <argument id="cdn_stack_ptr::self" name="self">
@@ -171,7 +181,7 @@ be sure to know that you are not exceeding the stack size.</doc>
     </argument>
   </function>
   <function id="cdn_stack_pushn" name="cdn_stack_pushn">
-    <brief>*Documentation missing...*</brief>
+    <brief>Push one or more values on the stack.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -180,16 +190,16 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_pushn::values" name="values">
-      <doc>*documentation missing...*</doc>
+      <doc>the values to push</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </argument>
     <argument id="cdn_stack_pushn::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of values</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_stack_pushni" name="cdn_stack_pushni">
-    <brief>*Documentation missing...*</brief>
+    <brief>Push the same value one or more times on the stack.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -198,11 +208,11 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_pushni::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>the value to push</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
     <argument id="cdn_stack_pushni::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of times to push the value</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
@@ -217,7 +227,11 @@ be sure to know that you are not exceeding the stack size.</doc>
     </argument>
   </function>
   <function id="cdn_stack_resize" name="cdn_stack_resize">
-    <brief>*Documentation missing...*</brief>
+    <brief>Resize the stack to have a capacity of <ref ref="API Reference::CdnStack#cdn_stack_resize::size">cdn_stack_resize::size</ref>
+    </brief>
+    <doc>Resize the stack to have a capacity of <ref ref="API Reference::CdnStack#cdn_stack_resize::size">cdn_stack_resize::size</ref>. Note that this destroys
+the contents of the stack if the new size is different from the old
+size of the stack.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -226,12 +240,15 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_resize::size" name="size">
-      <doc>*documentation missing...*</doc>
+      <doc>the new size</doc>
       <type builtin="yes" name="guint" />
     </argument>
   </function>
   <function id="cdn_stack_set" name="cdn_stack_set">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the last value on the stack to a value</brief>
+    <doc>Set the last value on the stack to a value. Note that this does not check whether the
+stack actually contains a value. It is up to the caller to make sure a value
+exists before setting its value.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -240,12 +257,14 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_set::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>a value</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
   <function id="cdn_stack_set_at" name="cdn_stack_set_at">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the value if the specified indexed item (from the start!) on the stack to a value</brief>
+    <doc>Set the value if the specified indexed item (from the start!) on the stack to a value.
+Note that this does not check whether <ref ref="API Reference::CdnStack#cdn_stack_set_at::idx">cdn_stack_set_at::idx</ref> is a valid location on the stack.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -254,16 +273,17 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_set_at::idx" name="idx">
-      <doc>*documentation missing...*</doc>
+      <doc>the index</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_stack_set_at::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>a value</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
   <function id="cdn_stack_set_output_ptr" name="cdn_stack_set_output_ptr">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the output pointer (i</brief>
+    <doc>Set the output pointer (i.e. the position of the stack) of the stack.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -272,7 +292,7 @@ be sure to know that you are not exceeding the stack size.</doc>
       <type name="CdnStack" qualifier="*" ref="API Reference::CdnStack#API Reference::CdnStack" />
     </argument>
     <argument id="cdn_stack_set_output_ptr::ptr" name="ptr">
-      <doc>*documentation missing...*</doc>
+      <doc>the new output pointer</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </argument>
   </function>

@@ -37,28 +37,6 @@ to lookup properties used in the expression.</doc>
       <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
   </function>
-  <function id="cdn_compile_context_get_function_arg_priority" name="cdn_compile_context_get_function_arg_priority">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_compile_context_get_function_arg_priority::self" name="self">
-      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
-      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
-    </argument>
-  </function>
-  <function id="cdn_compile_context_get_function_ref_priority" name="cdn_compile_context_get_function_ref_priority">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_compile_context_get_function_ref_priority::self" name="self">
-      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
-      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
-    </argument>
-  </function>
   <function id="cdn_compile_context_get_functions" name="cdn_compile_context_get_functions">
     <brief>Get the list of custom user functions</brief>
     <doc>Get the list of custom user functions. This returns the internally used
@@ -124,7 +102,7 @@ modified or freed.
     <brief>Lookup a variable in the list of context objects</brief>
     <doc>Lookup a variable in the list of context objects. This method differs from
 <ref ref="API Reference::CdnCompileContext#cdn_compile_context_lookup_variable">cdn_compile_context_lookup_variable</ref> in that it will return the last
-known variable named <ref ref="API Reference::CdnCompileContext#cdn_compile_context_lookup_variable_last::name">name</ref>.
+known variable named <ref ref="API Reference::CdnCompileContext#cdn_compile_context_lookup_variable_last::name">cdn_compile_context_lookup_variable_last::name</ref>.
 
 </doc>
     <return>
@@ -199,34 +177,6 @@ with <ref ref="API Reference::CdnCompileContext#cdn_compile_context_restore">cdn
     <argument id="cdn_compile_context_save::self" name="self">
       <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
       <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
-    </argument>
-  </function>
-  <function id="cdn_compile_context_set_function_arg_priority" name="cdn_compile_context_set_function_arg_priority">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_compile_context_set_function_arg_priority::self" name="self">
-      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
-      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
-    </argument>
-    <argument id="cdn_compile_context_set_function_arg_priority::prio" name="prio">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_compile_context_set_function_ref_priority" name="cdn_compile_context_set_function_ref_priority">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_compile_context_set_function_ref_priority::self" name="self">
-      <doc>a <ref ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext">CdnCompileContext</ref>.</doc>
-      <type name="CdnCompileContext" qualifier="*" ref="API Reference::CdnCompileContext#API Reference::CdnCompileContext" />
-    </argument>
-    <argument id="cdn_compile_context_set_function_ref_priority::prio" name="prio">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
     </argument>
   </function>
 </gobject:class>

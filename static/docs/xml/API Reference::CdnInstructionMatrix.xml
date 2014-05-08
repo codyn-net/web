@@ -1,21 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionMatrix" name="CdnInstructionMatrix" xmlns="http://jessevdk.github.com/cldoc/1.0">
-  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_MATRIX`</brief>
+  <brief>Matrix instruction</brief>
+  <doc>Matrix instruction.
+
+<ref ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">CdnInstructionMatrix</ref> is a special <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> subtype representing a
+matrixing instruction. The purpose of this instruction is solely to provide
+structure in the instruction stream. As all expressions in codyn are statically
+sized, matrices can be simply encoded in the dimensionality of the arguments
+on the stack. However, it can be useful to explicitly encode the matrix construction
+(i.e. [1, 2, 3; 4, 5 6]) in the instruction stream for later reconstruction of the
+expression.
+
+When executed, this instruction does nothing since it only encodes dimensionality.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
   <function id="cdn_instruction_matrix_new" name="cdn_instruction_matrix_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new <ref ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">CdnInstructionMatrix</ref> for the given <ref ref="API Reference::CdnInstructionMatrix#cdn_instruction_matrix_new::args">cdn_instruction_matrix_new::args</ref>
+    </brief>
+    <doc>Create a new <ref ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">CdnInstructionMatrix</ref> for the given <ref ref="API Reference::CdnInstructionMatrix#cdn_instruction_matrix_new::args">cdn_instruction_matrix_new::args</ref>. The dimension of the matrix
+is given by <ref ref="API Reference::CdnInstructionMatrix#cdn_instruction_matrix_new::dim">cdn_instruction_matrix_new::dim</ref>.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">CdnInstructionMatrix</ref>.</doc>
+      <type name="CdnInstructionMatrix" qualifier="*" ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_matrix_new::args" name="args">
-      <doc>*documentation missing...*</doc>
+      <doc>the <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
     <argument id="cdn_instruction_matrix_new::dim" name="dim">
-      <doc>*documentation missing...*</doc>
+      <doc>the result dimension</doc>
       <type name="CdnDimension" qualifier="*" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
     </argument>
   </function>

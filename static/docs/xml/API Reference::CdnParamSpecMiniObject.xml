@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnParamSpecMiniObject" name="CdnParamSpecMiniObject" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>A mini object param spec</brief>
+  <doc>A mini object param spec.
+
+<ref ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject">CdnParamSpecMiniObject</ref> is a &amp;lt;GParamSpec&amp;gt; implementation for <ref ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">CdnMiniObject</ref>.</doc>
   <base access="public">
     <type name="GParamSpec" />
   </base>

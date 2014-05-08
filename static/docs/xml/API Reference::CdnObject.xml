@@ -3,7 +3,7 @@
   <brief>Basis for all cdn objects</brief>
   <doc>Basis for all cdn objects.
 
-<ref ref="API Reference::CdnObject#API Reference::CdnObject" /> is a base class for all the objects which can be added to a
+<ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> is a base class for all the objects which can be added to a
 network. It provides property storage and virtual methods which can be
 implemented that drive the simulation process.</doc>
   <base access="public">
@@ -34,15 +34,15 @@ implemented that drive the simulation process.</doc>
     <brief>Add a new variable to the object</brief>
     <doc>Add a new variable to the object. Note that if a variable with the same
 name already exists, the variable information is transfered to the existing
-variable instance. This means that the specified <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> might not actually
+variable instance. This means that the specified <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">cdn_object_add_variable::variable</ref> might not actually
 be added to the object. Also, since a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> is a &amp;lt;GInitiallyUnowned&amp;gt;,
-<ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> will be destroyed after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable" /> in
+<ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">cdn_object_add_variable::variable</ref> will be destroyed after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable">cdn_object_add_variable</ref> in
 the above described case, unless you explicitly sink the floating reference.
 
 In the case that you can not know whether a variable is overriding an
-existing variable in &amp;lt;object&amp;gt;, never use <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">variable</ref> after a call to
-<ref ref="API Reference::CdnObject#cdn_object_add_variable" />. Instead, retrieve the corresponding variable
-using <ref ref="API Reference::CdnObject#cdn_object_get_variable">cdn_object_get_variable</ref> after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable" />.
+existing variable in &amp;lt;object&amp;gt;, never use <ref ref="API Reference::CdnObject#cdn_object_add_variable::variable">cdn_object_add_variable::variable</ref> after a call to
+<ref ref="API Reference::CdnObject#cdn_object_add_variable">cdn_object_add_variable</ref>. Instead, retrieve the corresponding variable
+using <ref ref="API Reference::CdnObject#cdn_object_get_variable">cdn_object_get_variable</ref> after the call to <ref ref="API Reference::CdnObject#cdn_object_add_variable">cdn_object_add_variable</ref>.
 
 </doc>
     <return>
@@ -66,7 +66,7 @@ using <ref ref="API Reference::CdnObject#cdn_object_get_variable">cdn_object_get
     <brief>Apply a template to the object</brief>
     <doc>Apply a template to the object. This will apply all of the characteristics
 of the template to the object. Note that &amp;lt;object&amp;gt; should be of the same type,
-or inheriting from, the type of <ref ref="API Reference::CdnObject#cdn_object_apply_template::templ">templ</ref>.
+or inheriting from, the type of <ref ref="API Reference::CdnObject#cdn_object_apply_template::templ">cdn_object_apply_template::templ</ref>.
 
 </doc>
     <return>
@@ -99,7 +99,7 @@ or inheriting from, the type of <ref ref="API Reference::CdnObject#cdn_object_ap
   <function id="cdn_object_compile" name="cdn_object_compile">
     <brief>Compile the object.</brief>
     <return>
-      <doc>`TRUE` if the object compiled successfully, `FALSE` otherwise. If the compilation failed and <ref ref="API Reference::CdnObject#cdn_object_compile::error">error</ref> was set, the reason for the compile failure is set in <ref ref="API Reference::CdnObject#cdn_object_compile::error">error</ref>.</doc>
+      <doc>`TRUE` if the object compiled successfully, `FALSE` otherwise. If the compilation failed and <ref ref="API Reference::CdnObject#cdn_object_compile::error">cdn_object_compile::error</ref> was set, the reason for the compile failure is set in <ref ref="API Reference::CdnObject#cdn_object_compile::error">cdn_object_compile::error</ref>.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_object_compile::self" name="self">
@@ -166,7 +166,7 @@ example <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>).
       <type name="CdnForeachExpressionFunc" />
     </argument>
     <argument id="cdn_object_foreach_expression::userdata" name="userdata">
-      <doc>The userdata that will be supplied to <ref ref="API Reference::CdnObject#cdn_object_foreach_expression::func">func</ref></doc>
+      <doc>The userdata that will be supplied to <ref ref="API Reference::CdnObject#cdn_object_foreach_expression::func">cdn_object_foreach_expression::func</ref></doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
@@ -224,9 +224,13 @@ most parent to refer to this object (i.e.
     </argument>
   </function>
   <function id="cdn_object_get_full_id_for_display" name="cdn_object_get_full_id_for_display">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get a human readable full id of the object for display to th</brief>
+    <doc>Get a human readable full id of the object for display to the
+user.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the full id for display.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_object_get_full_id_for_display::self" name="self">
@@ -257,9 +261,9 @@ most parent to refer to this object (i.e.
     </argument>
   </function>
   <function id="cdn_object_get_relative_id" name="cdn_object_get_relative_id">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the relative id from <ref ref="API Reference::CdnObject#cdn_object_get_relative_id::parent">cdn_object_get_relative_id::parent</ref> to &amp;lt;object&amp;gt;.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the relative id</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_object_get_relative_id::self" name="self">
@@ -267,14 +271,18 @@ most parent to refer to this object (i.e.
       <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
     <argument id="cdn_object_get_relative_id::parent" name="parent">
-      <doc>*documentation missing...*</doc>
+      <doc>the parent</doc>
       <type name="CdnNodeForward" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_object_get_relative_id_for_display" name="cdn_object_get_relative_id_for_display">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the human readable relative id from <ref ref="API Reference::CdnObject#cdn_object_get_relative_id_for_display::parent">cdn_object_get_relative_id_for_display::parent</ref> to &amp;lt;object&amp;gt; for displa</brief>
+    <doc>Get the human readable relative id from <ref ref="API Reference::CdnObject#cdn_object_get_relative_id_for_display::parent">cdn_object_get_relative_id_for_display::parent</ref> to &amp;lt;object&amp;gt; for display
+to the user.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the relative id for display</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_object_get_relative_id_for_display::self" name="self">
@@ -282,7 +290,7 @@ most parent to refer to this object (i.e.
       <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
     <argument id="cdn_object_get_relative_id_for_display::parent" name="parent">
-      <doc>*documentation missing...*</doc>
+      <doc>the parent</doc>
       <type name="CdnNodeForward" qualifier="*" />
     </argument>
   </function>
@@ -300,7 +308,7 @@ most parent to refer to this object (i.e.
   <function id="cdn_object_get_variable" name="cdn_object_get_variable">
     <brief>Get a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> from the object by name</brief>
     <return>
-      <doc>the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> with name <ref ref="API Reference::CdnObject#cdn_object_get_variable::name">name</ref>, or `NULL` if no such property could be found</doc>
+      <doc>the <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> with name <ref ref="API Reference::CdnObject#cdn_object_get_variable::name">cdn_object_get_variable::name</ref>, or `NULL` if no such property could be found</doc>
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </return>
     <argument id="cdn_object_get_variable::self" name="self">
@@ -313,8 +321,8 @@ most parent to refer to this object (i.e.
     </argument>
   </function>
   <function id="cdn_object_get_variable_template" name="cdn_object_get_variable_template">
-    <brief>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">variable</ref> is defined, if any</brief>
-    <doc>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">variable</ref> is defined, if any. If <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::match_full">match_full</ref> is
+    <brief>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">cdn_object_get_variable_template::variable</ref> is defined, if any</brief>
+    <doc>Get the template on which <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::variable">cdn_object_get_variable_template::variable</ref> is defined, if any. If <ref ref="API Reference::CdnObject#cdn_object_get_variable_template::match_full">cdn_object_get_variable_template::match_full</ref> is
 `TRUE`, the template will only be possitively matched if both variables are
 equal (i.e. if a variable originated from a template, but was later modified,
 this function will not return the original template object).
@@ -349,10 +357,10 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_object_has_variable" name="cdn_object_has_variable">
-    <brief>Get whether &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">name</ref>
+    <brief>Get whether &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">cdn_object_has_variable::name</ref>
     </brief>
     <return>
-      <doc>`TRUE` if &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">name</ref>, `FALSE` otherwise</doc>
+      <doc>`TRUE` if &amp;lt;object&amp;gt; has a property with name <ref ref="API Reference::CdnObject#cdn_object_has_variable::name">cdn_object_has_variable::name</ref>, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_object_has_variable::self" name="self">
@@ -402,9 +410,9 @@ this function will not return the original template object).
     </argument>
   </function>
   <function id="cdn_object_remove_variable" name="cdn_object_remove_variable">
-    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;</brief>
-    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
-could not be removed, <ref ref="API Reference::CdnObject#cdn_object_remove_variable::error">error</ref> will be appropriately set
+    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">cdn_object_remove_variable::name</ref> from &amp;lt;object&amp;gt;</brief>
+    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_remove_variable::name">cdn_object_remove_variable::name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
+could not be removed, <ref ref="API Reference::CdnObject#cdn_object_remove_variable::error">cdn_object_remove_variable::error</ref> will be appropriately set
 
 </doc>
     <return>
@@ -496,9 +504,9 @@ to be simulated</doc>
     </argument>
   </function>
   <function id="cdn_object_verify_remove_variable" name="cdn_object_verify_remove_variable">
-    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;</brief>
-    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
-could not be removed, <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::error">error</ref> will be appropriately set
+    <brief>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">cdn_object_verify_remove_variable::name</ref> from &amp;lt;object&amp;gt;</brief>
+    <doc>Remove the property <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::name">cdn_object_verify_remove_variable::name</ref> from &amp;lt;object&amp;gt;. If the property was not found or
+could not be removed, <ref ref="API Reference::CdnObject#cdn_object_verify_remove_variable::error">cdn_object_verify_remove_variable::error</ref> will be appropriately set
 
 </doc>
     <return>

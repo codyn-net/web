@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStackArgs" name="CdnStackArgs" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>List of stack argument</brief>
+  <doc>List of stack arguments
+
+<ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref> contains a list of <ref ref="API Reference::CdnStackArg#API Reference::CdnStackArg">CdnStackArg</ref>.</doc>
   <field id="API Reference::CdnStackArgs::num" name="num">
     <type builtin="yes" name="gint" />
   </field>
@@ -7,7 +11,7 @@
     <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
   </field>
   <function id="cdn_stack_args_append" name="cdn_stack_args_append">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append <ref ref="API Reference::CdnStackArgs#cdn_stack_args_append::arg">cdn_stack_args_append::arg</ref> to the arguments of <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs::args">CdnStackArgs::args</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -16,26 +20,28 @@
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
     <argument id="cdn_stack_args_append::arg" name="arg">
-      <doc>*documentation missing...*</doc>
+      <doc>the <ref ref="API Reference::CdnStackArg#API Reference::CdnStackArg">CdnStackArg</ref> to add</doc>
       <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
   </function>
   <function id="cdn_stack_args_copy" name="cdn_stack_args_copy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Copy the stack args from <ref ref="API Reference::CdnStackArgs#cdn_stack_args_copy::src">cdn_stack_args_copy::src</ref> to <ref ref="API Reference::CdnStackArgs#cdn_stack_args_copy::dest">cdn_stack_args_copy::dest</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_stack_args_copy::self" name="self">
-      <doc>a <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>.</doc>
-      <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
+    <argument id="cdn_stack_args_copy::dest" name="dest">
+      <doc>the destination <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
+      <type name="CdnStackArgs" out="yes" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
     <argument id="cdn_stack_args_copy::src" name="src">
-      <doc>*documentation missing...*</doc>
+      <doc>the source <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
   </function>
   <function id="cdn_stack_args_destroy" name="cdn_stack_args_destroy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Destroy the contents of the provided stack args</brief>
+    <doc>Destroy the contents of the provided stack args. Note that this does
+not free the memory of <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs::args">CdnStackArgs::args</ref> itself.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -45,7 +51,7 @@
     </argument>
   </function>
   <function id="cdn_stack_args_get_num" name="cdn_stack_args_get_num">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the number of arguments in <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs::args">CdnStackArgs::args</ref>.</brief>
     <return>
       <doc>*documentation missing...*</doc>
       <type builtin="yes" name="guint" />
@@ -56,7 +62,9 @@
     </argument>
   </function>
   <function id="cdn_stack_args_init" name="cdn_stack_args_init">
-    <brief>*Documentation missing...*</brief>
+    <brief>Initializes <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs::args">CdnStackArgs::args</ref> to contain <ref ref="API Reference::CdnStackArgs#cdn_stack_args_init::num">cdn_stack_args_init::num</ref> arguments</brief>
+    <doc>Initializes <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs::args">CdnStackArgs::args</ref> to contain <ref ref="API Reference::CdnStackArgs#cdn_stack_args_init::num">cdn_stack_args_init::num</ref> arguments. Note that the dimensionality
+of the arguments is initially unspecified and should be set accordingly.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -65,18 +73,25 @@
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
     </argument>
     <argument id="cdn_stack_args_init::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of arguments</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_stack_args_new" name="cdn_stack_args_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref> and allocate <ref ref="API Reference::CdnStackArgs#cdn_stack_args_new::num">cdn_stack_args_new::num</ref> arguments</brief>
+    <doc>Create a new <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref> and allocate <ref ref="API Reference::CdnStackArgs#cdn_stack_args_new::num">cdn_stack_args_new::num</ref> arguments. The arguments
+initially have dimension 1-by-1. It is also possible to allocate
+<ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref> on the stack to avoid allocations. To do so, please
+use <ref ref="API Reference::CdnStackArgs#cdn_stack_args_init">cdn_stack_args_init</ref> to initialize the stack allocated <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref>
+appropriately.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">CdnStackArgs</ref></doc>
       <type name="CdnStackArgs" qualifier="*" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" transfer-ownership="full" />
     </return>
     <argument id="cdn_stack_args_new::num" name="num">
-      <doc>*documentation missing...*</doc>
+      <doc>the number of arguments</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>

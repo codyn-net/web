@@ -14,9 +14,9 @@ This interface can be implemented when an object can be layouted.</doc>
     <type builtin="yes" name="gint" />
   </gobject:property>
   <function id="cdn_layoutable_get_has_location" name="cdn_layoutable_get_has_location">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the layoutable has a location set.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the layoutable has a location set, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_layoutable_get_has_location::self" name="self">
@@ -43,7 +43,7 @@ This interface can be implemented when an object can be layouted.</doc>
     </argument>
   </function>
   <function id="cdn_layoutable_set_has_location" name="cdn_layoutable_set_has_location">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set whether the layoutable has a location set.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -52,7 +52,7 @@ This interface can be implemented when an object can be layouted.</doc>
       <type name="CdnLayoutable" qualifier="*" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable" />
     </argument>
     <argument id="cdn_layoutable_set_has_location::has_location" name="has_location">
-      <doc>*documentation missing...*</doc>
+      <doc>whether or not the layoutable has a location set</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>

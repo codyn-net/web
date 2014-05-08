@@ -1,39 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnParserContext" name="CdnParserContext" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Modeling language parsing context</brief>
+  <doc>Modeling language parsing context.
+
+&amp;lt;CdnParsercontext&amp;gt; is a class which implements a context for the codyn
+modeling language. During parsing of codyn model files, API on the parser
+context is called to construct the network. The context is responsible
+for keeping track of the parser state as well as constructing the actual
+objects, nodes and edges.</doc>
   <base access="public">
     <type name="GObject" />
   </base>
   <gobject:property id="API Reference::CdnParserContext::network" mode="construct" name="network">
     <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
   </gobject:property>
-  <function id="cdn_parser_context_add_action" name="cdn_parser_context_add_action">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_add_action::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_add_action::target" name="target">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_action::expression" name="expression">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_action::phases" name="phases">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_action::added" name="added">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_add_event_set_variable" name="cdn_parser_context_add_event_set_variable">
-    <brief>*Documentation missing...*</brief>
+    <brief>Add an set variable to the currently open events</brief>
+    <doc>Add an set variable to the currently open events. The selector
+<ref ref="API Reference::CdnParserContext#cdn_parser_context_add_event_set_variable::selector">cdn_parser_context_add_event_set_variable::selector</ref> is used to select target variables for the set.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -42,16 +26,19 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_add_event_set_variable::selector" name="selector">
-      <doc>*documentation missing...*</doc>
+      <doc>a <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref></doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_parser_context_add_event_set_variable::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>a value</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_parser_context_add_integrator_variable" name="cdn_parser_context_add_integrator_variable">
-    <brief>*Documentation missing...*</brief>
+    <brief>Add an integrator variable</brief>
+    <doc>Add an integrator variable. Integrator variables are special since
+they correspond to specific properties of the integrator (i.e. these
+are not <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>).</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -60,128 +47,17 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_add_integrator_variable::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the name</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
     <argument id="cdn_parser_context_add_integrator_variable::value" name="value">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_add_interface" name="cdn_parser_context_add_interface">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_add_interface::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_add_interface::name" name="name">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_interface::child_name" name="child_name">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_interface::property_name" name="property_name">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_interface::is_optional" name="is_optional">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_add_layout_position" name="cdn_parser_context_add_layout_position">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_add_layout_position::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_add_layout_position::selector" name="selector">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
-    </argument>
-    <argument id="cdn_parser_context_add_layout_position::x" name="x">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_layout_position::y" name="y">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_layout_position::of" name="of">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
-    </argument>
-    <argument id="cdn_parser_context_add_layout_position::cartesian" name="cartesian">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_add_polynomial" name="cdn_parser_context_add_polynomial">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_add_polynomial::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_add_polynomial::name" name="name">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_polynomial::pieces" name="pieces">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_add_variable" name="cdn_parser_context_add_variable">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_add_variable::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::nameptr" name="nameptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::expressionptr" name="expressionptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::add_flags" name="add_flags">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::remove_flags" name="remove_flags">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::assign_optional" name="assign_optional">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::constraint" name="constraint">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_add_variable::state" name="state">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_parser_context_apply_template" name="cdn_parser_context_apply_template">
-    <brief>*Documentation missing...*</brief>
+    <brief>Apply the templates selected by <ref ref="API Reference::CdnParserContext#cdn_parser_context_apply_template::templates">cdn_parser_context_apply_template::templates</ref> to the objects selected by <ref ref="API Reference::CdnParserContext#cdn_parser_context_apply_template::targets">cdn_parser_context_apply_template::targets</ref>
+    </brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -190,22 +66,12 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_apply_template::templates" name="templates">
-      <doc>*documentation missing...*</doc>
+      <doc>a selector</doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_parser_context_apply_template::targets" name="targets">
-      <doc>*documentation missing...*</doc>
+      <doc>a selector</doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_begin_selector_item" name="cdn_parser_context_begin_selector_item">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_begin_selector_item::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
   <function id="cdn_parser_context_current_selections" name="cdn_parser_context_current_selections">
@@ -219,72 +85,8 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_debug_context" name="cdn_parser_context_debug_context">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_debug_context::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_debug_selector" name="cdn_parser_context_debug_selector">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_debug_selector::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_debug_selector::selector" name="selector">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_debug_string" name="cdn_parser_context_debug_string">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_debug_string::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_debug_string::s" name="s">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_define" name="cdn_parser_context_define">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_define::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_define::nameptr" name="nameptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_define::valueptr" name="valueptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_define::optional" name="optional">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-    <argument id="cdn_parser_context_define::fromenv" name="fromenv">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_delete_selector" name="cdn_parser_context_delete_selector">
-    <brief>*Documentation missing...*</brief>
+    <brief>Delete all objects selected by <ref ref="API Reference::CdnParserContext#cdn_parser_context_delete_selector::selector">cdn_parser_context_delete_selector::selector</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -293,12 +95,12 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_delete_selector::selector" name="selector">
-      <doc>*documentation missing...*</doc>
+      <doc>a selector</doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
   </function>
   <function id="cdn_parser_context_get_column" name="cdn_parser_context_get_column">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the currently parsed token column start and end</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -307,12 +109,12 @@
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_get_column::start" name="start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>the column start</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
     <argument id="cdn_parser_context_get_column::end" name="end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>the column end</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_parser_context_get_error" name="cdn_parser_context_get_error">
@@ -338,7 +140,7 @@
     </argument>
   </function>
   <function id="cdn_parser_context_get_error_location" name="cdn_parser_context_get_error_location">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the location of the current parser error.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -382,57 +184,14 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_get_first_eof" name="cdn_parser_context_get_first_eof">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_parser_context_get_first_eof::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_get_last_selector_item_column" name="cdn_parser_context_get_last_selector_item_column">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_get_last_selector_item_column::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_get_last_selector_item_column::start" name="start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_get_last_selector_item_column::end" name="end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_get_last_selector_item_line" name="cdn_parser_context_get_last_selector_item_line">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_get_last_selector_item_line::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_get_last_selector_item_line::line_start" name="line_start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_get_last_selector_item_line::line_end" name="line_end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_get_line" name="cdn_parser_context_get_line">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the current line being parsed in the current input</brief>
+    <doc>Get the current line being parsed in the current input. If not
+`NULL`, <ref ref="API Reference::CdnParserContext#cdn_parser_context_get_line::lineno">cdn_parser_context_get_line::lineno</ref> will be set to the current line number being parsed.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the line being parsed</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_parser_context_get_line::self" name="self">
@@ -440,14 +199,18 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_get_line::lineno" name="lineno">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>result location for the current line</doc>
+      <type allow-none="yes" builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_parser_context_get_line_at" name="cdn_parser_context_get_line_at">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get a line of text in the current input corresponding at the lin</brief>
+    <doc>Get a line of text in the current input corresponding at the line
+number <ref ref="API Reference::CdnParserContext#cdn_parser_context_get_line_at::lineno">cdn_parser_context_get_line_at::lineno</ref>.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the line</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_parser_context_get_line_at::self" name="self">
@@ -455,7 +218,7 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_get_line_at::lineno" name="lineno">
-      <doc>*documentation missing...*</doc>
+      <doc>line number</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
@@ -470,93 +233,33 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_get_start_token" name="cdn_parser_context_get_start_token">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </return>
-    <argument id="cdn_parser_context_get_start_token::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_get_token" name="cdn_parser_context_get_token">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_parser_context_get_token::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_import" name="cdn_parser_context_import">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_import::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_import::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_import::path" name="path">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_include" name="cdn_parser_context_include">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_include::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_include::filename" name="filename">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_include::isonce" name="isonce">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_link_library" name="cdn_parser_context_link_library">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_link_library::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_link_library::filename" name="filename">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_new" name="cdn_parser_context_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new parser context for <ref ref="API Reference::CdnParserContext#cdn_parser_context_new::network">cdn_parser_context_new::network</ref>
+    </brief>
+    <doc>Create a new parser context for <ref ref="API Reference::CdnParserContext#cdn_parser_context_new::network">cdn_parser_context_new::network</ref>. Initially, the parser does not contain
+any input and hence will not parser anything. Use <ref ref="API Reference::CdnParserContext#cdn_parser_context_push_input">cdn_parser_context_push_input</ref>
+and <ref ref="API Reference::CdnParserContext#cdn_parser_context_push_input_from_path">cdn_parser_context_push_input_from_path</ref> to push new input sources into
+the parser.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref></doc>
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" transfer-ownership="full" />
     </return>
     <argument id="cdn_parser_context_new::network" name="network">
-      <doc>*documentation missing...*</doc>
+      <doc>a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref></doc>
       <type name="CdnNetwork" qualifier="*" ref="API Reference::CdnNetwork#API Reference::CdnNetwork" />
     </argument>
   </function>
   <function id="cdn_parser_context_parse" name="cdn_parser_context_parse">
-    <brief>*Documentation missing...*</brief>
+    <brief>Parse the currently pushed input</brief>
+    <doc>Parse the currently pushed input. If <ref ref="API Reference::CdnParserContext#cdn_parser_context_parse::push_network">cdn_parser_context_parse::push_network</ref> is set to `TRUE`,
+then the network object associated with the parser will be pushed
+onto the current scope.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if parsing was successful, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_parser_context_parse::self" name="self">
@@ -564,23 +267,12 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_parse::push_network" name="push_network">
-      <doc>*documentation missing...*</doc>
+      <doc>whether to push the network</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
     <argument id="cdn_parser_context_parse::error" name="error">
       <doc>a &amp;lt;GError&amp;gt;.</doc>
       <type allow-none="yes" name="GError " qualifier="**" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_peek_equation_depth" name="cdn_parser_context_peek_equation_depth">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </return>
-    <argument id="cdn_parser_context_peek_equation_depth::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
   <function id="cdn_parser_context_peek_selector" name="cdn_parser_context_peek_selector">
@@ -615,33 +307,12 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_pop_equation_depth" name="cdn_parser_context_pop_equation_depth">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_parser_context_pop_equation_depth::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_pop_input" name="cdn_parser_context_pop_input">
-    <brief>*Documentation missing...*</brief>
+    <brief>Pop the currently being parsed input from the context.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
     <argument id="cdn_parser_context_pop_input::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_pop_layout" name="cdn_parser_context_pop_layout">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_pop_layout::self" name="self">
       <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
@@ -679,142 +350,10 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_push_annotation" name="cdn_parser_context_push_annotation">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_annotation::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_annotation::annotation" name="annotation">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_define" name="cdn_parser_context_push_define">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_define::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_edge" name="cdn_parser_context_push_edge">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_edge::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_edge::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_edge::templates" name="templates">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_push_edge::attributes" name="attributes">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_push_edge::fromto" name="fromto">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_push_edge::phase" name="phase">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_equation" name="cdn_parser_context_push_equation">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_equation::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_equation_depth" name="cdn_parser_context_push_equation_depth">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_equation_depth::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_event" name="cdn_parser_context_push_event">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_event::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::from_phase" name="from_phase">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::to_phase" name="to_phase">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::condition" name="condition">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::terminal" name="terminal">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::approximation" name="approximation">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_event::templates" name="templates">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_function" name="cdn_parser_context_push_function">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_function::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_function::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_function::args" name="args">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_push_function::expression" name="expression">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_function::optional" name="optional">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_push_input" name="cdn_parser_context_push_input">
-    <brief>*Documentation missing...*</brief>
+    <brief>Push a new input into the context</brief>
+    <doc>Push a new input into the context. Parsing will continue
+from this input.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -838,7 +377,7 @@ or a stream only, the result will be `NULL`.
   <function id="cdn_parser_context_push_input_from_path" name="cdn_parser_context_push_input_from_path">
     <brief>&amp;lt;context&amp;gt; the context</brief>
     <doc>&amp;lt;context&amp;gt; the context.
-<ref ref="API Reference::CdnParserContext#cdn_parser_context_push_input_from_path::filename">filename</ref> the file name.</doc>
+<ref ref="API Reference::CdnParserContext#cdn_parser_context_push_input_from_path::filename">cdn_parser_context_push_input_from_path::filename</ref> the file name.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -860,7 +399,9 @@ or a stream only, the result will be `NULL`.
     </argument>
   </function>
   <function id="cdn_parser_context_push_input_from_string" name="cdn_parser_context_push_input_from_string">
-    <brief>*Documentation missing...*</brief>
+    <brief>Parse input from a string</brief>
+    <doc>Parse input from a string. When <ref ref="API Reference::CdnParserContext#cdn_parser_context_push_input_from_string::only_in_context">cdn_parser_context_push_input_from_string::only_in_context</ref> is set, then parsing
+will be ignored when there are is no open context.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -869,202 +410,12 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_push_input_from_string::s" name="s">
-      <doc>*documentation missing...*</doc>
+      <doc>the string to parse</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
     <argument id="cdn_parser_context_push_input_from_string::only_in_context" name="only_in_context">
-      <doc>*documentation missing...*</doc>
+      <doc>whether to only allow parsing when in a context</doc>
       <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_integrator" name="cdn_parser_context_push_integrator">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_integrator::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_io_type" name="cdn_parser_context_push_io_type">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_io_type::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_io_type::mode" name="mode">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
-    </argument>
-    <argument id="cdn_parser_context_push_io_type::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_io_type::type" name="type">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_layout" name="cdn_parser_context_push_layout">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_layout::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_network" name="cdn_parser_context_push_network">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_network::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_node" name="cdn_parser_context_push_node">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_node::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_node::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-    <argument id="cdn_parser_context_push_node::templates" name="templates">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_objects" name="cdn_parser_context_push_objects">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_objects::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_objects::objects" name="objects">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_scope" name="cdn_parser_context_push_scope">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_scope::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selection" name="cdn_parser_context_push_selection">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selection::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selection::selector" name="selector">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
-    </argument>
-    <argument id="cdn_parser_context_push_selection::type" name="type">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelectorType" ref="API Reference#API Reference::CdnSelectorType" />
-    </argument>
-    <argument id="cdn_parser_context_push_selection::templates" name="templates">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selector" name="cdn_parser_context_push_selector">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selector::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector::with" name="with">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selector_define_context" name="cdn_parser_context_push_selector_define_context">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selector_define_context::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector_define_context::id" name="id">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selector_identifier" name="cdn_parser_context_push_selector_identifier">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selector_identifier::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector_identifier::identifier" name="identifier">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selector_pseudo" name="cdn_parser_context_push_selector_pseudo">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selector_pseudo::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector_pseudo::type" name="type">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnSelectorPseudoType" ref="API Reference#API Reference::CdnSelectorPseudoType" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector_pseudo::arguments" name="arguments">
-      <doc>*documentation missing...*</doc>
-      <type name="GSList" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_push_selector_regex" name="cdn_parser_context_push_selector_regex">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_selector_regex::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_push_selector_regex::regex" name="regex">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_parser_context_push_string" name="cdn_parser_context_push_string">
@@ -1078,226 +429,9 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
   </function>
-  <function id="cdn_parser_context_push_templates" name="cdn_parser_context_push_templates">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_push_templates::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_read" name="cdn_parser_context_read">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type name="gssize" />
-    </return>
-    <argument id="cdn_parser_context_read::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_read::buffer" name="buffer">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_read::max_size" name="max_size">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gsize" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_column" name="cdn_parser_context_set_column">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_column::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_column::start" name="start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-    <argument id="cdn_parser_context_set_column::end" name="end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_emit" name="cdn_parser_context_set_emit">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_emit::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_emit::emit" name="emit">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_error" name="cdn_parser_context_set_error">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_error::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_error::message" name="message">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_first_eof" name="cdn_parser_context_set_first_eof">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_first_eof::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_first_eof::firsteof" name="firsteof">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gboolean" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_integrator" name="cdn_parser_context_set_integrator">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_integrator::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_integrator::value" name="value">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_io_setting" name="cdn_parser_context_set_io_setting">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_io_setting::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_io_setting::nameptr" name="nameptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_set_io_setting::valueptr" name="valueptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_line" name="cdn_parser_context_set_line">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_line::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_line::line" name="line">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_set_line::lineno" name="lineno">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_node_state" name="cdn_parser_context_set_node_state">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_node_state::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_node_state::states" name="states">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_start_token" name="cdn_parser_context_set_start_token">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_start_token::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_start_token::token" name="token">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_token" name="cdn_parser_context_set_token">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_token::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_token::token" name="token">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_set_variable" name="cdn_parser_context_set_variable">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <type builtin="yes" name="void" />
-    </return>
-    <argument id="cdn_parser_context_set_variable::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-    <argument id="cdn_parser_context_set_variable::selectorptr" name="selectorptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_set_variable::expressionptr" name="expressionptr">
-      <doc>*documentation missing...*</doc>
-      <type name="GPtrArray" qualifier="*" />
-    </argument>
-    <argument id="cdn_parser_context_set_variable::add_flags" name="add_flags">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
-    </argument>
-    <argument id="cdn_parser_context_set_variable::remove_flags" name="remove_flags">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
-    </argument>
-  </function>
-  <function id="cdn_parser_context_steal_start_token" name="cdn_parser_context_steal_start_token">
-    <brief>*Documentation missing...*</brief>
-    <return>
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" />
-    </return>
-    <argument id="cdn_parser_context_steal_start_token::self" name="self">
-      <doc>a <ref ref="API Reference::CdnParserContext#API Reference::CdnParserContext">CdnParserContext</ref>.</doc>
-      <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
-    </argument>
-  </function>
   <function id="cdn_parser_context_unapply_template" name="cdn_parser_context_unapply_template">
-    <brief>*Documentation missing...*</brief>
+    <brief>Unapply the templates selected by <ref ref="API Reference::CdnParserContext#cdn_parser_context_unapply_template::templates">cdn_parser_context_unapply_template::templates</ref> to the objects selected by <ref ref="API Reference::CdnParserContext#cdn_parser_context_unapply_template::targets">cdn_parser_context_unapply_template::targets</ref>
+    </brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -1306,11 +440,11 @@ or a stream only, the result will be `NULL`.
       <type name="CdnParserContext" qualifier="*" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
     </argument>
     <argument id="cdn_parser_context_unapply_template::templates" name="templates">
-      <doc>*documentation missing...*</doc>
+      <doc>a selector</doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_parser_context_unapply_template::targets" name="targets">
-      <doc>*documentation missing...*</doc>
+      <doc>a selector</doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
   </function>

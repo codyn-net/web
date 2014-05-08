@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnSelection" name="CdnSelection" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Selection object</brief>
+  <doc>Selection object.
+
+<ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref> is an object which contains the result of a selector.
+It contains both the selected object and an expansion context which was
+the result of how the object got selected.</doc>
   <function id="cdn_selection_copy" name="cdn_selection_copy">
     <brief>Copy a selection.</brief>
     <return>
@@ -49,9 +55,9 @@
     </argument>
   </function>
   <function id="cdn_selection_ref" name="cdn_selection_ref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Increase the reference count on the selection</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>&amp;lt;selection&amp;gt;</doc>
       <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" transfer-ownership="full" />
     </return>
     <argument id="cdn_selection_ref::self" name="self">
@@ -74,7 +80,7 @@
     </argument>
   </function>
   <function id="cdn_selection_set_object" name="cdn_selection_set_object">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the object being selected.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -83,12 +89,14 @@
       <type name="CdnSelection" qualifier="*" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
     </argument>
     <argument id="cdn_selection_set_object::object" name="object">
-      <doc>*documentation missing...*</doc>
+      <doc>the object</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
   <function id="cdn_selection_unref" name="cdn_selection_unref">
-    <brief>*Documentation missing...*</brief>
+    <brief>Decrease the reference count on the selection</brief>
+    <doc>Decrease the reference count on the selection. If the reference count drops
+to 0, then the selection will be destroyed and is no longer valid.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>

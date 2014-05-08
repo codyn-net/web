@@ -1,24 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnStackArg" name="CdnStackArg" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>A stack argument</brief>
+  <doc>A stack argument.
+
+<ref ref="API Reference::CdnStackArg#API Reference::CdnStackArg">CdnStackArg</ref> represents a single argument on the stack. It carries
+information about the dimensionality of the argument.</doc>
   <field id="API Reference::CdnStackArg::dimension" name="dimension">
     <type name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
   </field>
   <function id="cdn_stack_arg_copy" name="cdn_stack_arg_copy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Copy the stack arg <ref ref="API Reference::CdnStackArg#cdn_stack_arg_copy::src">cdn_stack_arg_copy::src</ref> into the stack arg <ref ref="API Reference::CdnStackArg#cdn_stack_arg_copy::ret">cdn_stack_arg_copy::ret</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
-    <argument id="cdn_stack_arg_copy::self" name="self">
-      <doc>a <ref ref="API Reference::CdnStackArg#API Reference::CdnStackArg">CdnStackArg</ref>.</doc>
-      <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
+    <argument id="cdn_stack_arg_copy::ret" name="ret">
+      <doc>the return value of the copied stack arg</doc>
+      <type name="CdnStackArg" out="yes" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
     <argument id="cdn_stack_arg_copy::src" name="src">
-      <doc>*documentation missing...*</doc>
+      <doc>the source stack arg to copy</doc>
       <type name="CdnStackArg" qualifier="*" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
     </argument>
   </function>
   <function id="cdn_stack_arg_destroy" name="cdn_stack_arg_destroy">
-    <brief>*Documentation missing...*</brief>
+    <brief>Destroy a stack allocated stack arg.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -42,7 +47,7 @@
     </argument>
   </function>
   <function id="cdn_stack_arg_size" name="cdn_stack_arg_size">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the size (total number of elements) of &amp;lt;arg&amp;gt;.</brief>
     <return>
       <doc>*documentation missing...*</doc>
       <type builtin="yes" name="guint" />

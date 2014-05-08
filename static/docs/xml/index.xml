@@ -16,7 +16,9 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:interface name="CdnAnnotatable" ref="API Reference::CdnAnnotatable#API Reference::CdnAnnotatable">
       <brief>Interface for annotating objects</brief>
     </gobject:interface>
-    <gobject:boxed name="CdnAnnotationInfo" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo" />
+    <gobject:boxed name="CdnAnnotationInfo" ref="API Reference::CdnAnnotationInfo#API Reference::CdnAnnotationInfo">
+      <brief>Annotation informatio</brief>
+    </gobject:boxed>
     <gobject:class name="CdnAttribute" ref="API Reference::CdnAttribute#API Reference::CdnAttribute">
       <brief>Cdn format attribute</brief>
     </gobject:class>
@@ -29,25 +31,39 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:class name="CdnCompileError" ref="API Reference::CdnCompileError#API Reference::CdnCompileError">
       <brief>Compile error message container</brief>
     </gobject:class>
-    <gobject:boxed name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension" />
+    <gobject:boxed name="CdnDimension" ref="API Reference::CdnDimension#API Reference::CdnDimension">
+      <brief>A dimensio</brief>
+    </gobject:boxed>
     <gobject:class name="CdnEdge" ref="API Reference::CdnEdge#API Reference::CdnEdge">
       <brief>Connection between two nodes</brief>
     </gobject:class>
     <gobject:class name="CdnEdgeAction" ref="API Reference::CdnEdgeAction#API Reference::CdnEdgeAction">
       <brief>Edge action equation</brief>
     </gobject:class>
-    <gobject:class name="CdnEmbeddedString" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
+    <gobject:class name="CdnEmbeddedString" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString">
+      <brief>Embedded string class</brief>
+    </gobject:class>
     <gobject:class name="CdnEvent" ref="API Reference::CdnEvent#API Reference::CdnEvent">
       <brief>Event class</brief>
     </gobject:class>
-    <gobject:boxed name="CdnEventLogicalNode" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode" />
-    <gobject:boxed name="CdnEventSetVariable" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable" />
-    <gobject:boxed name="CdnExpansion" ref="API Reference::CdnExpansion#API Reference::CdnExpansion" />
-    <gobject:boxed name="CdnExpansionContext" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext" />
+    <gobject:boxed name="CdnEventLogicalNode" ref="API Reference::CdnEventLogicalNode#API Reference::CdnEventLogicalNode">
+      <brief>Logical event condition nod</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnEventSetVariable" ref="API Reference::CdnEventSetVariable#API Reference::CdnEventSetVariable">
+      <brief>Event set variable</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnExpansion" ref="API Reference::CdnExpansion#API Reference::CdnExpansion">
+      <brief>Expansion class</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnExpansionContext" ref="API Reference::CdnExpansionContext#API Reference::CdnExpansionContext">
+      <brief>Expansion context</brief>
+    </gobject:boxed>
     <gobject:class name="CdnExpression" ref="API Reference::CdnExpression#API Reference::CdnExpression">
       <brief>Mathematical expression evaluation</brief>
     </gobject:class>
-    <gobject:boxed name="CdnExpressionTreeIter" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter" />
+    <gobject:boxed name="CdnExpressionTreeIter" ref="API Reference::CdnExpressionTreeIter#API Reference::CdnExpressionTreeIter">
+      <brief>Expression tree iterator</brief>
+    </gobject:boxed>
     <gobject:class name="CdnFunction" ref="API Reference::CdnFunction#API Reference::CdnFunction">
       <brief>User defined function</brief>
     </gobject:class>
@@ -69,27 +85,45 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:class name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction">
       <brief>Mathematical instruction base class</brief>
     </gobject:class>
-    <gobject:boxed name="CdnInstructionBoxed" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed" />
+    <gobject:boxed name="CdnInstructionBoxed" ref="API Reference::CdnInstructionBoxed#API Reference::CdnInstructionBoxed">
+      <brief>Boxed instruction</brief>
+    </gobject:boxed>
     <gobject:class name="CdnInstructionCustomFunction" ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">
-      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_CUSTOM_FUNCTION`</brief>
+      <brief>Custom function call instruction</brief>
     </gobject:class>
-    <gobject:boxed name="CdnInstructionCustomFunctionBoxed" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed" />
-    <gobject:boxed name="CdnInstructionCustomFunctionRefBoxed" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed" />
-    <gobject:class name="CdnInstructionCustomOperator" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator" />
-    <gobject:boxed name="CdnInstructionCustomOperatorBoxed" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed" />
-    <gobject:boxed name="CdnInstructionCustomOperatorRefBoxed" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed" />
+    <gobject:boxed name="CdnInstructionCustomFunctionBoxed" ref="API Reference::CdnInstructionCustomFunctionBoxed#API Reference::CdnInstructionCustomFunctionBoxed">
+      <brief>Boxed custom function instruction</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnInstructionCustomFunctionRefBoxed" ref="API Reference::CdnInstructionCustomFunctionRefBoxed#API Reference::CdnInstructionCustomFunctionRefBoxed">
+      <brief>Boxed custom function ref instruction</brief>
+    </gobject:boxed>
+    <gobject:class name="CdnInstructionCustomOperator" ref="API Reference::CdnInstructionCustomOperator#API Reference::CdnInstructionCustomOperator">
+      <brief>Custom operator call instruction</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnInstructionCustomOperatorBoxed" ref="API Reference::CdnInstructionCustomOperatorBoxed#API Reference::CdnInstructionCustomOperatorBoxed">
+      <brief>Boxed custom operator instruction</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnInstructionCustomOperatorRefBoxed" ref="API Reference::CdnInstructionCustomOperatorRefBoxed#API Reference::CdnInstructionCustomOperatorRefBoxed">
+      <brief>Boxed custom operator ref instruction</brief>
+    </gobject:boxed>
     <gobject:class name="CdnInstructionFunction" ref="API Reference::CdnInstructionFunction#API Reference::CdnInstructionFunction">
-      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_FUNCTION`</brief>
+      <brief>Function call instruction</brief>
     </gobject:class>
     <gobject:class name="CdnInstructionMatrix" ref="API Reference::CdnInstructionMatrix#API Reference::CdnInstructionMatrix">
-      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_MATRIX`</brief>
+      <brief>Matrix instruction</brief>
     </gobject:class>
     <gobject:class name="CdnInstructionNumber" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">
-      <brief>The instruction class for `CDN_INSTRUCTION_TYPE_NUMBER`</brief>
+      <brief>Number instruction</brief>
     </gobject:class>
-    <gobject:class name="CdnInstructionRand" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand" />
-    <gobject:class name="CdnInstructionVariable" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable" />
-    <gobject:boxed name="CdnInstructionVariableBoxed" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed" />
+    <gobject:class name="CdnInstructionRand" ref="API Reference::CdnInstructionRand#API Reference::CdnInstructionRand">
+      <brief>Random number instruction</brief>
+    </gobject:class>
+    <gobject:class name="CdnInstructionVariable" ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">
+      <brief>Variable instruction</brief>
+    </gobject:class>
+    <gobject:boxed name="CdnInstructionVariableBoxed" ref="API Reference::CdnInstructionVariableBoxed#API Reference::CdnInstructionVariableBoxed">
+      <brief>Boxed variable instruction</brief>
+    </gobject:boxed>
     <gobject:class name="CdnIntegrator" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">
       <brief>Simulation integrator</brief>
     </gobject:class>
@@ -111,14 +145,21 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:class name="CdnIntegrators" ref="API Reference::CdnIntegrators#API Reference::CdnIntegrators">
       <brief>Integrator registry</brief>
     </gobject:class>
-    <gobject:interface name="CdnIo" ref="API Reference::CdnIo#API Reference::CdnIo" />
-    <gobject:class name="CdnIoMethod" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod" />
-    <gobject:class name="CdnLayout" ref="API Reference::CdnLayout#API Reference::CdnLayout" />
+    <gobject:interface name="CdnIo" ref="API Reference::CdnIo#API Reference::CdnIo">
+      <brief>Io module interface</brief>
+    </gobject:interface>
+    <gobject:class name="CdnIoMethod" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod">
+      <brief>Dynamic IO module loader</brief>
+    </gobject:class>
     <gobject:interface name="CdnLayoutable" ref="API Reference::CdnLayoutable#API Reference::CdnLayoutable">
       <brief>Interface for object layouting</brief>
     </gobject:interface>
-    <gobject:boxed name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix" />
-    <gobject:class name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject" />
+    <gobject:boxed name="CdnMatrix" ref="API Reference::CdnMatrix#API Reference::CdnMatrix">
+      <brief>2D matrix value</brief>
+    </gobject:boxed>
+    <gobject:class name="CdnMiniObject" ref="API Reference::CdnMiniObject#API Reference::CdnMiniObject">
+      <brief>A minimum object class</brief>
+    </gobject:class>
     <gobject:interface name="CdnModifiable" ref="API Reference::CdnModifiable#API Reference::CdnModifiable">
       <brief>Interface for keeping track of the modified state of an object</brief>
     </gobject:interface>
@@ -140,7 +181,9 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:class name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject">
       <brief>Basis for all cdn objects</brief>
     </gobject:class>
-    <gobject:class name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
+    <gobject:class name="CdnOperator" ref="API Reference::CdnOperator#API Reference::CdnOperator">
+      <brief>Custom operator base class</brief>
+    </gobject:class>
     <gobject:class name="CdnOperatorDelayed" ref="API Reference::CdnOperatorDelayed#API Reference::CdnOperatorDelayed">
       <brief>Math operator for delayed evaluation of an expression</brief>
     </gobject:class>
@@ -159,19 +202,33 @@ currently in the process of writing the <ref ref="Manual#Manual">Manual</ref>, p
     <gobject:class name="CdnOperatorSimplify" ref="API Reference::CdnOperatorSimplify#API Reference::CdnOperatorSimplify">
       <brief>Math operator for simplify evaluation of an expression</brief>
     </gobject:class>
-    <gobject:class name="CdnParamSpecMiniObject" ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject" />
-    <gobject:class name="CdnParserContext" ref="API Reference::CdnParserContext#API Reference::CdnParserContext" />
+    <gobject:class name="CdnParamSpecMiniObject" ref="API Reference::CdnParamSpecMiniObject#API Reference::CdnParamSpecMiniObject">
+      <brief>A mini object param spec</brief>
+    </gobject:class>
+    <gobject:class name="CdnParserContext" ref="API Reference::CdnParserContext#API Reference::CdnParserContext">
+      <brief>Modeling language parsing context</brief>
+    </gobject:class>
     <gobject:interface name="CdnPhaseable" ref="API Reference::CdnPhaseable#API Reference::CdnPhaseable">
       <brief>Interface for state dependent actions</brief>
     </gobject:interface>
-    <gobject:boxed name="CdnSelection" ref="API Reference::CdnSelection#API Reference::CdnSelection" />
-    <gobject:class name="CdnSelector" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
+    <gobject:boxed name="CdnSelection" ref="API Reference::CdnSelection#API Reference::CdnSelection">
+      <brief>Selection object</brief>
+    </gobject:boxed>
+    <gobject:class name="CdnSelector" ref="API Reference::CdnSelector#API Reference::CdnSelector">
+      <brief>Selector class</brief>
+    </gobject:class>
     <gobject:boxed name="CdnStack" ref="API Reference::CdnStack#API Reference::CdnStack">
       <brief>Simple stack</brief>
     </gobject:boxed>
-    <gobject:boxed name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg" />
-    <gobject:boxed name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs" />
-    <gobject:boxed name="CdnStackManipulation" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" />
+    <gobject:boxed name="CdnStackArg" ref="API Reference::CdnStackArg#API Reference::CdnStackArg">
+      <brief>A stack argument</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnStackArgs" ref="API Reference::CdnStackArgs#API Reference::CdnStackArgs">
+      <brief>List of stack argument</brief>
+    </gobject:boxed>
+    <gobject:boxed name="CdnStackManipulation" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation">
+      <brief>Stack manipulation informatio</brief>
+    </gobject:boxed>
     <gobject:interface name="CdnStatement" ref="API Reference::CdnStatement#API Reference::CdnStatement">
       <brief>Interface for keeping track statements.</brief>
     </gobject:interface>

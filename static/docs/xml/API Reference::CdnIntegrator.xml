@@ -3,7 +3,7 @@
   <brief>Simulation integrator</brief>
   <doc>Simulation integrator.
 
-<ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" /> is a base class for implementing different integration
+<ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref> is a base class for implementing different integration
 methods.</doc>
   <base access="public">
     <type name="CdnObject" ref="API Reference::CdnObject#API Reference::CdnObject" />
@@ -38,9 +38,14 @@ methods.</doc>
     <type builtin="yes" name="gdouble" />
   </gobject:property>
   <function id="cdn_integrator_begin" name="cdn_integrator_begin">
-    <brief>*Documentation missing...*</brief>
+    <brief>Initialize the integrator for integration starting at <ref ref="API Reference::CdnIntegrator#cdn_integrator_begin::start">cdn_integrator_begin::start</ref>
+    </brief>
+    <doc>Initialize the integrator for integration starting at <ref ref="API Reference::CdnIntegrator#cdn_integrator_begin::start">cdn_integrator_begin::start</ref>. This
+emits the ::begin signal.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the integrator was initialized properly, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_integrator_begin::self" name="self">
@@ -48,7 +53,7 @@ methods.</doc>
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
     <argument id="cdn_integrator_begin::start" name="start">
-      <doc>*documentation missing...*</doc>
+      <doc>the start</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
     <argument id="cdn_integrator_begin::error" name="error">
@@ -57,9 +62,12 @@ methods.</doc>
     </argument>
   </function>
   <function id="cdn_integrator_end" name="cdn_integrator_end">
-    <brief>*Documentation missing...*</brief>
+    <brief>Finalize the integrator for ending integration</brief>
+    <doc>Finalize the integrator for ending integration. This emits the ::end signal.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the integrator was finalized properly, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_integrator_end::self" name="self">
@@ -105,9 +113,9 @@ states can be found (&amp;lt;see&amp;gt; &amp;lt;cdn\_integrator\_state\_get\_up
     </argument>
   </function>
   <function id="cdn_integrator_get_default_timestep" name="cdn_integrator_get_default_timestep">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the default integration time step</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the default integration time step</doc>
       <type builtin="yes" name="gdouble" />
     </return>
     <argument id="cdn_integrator_get_default_timestep::self" name="self">
@@ -165,9 +173,9 @@ fast as possible.
     </argument>
   </function>
   <function id="cdn_integrator_get_terminate" name="cdn_integrator_get_terminate">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the integration has been terminated by an event.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the integration has been terminated, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_integrator_get_terminate::self" name="self">
@@ -226,7 +234,7 @@ main network.</doc>
     </argument>
   </function>
   <function id="cdn_integrator_set_default_timestep" name="cdn_integrator_set_default_timestep">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the default integration time step</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -235,15 +243,15 @@ main network.</doc>
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
     <argument id="cdn_integrator_set_default_timestep::timestep" name="timestep">
-      <doc>*documentation missing...*</doc>
+      <doc>the default time step</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
   <function id="cdn_integrator_set_real_time" name="cdn_integrator_set_real_time">
     <brief>Set how many times real time the integrator is trying to integrate th</brief>
     <doc>Set how many times real time the integrator is trying to integrate the
-network. Set <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">real_time</ref> to 0 to integrate the network as fast as possible.
-Otherwise, the integrator will integrate at <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">real_time</ref> real time, using
+network. Set <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">cdn_integrator_set_real_time::real_time</ref> to 0 to integrate the network as fast as possible.
+Otherwise, the integrator will integrate at <ref ref="API Reference::CdnIntegrator#cdn_integrator_set_real_time::real_time">cdn_integrator_set_real_time::real_time</ref> real time, using
 sleep to pause the integration if needed. Note that this can only make your
 network integrate slower, not faster.</doc>
     <return>
@@ -274,7 +282,7 @@ network integrate slower, not faster.</doc>
     </argument>
   </function>
   <function id="cdn_integrator_set_time" name="cdn_integrator_set_time">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the current time at which the object is being integrated.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -283,7 +291,7 @@ network integrate slower, not faster.</doc>
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
     <argument id="cdn_integrator_set_time::t" name="t">
-      <doc>*documentation missing...*</doc>
+      <doc>the time</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
@@ -325,9 +333,13 @@ run the integration for a period of time.
     </argument>
   </function>
   <function id="cdn_integrator_step_prepare" name="cdn_integrator_step_prepare">
-    <brief>*Documentation missing...*</brief>
+    <brief>Prepare the integrator for the next time step</brief>
+    <doc>Prepare the integrator for the next time step. This can be called by integrator
+implementations. You usually do not need to call this manually.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the step was prepared, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_integrator_step_prepare::self" name="self">
@@ -335,11 +347,11 @@ run the integration for a period of time.
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
     <argument id="cdn_integrator_step_prepare::t" name="t">
-      <doc>*documentation missing...*</doc>
+      <doc>the time</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
     <argument id="cdn_integrator_step_prepare::timestep" name="timestep">
-      <doc>*documentation missing...*</doc>
+      <doc>the time step</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>

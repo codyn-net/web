@@ -3,7 +3,7 @@
   <brief>Base node class</brief>
   <doc>Base node class.
 
-The <ref ref="API Reference::CdnNode#API Reference::CdnNode" /> class is the basic variable container class in a network. It
+The <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> class is the basic variable container class in a network. It
 derives from <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> (as all network objects do). Please see <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>
 for useful API about getting, setting and finding variables, as those functions
 are defined for all <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref>.
@@ -79,7 +79,7 @@ network is running (use &amp;lt;cdn\_integrator\_state\_set\_state&amp;gt; inste
     <brief>Find object by specifying a selector</brief>
     <doc>Find object by specifying a selector. For example, if there is
 another node "g" containing a node "s", you can use
-<ref ref="API Reference::CdnNode#cdn_node_find_object" /> (node, "g.s") to get the object.
+<ref ref="API Reference::CdnNode#cdn_node_find_object">cdn_node_find_object</ref> (node, "g.s") to get the object.
 
 </doc>
     <return>
@@ -119,7 +119,7 @@ another node "g" containing a state "s", you can use
     <brief>Find a variable by specifying a selector</brief>
     <doc>Find a variable by specifying a selector. For example, if there is
 another node "g" containing a node "s" with a variable "x", you can use
-<ref ref="API Reference::CdnNode#cdn_node_find_variable" /> (node, "g.s.x") to get the variable.
+<ref ref="API Reference::CdnNode#cdn_node_find_variable">cdn_node_find_variable</ref> (node, "g.s.x") to get the variable.
 
 </doc>
     <return>
@@ -139,7 +139,7 @@ another node "g" containing a node "s" with a variable "x", you can use
     <brief>Find variables by specifying a selector</brief>
     <doc>Find variables by specifying a selector. For example, if there is
 another node "g" containing a node "s" with variable "x", you can use
-<ref ref="API Reference::CdnNode#cdn_node_find_variables" /> (node, "g.s.x") to remove the variable.
+<ref ref="API Reference::CdnNode#cdn_node_find_variables">cdn_node_find_variables</ref> (node, "g.s.x") to remove the variable.
 
 </doc>
     <return>
@@ -156,7 +156,7 @@ another node "g" containing a node "s" with variable "x", you can use
     </argument>
   </function>
   <function id="cdn_node_foreach" name="cdn_node_foreach">
-    <brief>Call <ref ref="API Reference::CdnNode#cdn_node_foreach::func">func</ref> for each child object in the node.</brief>
+    <brief>Call <ref ref="API Reference::CdnNode#cdn_node_foreach::func">cdn_node_foreach::func</ref> for each child object in the node.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -370,9 +370,13 @@ programatically change the state of a node while the network is running, use
     </argument>
   </function>
   <function id="cdn_node_verify_remove_child" name="cdn_node_verify_remove_child">
-    <brief>*Documentation missing...*</brief>
+    <brief>Verifies whether <ref ref="API Reference::CdnNode#cdn_node_verify_remove_child::child">cdn_node_verify_remove_child::child</ref> can be removed from &amp;lt;node&amp;gt; safely</brief>
+    <doc>Verifies whether <ref ref="API Reference::CdnNode#cdn_node_verify_remove_child::child">cdn_node_verify_remove_child::child</ref> can be removed from &amp;lt;node&amp;gt; safely. Possible
+errors are related to the child still being in use or part of a template.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the child can be removed, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_node_verify_remove_child::self" name="self">
@@ -380,7 +384,7 @@ programatically change the state of a node while the network is running, use
       <type name="CdnNode" qualifier="*" ref="API Reference::CdnNode#API Reference::CdnNode" />
     </argument>
     <argument id="cdn_node_verify_remove_child::child" name="child">
-      <doc>*documentation missing...*</doc>
+      <doc>the child</doc>
       <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
     <argument id="cdn_node_verify_remove_child::error" name="error">

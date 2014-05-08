@@ -3,7 +3,7 @@
   <brief>Event class</brief>
   <doc>Event class.
 
-The <ref ref="API Reference::CdnEvent#API Reference::CdnEvent" /> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> derivative defining node state transitions
+The <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> derivative defining node state transitions
 under specified conditions (see <ref ref="API Reference::CdnEvent#cdn_event_set_condition">cdn_event_set_condition</ref>). Each simulation
 step, all event conditions are checked and when the condition goes from
 false to true, the event is executed (see <ref ref="API Reference::CdnEvent#cdn_event_execute">cdn_event_execute</ref>).
@@ -47,7 +47,7 @@ true is within the specified approximation.</doc>
     <type builtin="yes" name="gboolean" />
   </gobject:property>
   <function id="cdn_event_add_set_variable" name="cdn_event_add_set_variable">
-    <brief>Add an action to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">variable</ref> to <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::value">value</ref> when the event is triggered.</brief>
+    <brief>Add an action to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">cdn_event_add_set_variable::variable</ref> to <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::value">cdn_event_add_set_variable::value</ref> when the event is triggered.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -60,7 +60,7 @@ true is within the specified approximation.</doc>
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
     <argument id="cdn_event_add_set_variable::value" name="value">
-      <doc>the expression to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">variable</ref> to.</doc>
+      <doc>the expression to set <ref ref="API Reference::CdnEvent#cdn_event_add_set_variable::variable">cdn_event_add_set_variable::variable</ref> to.</doc>
       <type name="CdnExpression" qualifier="*" ref="API Reference::CdnExpression#API Reference::CdnExpression" />
     </argument>
   </function>
@@ -155,8 +155,8 @@ state transition.
   <function id="cdn_event_happened" name="cdn_event_happened">
     <brief>Check whether the event has happened in the last timestep</brief>
     <doc>Check whether the event has happened in the last timestep. If the event
-has happened, and <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">dist</ref> is not `NULL`, then the error on the event condition
-is returned in <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">dist</ref>.
+has happened, and <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">cdn_event_happened::dist</ref> is not `NULL`, then the error on the event condition
+is returned in <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">cdn_event_happened::dist</ref>.
 
 </doc>
     <return>
@@ -186,11 +186,11 @@ is returned in <ref ref="API Reference::CdnEvent#cdn_event_happened::dist">dist<
   <function id="cdn_event_new" name="cdn_event_new">
     <brief>Create a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>
     </brief>
-    <doc>Create a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>. The specified <ref ref="API Reference::CdnEvent#cdn_event_new::id">id</ref> is simply the <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> id
-(note that <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref> derives from <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>). The <ref ref="API Reference::CdnEvent#cdn_event_new::condition">condition</ref> expression should
+    <doc>Create a new <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref>. The specified <ref ref="API Reference::CdnEvent#cdn_event_new::id">cdn_event_new::id</ref> is simply the <ref ref="API Reference::CdnObject#API Reference::CdnObject">CdnObject</ref> id
+(note that <ref ref="API Reference::CdnEvent#API Reference::CdnEvent">CdnEvent</ref> derives from <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref>). The <ref ref="API Reference::CdnEvent#cdn_event_new::condition">cdn_event_new::condition</ref> expression should
 be a logical expression indicating when the event is triggered.
 
-Set <ref ref="API Reference::CdnEvent#cdn_event_new::approximation">approximation</ref> to the maximum allowed error (positive) on the condition
+Set <ref ref="API Reference::CdnEvent#cdn_event_new::approximation">cdn_event_new::approximation</ref> to the maximum allowed error (positive) on the condition
 for which the event should be triggered. A value of -1 specifies the maximum
 error and will not refine the time at which the event occured.
 
@@ -216,7 +216,7 @@ error and will not refine the time at which the event occured.
     <brief>Set the maximum error on the condition allowed when the event should b</brief>
     <doc>Set the maximum error on the condition allowed when the event should be
 triggered. If do not want the event to be refined, then use the special
-value -1 for <ref ref="API Reference::CdnEvent#cdn_event_set_approximation::approximation">approximation</ref>.</doc>
+value -1 for <ref ref="API Reference::CdnEvent#cdn_event_set_approximation::approximation">cdn_event_set_approximation::approximation</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>

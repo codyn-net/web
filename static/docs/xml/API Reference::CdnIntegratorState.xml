@@ -239,7 +239,7 @@ phase.
     </argument>
   </function>
   <function id="cdn_integrator_state_set_state" name="cdn_integrator_state_set_state">
-    <brief>Change the active state of <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::node">node</ref> to <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::st">st</ref>.</brief>
+    <brief>Change the active state of <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::node">cdn_integrator_state_set_state::node</ref> to <ref ref="API Reference::CdnIntegratorState#cdn_integrator_state_set_state::st">cdn_integrator_state_set_state::st</ref>.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>

@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnDimension" name="CdnDimension" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>A dimensio</brief>
+  <doc>A dimension
+
+<ref ref="API Reference::CdnDimension#API Reference::CdnDimension">CdnDimension</ref> represents a rows-by-columns dimension.</doc>
   <field id="API Reference::CdnDimension::rows" name="rows">
     <type builtin="yes" name="gint32" />
   </field>

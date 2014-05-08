@@ -53,9 +53,9 @@ Object used to store information on expression compile errors.</doc>
     </argument>
   </function>
   <function id="cdn_compile_error_get_formatted_string" name="cdn_compile_error_get_formatted_string">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get information about the compile error as a human readable formatted string.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the formatted error message</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_compile_error_get_formatted_string::self" name="self">
@@ -147,9 +147,9 @@ Object used to store information on expression compile errors.</doc>
     </argument>
   </function>
   <function id="cdn_compile_error_type_quark" name="cdn_compile_error_type_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the compile error type quark</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the &amp;lt;GQuark&amp;gt; for compile error types</doc>
       <type name="GQuark" />
     </return>
   </function>

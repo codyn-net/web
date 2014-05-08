@@ -14,7 +14,7 @@
     <type builtin="yes" name="gint" />
   </gobject:property>
   <function id="cdn_statement_get_column" name="cdn_statement_get_column">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the start and end column of the statement.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -23,16 +23,16 @@
       <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
     </argument>
     <argument id="cdn_statement_get_column::start" name="start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>return value for the start column of the statement</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
     <argument id="cdn_statement_get_column::end" name="end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>return value for the end column of the statement</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_statement_get_line" name="cdn_statement_get_line">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the start and end line of the statement.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -41,16 +41,16 @@
       <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
     </argument>
     <argument id="cdn_statement_get_line::start" name="start">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>return value for the start line of the statement</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
     <argument id="cdn_statement_get_line::end" name="end">
-      <doc>*documentation missing...*</doc>
-      <type builtin="yes" name="gint" qualifier="*" />
+      <doc>return value for the end line of the statement</doc>
+      <type builtin="yes" name="gint" out="yes" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_statement_set_column" name="cdn_statement_set_column">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the start and end column of the statement</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -59,16 +59,16 @@
       <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
     </argument>
     <argument id="cdn_statement_set_column::start" name="start">
-      <doc>*documentation missing...*</doc>
+      <doc>the start column</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_statement_set_column::end" name="end">
-      <doc>*documentation missing...*</doc>
+      <doc>the end column</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>
   <function id="cdn_statement_set_line" name="cdn_statement_set_line">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the start and end line of the statement</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -77,11 +77,11 @@
       <type name="CdnStatement" qualifier="*" ref="API Reference::CdnStatement#API Reference::CdnStatement" />
     </argument>
     <argument id="cdn_statement_set_line::start" name="start">
-      <doc>*documentation missing...*</doc>
+      <doc>the start line</doc>
       <type builtin="yes" name="gint" />
     </argument>
     <argument id="cdn_statement_set_line::end" name="end">
-      <doc>*documentation missing...*</doc>
+      <doc>the end line</doc>
       <type builtin="yes" name="gint" />
     </argument>
   </function>

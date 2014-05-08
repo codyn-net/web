@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionVariableBoxed" name="CdnInstructionVariableBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Boxed variable instruction</brief>
+  <doc>Boxed variable instruction.
+
+Boxed version of <ref ref="API Reference::CdnInstructionVariable#API Reference::CdnInstructionVariable">CdnInstructionVariable</ref>, only used for language bindings.</doc>
   <function id="cdn_instruction_variable_boxed_get_slice" name="cdn_instruction_variable_boxed_get_slice">
     <brief>Get the slice, if any, of this variable.</brief>
     <return>

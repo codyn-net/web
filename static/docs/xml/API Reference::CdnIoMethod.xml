@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnIoMethod" name="CdnIoMethod" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Dynamic IO module loader</brief>
+  <doc>Dynamic IO module loader.
+
+<ref ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod">CdnIoMethod</ref> is a dynamic loader for loading codyn IO modules. IO modules
+in codyn allow for extension of reading/writing input/output capabilities.
+libcodyn itself implements two such IO modules by itself, for reading files
+and for connecting dynamical systems over the network (using either TCP or UDP).</doc>
   <base access="public">
     <type name="GTypeModule" />
   </base>
@@ -10,34 +17,54 @@
     <type builtin="yes" name="gchar" qualifier="*" />
   </gobject:property>
   <function id="cdn_io_method_find" name="cdn_io_method_find">
-    <brief>*Documentation missing...*</brief>
+    <brief>Find the &amp;lt;GType&amp;gt; of the class corresponding to <ref ref="API Reference::CdnIoMethod#cdn_io_method_find::name">cdn_io_method_find::name</ref>, implementin</brief>
+    <doc>Find the &amp;lt;GType&amp;gt; of the class corresponding to <ref ref="API Reference::CdnIoMethod#cdn_io_method_find::name">cdn_io_method_find::name</ref>, implementing
+the IO mode <ref ref="API Reference::CdnIoMethod#cdn_io_method_find::mode">cdn_io_method_find::mode</ref>. This function will look for the dynamic symbol
+cdn_input_{name}_get_type, cdn_output_{name}_get_type or
+cdn_io_{name}_get_type, depending on whether the <ref ref="API Reference::CdnIoMethod#cdn_io_method_find::mode">cdn_io_method_find::mode</ref> is respectively
+<ref ref="API Reference#API Reference::CdnIoMode::CDN_IO_MODE_INPUT">CDN_IO_MODE_INPUT</ref>, <ref ref="API Reference#API Reference::CdnIoMode::CDN_IO_MODE_OUTPUT">CDN_IO_MODE_OUTPUT</ref> or <ref ref="API Reference#API Reference::CdnIoMode::CDN_IO_MODE_INPUT_OUTPUT">CDN_IO_MODE_INPUT_OUTPUT</ref>.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the corresponding &amp;lt;GType&amp;gt; or &amp;lt;G\_TYPE\_INVALID&amp;gt; if not found.</doc>
       <type name="GType" />
     </return>
     <argument id="cdn_io_method_find::name" name="name">
-      <doc>*documentation missing...*</doc>
+      <doc>the io name</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
     <argument id="cdn_io_method_find::mode" name="mode">
-      <doc>*documentation missing...*</doc>
+      <doc>the io mode</doc>
       <type name="CdnIoMode" ref="API Reference#API Reference::CdnIoMode" />
     </argument>
   </function>
   <function id="cdn_io_method_initialize" name="cdn_io_method_initialize">
-    <brief>*Documentation missing...*</brief>
+    <brief>Load all io modules in the io module search directories</brief>
+    <doc>Load all io modules in the io module search directories. The directories being searched
+are:
+
+1. $CDN_IO_METHODS environment variable
+2. $XDG_DATA_HOME/codyn-3.0/io
+3. $XDG_DATA_DIRS/codyn-3.0/io
+4. INSTALL/data/codyn-3.0/io</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
   </function>
   <function id="cdn_io_method_new" name="cdn_io_method_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new dynamic io method module to be loaded from the specifie</brief>
+    <doc>Create a new dynamic io method module to be loaded from the specified
+path. <ref ref="API Reference::CdnIoMethod#cdn_io_method_new::path">cdn_io_method_new::path</ref> should point to a dynamically loadable module. After construction,
+use <ref ref="API Reference::CdnIoMethod#cdn_io_method_find">cdn_io_method_find</ref> to obtain a &amp;lt;GType&amp;gt; of the dynamically loaded <ref ref="API Reference::CdnIo#API Reference::CdnIo">CdnIo</ref>
+class corresponding to a particular IO mode.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod">CdnIoMethod</ref>.</doc>
       <type name="CdnIoMethod" qualifier="*" ref="API Reference::CdnIoMethod#API Reference::CdnIoMethod" transfer-ownership="full" />
     </return>
     <argument id="cdn_io_method_new::path" name="path">
-      <doc>*documentation missing...*</doc>
+      <doc>the dynamic module path</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>

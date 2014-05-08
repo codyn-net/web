@@ -3,7 +3,7 @@
   <brief>Variable</brief>
   <doc>Variable.
 
-A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable" /> represents a single variable in an object. A variable has
+A <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref> represents a single variable in an object. A variable has
 a name and an mathematical expression describing its value.
 
 Variables can be constrained using a secondary equation which is evaluated
@@ -67,7 +67,10 @@ Each variable has a set of flags which changes its behavior.
     </argument>
   </function>
   <function id="cdn_variable_clear_update" name="cdn_variable_clear_update">
-    <brief>*Documentation missing...*</brief>
+    <brief>Clear the update value of a variable</brief>
+    <doc>Clear the update value of a variable. The update value is used to store the
+result of differential equations on the variable. You normally do not need
+to use this function.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -211,9 +214,9 @@ outer most parent to refer to this variable (i.e.
     </argument>
   </function>
   <function id="cdn_variable_get_full_name_for_display" name="cdn_variable_get_full_name_for_display">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the full name of the variable ready for user display.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the full name for display</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_variable_get_full_name_for_display::self" name="self">
@@ -293,9 +296,9 @@ to use this function.
     </argument>
   </function>
   <function id="cdn_variable_has_actions" name="cdn_variable_has_actions">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether there are and edge actions acting on &amp;lt;variable&amp;gt;.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if &amp;lt;variable&amp;gt; has any actions, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_variable_has_actions::self" name="self">
@@ -304,9 +307,9 @@ to use this function.
     </argument>
   </function>
   <function id="cdn_variable_has_flag" name="cdn_variable_has_flag">
-    <brief>*Documentation missing...*</brief>
+    <brief>Check whether &amp;lt;variable&amp;gt; has the flags specified by <ref ref="API Reference::CdnVariable#cdn_variable_has_flag::flags">cdn_variable_has_flag::flags</ref>.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if &amp;lt;variable&amp;gt; has the flags <ref ref="API Reference::CdnVariable#cdn_variable_has_flag::flags">cdn_variable_has_flag::flags</ref>, `FALSE` otherwise</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_variable_has_flag::self" name="self">
@@ -314,7 +317,7 @@ to use this function.
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
     <argument id="cdn_variable_has_flag::flags" name="flags">
-      <doc>*documentation missing...*</doc>
+      <doc>the flags</doc>
       <type name="CdnVariableFlags" ref="API Reference#API Reference::CdnVariableFlags" />
     </argument>
   </function>
@@ -383,7 +386,9 @@ stored string representation.</doc>
     </argument>
   </function>
   <function id="cdn_variable_set_derivative" name="cdn_variable_set_derivative">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set <ref ref="API Reference::CdnVariable#cdn_variable_set_derivative::derivative">cdn_variable_set_derivative::derivative</ref> to be the variable representing th</brief>
+    <doc>Set <ref ref="API Reference::CdnVariable#cdn_variable_set_derivative::derivative">cdn_variable_set_derivative::derivative</ref> to be the variable representing the
+derivative of &amp;lt;variable&amp;gt;.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -391,9 +396,9 @@ stored string representation.</doc>
       <doc>a <ref ref="API Reference::CdnVariable#API Reference::CdnVariable">CdnVariable</ref>.</doc>
       <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
-    <argument id="cdn_variable_set_derivative::diffprop" name="diffprop">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
+    <argument id="cdn_variable_set_derivative::derivative" name="derivative">
+      <doc>the derivative</doc>
+      <type allow-none="yes" name="CdnVariable" qualifier="*" ref="API Reference::CdnVariable#API Reference::CdnVariable" />
     </argument>
   </function>
   <function id="cdn_variable_set_expression" name="cdn_variable_set_expression">

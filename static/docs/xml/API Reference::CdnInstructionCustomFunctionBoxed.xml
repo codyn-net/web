@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:boxed xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionCustomFunctionBoxed" name="CdnInstructionCustomFunctionBoxed" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Boxed custom function instruction</brief>
+  <doc>Boxed custom function instruction.
+
+Boxed version of <ref ref="API Reference::CdnInstructionCustomFunction#API Reference::CdnInstructionCustomFunction">CdnInstructionCustomFunction</ref>, only used for language bindings.</doc>
   <function id="cdn_instruction_custom_function_boxed_get_function" name="cdn_instruction_custom_function_boxed_get_function">
     <brief>Get the function.</brief>
     <return>

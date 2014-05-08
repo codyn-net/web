@@ -1,30 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnOperator" name="CdnOperator" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Custom operator base class</brief>
+  <doc>Custom operator base class.
+
+<ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref> is an abstract base class for the implementation of custom operators
+for codyn. Note that here the term Operator does not refer to the standard mathematical
+binary or unary operators (such as addition and multiplication), but rather operations
+on symbolic expressions. Operators are used to implement functionality which operators
+on the symbolic, rather than numeric level. Examples of operator implementations are
+derivation, delays and simplification.</doc>
   <base access="public">
     <type name="GObject" />
   </base>
-  <function id="cdn_operator_all_expressions" name="cdn_operator_all_expressions">
-    <brief>Get the list of all expressions.</brief>
-    <return>
-      <doc>A list of all expressions</doc>
-      <type name="GSList" qualifier="**" />
-    </return>
-    <argument id="cdn_operator_all_expressions::self" name="self">
-      <doc>a <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref>.</doc>
-      <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
-    </argument>
-  </function>
-  <function id="cdn_operator_all_indices" name="cdn_operator_all_indices">
-    <brief>Get a list of al indices.</brief>
-    <return>
-      <doc>A list of all indices</doc>
-      <type name="GSList" qualifier="**" />
-    </return>
-    <argument id="cdn_operator_all_indices::self" name="self">
-      <doc>a <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref>.</doc>
-      <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
-    </argument>
-  </function>
   <function id="cdn_operator_copy" name="cdn_operator_copy">
     <brief>Copy an operator.</brief>
     <return>
@@ -56,9 +43,9 @@
     </argument>
   </function>
   <function id="cdn_operator_error_quark" name="cdn_operator_error_quark">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the error quark for the operator error type.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a &amp;lt;GQuark&amp;gt; for the operator error type</doc>
       <type name="GQuark" />
     </return>
   </function>
@@ -80,7 +67,7 @@ on the stack.</doc>
     </argument>
   </function>
   <function id="cdn_operator_foreach_function" name="cdn_operator_foreach_function">
-    <brief>Call <ref ref="API Reference::CdnOperator#cdn_operator_foreach_function::func">func</ref> for each function in the operator.</brief>
+    <brief>Call <ref ref="API Reference::CdnOperator#cdn_operator_foreach_function::func">cdn_operator_foreach_function::func</ref> for each function in the operator.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -93,7 +80,7 @@ on the stack.</doc>
       <type name="CdnForeachFunctionFunc" />
     </argument>
     <argument id="cdn_operator_foreach_function::userdata" name="userdata">
-      <doc>The <ref ref="API Reference::CdnOperator#cdn_operator_foreach_function::func">func</ref> userdata</doc>
+      <doc>The <ref ref="API Reference::CdnOperator#cdn_operator_foreach_function::func">cdn_operator_foreach_function::func</ref> userdata</doc>
       <type builtin="yes" name="gpointer" />
     </argument>
   </function>
@@ -106,21 +93,6 @@ on the stack.</doc>
     <argument id="cdn_operator_get_arguments_dimension::self" name="self">
       <doc>a <ref ref="API Reference::CdnOperator#API Reference::CdnOperator">CdnOperator</ref>.</doc>
       <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
-    </argument>
-  </function>
-  <function id="cdn_operator_get_class_name" name="cdn_operator_get_class_name">
-    <brief>Get the operator name</brief>
-    <doc>Get the operator name. This is the identifier that is used in expressions,
-and thus can only contain valid identifier characters.
-
-</doc>
-    <return>
-      <doc>a newly allocated string with the operator name, use &amp;lt;g\_free&amp;gt; to free the value when it's no longer needed.</doc>
-      <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
-    </return>
-    <argument id="cdn_operator_get_class_name::op" name="op">
-      <doc>A &amp;lt;CdnOperatorClass&amp;gt;</doc>
-      <type name="CdnOperatorClass" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_operator_get_expressions" name="cdn_operator_get_expressions">
@@ -199,9 +171,9 @@ and thus can only contain valid identifier characters.
     </argument>
   </function>
   <function id="cdn_operator_get_stack_manipulation" name="cdn_operator_get_stack_manipulation">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the operator stack manipulation.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the operator stack manipulation</doc>
       <type name="CdnStackManipulation" qualifier="*" ref="API Reference::CdnStackManipulation#API Reference::CdnStackManipulation" transfer-ownership="full" />
     </return>
     <argument id="cdn_operator_get_stack_manipulation::self" name="self">
@@ -249,7 +221,7 @@ and thus can only contain valid identifier characters.
     </argument>
   </function>
   <function id="cdn_operator_initialize_integrate" name="cdn_operator_initialize_integrate">
-    <brief>*Documentation missing...*</brief>
+    <brief>Initialize the operator for numerical integration</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -258,14 +230,14 @@ and thus can only contain valid identifier characters.
       <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
     </argument>
     <argument id="cdn_operator_initialize_integrate::integrator" name="integrator">
-      <doc>*documentation missing...*</doc>
+      <doc>a <ref ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator">CdnIntegrator</ref></doc>
       <type name="CdnIntegrator" qualifier="*" ref="API Reference::CdnIntegrator#API Reference::CdnIntegrator" />
     </argument>
   </function>
   <function id="cdn_operator_num_expressions" name="cdn_operator_num_expressions">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the number of expressions for the operator</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the number of expressions</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_operator_num_expressions::self" name="self">
@@ -274,9 +246,9 @@ and thus can only contain valid identifier characters.
     </argument>
   </function>
   <function id="cdn_operator_num_indices" name="cdn_operator_num_indices">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the number of indices for the operator</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the number of indices</doc>
       <type builtin="yes" name="gint" />
     </return>
     <argument id="cdn_operator_num_indices::self" name="self">
@@ -285,7 +257,7 @@ and thus can only contain valid identifier characters.
     </argument>
   </function>
   <function id="cdn_operator_reset" name="cdn_operator_reset">
-    <brief>*Documentation missing...*</brief>
+    <brief>Reset the operator.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -294,23 +266,10 @@ and thus can only contain valid identifier characters.
       <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
     </argument>
   </function>
-  <function id="cdn_operator_responds_to" name="cdn_operator_responds_to">
-    <brief>Check if the operator class responds to the name <ref ref="API Reference::CdnOperator#cdn_operator_responds_to::name">name</ref>.</brief>
-    <return>
-      <doc>`TRUE` if the operator class responds to <ref ref="API Reference::CdnOperator#cdn_operator_responds_to::name">name</ref>, `FALSE` otherwise.</doc>
-      <type builtin="yes" name="gboolean" />
-    </return>
-    <argument id="cdn_operator_responds_to::klass" name="klass">
-      <doc>a &amp;lt;CdnOperatorClass&amp;gt;.</doc>
-      <type name="CdnOperatorClass" qualifier="*" />
-    </argument>
-    <argument id="cdn_operator_responds_to::name" name="name">
-      <doc>The name.</doc>
-      <type builtin="yes" name="gchar" qualifier="*" />
-    </argument>
-  </function>
   <function id="cdn_operator_step" name="cdn_operator_step">
-    <brief>*Documentation missing...*</brief>
+    <brief>Step the operator</brief>
+    <doc>Step the operator. This should update any internal state of
+the operator to reflect that a simulation step has been performed.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -319,11 +278,11 @@ and thus can only contain valid identifier characters.
       <type name="CdnOperator" qualifier="*" ref="API Reference::CdnOperator#API Reference::CdnOperator" />
     </argument>
     <argument id="cdn_operator_step::t" name="t">
-      <doc>*documentation missing...*</doc>
+      <doc>the time</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
     <argument id="cdn_operator_step::timestep" name="timestep">
-      <doc>*documentation missing...*</doc>
+      <doc>the time step</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>

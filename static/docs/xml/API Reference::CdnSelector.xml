@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnSelector" name="CdnSelector" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Selector class</brief>
+  <doc>Selector class.
+
+<ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref> is a class which encodes a codyn modeling language selector. A selector
+receives a set of objects as input and performs filtering and selection based on
+a pipeline of special purpose selectors. This allows for powerful contextual selection
+of nodes based on certain criteria, matching names, types, children etc. Selectors
+can be built incrementally using the various append functions, or parsed from a string
+using <ref ref="API Reference::CdnSelector#cdn_selector_parse">cdn_selector_parse</ref>.</doc>
   <base access="public">
     <type name="GObject" />
   </base>
@@ -10,9 +19,15 @@
     <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
   </gobject:property>
   <function id="cdn_selector_append" name="cdn_selector_append">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append a matching identifier selector to the pipeline</brief>
+    <doc>Append a matching identifier selector to the pipeline. Identifier matches
+will match on names of objects and variables where appropriate. Note that
+the <ref ref="API Reference::CdnSelector#cdn_selector_append::identifier">cdn_selector_append::identifier</ref> embedded string may contain generators and can match multiple
+names at the same time.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a selector component identifier.</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_append::self" name="self">
@@ -20,14 +35,20 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_append::identifier" name="identifier">
-      <doc>*documentation missing...*</doc>
+      <doc>an embedded string</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_selector_append_partial" name="cdn_selector_append_partial">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append a partial matching identifier selector to the pipeline</brief>
+    <doc>Append a partial matching identifier selector to the pipeline. Identifier matches
+will match on names of objects and variables where appropriate. Note that
+the <ref ref="API Reference::CdnSelector#cdn_selector_append_partial::identifier">cdn_selector_append_partial::identifier</ref> embedded string may contain generators and can match multiple
+names at the same time.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the identifier of the added selector component</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_append_partial::self" name="self">
@@ -35,14 +56,14 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_append_partial::identifier" name="identifier">
-      <doc>*documentation missing...*</doc>
+      <doc>an embedded string</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_selector_append_pseudo" name="cdn_selector_append_pseudo">
     <brief>Append a pseudo selector.</brief>
     <return>
-      <doc>The identifier of the added pseudo selector</doc>
+      <doc>the identifier of the added selector component</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_append_pseudo::self" name="self">
@@ -59,9 +80,16 @@
     </argument>
   </function>
   <function id="cdn_selector_append_regex" name="cdn_selector_append_regex">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append a regular expression matching identifier selector to the pipeline</brief>
+    <doc>Append a regular expression matching identifier selector to the pipeline.
+Identifier matches will match on names of objects and variables where appropriate.
+Note that the &amp;lt;identifier&amp;gt; embedded string may contain generators and can match multiple
+names at the same time. The regular expression must match the full identifier of the
+object. See <ref ref="API Reference::CdnSelector#cdn_selector_append_regex_partial">cdn_selector_append_regex_partial</ref> for matching only partially.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a selector component identifier.</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_append_regex::self" name="self">
@@ -69,14 +97,20 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_append_regex::regex" name="regex">
-      <doc>*documentation missing...*</doc>
+      <doc>an embedded string</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_selector_append_regex_partial" name="cdn_selector_append_regex_partial">
-    <brief>*Documentation missing...*</brief>
+    <brief>Append a partial regular expression matching identifier selector to the pipeline</brief>
+    <doc>Append a partial regular expression matching identifier selector to the pipeline.
+Identifier matches will match on names of objects and variables where appropriate.
+Note that the &amp;lt;identifier&amp;gt; embedded string may contain generators and can match multiple
+names at the same time.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a selector component identifier.</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_append_regex_partial::self" name="self">
@@ -84,14 +118,14 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_append_regex_partial::regex" name="regex">
-      <doc>*documentation missing...*</doc>
+      <doc>an embedded string</doc>
       <type name="CdnEmbeddedString" qualifier="*" ref="API Reference::CdnEmbeddedString#API Reference::CdnEmbeddedString" />
     </argument>
   </function>
   <function id="cdn_selector_as_string" name="cdn_selector_as_string">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get a textual representation of the selector pipeline.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new string representation of the selector</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_selector_as_string::self" name="self">
@@ -111,9 +145,14 @@
     </argument>
   </function>
   <function id="cdn_selector_get_implicit_children" name="cdn_selector_get_implicit_children">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get whether the selector uses implicit children</brief>
+    <doc>Get whether the selector uses implicit children. When set, implicit children
+cause children to be selected from the input of the selector, as if
+the "children" selector component was at the beginning of the pipeline.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if the selector has implicit children, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_selector_get_implicit_children::self" name="self">
@@ -137,9 +176,9 @@
     </argument>
   </function>
   <function id="cdn_selector_get_last_id" name="cdn_selector_get_last_id">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the id of the last added selector component.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the last selector component id</doc>
       <type builtin="yes" name="guint" />
     </return>
     <argument id="cdn_selector_get_last_id::self" name="self">
@@ -163,7 +202,11 @@
     </argument>
   </function>
   <function id="cdn_selector_get_parts" name="cdn_selector_get_parts">
-    <brief>Get the selector parts.</brief>
+    <brief>Get the selector parts</brief>
+    <doc>Get the selector parts. The returned list contains the specification
+of all the components in the selector pipeline in the form of &amp;lt;CdnSelectorPart&amp;gt;.
+
+</doc>
     <return>
       <doc>a &amp;lt;GSList&amp;gt;.</doc>
       <type name="GSList" qualifier="*" />
@@ -185,14 +228,20 @@
     </argument>
   </function>
   <function id="cdn_selector_new" name="cdn_selector_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new selector at the specified <ref ref="API Reference::CdnSelector#cdn_selector_new::root">cdn_selector_new::root</ref>
+    </brief>
+    <doc>Create a new selector at the specified <ref ref="API Reference::CdnSelector#cdn_selector_new::root">cdn_selector_new::root</ref>. The root object
+can be used to set the value of the object returned by the root
+pseudo selector.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>a new <ref ref="API Reference::CdnSelector#API Reference::CdnSelector">CdnSelector</ref></doc>
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" transfer-ownership="full" />
     </return>
     <argument id="cdn_selector_new::root" name="root">
-      <doc>*documentation missing...*</doc>
-      <type name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
+      <doc>the root</doc>
+      <type allow-none="yes" name="CdnObject" qualifier="*" ref="API Reference::CdnObject#API Reference::CdnObject" />
     </argument>
   </function>
   <function id="cdn_selector_parse" name="cdn_selector_parse">
@@ -215,7 +264,7 @@
     </argument>
   </function>
   <function id="cdn_selector_select" name="cdn_selector_select">
-    <brief>Select objects (from <ref ref="API Reference::CdnSelector#cdn_selector_select::parent">parent</ref>) using the selector.</brief>
+    <brief>Select objects (from <ref ref="API Reference::CdnSelector#cdn_selector_select::parent">cdn_selector_select::parent</ref>) using the selector.</brief>
     <return>
       <doc>A &amp;lt;GSList&amp;gt; of <ref ref="API Reference::CdnSelection#API Reference::CdnSelection">CdnSelection</ref></doc>
       <type name="GSList" qualifier="*" transfer-ownership="full" />
@@ -257,7 +306,10 @@
     </argument>
   </function>
   <function id="cdn_selector_set_define_context" name="cdn_selector_set_define_context">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set a define context identifier in the selector for the last selecto</brief>
+    <doc>Set a define context identifier in the selector for the last selector
+component. When set, the expansion context generated by the selector component
+will be stored in a define with the name <ref ref="API Reference::CdnSelector#cdn_selector_set_define_context::id">cdn_selector_set_define_context::id</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -266,7 +318,7 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_set_define_context::id" name="id">
-      <doc>*documentation missing...*</doc>
+      <doc>the define context id</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
@@ -299,7 +351,10 @@
     </argument>
   </function>
   <function id="cdn_selector_set_partial" name="cdn_selector_set_partial">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set or unset all selector components present in the selector to b</brief>
+    <doc>Set or unset all selector components present in the selector to be
+partial. Note that selector components which are added after this
+are not affected.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -308,7 +363,7 @@
       <type name="CdnSelector" qualifier="*" ref="API Reference::CdnSelector#API Reference::CdnSelector" />
     </argument>
     <argument id="cdn_selector_set_partial::partial" name="partial">
-      <doc>*documentation missing...*</doc>
+      <doc>whether or not to set partial</doc>
       <type builtin="yes" name="gboolean" />
     </argument>
   </function>

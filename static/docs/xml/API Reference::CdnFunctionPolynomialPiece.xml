@@ -29,9 +29,9 @@ polynomial functions.</doc>
     </argument>
   </function>
   <function id="cdn_function_polynomial_piece_equal" name="cdn_function_polynomial_piece_equal">
-    <brief>*Documentation missing...*</brief>
+    <brief>Check whether two function polynomial pieces are equal.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>`TRUE` if &amp;lt;a&amp;gt; is equal to <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_equal::b">cdn_function_polynomial_piece_equal::b</ref>, `FALSE` otherwise.</doc>
       <type builtin="yes" name="gboolean" />
     </return>
     <argument id="cdn_function_polynomial_piece_equal::self" name="self">
@@ -39,12 +39,12 @@ polynomial functions.</doc>
       <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
     </argument>
     <argument id="cdn_function_polynomial_piece_equal::b" name="b">
-      <doc>*documentation missing...*</doc>
+      <doc>another <ref ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece">CdnFunctionPolynomialPiece</ref></doc>
       <type name="CdnFunctionPolynomialPiece" qualifier="*" ref="API Reference::CdnFunctionPolynomialPiece#API Reference::CdnFunctionPolynomialPiece" />
     </argument>
   </function>
   <function id="cdn_function_polynomial_piece_evaluate" name="cdn_function_polynomial_piece_evaluate">
-    <brief>Evaluate the piece at <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_evaluate::t">t</ref>.</brief>
+    <brief>Evaluate the piece at <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_evaluate::t">cdn_function_polynomial_piece_evaluate::t</ref>.</brief>
     <return>
       <doc>the value of the polynomial.</doc>
       <type builtin="yes" name="gdouble" />
@@ -89,8 +89,8 @@ to low
     </argument>
   </function>
   <function id="cdn_function_polynomial_piece_get_derivative" name="cdn_function_polynomial_piece_get_derivative">
-    <brief>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">order</ref> derivative of the origina</brief>
-    <doc>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">order</ref> derivative of the original
+    <brief>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">cdn_function_polynomial_piece_get_derivative::order</ref> derivative of the origina</brief>
+    <doc>Get a new polynomial piece representing the <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_get_derivative::order">cdn_function_polynomial_piece_get_derivative::order</ref> derivative of the original
 piece.
 
 </doc>
@@ -141,7 +141,7 @@ coefficients are specified from high to low order.
       <type builtin="yes" name="gdouble" qualifier="*" />
     </argument>
     <argument id="cdn_function_polynomial_piece_new::num_coefficients" name="num_coefficients">
-      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_new::coefficients">coefficients</ref></doc>
+      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_new::coefficients">cdn_function_polynomial_piece_new::coefficients</ref></doc>
       <type builtin="yes" name="guint" />
     </argument>
   </function>
@@ -175,7 +175,7 @@ from high to low.</doc>
       <type builtin="yes" name="gdouble" qualifier="*" />
     </argument>
     <argument id="cdn_function_polynomial_piece_set_coefficients::num" name="num">
-      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_set_coefficients::coefficients">coefficients</ref></doc>
+      <doc>The number of coefficients provided in <ref ref="API Reference::CdnFunctionPolynomialPiece#cdn_function_polynomial_piece_set_coefficients::coefficients">cdn_function_polynomial_piece_set_coefficients::coefficients</ref></doc>
       <type builtin="yes" name="guint" />
     </argument>
   </function>

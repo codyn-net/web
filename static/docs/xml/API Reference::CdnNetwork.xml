@@ -3,13 +3,13 @@
   <brief>The main codyn network object</brief>
   <doc>The main codyn network object.
 
-The <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork" /> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> subclass representing the top-level
+The <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref> class is a <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> subclass representing the top-level
 node in which all other nodes are defined. Variables defined on the network
 are therefore automatically available to all the nodes in your network and
 can be considered as global variables. Please see <ref ref="API Reference::CdnNode#API Reference::CdnNode">CdnNode</ref> for useful API
 for finding child nodes, and adding/removing nodes from the network.
 
-A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork" /> can be loaded from either an XML format or the newer Codyn
+A <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref> can be loaded from either an XML format or the newer Codyn
 language format. Please see <ref ref="API Reference::CdnNetwork#cdn_network_new_from_file">cdn_network_new_from_file</ref>,
 <ref ref="API Reference::CdnNetwork#cdn_network_new_from_path">cdn_network_new_from_path</ref>, <ref ref="API Reference::CdnNetwork#cdn_network_new_from_stream">cdn_network_new_from_stream</ref> and
 <ref ref="API Reference::CdnNetwork#cdn_network_new_from_string">cdn_network_new_from_string</ref> for more information.
@@ -68,7 +68,7 @@ system time (milliseconds since epoch).</doc>
     <brief>Initialize the network to be integrated</brief>
     <doc>Initialize the network to be integrated. Note that you do not need to
 use this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref> since it will call
-<ref ref="API Reference::CdnNetwork#cdn_network_begin" /> (and <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref>) for you.
+<ref ref="API Reference::CdnNetwork#cdn_network_begin">cdn_network_begin</ref> (and <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref>) for you.
 
 </doc>
     <return>
@@ -92,7 +92,7 @@ use this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">c
     <brief>Finalize the network after integration</brief>
     <doc>Finalize the network after integration. Note that you do not need to use
 this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_network_run</ref> since it will call
-<ref ref="API Reference::CdnNetwork#cdn_network_end" /> for you.
+<ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref> for you.
 
 </doc>
     <return>
@@ -209,8 +209,8 @@ this if you are using <ref ref="API Reference::CdnNetwork#cdn_network_run">cdn_n
     <brief>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>
     </brief>
     <doc>&amp;lt;network&amp;gt; a <ref ref="API Reference::CdnNetwork#API Reference::CdnNetwork">CdnNetwork</ref>.
-<ref ref="API Reference::CdnNetwork#cdn_network_link_library::path">path</ref> path to the dynamic library to link.
-<ref ref="API Reference::CdnNetwork#cdn_network_link_library::error">error</ref> a &amp;lt;GError&amp;gt;
+<ref ref="API Reference::CdnNetwork#cdn_network_link_library::path">cdn_network_link_library::path</ref> path to the dynamic library to link.
+<ref ref="API Reference::CdnNetwork#cdn_network_link_library::error">cdn_network_link_library::error</ref> a &amp;lt;GError&amp;gt;
 Link a dynamic library (.so, .dylib or .dll) at runtime. This method is
 mainly useful for internal use. It's used by the codyn format which has
 a link_library keyword to dynamically link a library when the network is
@@ -316,8 +316,8 @@ is resolved. If found, the symbol (interpreted as a function) is called with
     </argument>
   </function>
   <function id="cdn_network_merge_from_file" name="cdn_network_merge_from_file">
-    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">file</ref> into &amp;lt;network&amp;gt;</brief>
-    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">file</ref> into &amp;lt;network&amp;gt;. This is
+    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">cdn_network_merge_from_file::file</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_file::file">cdn_network_merge_from_file::file</ref> into &amp;lt;network&amp;gt;. This is
 similar to creating a network from a file and merging it with &amp;lt;network&amp;gt;.
 
 </doc>
@@ -339,8 +339,8 @@ similar to creating a network from a file and merging it with &amp;lt;network&am
     </argument>
   </function>
   <function id="cdn_network_merge_from_path" name="cdn_network_merge_from_path">
-    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">path</ref> into &amp;lt;network&amp;gt;</brief>
-    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">path</ref> into &amp;lt;network&amp;gt;. This is
+    <brief>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">cdn_network_merge_from_path::path</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in the file <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_path::path">cdn_network_merge_from_path::path</ref> into &amp;lt;network&amp;gt;. This is
 similar to creating a network from a file and merging it with &amp;lt;network&amp;gt;.
 
 </doc>
@@ -362,7 +362,7 @@ similar to creating a network from a file and merging it with &amp;lt;network&am
     </argument>
   </function>
   <function id="cdn_network_merge_from_stream" name="cdn_network_merge_from_stream">
-    <brief>Merges the network defined in the stream <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_stream::stream">stream</ref> into &amp;lt;network&amp;gt;.</brief>
+    <brief>Merges the network defined in the stream <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_stream::stream">cdn_network_merge_from_stream::stream</ref> into &amp;lt;network&amp;gt;.</brief>
     <return>
       <doc>*documentation missing...*</doc>
       <type builtin="yes" name="gboolean" />
@@ -381,8 +381,8 @@ similar to creating a network from a file and merging it with &amp;lt;network&am
     </argument>
   </function>
   <function id="cdn_network_merge_from_string" name="cdn_network_merge_from_string">
-    <brief>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">s</ref> into &amp;lt;network&amp;gt;</brief>
-    <doc>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">s</ref> into &amp;lt;network&amp;gt;. This is
+    <brief>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">cdn_network_merge_from_string::s</ref> into &amp;lt;network&amp;gt;</brief>
+    <doc>Merges the network defined in <ref ref="API Reference::CdnNetwork#cdn_network_merge_from_string::s">cdn_network_merge_from_string::s</ref> into &amp;lt;network&amp;gt;. This is
 similar to creating a network from xml and merging it with &amp;lt;network&amp;gt;.
 
 </doc>
@@ -555,9 +555,9 @@ well, and most likely will cause your network to behave incorrectly.</doc>
     </argument>
   </function>
   <function id="cdn_network_step" name="cdn_network_step">
-    <brief>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">timestep</ref>
+    <brief>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">cdn_network_step::timestep</ref>
     </brief>
-    <doc>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">timestep</ref>. Note that you
+    <doc>Perform one step of simulation given the specified <ref ref="API Reference::CdnNetwork#cdn_network_step::timestep">cdn_network_step::timestep</ref>. Note that you
 have to call <ref ref="API Reference::CdnNetwork#cdn_network_begin">cdn_network_begin</ref> before doing the first step, and you should
 call <ref ref="API Reference::CdnNetwork#cdn_network_end">cdn_network_end</ref> after the last step.
 

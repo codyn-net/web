@@ -1,13 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gobject:class xmlns:gobject="http://jessevdk.github.com/cldoc/gobject/1.0" id="API Reference::CdnInstructionNumber" name="CdnInstructionNumber" xmlns="http://jessevdk.github.com/cldoc/1.0">
-  <brief>The instruction class for `CDN_INSTRUCTION_TYPE_NUMBER`</brief>
+  <brief>Number instruction</brief>
+  <doc>Number instruction.
+
+<ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref> is a special <ref ref="API Reference::CdnInstruction#API Reference::CdnInstruction">CdnInstruction</ref> subtype which represents
+a single number. When executed, it pushes exactly one number onto the stack.</doc>
   <base access="public">
     <type name="CdnInstruction" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" />
   </base>
   <function id="cdn_instruction_number_get_representation" name="cdn_instruction_number_get_representation">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the textual representation of the number instruction</brief>
+    <doc>Get the textual representation of the number instruction. If the
+instruction was created using <ref ref="API Reference::CdnInstructionNumber#cdn_instruction_number_new_from_string">cdn_instruction_number_new_from_string</ref>,
+then the string provided to construct it will be returned. Otherwise,
+the textual representation of the actual numerical value will be
+returned.
+
+</doc>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the textual representation of the value.</doc>
       <type builtin="yes" name="gchar" qualifier="*" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_number_get_representation::self" name="self">
@@ -16,9 +27,9 @@
     </argument>
   </function>
   <function id="cdn_instruction_number_get_value" name="cdn_instruction_number_get_value">
-    <brief>*Documentation missing...*</brief>
+    <brief>Get the value of the number instruction.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
+      <doc>the number instruction value.</doc>
       <type builtin="yes" name="gdouble" />
     </return>
     <argument id="cdn_instruction_number_get_value::self" name="self">
@@ -27,29 +38,32 @@
     </argument>
   </function>
   <function id="cdn_instruction_number_new" name="cdn_instruction_number_new">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new number instruction representing the given value.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_number_new::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
   <function id="cdn_instruction_number_new_from_string" name="cdn_instruction_number_new_from_string">
-    <brief>*Documentation missing...*</brief>
+    <brief>Create a new number instruction representing the given value.</brief>
     <return>
-      <doc>*documentation missing...*</doc>
-      <type name="CdnInstruction" qualifier="*" ref="API Reference::CdnInstruction#API Reference::CdnInstruction" transfer-ownership="full" />
+      <doc>a new <ref ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber">CdnInstructionNumber</ref>.</doc>
+      <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" transfer-ownership="full" />
     </return>
     <argument id="cdn_instruction_number_new_from_string::repr" name="repr">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_instruction_number_set_representation" name="cdn_instruction_number_set_representation">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the textual representation of the number instruction</brief>
+    <doc>Set the textual representation of the number instruction. This does not
+change the numerical value that the instruction encodes, only its textual
+representation as returned by <ref ref="API Reference::CdnInstructionNumber#cdn_instruction_number_get_representation">cdn_instruction_number_get_representation</ref>.</doc>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -58,12 +72,12 @@
       <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
     </argument>
     <argument id="cdn_instruction_number_set_representation::repr" name="repr">
-      <doc>*documentation missing...*</doc>
+      <doc>the textual representation</doc>
       <type builtin="yes" name="gchar" qualifier="*" />
     </argument>
   </function>
   <function id="cdn_instruction_number_set_value" name="cdn_instruction_number_set_value">
-    <brief>*Documentation missing...*</brief>
+    <brief>Set the value of the number instruction.</brief>
     <return>
       <type builtin="yes" name="void" />
     </return>
@@ -72,7 +86,7 @@
       <type name="CdnInstructionNumber" qualifier="*" ref="API Reference::CdnInstructionNumber#API Reference::CdnInstructionNumber" />
     </argument>
     <argument id="cdn_instruction_number_set_value::value" name="value">
-      <doc>*documentation missing...*</doc>
+      <doc>the value</doc>
       <type builtin="yes" name="gdouble" />
     </argument>
   </function>
