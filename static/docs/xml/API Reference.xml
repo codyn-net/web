@@ -748,93 +748,133 @@ Operator error codes.</doc>
     </enumvalue>
   </enum>
   <enum anonymous="yes" id="API Reference::CdnSelectorPseudoType" name="CdnSelectorPseudoType" typedef="yes">
-    <brief>CDN_SELECTOR_PSEUDO_TYPE_ROOT: roo</brief>
-    <doc>CDN_SELECTOR_PSEUDO_TYPE_ROOT: root
-CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT: templates root
-CDN_SELECTOR_PSEUDO_TYPE_CHILDREN: children
-CDN_SELECTOR_PSEUDO_TYPE_PARENT: parent
-CDN_SELECTOR_PSEUDO_TYPE_FIRST: first
-CDN_SELECTOR_PSEUDO_TYPE_LAST: last
-CDN_SELECTOR_PSEUDO_TYPE_SUBSET: subset
-CDN_SELECTOR_PSEUDO_TYPE_EDGES: edges
-CDN_SELECTOR_PSEUDO_TYPE_NODES: nodes
-CDN_SELECTOR_PSEUDO_TYPE_IMPORTS: imports
-CDN_SELECTOR_PSEUDO_TYPE_VARIABLES: variables
-CDN_SELECTOR_PSEUDO_TYPE_ACTIONS: actions
-CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS: functions
-CDN_SELECTOR_PSEUDO_TYPE_OBJECTS: objects
-CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS: siblings
-CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES: templates
-CDN_SELECTOR_PSEUDO_TYPE_COUNT: count
-CDN_SELECTOR_PSEUDO_TYPE_INPUT: input
-CDN_SELECTOR_PSEUDO_TYPE_OUTPUT: output
-CDN_SELECTOR_PSEUDO_TYPE_INPUTS: inputs
-CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS: outputs
-CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME: input name
-CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME: output name
-CDN_SELECTOR_PSEUDO_TYPE_SELF: self
-CDN_SELECTOR_PSEUDO_TYPE_DEBUG: debug
-CDN_SELECTOR_PSEUDO_TYPE_NAME: name
-CDN_SELECTOR_PSEUDO_TYPE_UNIQUE: unique
-CDN_SELECTOR_PSEUDO_TYPE_IF: if
-CDN_SELECTOR_PSEUDO_TYPE_NOT: not
-CDN_SELECTOR_PSEUDO_TYPE_IFSTR: ifstr
-CDN_SELECTOR_PSEUDO_TYPE_NOTSTR: notstr
-CDN_SELECTOR_PSEUDO_TYPE_FROM_SET: from set
-CDN_SELECTOR_PSEUDO_TYPE_TYPE: type
-CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG: has flag
-CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE: has template
-CDN_SELECTOR_PSEUDO_TYPE_REVERSE: reverse
-CDN_SELECTOR_PSEUDO_TYPE_RECURSE: recurse
-CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT: append context
-CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES: applied templates
-CDN_SELECTOR_PSEUDO_TYPE_REDUCE: reduce
-CDN_SELECTOR_PSEUDO_TYPE_SORT: sort
-CDN_SELECTOR_PSEUDO_TYPE_XOR: xor
-CDN_SELECTOR_PSEUDO_NUM: num
-Pseudo selector type.</doc>
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_ROOT" value="0" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" value="1" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" name="CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" value="2" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_PARENT" name="CDN_SELECTOR_PSEUDO_TYPE_PARENT" value="3" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FIRST" name="CDN_SELECTOR_PSEUDO_TYPE_FIRST" value="4" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_LAST" name="CDN_SELECTOR_PSEUDO_TYPE_LAST" value="5" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SUBSET" name="CDN_SELECTOR_PSEUDO_TYPE_SUBSET" value="6" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_EDGES" name="CDN_SELECTOR_PSEUDO_TYPE_EDGES" value="7" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NODES" name="CDN_SELECTOR_PSEUDO_TYPE_NODES" value="8" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IMPORTS" name="CDN_SELECTOR_PSEUDO_TYPE_IMPORTS" value="9" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_VARIABLES" name="CDN_SELECTOR_PSEUDO_TYPE_VARIABLES" value="10" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_ACTIONS" name="CDN_SELECTOR_PSEUDO_TYPE_ACTIONS" value="11" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS" name="CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS" value="12" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OBJECTS" name="CDN_SELECTOR_PSEUDO_TYPE_OBJECTS" value="13" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS" name="CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS" value="14" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES" name="CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES" value="15" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_COUNT" name="CDN_SELECTOR_PSEUDO_TYPE_COUNT" value="16" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUT" name="CDN_SELECTOR_PSEUDO_TYPE_INPUT" value="17" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUT" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUT" value="18" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUTS" name="CDN_SELECTOR_PSEUDO_TYPE_INPUTS" value="19" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS" value="20" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME" value="21" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME" value="22" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SELF" name="CDN_SELECTOR_PSEUDO_TYPE_SELF" value="23" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_DEBUG" name="CDN_SELECTOR_PSEUDO_TYPE_DEBUG" value="24" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_NAME" value="25" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_UNIQUE" name="CDN_SELECTOR_PSEUDO_TYPE_UNIQUE" value="26" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IF" name="CDN_SELECTOR_PSEUDO_TYPE_IF" value="27" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NOT" name="CDN_SELECTOR_PSEUDO_TYPE_NOT" value="28" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IFSTR" name="CDN_SELECTOR_PSEUDO_TYPE_IFSTR" value="29" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NOTSTR" name="CDN_SELECTOR_PSEUDO_TYPE_NOTSTR" value="30" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FROM_SET" name="CDN_SELECTOR_PSEUDO_TYPE_FROM_SET" value="31" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TYPE" name="CDN_SELECTOR_PSEUDO_TYPE_TYPE" value="32" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG" name="CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG" value="33" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE" name="CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE" value="34" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_REVERSE" name="CDN_SELECTOR_PSEUDO_TYPE_REVERSE" value="35" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_RECURSE" name="CDN_SELECTOR_PSEUDO_TYPE_RECURSE" value="36" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT" name="CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT" value="37" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES" name="CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES" value="38" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_REDUCE" name="CDN_SELECTOR_PSEUDO_TYPE_REDUCE" value="39" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SORT" name="CDN_SELECTOR_PSEUDO_TYPE_SORT" value="40" />
-    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_XOR" name="CDN_SELECTOR_PSEUDO_TYPE_XOR" value="41" />
+    <brief>Pseudo selector type.</brief>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_ROOT" value="0">
+      <brief>root</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" name="CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES_ROOT" value="1">
+      <brief>templates root</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" name="CDN_SELECTOR_PSEUDO_TYPE_CHILDREN" value="2">
+      <brief>children</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_PARENT" name="CDN_SELECTOR_PSEUDO_TYPE_PARENT" value="3">
+      <brief>parent</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FIRST" name="CDN_SELECTOR_PSEUDO_TYPE_FIRST" value="4">
+      <brief>first</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_LAST" name="CDN_SELECTOR_PSEUDO_TYPE_LAST" value="5">
+      <brief>last</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SUBSET" name="CDN_SELECTOR_PSEUDO_TYPE_SUBSET" value="6">
+      <brief>subset</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_EDGES" name="CDN_SELECTOR_PSEUDO_TYPE_EDGES" value="7">
+      <brief>edges</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NODES" name="CDN_SELECTOR_PSEUDO_TYPE_NODES" value="8">
+      <brief>nodes</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IMPORTS" name="CDN_SELECTOR_PSEUDO_TYPE_IMPORTS" value="9">
+      <brief>imports</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_VARIABLES" name="CDN_SELECTOR_PSEUDO_TYPE_VARIABLES" value="10">
+      <brief>variables</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_ACTIONS" name="CDN_SELECTOR_PSEUDO_TYPE_ACTIONS" value="11">
+      <brief>actions</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS" name="CDN_SELECTOR_PSEUDO_TYPE_FUNCTIONS" value="12">
+      <brief>functions</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OBJECTS" name="CDN_SELECTOR_PSEUDO_TYPE_OBJECTS" value="13">
+      <brief>objects</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS" name="CDN_SELECTOR_PSEUDO_TYPE_SIBLINGS" value="14">
+      <brief>siblings</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES" name="CDN_SELECTOR_PSEUDO_TYPE_TEMPLATES" value="15">
+      <brief>templates</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_COUNT" name="CDN_SELECTOR_PSEUDO_TYPE_COUNT" value="16">
+      <brief>count</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUT" name="CDN_SELECTOR_PSEUDO_TYPE_INPUT" value="17">
+      <brief>input</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUT" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUT" value="18">
+      <brief>output</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUTS" name="CDN_SELECTOR_PSEUDO_TYPE_INPUTS" value="19">
+      <brief>inputs</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUTS" value="20">
+      <brief>outputs</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_INPUT_NAME" value="21">
+      <brief>input name</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_OUTPUT_NAME" value="22">
+      <brief>output name</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SELF" name="CDN_SELECTOR_PSEUDO_TYPE_SELF" value="23">
+      <brief>self</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_DEBUG" name="CDN_SELECTOR_PSEUDO_TYPE_DEBUG" value="24">
+      <brief>debug</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NAME" name="CDN_SELECTOR_PSEUDO_TYPE_NAME" value="25">
+      <brief>name</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_UNIQUE" name="CDN_SELECTOR_PSEUDO_TYPE_UNIQUE" value="26">
+      <brief>unique</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IF" name="CDN_SELECTOR_PSEUDO_TYPE_IF" value="27">
+      <brief>if</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NOT" name="CDN_SELECTOR_PSEUDO_TYPE_NOT" value="28">
+      <brief>not</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_IFSTR" name="CDN_SELECTOR_PSEUDO_TYPE_IFSTR" value="29">
+      <brief>ifstr</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_NOTSTR" name="CDN_SELECTOR_PSEUDO_TYPE_NOTSTR" value="30">
+      <brief>notstr</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_FROM_SET" name="CDN_SELECTOR_PSEUDO_TYPE_FROM_SET" value="31">
+      <brief>from set</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_TYPE" name="CDN_SELECTOR_PSEUDO_TYPE_TYPE" value="32">
+      <brief>type</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG" name="CDN_SELECTOR_PSEUDO_TYPE_HAS_FLAG" value="33">
+      <brief>has flag</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE" name="CDN_SELECTOR_PSEUDO_TYPE_HAS_TEMPLATE" value="34">
+      <brief>has template</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_REVERSE" name="CDN_SELECTOR_PSEUDO_TYPE_REVERSE" value="35">
+      <brief>reverse</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_RECURSE" name="CDN_SELECTOR_PSEUDO_TYPE_RECURSE" value="36">
+      <brief>recurse</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT" name="CDN_SELECTOR_PSEUDO_TYPE_APPEND_CONTEXT" value="37">
+      <brief>append context</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES" name="CDN_SELECTOR_PSEUDO_TYPE_APPLIED_TEMPLATES" value="38">
+      <brief>applied templates</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_REDUCE" name="CDN_SELECTOR_PSEUDO_TYPE_REDUCE" value="39">
+      <brief>reduce</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_SORT" name="CDN_SELECTOR_PSEUDO_TYPE_SORT" value="40">
+      <brief>sort</brief>
+    </enumvalue>
+    <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_TYPE_XOR" name="CDN_SELECTOR_PSEUDO_TYPE_XOR" value="41">
+      <brief>xor vCDN_SELECTOR_PSEUDO_NUM: num</brief>
+    </enumvalue>
     <enumvalue id="API Reference::CdnSelectorPseudoType::CDN_SELECTOR_PSEUDO_NUM" name="CDN_SELECTOR_PSEUDO_NUM" value="42" />
   </enum>
   <enum anonymous="yes" id="API Reference::CdnSelectorType" name="CdnSelectorType" typedef="yes">
