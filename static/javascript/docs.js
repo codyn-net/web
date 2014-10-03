@@ -8,9 +8,18 @@ App.prototype = {
 
         $(window).on('scroll', function(e) {
             var st = $(window).scrollTop();
+
+            if ($(document).height() <= $(window).height()) {
+                st = 0;
+            }
+
+            var d = Math.max(0, $(window).height() + st - $(document).height());
+
+            console.log(st, d);
+
             var sidebar = $('#cldoc_sidebar, #cldoc_sidebar_items');
 
-            sidebar.css('top', Math.max(0, 110 - Math.max(st, 0)));
+            sidebar.css('top', Math.max(0, 112 - Math.max(st, 0)) + d);
         });
     },
 

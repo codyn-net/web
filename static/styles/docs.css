@@ -1,6 +1,12 @@
+html, body, #main {
+  height: 100%;
+}
+
+body {
+  margin-top: 0;
+}
+
 #cldoc {
-  width: 740px;
-  margin: 0 auto;
   position: relative;
   line-height: 1.75;
   margin-right: 0px;
@@ -10,28 +16,42 @@ div#header {
   border-radius: 10px 10px 0px 0px;
 }
 
+#header-container {
+  padding-top: 12px;
+}
+
+
 #cldoc #cldoc_sidebar_items,
 #cldoc #cldoc_sidebar {
-  top: 110px;
+  top: 112px;
   background-color: #f5f5f5;
 }
 
 #cldoc #cldoc_sidebar,
 #cldoc #cldoc_sidebar_items,
 #cldoc #cldoc_search {
-  left: 50%;
-  margin-left: -500px;
+  left: auto;
+}
+
+#right-border {
+  border-right: 5px solid #f4f4f4;
+  position: absolute;
+  top: 112px;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
 }
 
 #cldoc #cldoc_content {
-  margin-left: 20px;
+  margin-left: 260px;
+  margin-bottom: 0px;
   padding-bottom: 30px;
   background-color: #fff;
   border-right: 5px solid #d4d4d4;
 }
 
 #cldoc #cldoc_search {
-  margin-left: -492px;
+  margin-left: 6px;
 }
 
 #cldoc #cldoc_sidebar {

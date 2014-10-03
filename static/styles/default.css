@@ -5,6 +5,8 @@ body
 {
   font-family: Ubuntu, Cantarell, 'Droid Sans', 'DejaVu Sans', Arial, sans-serif;
   overflow-y: scroll;
+  margin: 12px;
+  margin-bottom: 0px;
 }
 
 *
