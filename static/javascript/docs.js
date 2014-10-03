@@ -15,8 +15,6 @@ App.prototype = {
 
             var d = Math.max(0, $(window).height() + st - $(document).height());
 
-            console.log(st, d);
-
             var sidebar = $('#cldoc_sidebar, #cldoc_sidebar_items');
 
             sidebar.css('top', Math.max(0, 112 - Math.max(st, 0)) + d);
