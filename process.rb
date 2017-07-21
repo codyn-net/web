@@ -266,7 +266,8 @@ class Context
     end
 
     def playground_put(txt)
-        http = Net::HTTP.new('play.codyn.net', 80)
+        http = Net::HTTP.new('play.codyn.net', 443)
+        http.use_ssl = true
         response = http.send_request('PUT', '/d/', "document=#{CGI.escape(txt)}")
 
         ret = JSON.parse(response.body)
