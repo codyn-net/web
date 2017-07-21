@@ -26,7 +26,7 @@ dynamical systems.
 	if (navigator.appVersion.indexOf('Mac') != -1)
 	{
 		img.attr('src', 'images/osx_installer.png');
-		a.attr('href', 'http://download.codyn.net/releases/mac/<%= osx_latest %>');
+		a.attr('href', 'https://download.codyn.net/releases/mac/<%= osx_latest %>');
 		span.text('for OS X');
 	}
 	else if (navigator.appVersion.indexOf('Linux') != -1)
@@ -47,7 +47,7 @@ dynamical systems.
 			bits = '32';
 		}
 
-		a.attr('href', 'http://packages.codyn.net/ubuntu/pool/main/c/codyn-meta/codyn-ubuntu-installer_3.0-1precise0_' + arch + '.deb');
+		a.attr('href', 'https://packages.codyn.net/ubuntu/pool/main/c/codyn-meta/codyn-ubuntu-installer_3.0-1precise0_' + arch + '.deb');
 		span.text('for Ubuntu');
 	}
 	else
@@ -63,7 +63,7 @@ This approach ensures that the the core C library exposes all relevant API to
 built your own external tools, if needed. Furthermore, the C library can be
 easily expanded externally to add new integrator schemes, new io methods and
 additional mathematical functions. The core C library is furthermore built on
-top of [GObject](http://developer.gnome.org/gobject/stable) which provides a
+top of [GObject](https://developer.gnome.org/gobject/stable) which provides a
 number of advantages (such as automatic bindings for various programming languages,
 including Python and automatic documentation generation).
 
@@ -83,8 +83,8 @@ text files which can be integrated without any further compilation.
 The math in codyn supports basic mathematical functions and fully supports
 vectors and matrices. Various computationally intensive matrix operations
 (such as solving linear systems and matrix multiplication) are implemented
-using [BLAS](http://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms)
-and [LAPACK](http://en.wikipedia.org/wiki/LAPACK). Users can also easily
+using [BLAS](https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms)
+and [LAPACK](https://en.wikipedia.org/wiki/LAPACK). Users can also easily
 define their own functions using the modeling language. Evaluation of mathematical
 expressions is done with a minimal memory profile and are optimized for
 execution speed.

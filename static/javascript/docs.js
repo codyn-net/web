@@ -42,7 +42,7 @@ App.prototype = {
     _play_click: function(event, code) {
         var f = document.createElement('form');
         f.method = 'post';
-        f.action = 'http://play.codyn.net/d/';
+        f.action = 'https://play.codyn.net/d/';
 
         if (event.ctrlKey)
         {

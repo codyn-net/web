@@ -261,7 +261,7 @@ class Context
 
         markdown do
             @_erout += "~~~~ codyn\n#{ret}\n~~~~\n"
-            @_erout += "[⌦ Open in playground](http://play.codyn.net/d/#{play})"
+            @_erout += "[⌦ Open in playground](https://play.codyn.net/d/#{play})"
         end
     end
 
